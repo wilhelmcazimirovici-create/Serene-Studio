@@ -196,9 +196,9 @@ const pageSchema = [
           {page.secondaryHref && <a class="btn-liquid-dark" href={page.secondaryHref}>{page.secondaryLabel ?? l.seeStudio}</a>}
         </div>
         {page.proof && (
-          <div class="proof-strip" aria-label={locale === "ro" ? "Date rapide" : "Quick facts"}>
+          <div class="proof-strip" role="list" aria-label={locale === "ro" ? "Date rapide" : "Quick facts"}>
             {page.proof.map((item) => (
-              <div class="proof-item">
+              <div class="proof-item" role="listitem">
                 <span class="proof-value">{item.value}</span>
                 <span class="proof-label">{item.label}</span>
               </div>
@@ -238,7 +238,7 @@ const pageSchema = [
               <div class="reviews-grid">
                 {section.cards.map((card) => (
                   <article class="review-card">
-                    <span class="review-stars" aria-label={locale === "ro" ? "5 din 5 stele" : "5 out of 5 stars"}>
+                    <span class="review-stars" role="img" aria-label={locale === "ro" ? "5 din 5 stele" : "5 out of 5 stars"}>
                       {Array.from({ length: 5 }).map(() => (
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                           <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />

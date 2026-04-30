@@ -151,9 +151,9 @@ const graph = [...baseSchema, ...schema];
       <slot />
     </main>
     <Footer locale={locale} translationPath={translationPath} />
-    <div class="mobile-booking-bar" aria-label={l.reserve}>
+    <nav class="mobile-booking-bar" aria-label={l.reserve}>
       <BookingCta locale={locale} referer={`website_${locale}_mobile_sticky`} label={l.reserve} />
-    </div>
+    </nav>
 
     <script>
       (() => {

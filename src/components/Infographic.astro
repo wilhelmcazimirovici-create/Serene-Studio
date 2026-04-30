@@ -66,8 +66,8 @@ const modeLabel: Record<string, { ro: string; en: string }> = {
             itemscope
             itemtype="https://schema.org/Place"
           >
-            <span class="infographic-distance-icon" aria-label={modeText} title={modeText}>
-              <svg viewBox="0 0 24 24" focusable="false">
+            <span class="infographic-distance-icon" role="img" aria-label={modeText} title={modeText}>
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d={modeIcon[mode]} />
               </svg>
             </span>

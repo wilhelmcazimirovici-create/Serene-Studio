@@ -718,8 +718,8 @@ const operationalRo: PageContent[] = [
       },
       {
         title: "Acces și self check-in",
-        intro: "Check-in-ul este după 14:00, check-out-ul până la 12:00. Accesul este complet self-check-in, cu codul pentru cutia de chei de la poartă disponibil după finalizarea check-in-ului online.",
-        bullets: ["Check-in după 14:00", "Check-out până la 12:00", "Check-in online finalizat înainte de sosire", "Codul cutiei de chei devine disponibil după verificare ID, selfie, taxa de oraș și semnarea regulamentului", "Caută linkul de check-in și guidebook în emailul de confirmare înainte să contactezi personalul"]
+        intro: "Check-in-ul este după 14:00, check-out-ul până la 11:00. Accesul este complet self-check-in, cu codul pentru cutia de chei de la poartă disponibil după finalizarea check-in-ului online.",
+        bullets: ["Check-in după 14:00", "Check-out până la 11:00", "Check-in online finalizat înainte de sosire", "Codul cutiei de chei devine disponibil după verificare ID, selfie, taxa de oraș și semnarea regulamentului", "Caută linkul de check-in și guidebook în emailul de confirmare înainte să contactezi personalul"]
       },
       {
         title: "Parcare, fumat, copii și animale",
@@ -738,7 +738,7 @@ const operationalRo: PageContent[] = [
     ],
     faq: [
       { q: "La ce oră este check-in-ul?", a: "Check-in-ul este după ora 14:00." },
-      { q: "La ce oră este check-out-ul?", a: "Check-out-ul este până la ora 12:00." },
+      { q: "La ce oră este check-out-ul?", a: "Check-out-ul este până la ora 11:00." },
       { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE. Niciun alt document nu este acceptat. Actul se fotografiaza în timpul check-in-ului online." },
       { q: "De ce trebuie să fac selfie?", a: "Selfie-ul confirmă că persoana care face check-in-ul corespunde cu actul de identitate. Trebuie făcut pe loc, într-un cadru luminat, să se vadă clar." },
       { q: "Ce se întâmplă dacă pozele nu sunt clare?", a: "Pozele care nu sunt clare sau apar alterate duc la anularea rezervării fără ramburs. Asigură-te că actul și selfie-ul sunt vizibile, fără filtre și fără editări." },
@@ -755,7 +755,7 @@ const operationalRo: PageContent[] = [
     locale: "ro",
     translationPath: "/en/rules/",
     title: "Reguli de cazare la Serene Studio București",
-    description: "Reguli Serene Studio: check-in după 14:00, check-out până la 12:00, fumat interzis, fără animale, ore de liniște și garanție până la 500 lei.",
+    description: "Reguli Serene Studio: check-in după 14:00, check-out până la 11:00, fumat interzis, fără animale, ore de liniște și garanție până la 500 lei.",
     keyword: "reguli Serene Studio, fumat interzis, garantie daune",
     h1: "Reguli de cazare la Serene Studio",
     eyebrow: "Actualizat: 30 aprilie 2026",
@@ -765,7 +765,7 @@ const operationalRo: PageContent[] = [
     sections: [
       {
         title: "Regulile principale",
-        intro: "Check-in-ul este după 14:00, check-out-ul este până la 12:00, iar orele de liniște sunt 22:00-09:00.",
+        intro: "Check-in-ul este după 14:00, check-out-ul este până la 11:00, iar orele de liniște sunt 22:00-09:00.",
         bullets: [
           "Fumatul este interzis în interior.",
           "Fumatul este permis doar în curte sau zona indicata.",
@@ -814,7 +814,7 @@ const operationalRo: PageContent[] = [
     translationPath: "/en/contact/",
     title: "Contact Serene Studio București - rezervări online directe",
     description: "Pentru prețuri și disponibilitate la Serene Studio folosește butonul Rezervă online. Contact pentru urgențe: telefon și email confirmate.",
-    keyword: "contact Serene Studio, rezervare Serene Studio, contact@serenestudio.ro",
+    keyword: "contact Serene Studio, rezervare Serene Studio, serenestudio.ro@gmail.com",
     h1: "Contact Serene Studio",
     eyebrow: "Rezervări online",
     heroText: "Pentru prețuri, disponibilitate și rezervări, folosește butonul Rezervă online; sistemul îți arată datele disponibile și confirmă rezervarea pe loc.",
@@ -979,8 +979,8 @@ const operationalEn: PageContent[] = [
       },
       {
         title: "Access and self check-in",
-        intro: "Check-in is after 14:00 and check-out is by 12:00. Access is fully self check-in, with the key-box code available after online check-in is completed.",
-        bullets: ["Check-in after 14:00", "Check-out by 12:00", "Online check-in completed before arrival", "Key-box code becomes available after ID verification, selfie, city tax and rules signature", "Look for the check-in link and guidebook in your confirmation email before contacting staff"]
+        intro: "Check-in is after 14:00 and check-out is by 11:00. Access is fully self check-in, with the key-box code available after online check-in is completed.",
+        bullets: ["Check-in after 14:00", "Check-out by 11:00", "Online check-in completed before arrival", "Key-box code becomes available after ID verification, selfie, city tax and rules signature", "Look for the check-in link and guidebook in your confirmation email before contacting staff"]
       },
       {
         title: "Parking, smoking, children and pets",
@@ -999,7 +999,7 @@ const operationalEn: PageContent[] = [
     ],
     faq: [
       { q: "What time is check-in?", a: "Check-in is after 14:00." },
-      { q: "What time is check-out?", a: "Check-out is by 12:00." },
+      { q: "What time is check-out?", a: "Check-out is by 11:00." },
       { q: "Which documents are accepted at check-in?", a: "ID card or passport for EU guests; passport only for non-EU guests. No other document is accepted. The document is photographed during online check-in." },
       { q: "Why do I need to take a selfie?", a: "The selfie confirms that the person checking in matches the ID. It must be taken on the spot, in good light, with your face clearly visible." },
       { q: "What happens if my photos are unclear?", a: "Photos that are unclear or appear altered lead to cancellation of the booking with no refund. Make sure the document and selfie are visible, without filters or edits." },
@@ -1016,7 +1016,7 @@ const operationalEn: PageContent[] = [
     locale: "en",
     translationPath: "/reguli/",
     title: "Serene Studio Bucharest house rules",
-    description: "Serene Studio rules: check-in after 14:00, check-out by 12:00, no indoor smoking, no pets, quiet hours and damage deposit up to 500 lei.",
+    description: "Serene Studio rules: check-in after 14:00, check-out by 11:00, no indoor smoking, no pets, quiet hours and damage deposit up to 500 lei.",
     keyword: "Serene Studio rules, no smoking, damage deposit",
     h1: "House rules at Serene Studio",
     eyebrow: "Updated: 30 April 2026",
@@ -1026,7 +1026,7 @@ const operationalEn: PageContent[] = [
     sections: [
       {
         title: "Main rules",
-        intro: "Check-in is after 14:00, check-out is by 12:00, and quiet hours are 22:00-09:00.",
+        intro: "Check-in is after 14:00, check-out is by 11:00, and quiet hours are 22:00-09:00.",
         bullets: [
           "Smoking is not allowed inside.",
           "Smoking is allowed only in the courtyard or indicated area.",
@@ -1075,7 +1075,7 @@ const operationalEn: PageContent[] = [
     translationPath: "/contact/",
     title: "Contact Serene Studio Bucharest - direct online bookings",
     description: "For Serene Studio prices and availability use the Book online button. Confirmed emergency contact: phone and email.",
-    keyword: "contact Serene Studio, Serene Studio booking, contact@serenestudio.ro",
+    keyword: "contact Serene Studio, Serene Studio booking, serenestudio.ro@gmail.com",
     h1: "Contact Serene Studio",
     eyebrow: "Online bookings",
     heroText: "For prices, availability and bookings, use the Book online button; the system shows available dates and confirms the booking on the spot.",

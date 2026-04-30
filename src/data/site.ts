@@ -7,7 +7,7 @@ export const property = {
   fullName: "Serene Studio București",
   phone: "+40 733 737 363",
   phoneHref: "tel:+40733737363",
-  email: "contact@serenestudio.ro",
+  email: "serenestudio.ro@gmail.com",
   address: "Strada Alexandru Zagoritz 12, Sector 2, București 021998",
   streetAddress: "Strada Alexandru Zagoritz 12",
   locality: "Bucuresti",
@@ -17,7 +17,7 @@ export const property = {
   latitude: 44.4338629,
   longitude: 26.1408394,
   checkin: "14:00",
-  checkout: "12:00",
+  checkout: "11:00",
   quietHours: "22:00-09:00",
   size: "35 m2",
   bookingPropertyId: "249069",
@@ -25,7 +25,8 @@ export const property = {
 };
 
 export function bookingUrl(referer: string, locale: Locale = "ro") {
-  const url = new URL("/rezerva-online/", SITE_URL);
+  const url = new URL("https://beds24.com/booking.php");
+  url.searchParams.set("propid", property.bookingPropertyId);
   url.searchParams.set("referer", referer);
   if (locale === "en") url.searchParams.set("lang", "en");
   return url.toString();

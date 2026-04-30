@@ -5,6 +5,9 @@ export default defineConfig({
   site: "https://www.serenestudio.ro",
   output: "static",
   trailingSlash: "always",
+  devToolbar: {
+    enabled: false
+  },
   integrations: [
     sitemap({
       changefreq: "weekly",
