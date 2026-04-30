@@ -9,13 +9,13 @@ const { locale } = Astro.props;
 ---
 
 <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label={locale === "ro" ? "Galerie foto" : "Photo gallery"}>
-  <button type="button" class="lightbox-close" data-lightbox-close aria-label={locale === "ro" ? "Inchide" : "Close"}>
+  <button type="button" class="lightbox-close" data-lightbox-close aria-label={locale === "ro" ? "Închide" : "Close"}>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M6 18L18 6" /></svg>
   </button>
-  <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label={locale === "ro" ? "Imaginea anterioara" : "Previous image"}>
+  <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label={locale === "ro" ? "Imaginea anterioară" : "Previous image"}>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
   </button>
-  <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label={locale === "ro" ? "Imaginea urmatoare" : "Next image"}>
+  <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label={locale === "ro" ? "Imaginea următoare" : "Next image"}>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
   </button>
   <figure class="lightbox-figure">

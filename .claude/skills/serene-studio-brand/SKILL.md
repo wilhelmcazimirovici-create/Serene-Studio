@@ -53,6 +53,22 @@ CTA wording forbidden:
 - `Pret la cerere`
 - `Trimite-ne un mesaj`
 
+### Phone policy — canonical phrasing
+
+When copy needs to explain why the phone is not the booking channel, use these exact phrasings (never soft variants like "nu este nevoie sa suni" — they imply you *could* call to book):
+
+RO:
+- `Nu facem rezervari telefonic`
+- `Telefonul este doar pentru urgente`
+- `Toate informatiile pentru sejur le gasesti in guidebook, accesibil oricand prin acelasi link folosit la check-in-ul online`
+
+EN:
+- `We do not take bookings by phone`
+- `The phone is for emergencies only`
+- `All stay information is in the guidebook, accessible any time through the same link used for online check-in`
+
+Any FAQ entry about calling, any contact-page row labeling the phone, and any final-CTA explanatory paragraph must use these phrasings. Marketing card snippets like `fara apeluri` / `no calls` are still allowed as positive flow claims.
+
 ## Color palette (overrides generic from `modern-colors`)
 
 ```css

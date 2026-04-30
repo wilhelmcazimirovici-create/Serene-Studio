@@ -23,7 +23,7 @@ function sectionClass(index: number) {
 }
 
 function breadcrumbName(path: string) {
-  if (path === "/" || path === "/en/") return locale === "ro" ? "Acasa" : "Home";
+  if (path === "/" || path === "/en/") return locale === "ro" ? "Acasă" : "Home";
   const parts = path.split("/").filter(Boolean);
   return parts[parts.length - 1]?.replaceAll("-", " ") ?? "Page";
 }
@@ -136,7 +136,7 @@ const pageSchema = [
       {
         "@type": "ListItem",
         position: 1,
-        name: locale === "ro" ? "Acasa" : "Home",
+        name: locale === "ro" ? "Acasă" : "Home",
         item: absoluteUrl(locale === "ro" ? "/" : "/en/")
       },
       ...(page.path === "/" || page.path === "/en/"
@@ -362,7 +362,7 @@ const pageSchema = [
           <h2>{locale === "ro" ? "Galerie foto Serene Studio" : "Serene Studio photo gallery"}</h2>
           <p>
             {locale === "ro"
-              ? "Fotografiile folosesc imagini reale ale studioului, chicinetei, baii, terasei si accesului."
+              ? "Fotografiile folosesc imagini reale ale studioului, chicinetei, băii, terasei și accesului."
               : "The gallery uses real images of the studio, kitchenette, bathroom, terrace and access."}
           </p>
         </div>
@@ -398,10 +398,10 @@ const pageSchema = [
     <section class="band">
       <div class="container">
         <div class="section-head">
-          <h2>{locale === "ro" ? "Deschide ruta in aplicatia ta de navigatie" : "Open the route in your navigation app"}</h2>
+          <h2>{locale === "ro" ? "Deschide ruta în aplicația ta de navigație" : "Open the route in your navigation app"}</h2>
           <p>
             {locale === "ro"
-              ? "Coordonatele folosite sunt 44.4338629, 26.1408394. Verifica ruta inainte de plecare."
+              ? "Coordonatele folosite sunt 44.4338629, 26.1408394. Verifică ruta înainte de plecare."
               : "The coordinates used are 44.4338629, 26.1408394. Check your route before leaving."}
           </p>
         </div>
@@ -422,7 +422,7 @@ const pageSchema = [
           <h2>{l.faqTitle}</h2>
           <p>
             {locale === "ro"
-              ? "Raspunsuri scurte pentru intrebarile care apar cel mai des inainte de rezervare."
+              ? "Răspunsuri scurte pentru întrebările care apar cel mai des înainte de rezervare."
               : "Short answers to the questions that most often come up before booking."}
           </p>
         </div>

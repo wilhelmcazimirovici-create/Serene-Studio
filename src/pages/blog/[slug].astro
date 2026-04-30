@@ -108,7 +108,7 @@ const schema = [
       <h1>{post.title}</h1>
       <p class="hero-lead">{post.intro}</p>
       <div class="article-cta">
-        <p>Pentru preturi si disponibilitate, foloseste butonul Rezerva online.</p>
+        <p>Pentru prețuri și disponibilitate, folosește butonul Rezervă online.</p>
         <BookingCta locale="ro" referer={`${post.ctaReferer}_top`} label={l.checkAvailability} />
       </div>
       <div class="article-content">
@@ -170,16 +170,16 @@ const schema = [
             )}
             {index === 1 && (
               <div class="article-cta">
-                <p>Rezervarile se fac online, in pagina noastra securizata.</p>
-                <BookingCta locale="ro" referer={`${post.ctaReferer}_mid`} label="Rezerva online" />
+                <p>Rezervările se fac online, în pagina noastră securizată.</p>
+                <BookingCta locale="ro" referer={`${post.ctaReferer}_mid`} label="Rezervă online" />
               </div>
             )}
           </>
         ))}
-        <h2>Intrebari frecvente</h2>
+        <h2>Întrebări frecvente</h2>
         <FAQ items={post.faq} />
         <div class="article-cta">
-          <p>Vezi pretul pentru datele tale si finalizeaza rezervarea online.</p>
+          <p>Vezi prețul pentru datele tale și finalizează rezervarea online.</p>
           <BookingCta locale="ro" referer={`${post.ctaReferer}_final`} label={l.checkAvailability} />
         </div>
       </div>

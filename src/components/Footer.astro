@@ -1,5 +1,6 @@
 ---
 import BookingCta from "./BookingCta.astro";
+import LangSwitch from "./LangSwitch.astro";
 import { labels, nav, property, type Locale } from "@/data/site";
 
 type Props = {
@@ -12,23 +13,23 @@ const l = labels[locale];
 const year = new Date().getFullYear();
 
 const tagline = locale === "ro"
-  ? "Studio privat de aprox. 35 m2, langa Piata Muncii si Arena Nationala. Self check-in, terasa proprie, Wi-Fi rapid si zona rezidentiala linistita."
-  : "Private studio of about 35 m2 near Piata Muncii and the National Arena. Self check-in, own terrace, fast Wi-Fi and a quiet residential area.";
+  ? "Studio privat de aprox. 35 m2, lângă Piața Muncii și Arena Națională. Self check-in, terasă proprie, Wi-Fi rapid și zonă rezidențială liniștită."
+  : "Private studio of about 35 m2 near Piața Muncii and the National Arena. Self check-in, own terrace, fast Wi-Fi and a quiet residential area.";
 
-const navTitle = locale === "ro" ? "Navigatie" : "Navigation";
+const navTitle = locale === "ro" ? "Navigație" : "Navigation";
 const contactTitle = locale === "ro" ? "Contact" : "Contact";
 const langTitle = locale === "ro" ? "Limba" : "Language";
 const addressLabel = locale === "ro" ? "Adresa" : "Address";
 const phoneLabel = locale === "ro" ? "Telefon" : "Phone";
 const emailLabel = "Email";
 const checkLabel = locale === "ro"
-  ? `Check-in dupa ${property.checkin}, check-out pana la ${property.checkout}`
+  ? `Check-in după ${property.checkin}, check-out până la ${property.checkout}`
   : `Check-in after ${property.checkin}, check-out by ${property.checkout}`;
 
 const privacyHref = locale === "ro" ? "/politica-confidentialitate/" : "/en/privacy-policy/";
 const cookiesHref = locale === "ro" ? "/politica-cookies/" : "/en/cookie-policy/";
-const privacyLabel = locale === "ro" ? "Politica de confidentialitate" : "Privacy policy";
-const cookiesLabel = locale === "ro" ? "Politica cookies" : "Cookie policy";
+const privacyLabel = locale === "ro" ? "Politică de confidențialitate" : "Privacy policy";
+const cookiesLabel = locale === "ro" ? "Politică cookies" : "Cookie policy";
 const copyrightSuffix = locale === "ro" ? "Toate drepturile rezervate." : "All rights reserved.";
 ---
 
@@ -87,30 +88,15 @@ const copyrightSuffix = locale === "ro" ? "Toate drepturile rezervate." : "All r
     </div>
 
     <div class="border-t border-white/30">
-      <div class="container-max py-5 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-        <h3 class="eyebrow shrink-0 md:w-24" id="footer-lang-label">{langTitle}</h3>
-        <ul class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-sm list-none m-0 p-0" aria-labelledby="footer-lang-label">
-          <li class="m-0 p-0">
-            <a
-              href={locale === "ro" ? "/" : translationPath}
-              hreflang="ro"
-              aria-current={locale === "ro" ? "page" : undefined}
-              class={`block w-full text-center px-2 py-1.5 rounded-full leading-tight transition no-underline ${
-                locale === "ro" ? "glass-tinted text-brand-700 font-semibold" : "glass text-ink-700 hover:text-brand-700"
-              }`}
-            >Romana</a>
-          </li>
-          <li class="m-0 p-0">
-            <a
-              href={locale === "en" ? "/en/" : translationPath}
-              hreflang="en"
-              aria-current={locale === "en" ? "page" : undefined}
-              class={`block w-full text-center px-2 py-1.5 rounded-full leading-tight transition no-underline ${
-                locale === "en" ? "glass-tinted text-brand-700 font-semibold" : "glass text-ink-700 hover:text-brand-700"
-              }`}
-            >English</a>
-          </li>
-        </ul>
+      <div class="container-max py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+        <h3 class="eyebrow shrink-0" id="footer-lang-label">{langTitle}</h3>
+        <LangSwitch
+          locale={locale}
+          roHref={locale === "ro" ? "/" : translationPath}
+          enHref={locale === "en" ? "/en/" : translationPath}
+          ariaLabelledby="footer-lang-label"
+          class="self-start"
+        />
       </div>
     </div>
 

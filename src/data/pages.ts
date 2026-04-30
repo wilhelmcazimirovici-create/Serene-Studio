@@ -3,14 +3,14 @@ import type { PageContent } from "./types";
 import { arenaPhotoSection, arenaVideoSection } from "./arena-media";
 
 const homeProofRo = [
-  { value: "4 min", label: "pana la metrou Piata Muncii" },
-  { value: "14 min", label: "pe jos pana la Arena Nationala" },
+  { value: "4 min", label: "până la metrou Piața Muncii" },
+  { value: "14 min", label: "pe jos până la Arena Națională" },
   { value: "35 m2", label: "studio privat" },
-  { value: "22-09", label: "ore de liniste" }
+  { value: "22-09", label: "ore de liniște" }
 ];
 
 const homeProofEn = [
-  { value: "4 min", label: "to Piata Muncii metro" },
+  { value: "4 min", label: "to Piața Muncii metro" },
   { value: "14 min", label: "walk to the National Arena" },
   { value: "35 m2", label: "private studio" },
   { value: "22-09", label: "quiet hours" }
@@ -21,104 +21,104 @@ export const pages: PageContent[] = [
     path: "/",
     locale: "ro",
     translationPath: "/en/",
-    title: "Serene Studio Bucuresti - cazare langa Piata Muncii",
+    title: "Serene Studio București - cazare lângă Piața Muncii",
     description:
-      "Studio privat in Bucuresti, la 4 minute de metrou Piata Muncii si aproape de Arena Nationala. Chicineta, terasa, Wi-Fi rapid, parcare si self check-in complet.",
+      "Studio privat în București, la 4 minute de metrou Piața Muncii și aproape de Arena Națională. Chicinetă, terasă, Wi-Fi rapid, parcare și self check-in complet.",
     keyword: "Serene Studio Bucuresti, cazare Piata Muncii, cazare Arena Nationala",
-    h1: "Serene Studio Bucuresti",
-    eyebrow: "Piata Muncii · Arena Nationala · Sector 2",
+    h1: "Serene Studio București",
+    eyebrow: "Piața Muncii · Arena Națională · Sector 2",
     heroText:
-      "Studio privat si linistit in Bucuresti, la 4 minute de metrou Piata Muncii si la aproximativ 14 minute pe jos de Arena Nationala. Ai chicineta, terasa, Wi-Fi rapid, parcare gratuita pe strada si self check-in complet, cu cod pentru cutia de chei de la poarta dupa check-in-ul online.",
+      "Studio privat și liniștit în București, la 4 minute de metrou Piața Muncii și la aproximativ 14 minute pe jos de Arena Națională. Ai chicinetă, terasă, Wi-Fi rapid, parcare gratuită pe stradă și self check-in complet, cu cod pentru cutia de chei de la poartă după check-in-ul online.",
     heroImage: "bed",
     heroCtaReferer: "website_home_hero",
     secondaryHref: "/studio/",
     proof: homeProofRo,
     sections: [
       {
-        title: "Serene Studio este pentru oaspeti care vor liniste",
+        title: "Serene Studio este pentru oaspeți care vor liniște",
         intro:
-          "Serene Studio este potrivit pentru cupluri, calatorii business, participanti la evenimente pe Arena Nationala si oaspeti care au nevoie de acces rapid la spitalele din zona.",
+          "Serene Studio este potrivit pentru cupluri, călătorii business, participanți la evenimente pe Arena Națională și oaspeți care au nevoie de acces rapid la spitalele din zonă.",
         cards: [
-          { title: "Pentru doua persoane", text: "Studioul are un pat matrimonial si functioneaza cel mai bine pentru unu sau doi adulti." },
-          { title: "Pentru familii cu copil", text: "Copiii sunt acceptati, dar dorm cu parintii in acelasi pat matrimonial; nu exista pat suplimentar." },
-          { title: "Pentru sosiri flexibile", text: "Dupa rezervare completezi check-in-ul online. Dupa completarea datelor necesare, primesti codul de acces pentru cutia de chei de la poarta." }
+          { title: "Pentru două persoane", text: "Studioul are un pat matrimonial și funcționează cel mai bine pentru unu sau doi adulți." },
+          { title: "Pentru familii cu copil", text: "Copiii sunt acceptați, dar dorm cu părinții în același pat matrimonial; nu există pat suplimentar." },
+          { title: "Pentru sosiri flexibile", text: "După rezervare completezi check-in-ul online. După completarea datelor necesare, primești codul de acces pentru cutia de chei de la poartă." }
         ],
         ctaReferer: "website_home_quiet"
       },
       {
-        title: "Ce ai in studio",
-        intro: "Ai intregul spatiu privat, cu facilitati concrete pentru un sejur scurt sau de cateva zile.",
+        title: "Ce ai în studio",
+        intro: "Ai întregul spațiu privat, cu facilități concrete pentru un sejur scurt sau de câteva zile.",
         bullets: amenities.ro,
         image: "overview"
       },
       {
-        title: "Rezervi online, faci check-in online si intri singur",
+        title: "Rezervi online, faci check-in online și intri singur",
         intro:
-          "Rezervarea se face apasand pe butonul Rezerva online; pretul si disponibilitatea se vad imediat pentru datele tale.",
+          "Rezervarea se face apăsând pe butonul Rezervă online; prețul și disponibilitatea se văd imediat pentru datele tale.",
         paragraphs: [
-          "Apesi Rezerva online, alegi datele, verifici pretul si finalizezi rezervarea in pagina securizata.",
-          "Dupa confirmare primesti detaliile rezervarii si completezi check-in-ul online. Dupa completarea datelor necesare, primesti codul de acces pentru cutia de chei de la poarta. Pentru disponibilitate nu este nevoie sa suni."
+          "Apeși Rezervă online, alegi datele, verifici prețul și finalizezi rezervarea în pagina securizată.",
+          "După confirmare primești detaliile rezervării și completezi check-in-ul online. După completarea datelor necesare, primești codul de acces pentru cutia de chei de la poartă. Nu facem rezervări telefonic — telefonul este doar pentru urgențe."
         ],
         ctaReferer: "website_home_booking_flow"
       },
       {
-        title: "Esti aproape de Piata Muncii, Arena Nationala si spitale",
+        title: "Ești aproape de Piața Muncii, Arena Națională și spitale",
         intro:
-          "Adresa este Strada Alexandru Zagoritz 12, Sector 2, Bucuresti, intr-o zona rezidentiala linistita, aproape de metrou si de traseele utile din estul orasului.",
+          "Adresa este Strada Alexandru Zagoritz 12, Sector 2, București, într-o zonă rezidențială liniștită, aproape de metrou și de traseele utile din estul orașului.",
         infographic: {
           variant: "distances",
-          origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2, Bucuresti",
+          origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2, București",
           caption:
-            "Distantele sunt orientative pentru un mers pe jos relaxat. Verifica ruta in aplicatia ta de navigatie inainte de plecare.",
+            "Distanțele sunt orientative pentru un mers pe jos relaxat. Verifică ruta în aplicația ta de navigație înainte de plecare.",
           distances: [
-            { place: "Metrou Piata Muncii", detail: "Linia M1 catre centru, Gara de Nord si Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
-            { place: "Arena Nationala", detail: "Concerte, meciuri si evenimente mari", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
-            { place: "Metrou Iancului", detail: "Statie alternativa pe linia M1", value: "~1,1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
-            { place: "Mega Mall", detail: "Cumparaturi, restaurante si cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
-            { place: "Parcul IOR / Alexandru Ioan Cuza", detail: "Plimbari si relaxare langa lac", value: "metrou, taxi sau transport public", mode: "metro", lat: 44.4209, lon: 26.1652 }
+            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru, Gara de Nord și Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Arena Națională", detail: "Concerte, meciuri și evenimente mari", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
+            { place: "Metrou Iancului", detail: "Stație alternativă pe linia M1", value: "~1,1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
+            { place: "Mega Mall", detail: "Cumpărături, restaurante și cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
+            { place: "Parcul IOR / Alexandru Ioan Cuza", detail: "Plimbări și relaxare lângă lac", value: "metrou, taxi sau transport public", mode: "metro", lat: 44.4209, lon: 26.1652 }
           ]
         },
         ctaReferer: "website_home_location"
       },
       {
-        title: "Descopera zona din jurul Serene Studio",
+        title: "Descoperă zona din jurul Serene Studio",
         intro:
-          "Pagini dedicate pentru oaspetii care vin cu un scop clar - vizita la spital, eveniment la Arena Nationala sau o iesire la mall.",
+          "Pagini dedicate pentru oaspeții care vin cu un scop clar - vizită la spital, eveniment la Arena Națională sau o ieșire la mall.",
         cards: [
-          { eyebrow: "Spital de copii", title: "Cazare langa Spitalul Gomoiu", text: "Studio privat la ~1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Pentru parinti si insotitori.", href: "/cazare-langa-spitalul-gomoiu-bucuresti/" },
-          { eyebrow: "Cardiologie", title: "Cazare langa Spitalul Monza", text: "Studio privat in Sector 2, la ~2 km de Spitalul Monza (Str. Tony Bulandra 27). Pentru pacienti si apartinatori.", href: "/cazare-langa-spitalul-monza-bucuresti/" },
-          { eyebrow: "Concerte si meciuri", title: "Cazare langa Arena Nationala", text: "La ~14 minute pe jos de stadion. Self check-in, fara apeluri, ideal pentru concerte si meciuri.", href: "/cazare-langa-arena-nationala/" },
-          { eyebrow: "Shopping si cinema", title: "Cazare langa Mega Mall", text: "La ~18-20 min pe jos de Mega Mall si vecin cu Arena Nationala. Pentru shopping, restaurante si cinema.", href: "/cazare-langa-mega-mall-bucuresti/" },
-          { eyebrow: "Spitale in zona", title: "Cazare langa spitalele din Sector 2", text: "Pagina-hub pentru apartinatorii care cauta cazare in apropierea spitalelor importante din estul Bucurestiului.", href: "/cazare-langa-spitale-bucuresti/" }
+          { eyebrow: "Spital de copii", title: "Cazare lângă Spitalul Gomoiu", text: "Studio privat la ~1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Pentru părinți și însoțitori.", href: "/cazare-langa-spitalul-gomoiu-bucuresti/" },
+          { eyebrow: "Cardiologie", title: "Cazare lângă Spitalul Monza", text: "Studio privat în Sector 2, la ~2 km de Spitalul Monza (Str. Tony Bulandra 27). Pentru pacienți și aparținători.", href: "/cazare-langa-spitalul-monza-bucuresti/" },
+          { eyebrow: "Concerte și meciuri", title: "Cazare lângă Arena Națională", text: "La ~14 minute pe jos de stadion. Self check-in, fără apeluri, ideal pentru concerte și meciuri.", href: "/cazare-langa-arena-nationala/" },
+          { eyebrow: "Shopping și cinema", title: "Cazare lângă Mega Mall", text: "La ~18-20 min pe jos de Mega Mall și vecin cu Arena Națională. Pentru shopping, restaurante și cinema.", href: "/cazare-langa-mega-mall-bucuresti/" },
+          { eyebrow: "Spitale în zona", title: "Cazare lângă spitalele din Sector 2", text: "Pagina-hub pentru aparținătorii care caută cazare în apropierea spitalelor importante din estul Bucureștiului.", href: "/cazare-langa-spitale-bucuresti/" }
         ]
       },
       {
         title: "Articole utile despre zona Serene Studio",
         intro:
-          "Citeste ghidul de zona inainte sa rezervi: trasee cu metroul, spitale apropiate, evenimente la stadion si obiective in raza de 3-5 km.",
+          "Citește ghidul de zonă înainte să rezervi: trasee cu metroul, spitale apropiate, evenimente la stadion și obiective în raza de 3-5 km.",
         cards: [
-          { eyebrow: "Top 7 obiective", title: "Top obiective langa Serene Studio (3-5 km)", text: "Spitale, mall-uri, stadioane, parcuri si Centrul Vechi - toate la cativa kilometri de studio.", href: "/blog/obiective-langa-serene-studio-bucuresti-3-5-km/" },
-          { eyebrow: "Self check-in", title: "Self check-in in Bucuresti - cazare in studio privat", text: "Cum functioneaza fluxul: rezervare online, check-in online cu ID si selfie, codul cutiei de chei in guidebook.", href: "/blog/self-check-in-bucuresti-cazare-studio-privat/" },
-          { eyebrow: "Stadion", title: "Cazare langa Stadionul Dinamo Bucuresti", text: "La ~3 km de stadion. Cum ajungi cu masina sau metroul si de ce conteaza o zona rezidentiala dupa meci.", href: "/blog/cazare-langa-stadionul-dinamo-bucuresti/" },
-          { eyebrow: "Centrul Vechi", title: "Cum ajungi de la Serene Studio la Centrul Vechi cu metroul", text: "Ghid practic: traseu M1 de la Piata Muncii pana la Lipscani in 20-25 minute, plus alternative cu taxi.", href: "/blog/cum-ajungi-de-la-serene-studio-la-centrul-vechi-bucuresti/" }
+          { eyebrow: "Top 7 obiective", title: "Top obiective lângă Serene Studio (3-5 km)", text: "Spitale, mall-uri, stadioane, parcuri și Centrul Vechi - toate la câțiva kilometri de studio.", href: "/blog/obiective-langa-serene-studio-bucuresti-3-5-km/" },
+          { eyebrow: "Self check-in", title: "Self check-in în București - cazare în studio privat", text: "Cum funcționează fluxul: rezervare online, check-in online cu ID și selfie, codul cutiei de chei în guidebook.", href: "/blog/self-check-in-bucuresti-cazare-studio-privat/" },
+          { eyebrow: "Stadion", title: "Cazare lângă Stadionul Dinamo București", text: "La ~3 km de stadion. Cum ajungi cu mașina sau metroul și de ce contează o zonă rezidențială după meci.", href: "/blog/cazare-langa-stadionul-dinamo-bucuresti/" },
+          { eyebrow: "Centrul Vechi", title: "Cum ajungi de la Serene Studio la Centrul Vechi cu metroul", text: "Ghid practic: traseu M1 de la Piața Muncii până la Lipscani în 20-25 minute, plus alternative cu taxi.", href: "/blog/cum-ajungi-de-la-serene-studio-la-centrul-vechi-bucuresti/" }
         ]
       },
       {
-        title: "Recenzii reale, fara scor static neverificat",
+        title: "Recenzii reale, fără scor static neverificat",
         intro:
-          "Recenziile de mai jos provin din feedback existent; scorul actualizat trebuie verificat dinamic pe platformele de rezervare inainte de afisare.",
+          "Recenziile de mai jos provin din feedback existent; scorul actualizat trebuie verificat dinamic pe platformele de rezervare înainte de afișare.",
         cards: reviews.ro.map((review) => ({ title: review.name, text: review.quote })),
         variant: "reviews"
       }
     ],
     faq: [
-      { q: "Cum verific pretul si disponibilitatea?", a: "Apasa butonul Rezerva online. Sistemul afiseaza datele disponibile si pretul pentru perioada aleasa." },
-      { q: "Cum intru in studio?", a: "Unitatea este complet self-check-in. Dupa check-in-ul online si completarea datelor necesare, primesti codul de acces pentru cutia de chei de la poarta." },
-      { q: "Pot suna pentru disponibilitate?", a: "Disponibilitatea se verifica online, prin butonul Rezerva online. Telefonul este pentru urgente sau clarificari dupa rezervare." },
-      { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE. Niciun alt document nu este acceptat." },
-      { q: "Copiii sunt acceptati?", a: "Da, copiii sunt acceptati, dar dorm cu parintii in acelasi pat matrimonial; nu exista pat suplimentar." },
-      { q: "Exista parcare?", a: "Parcarea este gratuita pe strada. De obicei exista locuri disponibile in apropiere, dar locul nu este rezervat nominal." },
-      { q: "Pot fuma in interior?", a: "Nu. Fumatul este interzis in interior; se poate fuma doar in zona exterioara indicata." }
+      { q: "Cum verific prețul și disponibilitatea?", a: "Apasă butonul Rezervă online. Sistemul afișează datele disponibile și prețul pentru perioada aleasă." },
+      { q: "Cum intru în studio?", a: "Unitatea este complet self-check-in. După check-in-ul online și completarea datelor necesare, primești codul de acces pentru cutia de chei de la poartă." },
+      { q: "Pot rezerva telefonic?", a: "Nu facem rezervări telefonic. Disponibilitatea se verifică online, prin butonul Rezervă online. Telefonul este doar pentru urgențe; toate informațiile pentru sejur le găsești în guidebook, accesibil oricând prin același link folosit la check-in-ul online." },
+      { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE. Niciun alt document nu este acceptat." },
+      { q: "Copiii sunt acceptați?", a: "Da, copiii sunt acceptați, dar dorm cu părinții în același pat matrimonial; nu există pat suplimentar." },
+      { q: "Există parcare?", a: "Parcarea este gratuită pe stradă. De obicei există locuri disponibile în apropiere, dar locul nu este rezervat nominal." },
+      { q: "Pot fuma în interior?", a: "Nu. Fumatul este interzis în interior; se poate fuma doar în zona exterioară indicata." }
     ],
     gallery: true,
     finalCtaReferer: "website_home_final"
@@ -163,7 +163,7 @@ export const pages: PageContent[] = [
           "Bookings are made by clicking the Book online button; prices and availability are shown immediately for your selected dates.",
         paragraphs: [
           "Click Book online, choose your dates, check the price and complete the reservation on the secure booking page.",
-          "After confirmation you receive the booking details and complete online check-in. After the required details are completed, you receive the access code for the key box at the gate. You do not need to call for availability."
+          "After confirmation you receive the booking details and complete online check-in. After the required details are completed, you receive the access code for the key box at the gate. We do not take bookings by phone — the phone is for emergencies only."
         ],
         ctaReferer: "website_en_home_booking_flow"
       },
@@ -220,7 +220,7 @@ export const pages: PageContent[] = [
     faq: [
       { q: "How do I check price and availability?", a: "Click the Book online button. The system shows available dates and the price for your stay." },
       { q: "How do I enter the studio?", a: "The unit is fully self check-in. After online check-in and completion of the required details, you receive the access code for the key box at the gate." },
-      { q: "Should I call for availability?", a: "Availability is checked online via the Book online button. The phone is for emergencies or clarifications after booking." },
+      { q: "Can I book by phone?", a: "No. We do not take bookings by phone. Availability is checked online via the Book online button. The phone is for emergencies only; all stay information is in the guidebook, accessible any time through the same link used for online check-in." },
       { q: "Which documents are accepted at check-in?", a: "ID card or passport for EU guests; passport only for non-EU guests. No other document is accepted." },
       { q: "Are children allowed?", a: "Yes. Children are allowed, but they sleep with parents in the same double bed; there is no extra bed." },
       { q: "Is parking available?", a: "Parking is free on the street. Spaces are usually available nearby, but no parking spot is reserved by name." },
@@ -233,14 +233,14 @@ export const pages: PageContent[] = [
     path: "/studio/",
     locale: "ro",
     translationPath: "/en/studio/",
-    title: "Studio privat in Bucuresti cu chicineta si terasa - Serene Studio",
+    title: "Studio privat în București cu chicinetă și terasă - Serene Studio",
     description:
-      "Vezi ce include Serene Studio Bucuresti: pat matrimonial, chicineta, baie moderna, terasa, Wi-Fi rapid, self check-in si parcare gratuita pe strada.",
+      "Vezi ce include Serene Studio București: pat matrimonial, chicinetă, baie modernă, terasă, Wi-Fi rapid, self check-in și parcare gratuită pe stradă.",
     keyword: "studio privat Bucuresti, chicineta, terasa, self check-in",
-    h1: "Studio privat in Bucuresti, cu chicineta si terasa",
-    eyebrow: "Spatiu privat · 35 m2 · Self check-in",
+    h1: "Studio privat în București, cu chicinetă și terasă",
+    eyebrow: "Spațiu privat · 35 m2 · Self check-in",
     heroText:
-      "Serene Studio este un studio privat de aproximativ 35 m2, cu pat matrimonial, chicineta, baie moderna, terasa si acces rapid la Piata Muncii.",
+      "Serene Studio este un studio privat de aproximativ 35 m2, cu pat matrimonial, chicinetă, baie modernă, terasă și acces rapid la Piața Muncii.",
     heroImage: "terrace",
     heroCtaReferer: "website_studio_hero",
     secondaryHref: "/galerie/",
@@ -249,39 +249,39 @@ export const pages: PageContent[] = [
     sections: [
       {
         title: "Ce include studioul?",
-        intro: "Rezervi intregul studio, nu o camera intr-un apartament impartit.",
+        intro: "Rezervi întregul studio, nu o cameră într-un apartament împărțit.",
         bullets: amenities.ro,
         image: "kitchen",
         ctaReferer: "website_studio_facilities"
       },
       {
-        title: "Raspunsuri rapide despre spatiu",
-        intro: "Acest tabel raspunde intrebarilor normale despre folosirea studioului.",
+        title: "Răspunsuri rapide despre spațiu",
+        intro: "Acest tabel răspunde întrebărilor normale despre folosirea studioului.",
         table: {
-          headers: ["Intrebare", "Raspuns scurt"],
+          headers: ["Întrebare", "Răspuns scurt"],
           rows: [
-            ["Este spatiul privat?", "Da, rezervi intregul studio."],
-            ["Pot gati la aragaz sau plita?", "Nu. Nu exista aragaz sau plita; exista cuptor cu microunde, frigider, aparat de cafea si fierbator."],
-            ["Pot lucra remote?", "Da, exista Wi-Fi rapid si spatiu potrivit pentru laptop."],
-            ["Pot fuma?", "Nu in interior; doar in zona exterioara indicata."],
-            ["Copiii pot sta?", "Da, dar dorm cu parintii in acelasi pat matrimonial."]
+            ["Este spațiul privat?", "Da, rezervi întregul studio."],
+            ["Pot gati la aragaz sau plită?", "Nu. Nu există aragaz sau plită; există cuptor cu microunde, frigider, aparat de cafea și fierbător."],
+            ["Pot lucra remote?", "Da, există Wi-Fi rapid și spațiu potrivit pentru laptop."],
+            ["Pot fuma?", "Nu în interior; doar în zona exterioară indicata."],
+            ["Copiii pot sta?", "Da, dar dorm cu părinții în același pat matrimonial."]
           ]
         }
       },
       {
         title: "Pentru cine este potrivit?",
-        intro: "Studioul este potrivit pentru sejururi scurte, calatorii de business, evenimente la Arena Nationala si vizite in zona Piata Muncii.",
+        intro: "Studioul este potrivit pentru sejururi scurte, călătorii de business, evenimente la Arena Națională și vizite în zona Piața Muncii.",
         cards: [
-          { title: "Cupluri", text: "Un singur pat matrimonial, spatiu privat si curte/terasa." },
-          { title: "Business", text: "Wi-Fi rapid, self check-in si acces rapid la metrou." },
-          { title: "Evenimente", text: "Arena Nationala este la aproximativ 14 minute de mers pe jos." }
+          { title: "Cupluri", text: "Un singur pat matrimonial, spațiu privat și curte/terasă." },
+          { title: "Business", text: "Wi-Fi rapid, self check-in și acces rapid la metrou." },
+          { title: "Evenimente", text: "Arena Națională este la aproximativ 14 minute de mers pe jos." }
         ]
       }
     ],
     faq: [
-      { q: "Exista pat suplimentar?", a: "Nu. Exista un singur pat matrimonial." },
-      { q: "Exista aragaz sau plita?", a: "Nu. Chicineta are frigider, cuptor cu microunde, aparat de cafea si fierbator, dar nu are aragaz sau plita." },
-      { q: "Primesc prosoape?", a: "Da, studioul include prosoape si articole de toaleta." }
+      { q: "Există pat suplimentar?", a: "Nu. Există un singur pat matrimonial." },
+      { q: "Există aragaz sau plită?", a: "Nu. Chicinetă are frigider, cuptor cu microunde, aparat de cafea și fierbător, dar nu are aragaz sau plită." },
+      { q: "Primesc prosoape?", a: "Da, studioul include prosoape și articole de toaletă." }
     ],
     finalCtaReferer: "website_studio_final"
   },
@@ -345,25 +345,25 @@ export const pages: PageContent[] = [
     path: "/galerie/",
     locale: "ro",
     translationPath: "/en/gallery/",
-    title: "Galerie foto Serene Studio Bucuresti",
-    description: "Fotografii reale cu Serene Studio Bucuresti: pat matrimonial, chicineta, baie, terasa, interior si acces.",
+    title: "Galerie foto Serene Studio București",
+    description: "Fotografii reale cu Serene Studio București: pat matrimonial, chicinetă, baie, terasă, interior și acces.",
     keyword: "galerie Serene Studio Bucuresti, poze studio Piata Muncii",
     h1: "Galerie foto Serene Studio",
     eyebrow: "Fotografii reale",
-    heroText: "Vezi imagini reale cu studioul, chicineta, baia, terasa si intrarea in Serene Studio Bucuresti.",
+    heroText: "Vezi imagini reale cu studioul, chicinetă, baia, terasă și intrarea în Serene Studio București.",
     heroImage: "overview",
     heroCtaReferer: "website_gallery_hero",
     sections: [
       {
-        title: "Ce trebuie sa observi in fotografii?",
-        intro: "Fotografiile arata spatiul asa cum conteaza pentru rezervare: pat, chicineta, baie, zona exterioara si acces.",
-        bullets: ["Un singur pat matrimonial", "Chicineta cu microunde, frigider, cafea si ceai", "Baie moderna cu dus", "Terasa/curte pentru relaxare", "Acces potrivit pentru self check-in"]
+        title: "Ce trebuie sa observi în fotografii?",
+        intro: "Fotografiile arată spațiul așa cum contează pentru rezervare: pat, chicinetă, baie, zona exterioară și acces.",
+        bullets: ["Un singur pat matrimonial", "Chicinetă cu microunde, frigider, cafea și ceai", "Baie modernă cu duș", "Terasă/curte pentru relaxare", "Acces potrivit pentru self check-in"]
       }
     ],
     gallery: true,
     faq: [
-      { q: "Fotografiile sunt reale?", a: "Da, fotografiile sunt descarcate de pe site-ul actual Serene Studio si optimizate pentru noul site." },
-      { q: "Exista mai multe camere?", a: "Nu. Serene Studio este un singur studio privat." }
+      { q: "Fotografiile sunt reale?", a: "Da, fotografiile sunt descărcate de pe site-ul actual Serene Studio și optimizate pentru noul site." },
+      { q: "Există mai multe camere?", a: "Nu. Serene Studio este un singur studio privat." }
     ],
     finalCtaReferer: "website_gallery_final"
   },
@@ -397,35 +397,35 @@ export const pages: PageContent[] = [
     path: "/locatie/",
     locale: "ro",
     translationPath: "/en/location/",
-    title: "Locatia Serene Studio in Bucuresti - Piata Muncii si Arena Nationala",
+    title: "Locația Serene Studio în București - Piața Muncii și Arena Națională",
     description:
-      "Serene Studio este pe Strada Alexandru Zagoritz 12, Sector 2, la aproximativ 4 minute de metrou Piata Muncii si 14 minute pe jos de Arena Nationala.",
+      "Serene Studio este pe Strada Alexandru Zagoritz 12, Sector 2, la aproximativ 4 minute de metrou Piața Muncii și 14 minute pe jos de Arena Națională.",
     keyword: "locatie Serene Studio, Strada Alexandru Zagoritz 12, Piata Muncii",
-    h1: "Locatia Serene Studio in Bucuresti",
+    h1: "Locația Serene Studio în București",
     eyebrow: "Strada Alexandru Zagoritz 12",
     heroText:
-      "Serene Studio se afla pe Strada Alexandru Zagoritz 12, Sector 2, Bucuresti, la aproximativ 4 minute de mers pe jos de statia de metrou Piata Muncii.",
+      "Serene Studio se află pe Strada Alexandru Zagoritz 12, Sector 2, București, la aproximativ 4 minute de mers pe jos de stația de metrou Piața Muncii.",
     heroImage: "entrance",
     heroCtaReferer: "website_location_hero",
     proof: homeProofRo,
     sections: [
       {
-        title: "Adresa si coordonate GPS",
-        intro: `${property.address}. Coordonatele folosite pentru harta sunt ${property.latitude}, ${property.longitude}; verifica ruta finala in aplicatia de navigatie.`,
-        bullets: ["Zona rezidentiala cu case si vile", "Acces rapid la metrou Piata Muncii", "Traseu simplu catre Arena Nationala", "Parcare gratuita pe strada, de obicei disponibila in apropiere"],
+        title: "Adresa și coordonate GPS",
+        intro: `${property.address}. Coordonatele folosite pentru hartă sunt ${property.latitude}, ${property.longitude}; verifică ruta finală în aplicația de navigație.`,
+        bullets: ["Zona rezidențială cu case și vile", "Acces rapid la metrou Piața Muncii", "Traseu simplu către Arena Națională", "Parcare gratuită pe stradă, de obicei disponibilă în apropiere"],
         ctaReferer: "website_location_address"
       },
       {
-        title: "Distante utile din zona",
-        intro: "Timpii de mai jos sunt orientativi si trebuie verificati in ziua plecarii, mai ales pentru trafic sau evenimente.",
-        table: { headers: ["Loc", "De ce conteaza", "Timp / distanta de mentionat"], rows: locationRows.ro }
+        title: "Distanțe utile din zonă",
+        intro: "Timpii de mai jos sunt orientativi și trebuie verificați în ziua plecării, mai ales pentru trafic sau evenimente.",
+        table: { headers: ["Loc", "De ce contează", "Timp / distanță de menționat"], rows: locationRows.ro }
       }
     ],
     maps: true,
     faq: [
-      { q: "Unde este Serene Studio?", a: `Serene Studio este pe ${property.address}, aproape de metrou Piata Muncii.` },
-      { q: "Cat este pana la metrou?", a: "Statia Piata Muncii este la aproximativ 4 minute de mers pe jos." },
-      { q: "Cat este pana la Arena Nationala?", a: "Arena Nationala este la aproximativ 14 minute de mers pe jos, conform informatiilor existente pe platformele de rezervare." }
+      { q: "Unde este Serene Studio?", a: `Serene Studio este pe ${property.address}, aproape de metrou Piața Muncii.` },
+      { q: "Cât este până la metrou?", a: "Stația Piața Muncii este la aproximativ 4 minute de mers pe jos." },
+      { q: "Cât este până la Arena Națională?", a: "Arena Națională este la aproximativ 14 minute de mers pe jos, conform informațiilor existente pe platformele de rezervare." }
     ],
     finalCtaReferer: "website_location_final"
   },
@@ -469,54 +469,54 @@ export const pages: PageContent[] = [
     path: "/cazare-langa-arena-nationala/",
     locale: "ro",
     translationPath: "/en/accommodation-near-national-arena/",
-    title: "Cazare langa Arena Nationala Bucuresti - Serene Studio",
+    title: "Cazare lângă Arena Națională București - Serene Studio",
     description:
-      "Serene Studio este cazare linistita langa Arena Nationala, la aproximativ 14 minute pe jos de stadion si 4 minute de metrou Piata Muncii.",
+      "Serene Studio este cazare liniștită lângă Arena Națională, la aproximativ 14 minute pe jos de stadion și 4 minute de metrou Piața Muncii.",
     keyword: "cazare langa Arena Nationala, cazare stadion Bucuresti",
-    h1: "Cazare langa Arena Nationala Bucuresti",
+    h1: "Cazare lângă Arena Națională București",
     eyebrow: "Concerte · Meciuri · Evenimente",
     heroText:
-      "Serene Studio este o optiune linistita de cazare langa Arena Nationala, la aproximativ 14 minute de mers pe jos de stadion si la 4 minute de metrou Piata Muncii.",
+      "Serene Studio este o opțiune liniștită de cazare lângă Arena Națională, la aproximativ 14 minute de mers pe jos de stadion și la 4 minute de metrou Piața Muncii.",
     heroImage: "arena",
     heroCtaReferer: "website_arena_page_hero",
     proof: homeProofRo,
     sections: [
       {
-        title: "De ce sa alegi Serene Studio pentru un eveniment la Arena Nationala?",
-        intro: "Studioul este aproape de stadion, dar se afla intr-o zona rezidentiala mai linistita decat strazile lipite de fluxul de eveniment.",
-        bullets: ["Poti merge pe jos catre stadion", "Ai self check-in complet dupa ora 14:00, cu cod pentru cutia de chei de la poarta dupa check-in-ul online", "Te intorci la un studio privat, nu la o camera comuna", "Rezervarea se face online, fara apel pentru disponibilitate"],
+        title: "De ce sa alegi Serene Studio pentru un eveniment la Arena Națională?",
+        intro: "Studioul este aproape de stadion, dar se află într-o zonă rezidențială mai liniștită decât străzile lipite de fluxul de eveniment.",
+        bullets: ["Poți merge pe jos către stadion", "Ai self check-in complet după ora 14:00, cu cod pentru cutia de chei de la poartă după check-in-ul online", "Te intorci la un studio privat, nu la o cameră comună", "Rezervarea se face online, fără apel pentru disponibilitate"],
         ctaReferer: "website_arena_page_mid"
       },
       {
         title: "Pentru cine este potrivit?",
-        intro: "Pagina este pentru oaspeti care cauta cazare inainte sau dupa un concert, meci, eveniment sportiv ori eveniment corporate.",
+        intro: "Pagina este pentru oaspeți care caută cazare înainte sau după un concert, meci, eveniment sportiv ori eveniment corporate.",
         cards: [
-          { title: "Cupluri", text: "Un pat matrimonial, baie privata si chicineta." },
-          { title: "O noapte dupa eveniment", text: "Self check-in si acces rapid la zona Piata Muncii." },
-          { title: "Sejur scurt", text: "Wi-Fi, parcare pe strada si transport public in apropiere." }
+          { title: "Cupluri", text: "Un pat matrimonial, baie privată și chicinetă." },
+          { title: "O noapte după eveniment", text: "Self check-in și acces rapid la zona Piața Muncii." },
+          { title: "Sejur scurt", text: "Wi-Fi, parcare pe stradă și transport public în apropiere." }
         ],
         image: "terrace"
       },
       arenaPhotoSection("ro"),
       arenaVideoSection("ro"),
       {
-        title: "Vrei detalii despre traseul pe jos pana la stadion?",
-        intro: "Daca vrei un ghid pas cu pas pentru drumul de la Serene Studio si Piata Muncii la Arena Nationala (timpi reali, repere si tips pentru zile de eveniment), continua cu articolul dedicat.",
+        title: "Vrei detalii despre traseul pe jos până la stadion?",
+        intro: "Dacă vrei un ghid pas cu pas pentru drumul de la Serene Studio și Piața Muncii la Arena Națională (timpi reali, repere și tips pentru zile de eveniment), continuă cu articolul dedicat.",
         cards: [
           {
             eyebrow: "Ghid pe jos",
-            title: "Traseu pe jos: Serene Studio → Arena Nationala",
-            text: "Timp real, puncte de reper si tips pentru zile de concert sau meci.",
+            title: "Traseu pe jos: Serene Studio → Arena Națională",
+            text: "Timp real, puncte de reper și tips pentru zile de concert sau meci.",
             href: "/blog/traseu-pe-jos-serene-studio-arena-nationala/"
           }
         ]
       }
     ],
     faq: [
-      { q: "Pot merge pe jos la Arena Nationala?", a: "Da, Arena Nationala este la aproximativ 14 minute de mers pe jos de Serene Studio." },
-      { q: "Pot face check-in tarziu dupa un concert?", a: "Da. Dupa rezervare si check-in online, primesti codul de acces pentru cutia de chei de la poarta dupa completarea datelor necesare." },
-      { q: "Exista parcare?", a: "Parcarea este gratuita pe strada si de obicei exista locuri in apropiere, dar nu este un loc rezervat." },
-      { q: "Este potrivit pentru o noapte dupa eveniment?", a: "Da, este potrivit pentru o noapte sau un sejur scurt, mai ales daca vrei acces pe jos la stadion." }
+      { q: "Pot merge pe jos la Arena Națională?", a: "Da, Arena Națională este la aproximativ 14 minute de mers pe jos de Serene Studio." },
+      { q: "Pot face check-in târziu după un concert?", a: "Da. După rezervare și check-in online, primești codul de acces pentru cutia de chei de la poartă după completarea datelor necesare." },
+      { q: "Există parcare?", a: "Parcarea este gratuită pe stradă și de obicei există locuri în apropiere, dar nu este un loc rezervat." },
+      { q: "Este potrivit pentru o noapte după eveniment?", a: "Da, este potrivit pentru o noapte sau un sejur scurt, mai ales dacă vrei acces pe jos la stadion." }
     ],
     finalCtaReferer: "website_arena_page_final"
   },
@@ -539,7 +539,7 @@ export const pages: PageContent[] = [
       {
         title: "Why choose Serene Studio for a National Arena event?",
         intro: "The studio is close to the stadium, while still being in a quieter residential area than streets directly attached to event traffic.",
-        bullets: ["You can walk to the stadium", "Full self check-in after 14:00, with the key-box code after online check-in", "You return to a private studio, not a shared room", "Booking is online, without calling for availability"],
+        bullets: ["You can walk to the stadium", "Full self check-in after 14:00, with the key-box code after online check-in", "You return to a private studio, not a shared room", "Booking is online — we do not take bookings by phone"],
         ctaReferer: "website_en_arena_page_mid"
       },
       {
@@ -579,48 +579,48 @@ export const pages: PageContent[] = [
     path: "/cazare-langa-spitale-bucuresti/",
     locale: "ro",
     translationPath: "/en/accommodation-near-bucharest-hospitals/",
-    title: "Cazare langa spitale in Bucuresti - Serene Studio",
+    title: "Cazare lângă spitale în București - Serene Studio",
     description:
-      "Studio privat si linistit in Sector 2, potrivit pentru apartinatori sau oaspeti care au nevoie de cazare langa spitalele din zona Piata Muncii - Mihai Bravu - Iancului.",
+      "Studio privat și liniștit în Sector 2, potrivit pentru aparținători sau oaspeți care au nevoie de cazare lângă spitalele din zona Piața Muncii - Mihai Bravu - Iancului.",
     keyword: "cazare langa spitale Bucuresti, cazare Victor Babes, cazare Monza",
-    h1: "Cazare linistita langa spitale in Bucuresti",
-    eyebrow: "Sector 2 · Piata Muncii · Mihai Bravu",
+    h1: "Cazare liniștită lângă spitale în București",
+    eyebrow: "Sector 2 · Piața Muncii · Mihai Bravu",
     heroText:
-      "Serene Studio este un studio privat si linistit in Sector 2, potrivit pentru apartinatori sau oaspeti care au nevoie de cazare aproape de spitalele din zona Piata Muncii - Mihai Bravu - Iancului.",
+      "Serene Studio este un studio privat și liniștit în Sector 2, potrivit pentru aparținători sau oaspeți care au nevoie de cazare aproape de spitalele din zona Piața Muncii - Mihai Bravu - Iancului.",
     heroImage: "overview",
     heroCtaReferer: "website_hospital_page_hero",
     proof: homeProofRo,
     sections: [
       {
-        title: "Pentru ce situatii este potrivit?",
-        intro: "Studioul nu ofera servicii medicale, dar poate fi util pentru cazare privata, linistita si usor de rezervat online.",
-        bullets: ["Apartinatori care au nevoie de intimitate", "Oaspeti cu program variabil", "Sejururi de cateva zile cu chicineta", "Acces rapid cu taxi, metrou sau transport public"],
+        title: "Pentru ce situații este potrivit?",
+        intro: "Studioul nu oferă servicii medicale, dar poate fi util pentru cazare privată, liniștită și ușor de rezervat online.",
+        bullets: ["Aparținători care au nevoie de intimitate", "Oaspeți cu program variabil", "Sejururi de câteva zile cu chicinetă", "Acces rapid cu taxi, metrou sau transport public"],
         ctaReferer: "website_hospital_page_mid"
       },
       {
-        title: "Spitale cautate in zona",
-        intro: "Distantele exacte trebuie verificate in Google Maps in functie de ora si traseu.",
+        title: "Spitale căutate în zonă",
+        intro: "Distanțele exacte trebuie verificate în Google Maps în funcție de oră și traseu.",
         table: {
-          headers: ["Spital", "De ce cauta oamenii cazare aici", "Distanta / timp"],
+          headers: ["Spital", "De ce caută oamenii cazare aici", "Distanță / timp"],
           rows: hospitalRows.ro
         }
       },
       {
-        title: "Ce ajuta intr-un sejur medical sau pentru apartinatori?",
-        intro: "Serene Studio pune accent pe liniste, curatenie, intimitate si un flux de rezervare fara apeluri inutile.",
+        title: "Ce ajuta într-un sejur medical sau pentru aparținători?",
+        intro: "Serene Studio pune accent pe liniște, curățenie, intimitate și un flux de rezervare fără apeluri inutile.",
         cards: [
-          { title: "Chicineta", text: "Poti folosi frigiderul, cuptorul cu microunde, aparatul de cafea si fierbatorul; nu exista aragaz sau plita." },
-          { title: "Self check-in", text: "Poti ajunge dupa ora 14:00. Dupa check-in-ul online si completarea datelor necesare, folosesti codul pentru cutia de chei de la poarta." },
-          { title: "Ore de liniste", text: "Intervalul 22:00-09:00 ajuta la pastrarea unui mediu calm." }
+          { title: "Chicinetă", text: "Poți folosi frigiderul, cuptorul cu microunde, aparatul de cafea și fierbătorul; nu există aragaz sau plită." },
+          { title: "Self check-in", text: "Poți ajunge după ora 14:00. După check-in-ul online și completarea datelor necesare, folosești codul pentru cutia de chei de la poartă." },
+          { title: "Ore de liniște", text: "Intervalul 22:00-09:00 ajută la păstrarea unui mediu calm." }
         ],
         image: "kitchen"
       }
     ],
     faq: [
-      { q: "Este Serene Studio potrivit pentru apartinatori?", a: "Da, poate fi potrivit pentru apartinatori care cauta un studio privat si linistit in Sector 2." },
-      { q: "Pot face self check-in daca ajung seara?", a: "Da, dupa rezervare completezi check-in-ul online, iar dupa completarea datelor necesare primesti codul pentru cutia de chei de la poarta." },
-      { q: "Am chicineta pentru cateva zile?", a: "Da, exista frigider, cuptor cu microunde, aparat de cafea si fierbator; nu exista aragaz sau plita." },
-      { q: "Pot rezerva online fara sa sun?", a: "Da. Pretul si disponibilitatea se verifica online, apasand pe butonul Rezerva online." }
+      { q: "Este Serene Studio potrivit pentru aparținători?", a: "Da, poate fi potrivit pentru aparținători care caută un studio privat și liniștit în Sector 2." },
+      { q: "Pot face self check-in dacă ajung seara?", a: "Da, după rezervare completezi check-in-ul online, iar după completarea datelor necesare primești codul pentru cutia de chei de la poartă." },
+      { q: "Am chicinetă pentru câteva zile?", a: "Da, există frigider, cuptor cu microunde, aparat de cafea și fierbător; nu există aragaz sau plită." },
+      { q: "Pot rezerva online fără să sun?", a: "Da. Prețul și disponibilitatea se verifică online, apăsând pe butonul Rezervă online." }
     ],
     finalCtaReferer: "website_hospital_page_final"
   },
@@ -669,7 +669,7 @@ export const pages: PageContent[] = [
       { q: "Is Serene Studio suitable for relatives?", a: "Yes, it can suit relatives looking for a quiet private studio in Sector 2." },
       { q: "Can I self check in if I arrive in the evening?", a: "Yes, after booking you complete online check-in, and after the required details are completed you receive the code for the key box at the gate." },
       { q: "Is there a kitchenette for a few days?", a: "Yes, there is a fridge, microwave, coffee maker and kettle; there is no stove or hob." },
-      { q: "Can I book online without calling?", a: "Yes. Price and availability are checked online by clicking the Book online button." }
+      { q: "Can I book by phone?", a: "No. We do not take bookings by phone. Price and availability are checked online by clicking the Book online button. The phone is for emergencies only; all stay information is in the guidebook, accessible any time through the same link used for online check-in." }
     ],
     finalCtaReferer: "website_en_hospital_page_final"
   }
@@ -680,73 +680,73 @@ const operationalRo: PageContent[] = [
     path: "/info/",
     locale: "ro",
     translationPath: "/en/info/",
-    title: "Informatii utile pentru cazarea la Serene Studio",
-    description: "Check-in online, verificare ID, taxa de oras, regulament, guidebook si self check-in pentru oaspetii Serene Studio Bucuresti.",
+    title: "Informații utile pentru cazarea la Serene Studio",
+    description: "Check-in online, verificare ID, taxa de oraș, regulament, guidebook și self check-in pentru oaspeții Serene Studio București.",
     keyword: "informatii Serene Studio, check-in online, self check-in Bucuresti, verificare ID",
-    h1: "Informatii utile pentru cazarea la Serene Studio",
+    h1: "Informații utile pentru cazarea la Serene Studio",
     eyebrow: "Rezervare / Check-in online / Self check-in",
-    heroText: "Rezervi online apasand pe butonul Rezerva online, apoi completezi check-in-ul online cu verificare ID, selfie, taxa de oras si semnatura pe regulament. La final se deschide guidebook-ul cu instructiunile pentru self-check-in.",
+    heroText: "Rezervi online apăsând pe butonul Rezervă online, apoi completezi check-in-ul online cu verificare ID, selfie, taxa de oraș și semnătură pe regulament. La final se deschide guidebook-ul cu instrucțiunile pentru self-check-in.",
     heroImage: "entrance",
     heroCtaReferer: "website_info_hero",
     sections: [
       {
         title: "Cum fac rezervarea?",
-        intro: "Rezervarea se face apasand pe butonul Rezerva online; pretul si disponibilitatea se vad imediat.",
-        paragraphs: ["Apasa Rezerva online, alege datele si finalizeaza rezervarea in sistemul securizat. Pentru disponibilitate nu este nevoie de formular sau apel telefonic."],
+        intro: "Rezervarea se face apăsând pe butonul Rezervă online; prețul și disponibilitatea se văd imediat.",
+        paragraphs: ["Apasă Rezervă online, alege datele și finalizează rezervarea în sistemul securizat. Nu facem rezervări telefonic — telefonul este doar pentru urgențe."],
         ctaReferer: "website_info_booking"
       },
       {
-        title: "Cum functioneaza check-in-ul online?",
-        intro: "Dupa rezervare primesti linkul pentru check-in-ul online. Parcurgi pasii in ordine, fara sari de etape; daca o etapa nu este finalizata corect, codul de acces nu devine disponibil.",
+        title: "Cum funcționează check-in-ul online?",
+        intro: "După rezervare primești linkul pentru check-in-ul online. Parcurgi pașii în ordine, fără să sari etape; dacă o etapă nu este finalizată corect, codul de acces nu devine disponibil.",
         cards: [
-          { title: "Verificare act de identitate", text: "Fotografiezi actul: buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE. Nu se accepta niciun alt document. Fotografia trebuie sa fie clara si nealterata. Nerespectarea conditiilor duce la anularea rezervarii fara ramburs." },
-          { title: "Selfie pe loc", text: "Dupa actul de identitate faci un selfie chiar in acel moment, intr-un cadru bine luminat, sa se vada clar fata. Selfie-ul nu poate fi incarcat din galerie." },
-          { title: "Taxa de oras", text: "Taxa de oras se achita online, in fluxul de check-in, conform tarifului in vigoare." },
-          { title: "Regulamentul Serene Studio", text: "Citesti si iei la cunostinta regulamentul, apoi semnezi direct pe ecranul telefonului." },
-          { title: "Guidebook si self-check-in", text: "La final se deschide guidebook-ul cu instructiunile complete pentru self-check-in: cum gasesti cutia de chei de la poarta, cum folosesti codul si cum te orientezi in studio." }
+          { title: "Verificare act de identitate", text: "Fotografiezi actul: buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE. Nu se acceptă niciun alt document. Fotografia trebuie să fie clară și nealterată. Nerespectarea condițiilor duce la anularea rezervării fără ramburs." },
+          { title: "Selfie pe loc", text: "După actul de identitate faci un selfie chiar în acel moment, într-un cadru bine luminat, să se vadă clar fața. Selfie-ul nu poate fi încărcat din galerie." },
+          { title: "Taxa de oraș", text: "Taxa de oraș se achită online, în fluxul de check-in, conform tarifului în vigoare." },
+          { title: "Regulamentul Serene Studio", text: "Citești și iei la cunoștință regulamentul, apoi semnezi direct pe ecranul telefonului." },
+          { title: "Guidebook și self-check-in", text: "La final se deschide guidebook-ul cu instrucțiunile complete pentru self-check-in: cum găsești cutia de chei de la poartă, cum folosești codul și cum te orientezi în studio." }
         ]
       },
       {
-        title: "Guidebook-ul ramane mereu la indemana",
-        intro: "Guidebook-ul se deschide oricand prin acelasi link folosit la check-in-ul online, fara cont sau parola suplimentara.",
+        title: "Guidebook-ul rămâne mereu la indemana",
+        intro: "Guidebook-ul se deschide oricând prin același link folosit la check-in-ul online, fără cont sau parolă suplimentară.",
         bullets: [
-          "Contine instructiunile pentru self-check-in si codul cutiei de chei de la poarta",
-          "Raspunde la majoritatea intrebarilor uzuale: Wi-Fi, AC, microunde, terasa, parcare, transport",
-          "Te rugam sa-l citesti inainte sa suni - aproape toate raspunsurile sunt acolo",
-          "Telefonul ramane pentru urgente reale sau situatii care nu sunt acoperite in guidebook"
+          "Conține instrucțiunile pentru self-check-in și codul cutiei de chei de la poarta",
+          "Răspunde la majoritatea întrebărilor uzuale: Wi-Fi, AC, microunde, terasă, parcare, transport",
+          "Te rugăm să-l citești înainte să suni - aproape toate răspunsurile sunt acolo",
+          "Telefonul rămâne pentru urgențe reale sau situații care nu sunt acoperite în guidebook"
         ]
       },
       {
-        title: "Acces si self check-in",
-        intro: "Check-in-ul este dupa 14:00, check-out-ul pana la 12:00. Accesul este complet self-check-in, cu codul pentru cutia de chei de la poarta disponibil dupa finalizarea check-in-ului online.",
-        bullets: ["Check-in dupa 14:00", "Check-out pana la 12:00", "Check-in online finalizat inainte de sosire", "Codul cutiei de chei devine disponibil dupa verificare ID, selfie, taxa de oras si semnarea regulamentului", "Cauta linkul de check-in si guidebook in emailul de confirmare inainte sa contactezi personalul"]
+        title: "Acces și self check-in",
+        intro: "Check-in-ul este după 14:00, check-out-ul până la 12:00. Accesul este complet self-check-in, cu codul pentru cutia de chei de la poartă disponibil după finalizarea check-in-ului online.",
+        bullets: ["Check-in după 14:00", "Check-out până la 12:00", "Check-in online finalizat înainte de sosire", "Codul cutiei de chei devine disponibil după verificare ID, selfie, taxa de oraș și semnarea regulamentului", "Caută linkul de check-in și guidebook în emailul de confirmare înainte să contactezi personalul"]
       },
       {
-        title: "Parcare, fumat, copii si animale",
-        intro: "Parcarea este gratuita pe strada, fumatul este interzis in interior, copiii sunt acceptati, iar animalele nu sunt acceptate.",
+        title: "Parcare, fumat, copii și animale",
+        intro: "Parcarea este gratuită pe stradă, fumatul este interzis în interior, copiii sunt acceptați, iar animalele nu sunt acceptate.",
         table: {
-          headers: ["Subiect", "Raspuns"],
+          headers: ["Subiect", "Răspuns"],
           rows: [
-            ["Parcare", "Gratuita pe strada; de obicei exista locuri in apropiere, dar nu sunt rezervate nominal."],
-            ["Fumat", "Interzis in interior; doar in zona exterioara indicata."],
-            ["Copii", "Acceptati, dar dorm cu parintii in patul matrimonial."],
+            ["Parcare", "Gratuită pe stradă; de obicei există locuri în apropiere, dar nu sunt rezervate nominal."],
+            ["Fumat", "Interzis în interior; doar în zona exterioară indicata."],
+            ["Copii", "Acceptați, dar dorm cu părinții în patul matrimonial."],
             ["Animale", "Nu sunt acceptate."],
-            ["Plata si anulare", "Rezervarile se pot anula oricand, insa sumele achitate nu se ramburseaza."]
+            ["Plată și anulare", "Rezervările se pot anula oricând, însă sumele achitate nu se rambursează."]
           ]
         }
       }
     ],
     faq: [
-      { q: "La ce ora este check-in-ul?", a: "Check-in-ul este dupa ora 14:00." },
-      { q: "La ce ora este check-out-ul?", a: "Check-out-ul este pana la ora 12:00." },
-      { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE. Niciun alt document nu este acceptat. Actul se fotografiaza in timpul check-in-ului online." },
-      { q: "De ce trebuie sa fac selfie?", a: "Selfie-ul confirma ca persoana care face check-in-ul corespunde cu actul de identitate. Trebuie facut pe loc, intr-un cadru luminat, sa se vada clar." },
-      { q: "Ce se intampla daca pozele nu sunt clare?", a: "Pozele care nu sunt clare sau apar alterate duc la anularea rezervarii fara ramburs. Asigura-te ca actul si selfie-ul sunt vizibile, fara filtre si fara editari." },
-      { q: "Ce este taxa de oras?", a: "Este taxa locala datorata pentru cazarea in Bucuresti. Se achita in fluxul de check-in online, conform tarifului in vigoare." },
-      { q: "De ce semnez regulamentul?", a: "Semnatura confirma ca ai citit si ai luat la cunostinta regulile interne (orele de liniste, fumat, animale, garantie). Se semneaza direct pe ecranul telefonului." },
-      { q: "Ce este guidebook-ul si cum il deschid?", a: "Guidebook-ul contine instructiunile pentru self-check-in si raspunsurile la intrebarile uzuale. Se deschide prin acelasi link folosit la check-in-ul online si ramane disponibil oricand pe parcursul sejurului." },
-      { q: "Cand sun pe telefon?", a: "Te rugam sa citesti guidebook-ul inainte sa suni - aproape toate raspunsurile sunt acolo. Telefonul este pentru urgente sau situatii care nu sunt acoperite in guidebook." },
-      { q: "Cum primesc codul cutiei de chei?", a: "Codul devine disponibil in guidebook dupa finalizarea check-in-ului online (verificare ID, selfie, taxa de oras si semnatura pe regulament)." }
+      { q: "La ce oră este check-in-ul?", a: "Check-in-ul este după ora 14:00." },
+      { q: "La ce oră este check-out-ul?", a: "Check-out-ul este până la ora 12:00." },
+      { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE. Niciun alt document nu este acceptat. Actul se fotografiaza în timpul check-in-ului online." },
+      { q: "De ce trebuie să fac selfie?", a: "Selfie-ul confirmă că persoana care face check-in-ul corespunde cu actul de identitate. Trebuie făcut pe loc, într-un cadru luminat, să se vadă clar." },
+      { q: "Ce se întâmplă dacă pozele nu sunt clare?", a: "Pozele care nu sunt clare sau apar alterate duc la anularea rezervării fără ramburs. Asigură-te că actul și selfie-ul sunt vizibile, fără filtre și fără editări." },
+      { q: "Ce este taxa de oraș?", a: "Este taxa locală datorată pentru cazarea în București. Se achita în fluxul de check-in online, conform tarifului în vigoare." },
+      { q: "De ce semnez regulamentul?", a: "Semnătura confirmă că ai citit și ai luat la cunoștință regulile interne (orele de liniște, fumat, animale, garanție). Se semneaza direct pe ecranul telefonului." },
+      { q: "Ce este guidebook-ul și cum il deschid?", a: "Guidebook-ul conține instrucțiunile pentru self-check-in și răspunsurile la întrebările uzuale. Se deschide prin același link folosit la check-in-ul online și rămâne disponibil oricând pe parcursul sejurului." },
+      { q: "Când sun pe telefon?", a: "Telefonul este doar pentru urgențe. Nu facem rezervări telefonic. Toate informațiile pentru sejur le găsești în guidebook, accesibil oricând prin același link folosit la check-in-ul online — te rugăm să-l citești înainte să suni." },
+      { q: "Cum primesc codul cutiei de chei?", a: "Codul devine disponibil în guidebook după finalizarea check-in-ului online (verificare ID, selfie, taxa de oraș și semnătură pe regulament)." }
     ],
     finalCtaReferer: "website_info_final"
   },
@@ -754,57 +754,57 @@ const operationalRo: PageContent[] = [
     path: "/reguli/",
     locale: "ro",
     translationPath: "/en/rules/",
-    title: "Reguli de cazare la Serene Studio Bucuresti",
-    description: "Reguli Serene Studio: check-in dupa 14:00, check-out pana la 12:00, fumat interzis, fara animale, ore de liniste si garantie pana la 500 lei.",
+    title: "Reguli de cazare la Serene Studio București",
+    description: "Reguli Serene Studio: check-in după 14:00, check-out până la 12:00, fumat interzis, fără animale, ore de liniște și garanție până la 500 lei.",
     keyword: "reguli Serene Studio, fumat interzis, garantie daune",
     h1: "Reguli de cazare la Serene Studio",
     eyebrow: "Actualizat: 30 aprilie 2026",
-    heroText: "Regulile sunt clare pentru a pastra studioul curat, linistit si potrivit pentru urmatorii oaspeti.",
+    heroText: "Regulile sunt clare pentru a păstra studioul curat, liniștit și potrivit pentru următorii oaspeți.",
     heroImage: "terrace",
     heroCtaReferer: "website_rules_hero",
     sections: [
       {
         title: "Regulile principale",
-        intro: "Check-in-ul este dupa 14:00, check-out-ul este pana la 12:00, iar orele de liniste sunt 22:00-09:00.",
+        intro: "Check-in-ul este după 14:00, check-out-ul este până la 12:00, iar orele de liniște sunt 22:00-09:00.",
         bullets: [
-          "Fumatul este interzis in interior.",
-          "Fumatul este permis doar in curte sau zona indicata.",
+          "Fumatul este interzis în interior.",
+          "Fumatul este permis doar în curte sau zona indicata.",
           "Animalele de companie nu sunt acceptate.",
-          "Copiii sunt acceptati, dar dorm cu parintii in patul matrimonial.",
-          "Petrecerile si evenimentele private nu sunt permise.",
-          "Vizitatorii neinregistrati nu sunt permisi.",
-          "Numarul de oaspeti nu poate depasi rezervarea.",
-          "Actul de identitate poate fi solicitat conform legislatiei."
+          "Copiii sunt acceptați, dar dorm cu părinții în patul matrimonial.",
+          "Petrecerile și evenimentele private nu sunt permise.",
+          "Vizitatorii neînregistrați nu sunt permiși.",
+          "Numărul de oaspeți nu poate depăși rezervarea.",
+          "Actul de identitate poate fi solicitat conform legislației."
         ]
       },
       {
-        title: "Daune, fumat si garantie",
-        intro: "Oaspetii raspund pentru daune, iar garantia poate ajunge pana la 500 lei.",
+        title: "Daune, fumat și garanție",
+        intro: "Oaspeții răspund pentru daune, iar garanția poate ajunge până la 500 lei.",
         paragraphs: [
-          "Daca se fumeaza in interior, se poate retine intreaga suma de garantie, deoarece mirosul si curatarea afecteaza urmatorii oaspeti.",
-          "Rezervarile se pot anula oricand, insa sumele achitate nu se ramburseaza. Platile si anularile sunt gestionate prin sistemul de rezervare folosit."
+          "Dacă se fumează în interior, se poate reține întreaga sumă de garanție, deoarece mirosul și curățarea afectează următorii oaspeți.",
+          "Rezervările se pot anula oricând, însă sumele achitate nu se rambursează. Plățile și anulările sunt gestionate prin sistemul de rezervare folosit."
         ]
       },
       {
-        title: "Verificare la check-in si actele acceptate",
-        intro: "Identitatea se verifica online, in fluxul de check-in. Regulile sunt simple, dar stricte.",
+        title: "Verificare la check-in și actele acceptate",
+        intro: "Identitatea se verifică online, în fluxul de check-in. Regulile sunt simple, dar stricte.",
         bullets: [
-          "Buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE",
+          "Buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE",
           "Niciun alt act nu este acceptat",
-          "Fotografia actului trebuie facuta pe loc, sa fie clara si nealterata",
-          "Selfie-ul se face dupa act, intr-un cadru luminat, sa se vada clar fata",
-          "Pozele neclare sau alterate duc la anularea rezervarii fara ramburs",
-          "Dupa verificare se achita taxa de oras si se semneaza regulamentul",
-          "La final se deschide guidebook-ul cu instructiunile de self-check-in"
+          "Fotografia actului trebuie făcută pe loc, sa fie clară și nealterată",
+          "Selfie-ul se face după act, într-un cadru luminat, să se vadă clar fața",
+          "Pozele neclare sau alterate duc la anularea rezervării fără ramburs",
+          "După verificare se achită taxa de oraș și se semnează regulamentul",
+          "La final se deschide guidebook-ul cu instrucțiunile de self-check-in"
         ]
       }
     ],
     faq: [
-      { q: "Pot fuma in studio?", a: "Nu. Fumatul in interior este interzis si poate duce la retinerea integrala a garantiei." },
+      { q: "Pot fuma în studio?", a: "Nu. Fumatul în interior este interzis și poate duce la reținerea integrală a garanției." },
       { q: "Sunt acceptate animalele?", a: "Nu, animalele de companie nu sunt acceptate." },
-      { q: "Pot face petrecere?", a: "Nu, petrecerile si evenimentele private nu sunt permise." },
-      { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE. Niciun alt document nu este acceptat." },
-      { q: "Ce se intampla daca pozele de la verificare nu sunt clare?", a: "Pozele neclare sau alterate duc la anularea rezervarii fara ramburs." }
+      { q: "Pot face petrecere?", a: "Nu, petrecerile și evenimentele private nu sunt permise." },
+      { q: "Ce acte sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE. Niciun alt document nu este acceptat." },
+      { q: "Ce se întâmplă dacă pozele de la verificare nu sunt clare?", a: "Pozele neclare sau alterate duc la anularea rezervării fără ramburs." }
     ],
     finalCtaReferer: "website_rules_final"
   },
@@ -812,44 +812,44 @@ const operationalRo: PageContent[] = [
     path: "/contact/",
     locale: "ro",
     translationPath: "/en/contact/",
-    title: "Contact Serene Studio Bucuresti - rezervari online directe",
-    description: "Pentru preturi si disponibilitate la Serene Studio foloseste butonul Rezerva online. Contact pentru urgente: telefon si email confirmate.",
+    title: "Contact Serene Studio București - rezervări online directe",
+    description: "Pentru prețuri și disponibilitate la Serene Studio folosește butonul Rezervă online. Contact pentru urgențe: telefon și email confirmate.",
     keyword: "contact Serene Studio, rezervare Serene Studio, contact@serenestudio.ro",
     h1: "Contact Serene Studio",
-    eyebrow: "Rezervari online",
-    heroText: "Pentru preturi, disponibilitate si rezervari, foloseste butonul Rezerva online; sistemul iti arata datele disponibile si confirma rezervarea pe loc.",
+    eyebrow: "Rezervări online",
+    heroText: "Pentru prețuri, disponibilitate și rezervări, folosește butonul Rezervă online; sistemul îți arată datele disponibile și confirmă rezervarea pe loc.",
     heroImage: "entrance",
     heroCtaReferer: "website_contact_hero",
     sections: [
       {
-        title: "Rezervari online",
-        intro: "Nu este nevoie sa suni pentru disponibilitate.",
-        paragraphs: ["Apasa Rezerva online, alege datele si verifica pretul direct in pagina securizata de rezervare."],
+        title: "Rezervări online",
+        intro: "Nu facem rezervări telefonic — telefonul este doar pentru urgențe.",
+        paragraphs: ["Apasă Rezervă online, alege datele și verifică prețul direct în pagina securizată de rezervare."],
         ctaReferer: "website_contact_booking"
       },
       {
         title: "Ai rezervat deja?",
-        intro: "Cauta emailul de confirmare, linkul pentru check-in online si guidebook si detaliile pentru cutia de chei inainte sa contactezi personalul.",
-        bullets: ["Verifica inbox si spam", "Finalizeaza check-in-ul online (ID, selfie, taxa de oras, semnatura regulament)", "Citeste guidebook-ul - majoritatea raspunsurilor sunt acolo", "Verifica instructiunile si codul pentru cutia de chei de la poarta", "Contacteaza personalul doar pentru urgente sau probleme care nu sunt acoperite in guidebook"]
+        intro: "Caută emailul de confirmare, linkul pentru check-in online și guidebook și detaliile pentru cutia de chei înainte să contactezi personalul.",
+        bullets: ["Verifică inbox și spam", "Finalizează check-in-ul online (ID, selfie, taxa de oraș, semnătură regulament)", "Citește guidebook-ul - majoritatea răspunsurilor sunt acolo", "Verifică instrucțiunile și codul pentru cutia de chei de la poartă", "Contactează personalul doar pentru urgențe sau probleme care nu sunt acoperite în guidebook"]
       },
       {
-        title: "Adresa si contact pentru urgente",
+        title: "Adresa și contact pentru urgențe",
         intro: `${property.address}. Telefon: ${property.phone}. Email: ${property.email}.`,
         table: {
-          headers: ["Canal", "Foloseste pentru"],
+          headers: ["Canal", "Folosește pentru"],
           rows: [
-            ["Buton Rezerva online", "Preturi, disponibilitate si rezervare online"],
-            ["Guidebook (link primit la check-in)", "Instructiuni self-check-in si raspunsuri uzuale"],
-            [property.phone, "Urgente sau clarificari dupa rezervare"],
-            [property.email, "Mesaje care nu sunt urgente"]
+            ["Buton Rezervă online", "Prețuri, disponibilitate și rezervare online"],
+            ["Guidebook (link primit la check-in)", "Instrucțiuni self-check-in și răspunsuri uzuale"],
+            [property.phone, "Doar pentru urgențe — nu facem rezervări telefonic"],
+            [property.email, "Mesaje care nu sunt urgențe"]
           ]
         }
       }
     ],
     maps: true,
     faq: [
-      { q: "Pot trimite formular pentru disponibilitate?", a: "Nu este necesar. Disponibilitatea se verifica online apasand pe butonul Rezerva online." },
-      { q: "Unde gasesc raspunsurile uzuale?", a: "In guidebook, accesibil prin acelasi link folosit la check-in-ul online. Aproape toate intrebarile uzuale sunt acoperite acolo." },
+      { q: "Pot trimite formular pentru disponibilitate?", a: "Nu este necesar. Disponibilitatea se verifică online apăsând pe butonul Rezervă online." },
+      { q: "Unde găsesc răspunsurile uzuale?", a: "În guidebook, accesibil prin același link folosit la check-in-ul online. Aproape toate întrebările uzuale sunt acoperite acolo." },
       { q: "Care este emailul corect?", a: `Emailul corect este ${property.email}.` }
     ],
     finalCtaReferer: "website_contact_final"
@@ -858,31 +858,31 @@ const operationalRo: PageContent[] = [
     path: "/rezerva/",
     locale: "ro",
     translationPath: "/en/book/",
-    title: "Rezerva Serene Studio online - preturi in timp real",
-    description: "Alege datele, verifica pretul si finalizeaza rezervarea Serene Studio direct, prin pagina noastra securizata.",
+    title: "Rezervă Serene Studio online - prețuri în timp real",
+    description: "Alege datele, verifică prețul și finalizează rezervarea Serene Studio direct, prin pagina noastră securizată.",
     keyword: "rezerva Serene Studio, rezervare online studio Bucuresti",
-    h1: "Rezerva Serene Studio online",
-    eyebrow: "Preturi in timp real · Confirmare imediata",
-    heroText: "Alege datele, verifica pretul si finalizeaza rezervarea direct, intr-o pagina securizata.",
+    h1: "Rezervă Serene Studio online",
+    eyebrow: "Prețuri în timp real · Confirmare imediată",
+    heroText: "Alege datele, verifică prețul și finalizează rezervarea direct, într-o pagina securizată.",
     heroImage: "bed",
     heroCtaReferer: "website_book_hero",
     sections: [
       {
-        title: "Cum se imparte fluxul intre rezervare si check-in online",
-        intro: "Apasa butonul Rezerva online pentru a vedea pretul si disponibilitatea, apoi finalizezi rezervarea. Dupa confirmare, completezi check-in-ul online pentru a primi codul de acces.",
+        title: "Cum se împarte fluxul între rezervare și check-in online",
+        intro: "Apasă butonul Rezervă online pentru a vedea prețul și disponibilitatea, apoi finalizezi rezervarea. După confirmare, completezi check-in-ul online pentru a primi codul de acces.",
         paragraphs: [
-          "Pretul si disponibilitatea sunt afisate in timp real pentru datele tale, iar plata si confirmarea sunt procesate securizat.",
-          "Accesul in unitate ramane complet self-check-in. Codul pentru cutia de chei de la poarta devine disponibil in guidebook dupa finalizarea check-in-ului online (verificare ID, selfie, taxa de oras si semnarea regulamentului)."
+          "Prețul și disponibilitatea sunt afișate în timp real pentru datele tale, iar plata și confirmarea sunt procesate securizat.",
+          "Accesul în unitate rămâne complet self-check-in. Codul pentru cutia de chei de la poartă devine disponibil în guidebook după finalizarea check-in-ului online (verificare ID, selfie, taxa de oraș și semnarea regulamentului)."
         ],
         ctaReferer: "website_book_page_box"
       }
     ],
     faq: [
-      { q: "Cum vad pretul si disponibilitatea?", a: "Apasa butonul Rezerva online si alege datele. Pretul si disponibilitatea sunt afisate in timp real pentru perioada aleasa." },
-      { q: "Pot vedea pretul inainte de plata?", a: "Da, alegi datele si vezi pretul inainte de finalizarea rezervarii." },
-      { q: "Primesc confirmare online?", a: "Da, confirmarea ajunge pe email imediat dupa finalizarea rezervarii." },
-      { q: "Unde fac check-in-ul online?", a: "Dupa rezervare primesti pe email linkul pentru check-in online. Codul cutiei de chei devine disponibil dupa verificarea ID, selfie, taxa de oras si semnarea regulamentului." },
-      { q: "Pot modifica datele?", a: "Modificarile se gestioneaza conform regulilor afisate la rezervare; sumele achitate nu se ramburseaza." }
+      { q: "Cum vad prețul și disponibilitatea?", a: "Apasă butonul Rezervă online și alege datele. Prețul și disponibilitatea sunt afișate în timp real pentru perioada aleasa." },
+      { q: "Pot vedea prețul înainte de plata?", a: "Da, alegi datele și vezi prețul înainte de finalizarea rezervării." },
+      { q: "Primesc confirmare online?", a: "Da, confirmarea ajunge pe email imediat după finalizarea rezervării." },
+      { q: "Unde fac check-in-ul online?", a: "După rezervare primești pe email linkul pentru check-in online. Codul cutiei de chei devine disponibil după verificarea ID, selfie, taxa de oraș și semnarea regulamentului." },
+      { q: "Pot modifica datele?", a: "Modificările se gestionează conform regulilor afișate la rezervare; sumele achitate nu se rambursează." }
     ],
     finalCtaReferer: "website_book_final"
   },
@@ -890,26 +890,26 @@ const operationalRo: PageContent[] = [
     path: "/politica-confidentialitate/",
     locale: "ro",
     translationPath: "/en/privacy-policy/",
-    title: "Politica de confidentialitate - Serene Studio",
-    description: "Politica de confidentialitate pentru serenestudio.ro, fluxul de rezervare online si check-in-ul online cu verificare ID.",
+    title: "Politică de confidențialitate - Serene Studio",
+    description: "Politică de confidențialitate pentru serenestudio.ro, fluxul de rezervare online și check-in-ul online cu verificare ID.",
     keyword: "politica confidentialitate Serene Studio",
-    h1: "Politica de confidentialitate",
+    h1: "Politică de confidențialitate",
     eyebrow: "Serene Studio",
-    heroText: "Aceasta pagina explica ce date pot fi prelucrate cand folosesti serenestudio.ro, cand finalizezi o rezervare online si cand completezi check-in-ul online.",
+    heroText: "Această pagină explică ce date pot fi prelucrate când folosești serenestudio.ro, când finalizezi o rezervare online și când completezi check-in-ul online.",
     heroCtaReferer: "website_privacy_hero",
     sections: [
       {
-        title: "Ce date prelucram?",
-        intro: "Site-ul nu foloseste analytics la lansare. Rezervarea si check-in-ul online sunt operate prin furnizori specializati, conform termenilor afisati la finalizarea rezervarii.",
+        title: "Ce date prelucrăm?",
+        intro: "Site-ul nu folosește analytics la lansare. Rezervarea și check-in-ul online sunt operate prin furnizori specializați, conform termenilor afișați la finalizarea rezervării.",
         paragraphs: [
-          "Cand ne contactezi prin email sau telefon, putem prelucra datele pe care le transmiti voluntar.",
-          "Cand apesi Rezerva online, ajungi pe pagina securizata de rezervare, unde se aplica termenii si politica furnizorului care opereaza sistemul de rezervare.",
-          "Dupa rezervare, sunt prelucrate datele necesare pentru check-in-ul online: actul de identitate (buletin sau pasaport, conform reglementarilor UE/non-UE), selfie pentru verificare, taxa de oras si semnatura digitala pe regulament. Datele se folosesc strict pentru identificare, raportare locala si acces self-check-in."
+          "Când ne contactezi prin email sau telefon, putem prelucra datele pe care le transmiți voluntar.",
+          "Când apesi Rezervă online, ajungi pe pagina securizată de rezervare, unde se aplică termenii și politica furnizorului care operează sistemul de rezervare.",
+          "După rezervare, sunt prelucrate datele necesare pentru check-in-ul online: actul de identitate (buletin sau pasaport, conform reglementărilor UE/non-UE), selfie pentru verificare, taxa de oraș și semnătură digitală pe regulament. Datele se folosesc strict pentru identificare, raportare locală și acces self-check-in."
         ]
       },
       {
         title: "Contact pentru date personale",
-        intro: `Pentru solicitari legate de date personale, foloseste emailul ${property.email}.`
+        intro: `Pentru solicitări legate de date personale, folosește emailul ${property.email}.`
       }
     ],
     finalCtaReferer: "website_privacy_final"
@@ -918,18 +918,18 @@ const operationalRo: PageContent[] = [
     path: "/politica-cookies/",
     locale: "ro",
     translationPath: "/en/cookie-policy/",
-    title: "Politica cookies - Serene Studio",
-    description: "Politica cookies pentru serenestudio.ro. Site-ul este lansat fara analytics in prima versiune.",
+    title: "Politică cookies - Serene Studio",
+    description: "Politică cookies pentru serenestudio.ro. Site-ul este lansat fără analytics în prima versiune.",
     keyword: "politica cookies Serene Studio",
-    h1: "Politica cookies",
-    eyebrow: "Fara analytics la lansare",
-    heroText: "In prima versiune, serenestudio.ro nu incarca analytics sau instrumente de tracking externe.",
+    h1: "Politică cookies",
+    eyebrow: "Fără analytics la lansare",
+    heroText: "În prima versiune, serenestudio.ro nu încarcă analytics sau instrumente de tracking externe.",
     heroCtaReferer: "website_cookies_hero",
     sections: [
       {
-        title: "Ce cookies foloseste site-ul?",
-        intro: "Site-ul static foloseste doar functionalitate esentiala pentru navigare.",
-        paragraphs: ["Daca la lansare se adauga GA4, Clarity sau harti embed, politica si bannerul de consimtamant trebuie activate inainte de publicare."]
+        title: "Ce cookies folosește site-ul?",
+        intro: "Site-ul static folosește doar funcționalitate esențială pentru navigare.",
+        paragraphs: ["Dacă la lansare se adaugă GA4, Clarity sau hărți embed, politica și bannerul de consimțământ trebuie activate înainte de publicare."]
       }
     ],
     finalCtaReferer: "website_cookies_final"
@@ -953,7 +953,7 @@ const operationalEn: PageContent[] = [
       {
         title: "How do I book?",
         intro: "Booking is made by clicking the Book online button; price and availability are shown immediately.",
-        paragraphs: ["Click Book online, choose your dates and complete the booking in the secure system. There is no need for a form or phone call for availability."],
+        paragraphs: ["Click Book online, choose your dates and complete the booking in the secure system. We do not take bookings by phone — the phone is for emergencies only."],
         ctaReferer: "website_en_info_booking"
       },
       {
@@ -1006,7 +1006,7 @@ const operationalEn: PageContent[] = [
       { q: "What is the city tax?", a: "It is the local tax owed for staying in Bucharest. It is paid online, during the check-in flow, at the rate in force." },
       { q: "Why do I sign the house rules?", a: "The signature confirms that you have read and acknowledged the internal rules (quiet hours, smoking, pets, deposit). It is signed directly on the phone screen." },
       { q: "What is the guidebook and how do I open it?", a: "The guidebook contains the self check-in instructions and answers to common questions. It opens through the same link used for online check-in and stays available at any time during your stay." },
-      { q: "When should I call staff?", a: "Please read the guidebook before calling - almost every answer is in there. The phone is for emergencies or situations not covered by the guidebook." },
+      { q: "When should I call staff?", a: "The phone is for emergencies only. We do not take bookings by phone. All stay information is in the guidebook, accessible any time through the same link used for online check-in — please read it before calling." },
       { q: "How do I receive the key-box code?", a: "The code becomes available in the guidebook after online check-in is finalized (ID verification, selfie, city tax and rules signature)." }
     ],
     finalCtaReferer: "website_en_info_final"
@@ -1084,7 +1084,7 @@ const operationalEn: PageContent[] = [
     sections: [
       {
         title: "Online bookings",
-        intro: "You do not need to call for availability.",
+        intro: "We do not take bookings by phone — the phone is for emergencies only.",
         paragraphs: ["Click Book online, choose dates and check the price directly on the secure booking page."],
         ctaReferer: "website_en_contact_booking"
       },
@@ -1101,7 +1101,7 @@ const operationalEn: PageContent[] = [
           rows: [
             ["Book online button", "Prices, availability and online booking"],
             ["Guidebook (link sent at check-in)", "Self check-in instructions and everyday answers"],
-            [property.phone, "Emergencies or clarifications after booking"],
+            [property.phone, "Emergencies only — we do not take bookings by phone"],
             [property.email, "Non-urgent messages"]
           ]
         }
@@ -1202,38 +1202,38 @@ const nearbyRo: PageContent[] = [
     path: "/cazare-langa-spitalul-gomoiu-bucuresti/",
     locale: "ro",
     translationPath: "/en/accommodation-near-gomoiu-hospital-bucharest/",
-    title: "Cazare langa Spitalul Gomoiu Bucuresti - Serene Studio",
+    title: "Cazare lângă Spitalul Gomoiu București - Serene Studio",
     description:
-      "Studio privat in Sector 2 Bucuresti, la cateva minute de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Self check-in, chicineta, baie privata si rezervare online directa - ideal pentru parinti si bunici care isi insotesc copilul la spital.",
+      "Studio privat în Sector 2 București, la câteva minute de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Self check-in, chicinetă, baie privată și rezervare online directă - ideal pentru părinți și bunici care își însoțesc copilul la spital.",
     keyword: "cazare langa Spitalul Gomoiu Bucuresti, cazare parinti Spitalul de Copii Gomoiu, Bd. Basarabia 21 Sector 2",
-    h1: "Cazare langa Spitalul de Copii Dr. Victor Gomoiu in Bucuresti",
-    eyebrow: "Sector 2 · Bd. Basarabia 21 · Parinti si insotitori",
+    h1: "Cazare lângă Spitalul de Copii Dr. Victor Gomoiu în București",
+    eyebrow: "Sector 2 · Bd. Basarabia 21 · Părinți și însoțitori",
     heroText:
-      "Serene Studio este o cazare privata si linistita in Sector 2 Bucuresti, la aproximativ 1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bulevardul Basarabia 21). Studio de aproximativ 35 m2, cu pat matrimonial, chicineta, baie privata si self check-in dupa ora 14:00 pe baza codului din guidebook.",
+      "Serene Studio este o cazare privată și liniștită în Sector 2 București, la aproximativ 1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bulevardul Basarabia 21). Studio de aproximativ 35 m2, cu pat matrimonial, chicinetă, baie privată și self check-in după ora 14:00 pe baza codului din guidebook.",
     heroImage: "overview",
     heroCtaReferer: "website_gomoiu_hero",
     proof: [
-      { value: "~1,5 km", label: "pana la Spitalul Gomoiu" },
+      { value: "~1,5 km", label: "până la Spitalul Gomoiu" },
       { value: "35 m2", label: "studio privat" },
-      { value: "Self check-in", label: "acces dupa 14:00" },
-      { value: "22-09", label: "ore de liniste" }
+      { value: "Self check-in", label: "acces după 14:00" },
+      { value: "22-09", label: "ore de liniște" }
     ],
     sections: [
       {
-        title: "Pentru cine este potrivit Serene Studio cand mergi la Spitalul Gomoiu",
+        title: "Pentru cine este potrivit Serene Studio când mergi la Spitalul Gomoiu",
         intro:
-          "Spitalul Clinic de Copii Dr. Victor Gomoiu este un spital pediatric de referinta in Bucuresti, cu sectii de chirurgie pediatrica, pediatrie, neurologie si terapie intensiva pentru copii. Familiile care insotesc copilul au nevoie de cazare apropiata, linistita si flexibila.",
+          "Spitalul Clinic de Copii Dr. Victor Gomoiu este un spital pediatric de referință în București, cu secții de chirurgie pediatrică, pediatrie, neurologie și terapie intensivă pentru copii. Familiile care însoțesc copilul au nevoie de cazare apropiată, liniștită și flexibilă.",
         cards: [
-          { title: "Parinti care insotesc copilul", text: "Studio privat unde te poti odihni intre vizite, cu chicineta pentru micul dejun, o cafea calda dimineata si baie proprie - fara sa imparti spatiul cu alti oaspeti." },
-          { title: "Bunici si apartinatori din afara orasului", text: "Sosiri si plecari flexibile, self check-in dupa ora 14:00, fara coada la receptie. Daca ajungi seara tarziu, codul cutiei de chei te asteapta in guidebook." },
-          { title: "Familii la sejur medical de cateva zile", text: "Rezervi un singur loc privat la 4 minute de metroul Piata Muncii, eviti drumurile lungi prin oras si te concentrezi pe sanatatea copilului." }
+          { title: "Părinți care însoțesc copilul", text: "Studio privat unde te poți odihni între vizite, cu chicinetă pentru micul dejun, o cafea caldă dimineața și baie proprie - fără să împarți spațiul cu alți oaspeți." },
+          { title: "Bunici și aparținători din afara orașului", text: "Sosiri și plecări flexibile, self check-in după ora 14:00, fără coadă la recepție. Dacă ajungi seara târziu, codul cutiei de chei te așteaptă în guidebook." },
+          { title: "Familii la sejur medical de câteva zile", text: "Rezervi un singur loc privat la 4 minute de metroul Piața Muncii, eviți drumurile lungi prin oraș și te concentrezi pe sănătatea copilului." }
         ],
         ctaReferer: "website_gomoiu_quiet"
       },
       {
-        title: "Cum arata Spitalul Gomoiu Bucuresti",
+        title: "Cum arată Spitalul Gomoiu București",
         intro:
-          "Un scurt video al Spitalului Clinic de Copii Dr. Victor Gomoiu (Bulevardul Basarabia 21, Sector 2). Util pentru parintii care vin prima data la programare si vor sa recunoasca cladirea si zona din jur.",
+          "Un scurt video al Spitalului Clinic de Copii Dr. Victor Gomoiu (Bulevardul Basarabia 21, Sector 2). Util pentru părinții care vin prima dată la programare și vor să recunoască clădirea și zona din jur.",
         video: {
           base: "spitalul-gomoiu-bucuresti",
           poster: "/video/spitalul-gomoiu-bucuresti-poster.jpg",
@@ -1243,63 +1243,63 @@ const nearbyRo: PageContent[] = [
           width: 960,
           height: 644,
           name: {
-            ro: "Spitalul Clinic de Copii Dr. Victor Gomoiu - vedere exterioara",
+            ro: "Spitalul Clinic de Copii Dr. Victor Gomoiu - vedere exterioară",
             en: "Dr. Victor Gomoiu Children's Clinical Hospital - exterior view"
           },
           description: {
-            ro: "Filmare scurta cu Spitalul Clinic de Copii Dr. Victor Gomoiu, Bulevardul Basarabia 21, Sector 2 Bucuresti - utila pentru parintii care vin prima data la spital cu copilul si pentru insotitorii care cauta cazare aproape, la Serene Studio.",
+            ro: "Filmare scurtă cu Spitalul Clinic de Copii Dr. Victor Gomoiu, Bulevardul Basarabia 21, Sector 2 București - utilă pentru părinții care vin prima dată la spital cu copilul și pentru însoțitorii care caută cazare aproape, la Serene Studio.",
             en: "Short clip of the Dr. Victor Victor Gomoiu Children's Clinical Hospital at Bulevardul Basarabia 21, Sector 2 Bucharest - useful for parents arriving with their child for the first time and for relatives looking for nearby accommodation at Serene Studio."
           },
           contentLocation: {
             name: "Spitalul Clinic de Copii Dr. Victor Gomoiu",
-            address: "Bulevardul Basarabia 21, Sector 2, Bucuresti 022102",
+            address: "Bulevardul Basarabia 21, Sector 2, București 022102",
             lat: 44.4393,
             lon: 26.1486
           }
         }
       },
       {
-        title: "Distantele utile din zona",
+        title: "Distanțele utile din zonă",
         intro:
-          "Adresa Serene Studio: Strada Alexandru Zagoritz 12, Sector 2, Bucuresti. Spitalul Clinic de Copii Dr. Victor Gomoiu se afla pe Bulevardul Basarabia 21, in acelasi Sector 2 - foarte aproape, pe ruta catre Arena Nationala.",
+          "Adresa Serene Studio: Strada Alexandru Zagoritz 12, Sector 2, București. Spitalul Clinic de Copii Dr. Victor Gomoiu se află pe Bulevardul Basarabia 21, în același Sector 2 - foarte aproape, pe ruta către Arena Națională.",
         infographic: {
           variant: "distances",
           origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2",
           caption:
-            "Distantele sunt orientative. Verifica intotdeauna ruta in aplicatia ta de navigatie inainte de plecare.",
+            "Distanțele sunt orientative. Verifică întotdeauna ruta în aplicația ta de navigație înainte de plecare.",
           distances: [
-            { place: "Spitalul Clinic de Copii Dr. Victor Gomoiu", detail: "Bd. Basarabia 21 - chirurgie pediatrica, pediatrie, ATI copii", value: "~1,5 km", mode: "drive", lat: 44.4393, lon: 26.1486 },
-            { place: "Ambulatoriul Gomoiu (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - consultatii ambulatorii", value: "~6 km cu masina", mode: "drive", lat: 44.4232, lon: 26.1843 },
+            { place: "Spitalul Clinic de Copii Dr. Victor Gomoiu", detail: "Bd. Basarabia 21 - chirurgie pediatrică, pediatrie, ATI copii", value: "~1,5 km", mode: "drive", lat: 44.4393, lon: 26.1486 },
+            { place: "Ambulatoriul Gomoiu (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - consultații ambulatorii", value: "~6 km cu mașina", mode: "drive", lat: 44.4232, lon: 26.1843 },
             { place: "Spitalul Monza", detail: "Strada Tony Bulandra 27 - cardiologie, chirurgie", value: "~2 km", mode: "drive", lat: 44.4464, lon: 26.1379 },
-            { place: "Metrou Piata Muncii", detail: "Linia M1 catre centru si Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
-            { place: "Farmacii non-stop", detail: "Pe Mihai Bravu si Bulevardul Basarabia", value: "1-5 min pe jos", mode: "walk" }
+            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Farmacii non-stop", detail: "Pe Mihai Bravu și Bulevardul Basarabia", value: "1-5 min pe jos", mode: "walk" }
           ]
         },
         ctaReferer: "website_gomoiu_distances"
       },
       {
-        title: "Ce face diferenta cand vii cu copilul la spital",
+        title: "Ce face diferența când vii cu copilul la spital",
         intro:
-          "Serene Studio nu este unitate medicala si nu ofera servicii de ingrijire. Ce ofera este un mediu privat, curat si predictibil, cu un flux de rezervare gandit pentru parinti stresati.",
+          "Serene Studio nu este unitate medicală și nu oferă servicii de îngrijire. Ce oferă este un mediu privat, curat și predictibil, cu un flux de rezervare gândit pentru părinți stresați.",
         bullets: [
-          "Studio privat de aproximativ 35 m2 - rezervi intregul spatiu, fara colocatari",
-          "Chicineta cu frigider, microunde, aparat de cafea si fierbator (fara aragaz/plita)",
-          "Wi-Fi rapid pentru video-call cu familia ramasa acasa sau pentru telemedicina",
-          "Self check-in dupa 14:00 cu cod pentru cutia de chei (disponibil dupa check-in-ul online)",
-          "Ore de liniste 22:00-09:00 - somn linistit pentru noaptea de dinainte de operatie sau dupa o zi grea",
-          "Parcare gratuita pe strada, de obicei disponibila in apropiere",
-          "Acces rapid catre metrou Piata Muncii (4 minute pe jos) - util pentru drumuri prin oras"
+          "Studio privat de aproximativ 35 m2 - rezervi întregul spațiu, fără colocatari",
+          "Chicinetă cu frigider, microunde, aparat de cafea și fierbător (fără aragaz/plită)",
+          "Wi-Fi rapid pentru video-call cu familia rămasă acasă sau pentru telemedicină",
+          "Self check-in după 14:00 cu cod pentru cutia de chei (disponibil după check-in-ul online)",
+          "Ore de liniște 22:00-09:00 - somn liniștit pentru noaptea de dinainte de operație sau după o zi grea",
+          "Parcare gratuită pe stradă, de obicei disponibilă în apropiere",
+          "Acces rapid către metrou Piața Muncii (4 minute pe jos) - util pentru drumuri prin oraș"
         ],
         ctaReferer: "website_gomoiu_features"
       }
     ],
     faq: [
-      { q: "Care este adresa Spitalului Gomoiu din Bucuresti?", a: "Spitalul Clinic de Copii Dr. Victor Gomoiu are sediul principal pe Bulevardul Basarabia 21, Sector 2, Bucuresti, cod postal 022102. Ambulatoriul se afla la Strada Rodul Pamantului 2-4, Sector 3." },
-      { q: "Cat de aproape este Serene Studio de Spitalul Gomoiu?", a: "Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) este la aproximativ 1,5 km de Spitalul Gomoiu - cateva minute cu masina sau taxi. Verifica ruta exacta in Google Maps inainte de plecare." },
-      { q: "Pot face check-in tarziu daca ies tarziu de la spital?", a: "Da. Self check-in-ul functioneaza dupa ora 14:00, fara restrictie de seara. Codul cutiei de chei este disponibil in guidebook dupa finalizarea check-in-ului online (ID, selfie, taxa de oras, semnatura regulament)." },
-      { q: "Este potrivit pentru parinti care isi insotesc copilul?", a: "Da. Studioul este privat, linistit, cu chicineta si baie proprie - ideal pentru parinti care dorm putin, mananca pe fuga si vor intimitate dupa o zi grea la spital." },
-      { q: "Pot ramane mai multe nopti pentru un sejur medical pediatric?", a: "Da, sejururile de cateva nopti sunt complet acceptate. Chicineta ajuta la masa rapida fara sa depinzi de restaurante." },
-      { q: "Ce documente sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE. Niciun alt document nu este acceptat." }
+      { q: "Care este adresa Spitalului Gomoiu din București?", a: "Spitalul Clinic de Copii Dr. Victor Gomoiu are sediul principal pe Bulevardul Basarabia 21, Sector 2, București, cod poștal 022102. Ambulatoriul se află la Strada Rodul Pamantului 2-4, Sector 3." },
+      { q: "Cat de aproape este Serene Studio de Spitalul Gomoiu?", a: "Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) este la aproximativ 1,5 km de Spitalul Gomoiu - câteva minute cu mașină sau taxi. Verifică ruta exactă în Google Maps înainte de plecare." },
+      { q: "Pot face check-in târziu dacă ies târziu de la spital?", a: "Da. Self check-in-ul funcționează după ora 14:00, fără restricție de seară. Codul cutiei de chei este disponibil în guidebook după finalizarea check-in-ului online (ID, selfie, taxa de oraș, semnătură regulament)." },
+      { q: "Este potrivit pentru părinți care își însoțesc copilul?", a: "Da. Studioul este privat, liniștit, cu chicinetă și baie proprie - ideal pentru părinți care dorm puțin, mănâncă pe fugă și vor intimitate după o zi grea la spital." },
+      { q: "Pot rămâne mai multe nopti pentru un sejur medical pediatric?", a: "Da, sejururile de câteva nopți sunt complet acceptate. Chicineta ajută la masa rapidă fără să depinzi de restaurante." },
+      { q: "Ce documente sunt acceptate la check-in?", a: "Buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE. Niciun alt document nu este acceptat." }
     ],
     finalCtaReferer: "website_gomoiu_final"
   },
@@ -1307,38 +1307,38 @@ const nearbyRo: PageContent[] = [
     path: "/cazare-langa-spitalul-monza-bucuresti/",
     locale: "ro",
     translationPath: "/en/accommodation-near-monza-hospital-bucharest/",
-    title: "Cazare langa Spitalul Monza Bucuresti - Serene Studio",
+    title: "Cazare lângă Spitalul Monza București - Serene Studio",
     description:
-      "Studio privat in Sector 2 Bucuresti, la cativa minute de Spitalul Monza (cardiologie, chirurgie). Self check-in, chicineta, baie privata si rezervare online directa, fara apeluri.",
+      "Studio privat în Sector 2 București, la câteva minute de Spitalul Monza (cardiologie, chirurgie). Self check-in, chicinetă, baie privată și rezervare online directă, fără apeluri.",
     keyword: "cazare langa Spitalul Monza Bucuresti, cazare cardiologie Monza, studio apartinatori",
-    h1: "Cazare langa Spitalul Monza in Bucuresti",
-    eyebrow: "Sector 2 · Cardiologie · Apartinatori",
+    h1: "Cazare lângă Spitalul Monza în București",
+    eyebrow: "Sector 2 · Cardiologie · Aparținători",
     heroText:
-      "Serene Studio este un studio privat de aproximativ 35 m2, in Sector 2 Bucuresti, la cativa minute distanta de Spitalul Monza. Pat matrimonial, chicineta, baie privata, terasa si self check-in cu cod pentru cutia de chei dupa check-in-ul online.",
+      "Serene Studio este un studio privat de aproximativ 35 m2, în Sector 2 București, la câteva minute distanță de Spitalul Monza. Pat matrimonial, chicinetă, baie privată, terasă și self check-in cu cod pentru cutia de chei după check-in-ul online.",
     heroImage: "overview",
     heroCtaReferer: "website_monza_hero",
     proof: [
-      { value: "~2 km", label: "pana la Spitalul Monza" },
+      { value: "~2 km", label: "până la Spitalul Monza" },
       { value: "35 m2", label: "studio privat" },
-      { value: "Self check-in", label: "acces dupa 14:00" },
-      { value: "22-09", label: "ore de liniste" }
+      { value: "Self check-in", label: "acces după 14:00" },
+      { value: "22-09", label: "ore de liniște" }
     ],
     sections: [
       {
-        title: "Pentru cine este potrivit Serene Studio inainte sau dupa o vizita la Monza?",
+        title: "Pentru cine este potrivit Serene Studio înainte sau după o vizită la Monza?",
         intro:
-          "Spitalul Monza este cunoscut pentru cardiologie, chirurgie si proceduri planificate. Oaspetii care se cazeaza la Serene Studio inaintea sau dupa unei interventii cauta liniste, intimitate si un flux de rezervare simplu.",
+          "Spitalul Monza este cunoscut pentru cardiologie, chirurgie și proceduri planificate. Oaspeții care se cazează la Serene Studio înainte sau după o intervenție caută liniște, intimitate și un flux de rezervare simplu.",
         cards: [
-          { title: "Pacienti cu programare", text: "Studio privat la cativa minute de spital, ideal pentru noaptea dinaintea internarii sau pentru recuperarea ambulatorie." },
-          { title: "Apartinatori cu vizite multiple", text: "Spatiu linistit unde dormi bine intre vizite, cu chicineta pentru o masa rapida fara sa depinzi de restaurante." },
-          { title: "Familii din afara Bucurestiului", text: "Eviti hotelurile zgomotoase si stai intr-o zona rezidentiala calma, foarte aproape de Monza si de Piata Muncii." }
+          { title: "Pacienți cu programare", text: "Studio privat la câteva minute de spital, ideal pentru noaptea dinaintea internării sau pentru recuperarea ambulatorie." },
+          { title: "Aparținători cu vizite multiple", text: "Spațiu liniștit unde dormi bine între vizite, cu chicinetă pentru o masă rapidă fără să depinzi de restaurante." },
+          { title: "Familii din afara Bucureștiului", text: "Eviți hotelurile zgomotoase și stai într-o zonă rezidențială calmă, foarte aproape de Monza și de Piața Muncii." }
         ],
         ctaReferer: "website_monza_audience"
       },
       {
-        title: "Cum arata Spitalul Monza Bucuresti",
+        title: "Cum arată Spitalul Monza București",
         intro:
-          "Un scurt video al Spitalului Monza Bucuresti din Sector 2, ca sa stii ce sa cauti cand ajungi pe Strada Tony Bulandra 27. Util pentru pacienti la prima vizita si apartinatori care nu cunosc zona.",
+          "Un scurt video al Spitalului Monza București din Sector 2, ca să știi ce să cauți când ajungi pe Strada Tony Bulandra 27. Util pentru pacienți la prima vizită și aparținători care nu cunosc zona.",
         video: {
           base: "spitalul-monza-bucuresti",
           poster: "/video/spitalul-monza-bucuresti-poster.jpg",
@@ -1348,63 +1348,63 @@ const nearbyRo: PageContent[] = [
           width: 960,
           height: 631,
           name: {
-            ro: "Spitalul Monza Bucuresti - vedere exterioara",
+            ro: "Spitalul Monza București - vedere exterioară",
             en: "Monza Hospital Bucharest - exterior view"
           },
           description: {
-            ro: "Filmare scurta cu Spitalul Monza Bucuresti din Sector 2, pentru pacientii care merg prima data la programare si apartinatorii care cauta cazare aproape - Serene Studio este la aproximativ 2 km distanta.",
+            ro: "Filmare scurtă cu Spitalul Monza București din Sector 2, pentru pacienții care merg prima dată la programare și aparținătorii care caută cazare aproape - Serene Studio este la aproximativ 2 km distanță.",
             en: "Short clip of Monza Hospital Bucharest in Sector 2, useful for patients arriving for the first time and relatives looking for nearby accommodation - Serene Studio is about 2 km away."
           },
           contentLocation: {
-            name: "Spitalul Monza Bucuresti",
-            address: "Strada Tony Bulandra 27, Sector 2, Bucuresti",
+            name: "Spitalul Monza București",
+            address: "Strada Tony Bulandra 27, Sector 2, București",
             lat: 44.4464,
             lon: 26.1379
           }
         }
       },
       {
-        title: "Distantele utile din zona",
+        title: "Distanțele utile din zonă",
         intro:
-          "Adresa Serene Studio: Strada Alexandru Zagoritz 12, Sector 2, Bucuresti. Spitalul Monza se afla pe Strada Tony Bulandra 27, Sector 2 - tot in zona Piata Muncii / Mihai Bravu.",
+          "Adresa Serene Studio: Strada Alexandru Zagoritz 12, Sector 2, București. Spitalul Monza se află pe Strada Tony Bulandra 27, Sector 2 - tot în zona Piața Muncii / Mihai Bravu.",
         infographic: {
           variant: "distances",
           origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2",
           caption:
-            "Distantele sunt orientative pentru un drum cu masina sau taxi. Verifica intotdeauna in Google Maps inainte de plecare, mai ales cu trafic.",
+            "Distanțele sunt orientative pentru un drum cu mașină sau taxi. Verifică întotdeauna în Google Maps înainte de plecare, mai ales cu trafic.",
           distances: [
-            { place: "Spitalul Monza", detail: "Strada Tony Bulandra 27, Sector 2 - cardiologie si chirurgie", value: "~2 km cu masina", mode: "drive", lat: 44.4464, lon: 26.1379 },
-            { place: "Metrou Piata Muncii", detail: "Linia M1 catre centru, Gara de Nord si Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
-            { place: "Farmacii non-stop", detail: "Pe Mihai Bravu si in Piata Muncii", value: "1-5 min pe jos", mode: "walk" },
-            { place: "Mega Mall", detail: "Restaurante, supermarket si cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
-            { place: "Aeroportul Otopeni (OTP)", detail: "Sosiri internationale, cu tren via Gara de Nord", value: "tren + metrou sau taxi", mode: "train", lat: 44.5711, lon: 26.085 }
+            { place: "Spitalul Monza", detail: "Strada Tony Bulandra 27, Sector 2 - cardiologie și chirurgie", value: "~2 km cu mașina", mode: "drive", lat: 44.4464, lon: 26.1379 },
+            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru, Gara de Nord și Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Farmacii non-stop", detail: "Pe Mihai Bravu și în Piața Muncii", value: "1-5 min pe jos", mode: "walk" },
+            { place: "Mega Mall", detail: "Restaurante, supermarket și cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
+            { place: "Aeroportul Otopeni (OTP)", detail: "Sosiri internaționale, cu tren via Gara de Nord", value: "tren + metrou sau taxi", mode: "train", lat: 44.5711, lon: 26.085 }
           ]
         },
         ctaReferer: "website_monza_distances"
       },
       {
-        title: "Ce primesti la Serene Studio",
+        title: "Ce primești la Serene Studio",
         intro:
-          "Studioul este gandit pentru oaspeti care vor liniste, curatenie si un flux fara frictiune. Self check-in si guidebook digital, fara apeluri pentru rezervare sau acces.",
+          "Studioul este gândit pentru oaspeți care vor liniște, curățenie și un flux fără fricțiune. Self check-in și guidebook digital, fără apeluri pentru rezervare sau acces.",
         bullets: [
           "Studio privat de aproximativ 35 m2, doar pentru tine",
-          "Pat matrimonial cu saltea confortabila si lenjerie curata",
-          "Baie moderna privata cu dus, prosoape si articole de toaleta",
-          "Chicineta cu frigider, microunde, aparat de cafea si fierbator",
-          "Wi-Fi rapid, TV, aer conditionat si incalzire centrala",
-          "Self check-in cu cod pentru cutia de chei de la poarta",
-          "Guidebook digital cu instructiunile complete - aproape toate raspunsurile sunt acolo"
+          "Pat matrimonial cu saltea confortabilă și lenjerie curată",
+          "Baie modernă privată cu duș, prosoape și articole de toaletă",
+          "Chicinetă cu frigider, microunde, aparat de cafea și fierbător",
+          "Wi-Fi rapid, TV, aer condiționat și încălzire centrală",
+          "Self check-in cu cod pentru cutia de chei de la poartă",
+          "Guidebook digital cu instrucțiunile complete - aproape toate răspunsurile sunt acolo"
         ],
         ctaReferer: "website_monza_features",
         image: "kitchen"
       }
     ],
     faq: [
-      { q: "Cat este de la Serene Studio la Spitalul Monza?", a: "Spitalul Monza se afla pe Strada Tony Bulandra 27, la aproximativ 2 km de Serene Studio - cateva minute cu masina sau taxi, in functie de trafic. Verifica ruta in Google Maps." },
-      { q: "Pot rezerva pentru noaptea dinaintea unei interventii la Monza?", a: "Da, sejururile scurte sunt complet acceptate. Apesi butonul Rezerva online, alegi datele si finalizezi rezervarea direct, fara apel telefonic." },
-      { q: "Pot intra tarziu daca am operatie dimineata devreme?", a: "Da. Self check-in-ul functioneaza fara restrictie de ora dupa 14:00. Codul cutiei de chei devine disponibil in guidebook dupa finalizarea check-in-ului online." },
-      { q: "Este potrivit pentru recuperare dupa o interventie ambulatorie?", a: "Studioul este privat, linistit si cu baie proprie - dar nu ofera servicii medicale. Pentru recuperari complexe consulta intotdeauna recomandarea medicului." },
-      { q: "Pot anula daca interventia se reprogrameaza?", a: "Rezervarile se pot anula oricand, insa sumele achitate nu se ramburseaza. Verifica regulile afisate la rezervare." }
+      { q: "Cât este de la Serene Studio la Spitalul Monza?", a: "Spitalul Monza se află pe Strada Tony Bulandra 27, la aproximativ 2 km de Serene Studio - câteva minute cu mașina sau taxi, în funcție de trafic. Verifică ruta în Google Maps." },
+      { q: "Pot rezerva pentru noaptea dinaintea unei intervenții la Monza?", a: "Da, sejururile scurte sunt complet acceptate. Apeși butonul Rezervă online, alegi datele și finalizezi rezervarea direct — nu facem rezervări telefonic." },
+      { q: "Pot intra târziu dacă am operație dimineața devreme?", a: "Da. Self check-in-ul funcționează fără restricție de oră după 14:00. Codul cutiei de chei devine disponibil în guidebook după finalizarea check-in-ului online." },
+      { q: "Este potrivit pentru recuperare după o intervenție ambulatorie?", a: "Studioul este privat, liniștit și cu baie proprie - dar nu oferă servicii medicale. Pentru recuperări complexe consultă întotdeauna recomandarea medicului." },
+      { q: "Pot anula dacă intervenția se reprogramează?", a: "Rezervările se pot anula oricând, însă sumele achitate nu se rambursează. Verifică regulile afișate la rezervare." }
     ],
     finalCtaReferer: "website_monza_final"
   },
@@ -1412,75 +1412,75 @@ const nearbyRo: PageContent[] = [
     path: "/cazare-langa-mega-mall-bucuresti/",
     locale: "ro",
     translationPath: "/en/accommodation-near-mega-mall-bucharest/",
-    title: "Cazare langa Mega Mall Bucuresti - Serene Studio in Sector 2",
+    title: "Cazare lângă Mega Mall București - Serene Studio în Sector 2",
     description:
-      "Studio privat in Sector 2 Bucuresti, la 18-20 minute pe jos de Mega Mall, cu acces rapid la Arena Nationala, Piata Muncii si centrul orasului. Self check-in si rezervare online directa.",
+      "Studio privat în Sector 2 București, la 18-20 minute pe jos de Mega Mall, cu acces rapid la Arena Națională, Piața Muncii și centrul orașului. Self check-in și rezervare online directă.",
     keyword: "cazare langa Mega Mall Bucuresti, cazare Sector 2 mall, studio Piata Muncii",
-    h1: "Cazare langa Mega Mall in Bucuresti",
+    h1: "Cazare lângă Mega Mall în București",
     eyebrow: "Sector 2 · Shopping · Cinema · Restaurante",
     heroText:
-      "Serene Studio este un studio privat in Sector 2 Bucuresti, la 18-20 de minute pe jos de Mega Mall si la cativa minute de Piata Muncii. Ideal pentru oaspeti care vor shopping, cinema sau o pauza la cafea aproape de cazare.",
+      "Serene Studio este un studio privat în Sector 2 București, la 18-20 de minute pe jos de Mega Mall și la câteva minute de Piața Muncii. Ideal pentru oaspeți care vor shopping, cinema sau o pauză la cafea aproape de cazare.",
     heroImage: "overview",
     heroCtaReferer: "website_megamall_hero",
     proof: [
-      { value: "~18-20 min", label: "pe jos pana la Mega Mall" },
-      { value: "~14 min", label: "pe jos pana la Arena Nationala" },
-      { value: "~4 min", label: "pana la metrou Piata Muncii" },
-      { value: "Self check-in", label: "dupa ora 14:00" }
+      { value: "~18-20 min", label: "pe jos până la Mega Mall" },
+      { value: "~14 min", label: "pe jos până la Arena Națională" },
+      { value: "~4 min", label: "până la metrou Piața Muncii" },
+      { value: "Self check-in", label: "după ora 14:00" }
     ],
     sections: [
       {
-        title: "De ce e bun Serene Studio pentru o vizita la Mega Mall?",
+        title: "De ce e bun Serene Studio pentru o vizită la Mega Mall?",
         intro:
-          "Mega Mall este unul dintre cele mai mari mall-uri din Bucuresti, cu peste 200 de magazine, restaurante, supermarket Cora si cinema Grand Cinema & More. Serene Studio este suficient de aproape sa ajungi pe jos si suficient de retras sa nu auzi traficul de seara.",
+          "Mega Mall este unul dintre cele mai mari mall-uri din București, cu peste 200 de magazine, restaurante, supermarket Cora și cinema Grand Cinema & More. Serene Studio este suficient de aproape să ajungi pe jos și suficient de retras să nu auzi traficul de seară.",
         cards: [
-          { title: "Cupluri la o escapada de weekend", text: "Studio privat cu pat matrimonial si baie proprie. Iesi la cumparaturi sau cinema la Mega Mall si te intorci intr-un loc linistit." },
-          { title: "Calatorii business", text: "Wi-Fi rapid, self check-in si acces rapid catre metrou Piata Muncii. Mega Mall iti ofera optiuni rapide pentru cina sau cumparaturi de ultim moment." },
-          { title: "Familii cu copil mai mare", text: "Copiii sunt acceptati, iar mall-ul are zone de joaca, restaurante si cinema. Studioul are un singur pat matrimonial, asa ca rezerva pentru maxim 2 adulti + copil." }
+          { title: "Cupluri la o escapadă de weekend", text: "Studio privat cu pat matrimonial și baie proprie. Ieși la cumpărături sau cinema la Mega Mall și te întorci într-un loc liniștit." },
+          { title: "Călătorii business", text: "Wi-Fi rapid, self check-in și acces rapid către metrou Piața Muncii. Mega Mall îți oferă opțiuni rapide pentru cină sau cumpărături de ultim moment." },
+          { title: "Familii cu copil mai mare", text: "Copiii sunt acceptați, iar mall-ul are zone de joacă, restaurante și cinema. Studioul are un singur pat matrimonial, așa că rezervă pentru maxim 2 adulți + copil." }
         ],
         ctaReferer: "website_megamall_audience"
       },
       {
-        title: "Distantele utile din zona",
+        title: "Distanțele utile din zonă",
         intro:
-          "Mega Mall se afla pe Bulevardul Pierre de Coubertin 3-5, in Sector 2 - aproape de Arena Nationala. Serene Studio este la 18-20 de minute pe jos sau 5-7 minute cu masina, in functie de trafic.",
+          "Mega Mall se află pe Bulevardul Pierre de Coubertin 3-5, în Sector 2 - aproape de Arena Națională. Serene Studio este la 18-20 de minute pe jos sau 5-7 minute cu mașina, în funcție de trafic.",
         infographic: {
           variant: "distances",
           origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2",
           caption:
-            "Pe jos timpii sunt orientativi pentru un mers relaxat. Cu masina, verifica traficul in aplicatia ta de navigatie.",
+            "Pe jos timpii sunt orientativi pentru un mers relaxat. Cu mașina, verifică traficul în aplicația ta de navigație.",
           distances: [
             { place: "Mega Mall", detail: "Bulevardul Pierre de Coubertin 3-5 - 200+ magazine, cinema, restaurante", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
-            { place: "Arena Nationala", detail: "Concerte, meciuri si evenimente", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
+            { place: "Arena Națională", detail: "Concerte, meciuri și evenimente", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
             { place: "Bucur Obor", detail: "Magazinul universal istoric din Sector 2", value: "~10 min pe jos", mode: "walk", lat: 44.4474, lon: 26.1284 },
-            { place: "Metrou Piata Muncii", detail: "Linia M1 catre centru si Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
-            { place: "Centrul Vechi", detail: "Restaurante, baruri si turism", value: "metrou sau taxi", mode: "metro" }
+            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Centrul Vechi", detail: "Restaurante, baruri și turism", value: "metrou sau taxi", mode: "metro" }
           ]
         },
         ctaReferer: "website_megamall_distances"
       },
       {
-        title: "Ce gasesti la Mega Mall",
+        title: "Ce găsești la Mega Mall",
         intro:
-          "Mega Mall combina shopping clasic cu divertisment - cinema, food court, supermarket Cora si peste 200 de magazine, inclusiv branduri internationale.",
+          "Mega Mall combină shopping clasic cu divertisment - cinema, food court, supermarket Cora și peste 200 de magazine, inclusiv branduri internaționale.",
         bullets: [
-          "Peste 200 de magazine: moda, sport, electronice, frumusete",
-          "Grand Cinema & More cu 14 sali, inclusiv VIP si IMAX",
-          "Supermarket Cora deschis pana seara tarziu",
-          "Food court cu 30+ restaurante si cafenele",
-          "Zona de joaca pentru copii la etajul superior",
-          "Parcare subterana si la suprafata pentru vizitatori"
+          "Peste 200 de magazine: modă, sport, electronice, frumusețe",
+          "Grand Cinema & More cu 14 săli, inclusiv VIP și IMAX",
+          "Supermarket Cora deschis până seara târziu",
+          "Food court cu 30+ restaurante și cafenele",
+          "Zonă de joacă pentru copii la etajul superior",
+          "Parcare subterană și la suprafață pentru vizitatori"
         ],
         ctaReferer: "website_megamall_inside",
         image: "kitchenArch"
       }
     ],
     faq: [
-      { q: "Cat este de la Serene Studio la Mega Mall?", a: "Mega Mall este la aproximativ 18-20 de minute pe jos de Serene Studio sau 5-7 minute cu masina/taxi. Adresa Mega Mall: Bulevardul Pierre de Coubertin 3-5, Sector 2, Bucuresti." },
-      { q: "Pot ajunge pe jos seara la Mega Mall?", a: "Da, traseul trece prin zone bine iluminate si circulate. Verifica orele de inchidere ale magazinelor si cinematografului inainte sa pleci." },
-      { q: "Mega Mall este aproape si de Arena Nationala?", a: "Da. Mega Mall si Arena Nationala sunt vecine - daca ai bilet la concert sau meci, poti combina shoppingul cu evenimentul." },
-      { q: "Pot parca la Mega Mall daca vin cu masina?", a: "Da, Mega Mall are parcare proprie subterana si la suprafata. Daca stai la Serene Studio si vrei sa lasi masina pe strada, parcarea pe strada este gratuita in zona, de obicei disponibila in apropiere." },
-      { q: "Mega Mall are supermarket?", a: "Da, Mega Mall gazduieste un supermarket Cora cu program pana seara tarziu - util daca vrei sa cumperi mancare pentru chicineta in studio." }
+      { q: "Cât este de la Serene Studio la Mega Mall?", a: "Mega Mall este la aproximativ 18-20 de minute pe jos de Serene Studio sau 5-7 minute cu mașina/taxi. Adresa Mega Mall: Bulevardul Pierre de Coubertin 3-5, Sector 2, București." },
+      { q: "Pot ajunge pe jos seara la Mega Mall?", a: "Da, traseul trece prin zone bine iluminate și circulate. Verifică orele de închidere ale magazinelor și cinematografului înainte să pleci." },
+      { q: "Mega Mall este aproape și de Arena Națională?", a: "Da. Mega Mall și Arena Națională sunt vecine - dacă ai bilet la concert sau meci, poți combina shoppingul cu evenimentul." },
+      { q: "Pot parca la Mega Mall dacă vin cu mașina?", a: "Da, Mega Mall are parcare proprie subterană și la suprafață. Dacă stai la Serene Studio și vrei să lași mașina pe stradă, parcarea pe stradă este gratuită în zonă, de obicei disponibilă în apropiere." },
+      { q: "Mega Mall are supermarket?", a: "Da, Mega Mall găzduiește un supermarket Cora cu program până seara târziu - util dacă vrei să cumperi mâncare pentru chicineta din studio." }
     ],
     finalCtaReferer: "website_megamall_final"
   }
@@ -1532,11 +1532,11 @@ const nearbyEn: PageContent[] = [
           width: 960,
           height: 644,
           name: {
-            ro: "Spitalul Clinic de Copii Dr. Victor Gomoiu - vedere exterioara",
+            ro: "Spitalul Clinic de Copii Dr. Victor Gomoiu - vedere exterioară",
             en: "Dr. Victor Gomoiu Children's Clinical Hospital - exterior view"
           },
           description: {
-            ro: "Filmare scurta cu Spitalul Clinic de Copii Dr. Victor Gomoiu, Bulevardul Basarabia 21, Sector 2 Bucuresti - utila pentru parintii care vin prima data la spital cu copilul si pentru insotitorii care cauta cazare aproape, la Serene Studio.",
+            ro: "Filmare scurtă cu Spitalul Clinic de Copii Dr. Victor Gomoiu, Bulevardul Basarabia 21, Sector 2 București - utilă pentru părinții care vin prima dată la spital cu copilul și pentru însoțitorii care caută cazare aproape, la Serene Studio.",
             en: "Short clip of the Dr. Victor Gomoiu Children's Clinical Hospital at Bulevardul Basarabia 21, Sector 2 Bucharest - useful for parents arriving with their child for the first time and for relatives looking for nearby accommodation at Serene Studio."
           },
           contentLocation: {
@@ -1636,11 +1636,11 @@ const nearbyEn: PageContent[] = [
           width: 960,
           height: 631,
           name: {
-            ro: "Spitalul Monza Bucuresti - vedere exterioara",
+            ro: "Spitalul Monza București - vedere exterioară",
             en: "Monza Hospital Bucharest - exterior view"
           },
           description: {
-            ro: "Filmare scurta cu Spitalul Monza Bucuresti din Sector 2, pentru pacientii care merg prima data la programare si apartinatorii care cauta cazare aproape - Serene Studio este la aproximativ 2 km distanta.",
+            ro: "Filmare scurtă cu Spitalul Monza București din Sector 2, pentru pacienții care merg prima dată la programare și aparținătorii care caută cazare aproape - Serene Studio este la aproximativ 2 km distanță.",
             en: "Short clip of Monza Hospital Bucharest in Sector 2, useful for patients arriving for the first time and relatives looking for nearby accommodation - Serene Studio is about 2 km away."
           },
           contentLocation: {

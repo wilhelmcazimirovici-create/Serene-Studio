@@ -1,8 +1,8 @@
 import type { GalleryImage, PageSection, SectionVideo } from "./types";
 
 export const arenaLocation = {
-  name: "Arena Nationala Bucuresti",
-  address: "Bulevardul Basarabia 37-39, Sector 2, Bucuresti 022103",
+  name: "Arena Națională București",
+  address: "Bulevardul Basarabia 37-39, Sector 2, București 022103",
   lat: 44.4376,
   lon: 26.1525
 };
@@ -19,11 +19,11 @@ export const arenaVideos: SectionVideo[] = [
     width: 960,
     height: 710,
     name: {
-      ro: "Arena Nationala Bucuresti - vedere generala in zi de eveniment",
+      ro: "Arena Națională București - vedere generală în zi de eveniment",
       en: "National Arena Bucharest - general view on event day"
     },
     description: {
-      ro: "Filmare scurta cu Arena Nationala Bucuresti, Bulevardul Basarabia 37-39 Sector 2, intr-o zi de eveniment - utila pentru oaspetii care vin la concert sau meci si stau la Serene Studio in Sector 2.",
+      ro: "Filmare scurtă cu Arena Națională București, Bulevardul Basarabia 37-39 Sector 2, într-o zi de eveniment - utilă pentru oaspeții care vin la concert sau meci și stau la Serene Studio în Sector 2.",
       en: "Short clip of the National Arena Bucharest at Bulevardul Basarabia 37-39 Sector 2 on an event day - useful for guests attending a concert or match while staying at Serene Studio in Sector 2."
     },
     contentLocation: arenaLocation
@@ -37,11 +37,11 @@ export const arenaVideos: SectionVideo[] = [
     width: 960,
     height: 540,
     name: {
-      ro: "Arena Nationala Bucuresti - filmare cu drona din exterior",
+      ro: "Arena Națională București - filmare cu drona din exterior",
       en: "National Arena Bucharest - aerial drone view from outside"
     },
     description: {
-      ro: "Filmare aeriana cu drona a Arenei Nationale Bucuresti, Sector 2 - perspectiva exterioara peste stadion si zona Basarabia, utila ca reper vizual pentru oaspetii cazati la Serene Studio.",
+      ro: "Filmare aeriană cu drona a Arenei Naționale București, Sector 2 - perspectiva exterioară peste stadion și zona Basarabia, utilă ca reper vizual pentru oaspeții cazati la Serene Studio.",
       en: "Aerial drone footage of the National Arena Bucharest in Sector 2 - exterior perspective over the stadium and the Basarabia area, a useful visual reference for guests staying at Serene Studio."
     },
     contentLocation: arenaLocation
@@ -55,11 +55,11 @@ export const arenaVideos: SectionVideo[] = [
     width: 960,
     height: 546,
     name: {
-      ro: "Arena Nationala Bucuresti - filmare cu drona din interior",
+      ro: "Arena Națională București - filmare cu drona din interior",
       en: "National Arena Bucharest - aerial drone view from inside"
     },
     description: {
-      ro: "Filmare cu drona din interiorul Arenei Nationale Bucuresti - vedere peste teren si tribune, utila pentru a-ti face o idee despre amploarea stadionului inainte de eveniment.",
+      ro: "Filmare cu drona din interiorul Arenei Naționale București - vedere peste teren și tribune, utilă pentru a-ti face o idee despre amploarea stadionului înainte de eveniment.",
       en: "Drone footage from inside the National Arena Bucharest - view over the pitch and stands, useful to get a sense of the stadium's scale before your event."
     },
     contentLocation: arenaLocation
@@ -73,11 +73,11 @@ export const arenaVideos: SectionVideo[] = [
     width: 960,
     height: 710,
     name: {
-      ro: "Arena Nationala Bucuresti - tunelul de intrare al jucatorilor",
+      ro: "Arena Națională București - tunelul de intrare al jucătorilor",
       en: "National Arena Bucharest - players' tunnel entrance"
     },
     description: {
-      ro: "Filmare scurta cu tunelul de intrare al jucatorilor pe Arena Nationala Bucuresti - utila pentru fanii care vor sa recunoasca zonele cheie inainte de meci.",
+      ro: "Filmare scurtă cu tunelul de intrare al jucătorilor pe Arena Națională București - utilă pentru fanii care vor să recunoască zonele cheie înainte de meci.",
       en: "Short clip of the players' tunnel entrance at the National Arena Bucharest - useful for fans who want to recognize key areas before the match."
     },
     contentLocation: arenaLocation
@@ -91,11 +91,11 @@ export const arenaVideos: SectionVideo[] = [
     width: 960,
     height: 632,
     name: {
-      ro: "Arena Nationala Bucuresti - bancile antrenorilor pe marginea terenului",
+      ro: "Arena Națională București - băncile antrenorilor pe marginea terenului",
       en: "National Arena Bucharest - coaches' benches at the pitch side"
     },
     description: {
-      ro: "Vedere cu bancile antrenorilor pe Arena Nationala Bucuresti, pe marginea terenului - detaliu util pentru fanii care vin la meciuri sau vizite organizate.",
+      ro: "Vedere cu bancile antrenorilor pe Arena Națională București, pe marginea terenului - detaliu util pentru fanii care vin la meciuri sau vizite organizate.",
       en: "View of the coaches' benches at the National Arena Bucharest pitch side - a useful detail for fans attending matches or organized visits."
     },
     contentLocation: arenaLocation
@@ -109,11 +109,11 @@ export const arenaVideos: SectionVideo[] = [
     width: 960,
     height: 574,
     name: {
-      ro: "Arena Nationala Bucuresti - atmosfera la meciul nationalei Romaniei",
+      ro: "Arena Națională București - atmosfera la meciul naționalei României",
       en: "National Arena Bucharest - atmosphere at the Romania national team match"
     },
     description: {
-      ro: "Atmosfera de pe Arena Nationala la un meci al nationalei Romaniei - utila pentru oaspetii care vor sa vada in avans cum este experienta in tribuna.",
+      ro: "Atmosfera de pe Arena Națională la un meci al naționalei României - utilă pentru oaspeții care vor să vadă în avans cum este experiența în tribună.",
       en: "Atmosphere at the National Arena during a Romania national team match - useful for guests who want to see in advance what the stand experience is like."
     },
     contentLocation: arenaLocation
@@ -124,42 +124,42 @@ export const arenaPhotos: GalleryImage[] = [
   {
     key: "arenaExteriorDrona",
     caption: {
-      ro: "Vedere aeriana cu drona - exteriorul Arenei Nationale Bucuresti",
+      ro: "Vedere aeriană cu drona - exteriorul Arenei Naționale București",
       en: "Aerial drone view - exterior of the National Arena Bucharest"
     }
   },
   {
     key: "arenaInteriorDrona",
     caption: {
-      ro: "Vedere cu drona din interior - peste teren si tribune",
+      ro: "Vedere cu drona din interior - peste teren și tribune",
       en: "Drone view from inside - over the pitch and stands"
     }
   },
   {
     key: "arenaVedereStadion",
     caption: {
-      ro: "Vedere generala dintr-o zi de eveniment pe stadion",
+      ro: "Vedere generală dintr-o zi de eveniment pe stadion",
       en: "General view from an event day at the stadium"
     }
   },
   {
     key: "arenaIntrareTunel",
     caption: {
-      ro: "Tunelul de intrare al jucatorilor pe Arena Nationala",
+      ro: "Tunelul de intrare al jucătorilor pe Arena Națională",
       en: "Players' tunnel entrance at the National Arena"
     }
   },
   {
     key: "arenaBancaAntrenori",
     caption: {
-      ro: "Bancile antrenorilor pe marginea terenului",
+      ro: "Băncile antrenorilor pe marginea terenului",
       en: "Coaches' benches at the pitch side"
     }
   },
   {
     key: "arenaMeciRomania",
     caption: {
-      ro: "Atmosfera la meciul nationalei Romaniei",
+      ro: "Atmosfera la meciul naționalei României",
       en: "Atmosphere at the Romania national team match"
     }
   }
@@ -168,11 +168,11 @@ export const arenaPhotos: GalleryImage[] = [
 export const arenaPhotoSection = (locale: "ro" | "en"): PageSection => ({
   title:
     locale === "ro"
-      ? "Arena Nationala Bucuresti in imagini - capturi de pe stadion"
+      ? "Arena Națională București în imagini - capturi de pe stadion"
       : "The National Arena Bucharest in pictures - on-site shots",
   intro:
     locale === "ro"
-      ? "Capturi reale de pe Arena Nationala (Bulevardul Basarabia 37-39, Sector 2): exterior cu drona, interior cu drona, intrarea jucatorilor, bancile antrenorilor si o atmosfera de meci al nationalei. Util ca reper vizual inainte sa ajungi la eveniment."
+      ? "Capturi reale de pe Arena Națională (Bulevardul Basarabia 37-39, Sector 2): exterior cu drona, interior cu drona, intrarea jucătorilor, băncile antrenorilor și o atmosferă de meci al naționalei. Util ca reper vizual înainte să ajungi la eveniment."
       : "Real on-site shots from the National Arena (Bulevardul Basarabia 37-39, Sector 2): drone exterior, drone interior, players' tunnel, coaches' benches and a Romania national team match atmosphere. Useful as a visual reference before arriving at the event.",
   imageGallery: arenaPhotos
 });
@@ -180,11 +180,11 @@ export const arenaPhotoSection = (locale: "ro" | "en"): PageSection => ({
 export const arenaVideoSection = (locale: "ro" | "en"): PageSection => ({
   title:
     locale === "ro"
-      ? "Arena Nationala Bucuresti in video - filmari scurte de pe stadion"
+      ? "Arena Națională București în video - filmări scurte de pe stadion"
       : "The National Arena Bucharest on video - short on-site clips",
   intro:
     locale === "ro"
-      ? "Sase filmari scurte (fara audio) cu Arena Nationala: vedere generala, drona exterior, drona interior, tunelul de intrare, bancile antrenorilor si atmosfera la meciul Romaniei. Reda fiecare clip pentru a vedea zona inainte sa ajungi la concert sau meci."
+      ? "Șase filmări scurte (fără audio) cu Arena Națională: vedere generală, dronă exterior, dronă interior, tunelul de intrare, băncile antrenorilor și atmosfera la meciul României. Redă fiecare clip pentru a vedea zona înainte să ajungi la concert sau meci."
       : "Six short silent clips of the National Arena: general view, drone exterior, drone interior, players' tunnel, coaches' benches and the Romania match atmosphere. Play each clip to see the venue before your concert or match.",
   videoGallery: arenaVideos
 });

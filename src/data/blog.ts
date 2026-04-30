@@ -3,11 +3,11 @@ import type { BlogPost, Faq } from "./types";
 import { arenaPhotoSection, arenaVideoSection } from "./arena-media";
 
 const commonFaqRo: Faq[] = [
-  { q: "Cum verific disponibilitatea?", a: "Disponibilitatea si pretul se verifica online apasand butonul Rezerva online." },
-  { q: "Cum se face check-in-ul?", a: "Check-in-ul este online. Fotografiezi actul de identitate (buletin sau pasaport pentru oaspetii din UE; doar pasaport pentru oaspetii non-UE), faci un selfie pe loc, achiti taxa de oras si semnezi regulamentul. La final se deschide guidebook-ul cu codul cutiei de chei." },
-  { q: "Ce este guidebook-ul?", a: "Guidebook-ul contine instructiunile pentru self-check-in si raspunsurile la intrebarile uzuale. Se deschide oricand prin acelasi link folosit la check-in. Te rugam sa-l citesti inainte sa suni." },
-  { q: "Exista parcare?", a: "Parcarea este gratuita pe strada si de obicei exista locuri disponibile in apropiere." },
-  { q: "Pot fuma in interior?", a: "Nu. Fumatul este interzis in interior si poate duce la retinerea garantiei." }
+  { q: "Cum verific disponibilitatea?", a: "Disponibilitatea și prețul se verifică online apăsând butonul Rezervă online." },
+  { q: "Cum se face check-in-ul?", a: "Check-in-ul este online. Fotografiezi actul de identitate (buletin sau pasaport pentru oaspeții din UE; doar pasaport pentru oaspeții non-UE), faci un selfie pe loc, achiți taxa de oraș și semnezi regulamentul. La final se deschide guidebook-ul cu codul cutiei de chei." },
+  { q: "Ce este guidebook-ul?", a: "Guidebook-ul conține instrucțiunile pentru self-check-in și răspunsurile la întrebările uzuale. Se deschide oricând prin același link folosit la check-in. Te rugăm să-l citești înainte să suni." },
+  { q: "Există parcare?", a: "Parcarea este gratuită pe stradă și de obicei există locuri disponibile în apropiere." },
+  { q: "Pot fuma în interior?", a: "Nu. Fumatul este interzis în interior și poate duce la reținerea garanției." }
 ];
 
 const commonFaqEn: Faq[] = [
@@ -23,97 +23,97 @@ export const blogPosts: BlogPost[] = [
     slug: "traseu-pe-jos-serene-studio-arena-nationala",
     locale: "ro",
     translationSlug: "walking-route-serene-studio-national-arena",
-    title: "Traseu pe jos: Serene Studio - Arena Nationala (Piata Muncii, Sector 2)",
+    title: "Traseu pe jos: Serene Studio - Arena Națională (Piața Muncii, Sector 2)",
     description:
-      "Cum ajungi pe jos de la Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) la Arena Nationala Bucuresti: timp real ~14 minute, repere de pe traseu si tips pentru zilele de concert sau meci.",
+      "Cum ajungi pe jos de la Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) la Arena Națională București: timp real ~14 minute, repere de pe traseu și tips pentru zilele de concert sau meci.",
     keyword:
-      "traseu pe jos Arena Nationala Bucuresti, pe jos de la Piata Muncii la Arena Nationala, drum stadion Bucuresti",
+      "traseu pe jos Arena Națională București, pe jos de la Piața Muncii la Arena Națională, drum stadion București",
     date: "2026-04-30",
     intro:
-      "Articolul este un ghid de drum, nu o pagina de cazare. Daca esti deja cazat la Serene Studio (sau cauti repere reale pentru zona Piata Muncii - Bulevardul Basarabia), aici gasesti traseul pe jos pas cu pas: timp real, puncte de reper, tips pentru ziua evenimentului si optiuni de retur dupa concert sau meci.",
+      "Articolul este un ghid de drum, nu o pagină de cazare. Dacă ești deja cazat la Serene Studio (sau cauți repere reale pentru zona Piața Muncii - Bulevardul Basarabia), aici găsești traseul pe jos pas cu pas: timp real, puncte de reper, tips pentru ziua evenimentului și opțiuni de retur după concert sau meci.",
     ctaReferer: "website_blog_arena_traseu",
     sections: [
       {
         title: "Timpul real pe jos: ~14 minute, dar depinde de eveniment",
         intro:
-          "De la Strada Alexandru Zagoritz 12 (Sector 2) pana la Bulevardul Basarabia 37-39 (intrarile Arenei Nationale) sunt aproximativ 1,1-1,3 km, in functie de poarta de acces.",
+          "De la Strada Alexandru Zagoritz 12 (Sector 2) până la Bulevardul Basarabia 37-39 (intrările Arenei Naționale) sunt aproximativ 1,1-1,3 km, în funcție de poarta de acces.",
         paragraphs: [
-          "In zilele obisnuite, mersul pe jos este de circa 14 minute la pas mediu. In zile de concert sau meci, accesul controlat de organizatori si fluxul de oameni pot adauga 5-15 minute pana la intrare.",
-          "Verifica intotdeauna in Google Maps cu cateva ore inainte: la unele evenimente se inchid strazi adiacente si traseul redirectionat poate fi mai lung."
+          "În zilele obișnuite, mersul pe jos este de circa 14 minute la pas mediu. În zile de concert sau meci, accesul controlat de organizatori și fluxul de oameni pot adăuga 5-15 minute până la intrare.",
+          "Verifică întotdeauna în Google Maps cu câteva ore înainte: la unele evenimente se închid străzi adiacente și traseul redirecționat poate fi mai lung."
         ],
         table: {
-          headers: ["Reper", "Pozitie", "Timp / distanta"],
+          headers: ["Reper", "Poziție", "Timp / distanță"],
           rows: [
             ["Plecare: Serene Studio", "Strada Alexandru Zagoritz 12, Sector 2", "0 min"],
-            ["Metrou Piata Muncii (M1)", "Sosirea Piata Muncii", "~4 min pe jos"],
-            ["Bulevardul Basarabia", "Pe directia Arena", "~9-10 min pe jos"],
-            ["Sosire: Arena Nationala", "Bd. Basarabia 37-39, Sector 2", "~14 min pe jos"]
+            ["Metrou Piața Muncii (M1)", "Sosirea Piața Muncii", "~4 min pe jos"],
+            ["Bulevardul Basarabia", "Pe direcția Arena", "~9-10 min pe jos"],
+            ["Sosire: Arena Națională", "Bd. Basarabia 37-39, Sector 2", "~14 min pe jos"]
           ]
         }
       },
       {
-        title: "Reperele de pe traseu - sa nu ratezi cotitura",
+        title: "Reperele de pe traseu - să nu ratezi cotitura",
         intro:
-          "Drumul tipic urmeaza Strada Alexandru Zagoritz spre Piata Muncii, apoi continua pe Bulevardul Basarabia direct catre stadion.",
+          "Drumul tipic urmează Strada Alexandru Zagoritz spre Piața Muncii, apoi continuă pe Bulevardul Basarabia direct către stadion.",
         bullets: [
-          "La iesirea din Serene Studio mergi spre Piata Muncii (sud-est) - vezi semnele pentru metrou M1",
-          "Treci de Piata Muncii pastrand directia spre Bulevardul Basarabia",
-          "Pe Bulevardul Basarabia mergi continuu pana vezi conturul stadionului si pasajul pietonal",
-          "Intrarile pentru fani sunt pe Bd. Basarabia 37-39 - poarta exacta apare pe biletul tau",
-          "Daca ai bilet la VIP / acces special, organizatorul iti trimite poarta separata"
+          "La ieșirea din Serene Studio mergi spre Piața Muncii (sud-est) - vezi semnele pentru metrou M1",
+          "Treci de Piața Muncii păstrând direcția spre Bulevardul Basarabia",
+          "Pe Bulevardul Basarabia mergi continuu până vezi conturul stadionului și pasajul pietonal",
+          "Intrările pentru fani sunt pe Bd. Basarabia 37-39 - poarta exactă apare pe biletul tău",
+          "Dacă ai bilet la VIP / acces special, organizatorul îți trimite poarta separată"
         ]
       },
       {
         title: "Tips pentru zile de concert sau meci",
         intro:
-          "Pleaca cu margine de timp si verifica regulamentul de acces, ca sa eviti aglomeratia chiar la poarta.",
+          "Pleacă cu marjă de timp și verifică regulamentul de acces, ca să eviți aglomerația chiar la poartă.",
         bullets: [
-          "Pleaca de la Serene Studio cu 60-90 de minute inainte de ora din bilet pentru concerte mari",
-          "Pentru meciuri ale nationalei sau Champions League adauga 30 de minute pentru filtrele de acces",
-          "Lasa rucsacul mare si obiectele interzise la cazare (vezi regulamentul evenimentului)",
-          "Hidrateaza-te inainte sa intri - in interior preturile cresc si cozile pot fi lungi",
-          "Pe drumul de intoarcere, alege Piata Muncii in loc de strazile lipite de stadion - flux mai redus"
+          "Pleacă de la Serene Studio cu 60-90 de minute înainte de ora din bilet pentru concerte mari",
+          "Pentru meciuri ale naționalei sau Champions League adaugă 30 de minute pentru filtrele de acces",
+          "Lasă rucsacul mare și obiectele interzise la cazare (vezi regulamentul evenimentului)",
+          "Hidratează-te înainte să intri - în interior prețurile cresc și cozile pot fi lungi",
+          "Pe drumul de întoarcere, alege Piața Muncii în loc de străzile lipite de stadion - flux mai redus"
         ]
       },
       {
-        title: "Drumul de intoarcere: cum eviti aglomeratia",
+        title: "Drumul de întoarcere: cum eviți aglomerația",
         intro:
-          "De la Arena Nationala nu ai metrou direct catre Piata Muncii - cea mai apropiata statie M1 de stadion este Costin Georgian, iar drumul pana la ea este comparabil cu mersul direct catre Serene Studio.",
+          "De la Arena Națională nu ai metrou direct către Piața Muncii - cea mai apropiată stație M1 de stadion este Costin Georgian, iar drumul până la ea este comparabil cu mersul direct către Serene Studio.",
         paragraphs: [
-          "Pentru oaspetii Serene Studio, mersul pe jos invers ramane cea mai predictibila optiune: ~14 minute, fara taxiul comun de dupa eveniment si fara surge price.",
-          "Daca alegi taxi sau ridesharing, prevezi ca timpul de asteptare poate creste 15-30 de minute in primele 30 de minute dupa eveniment. Stabileste punctul de pickup cu cateva strazi mai departe de stadion, ca sa eviti zona blocata pentru evacuare.",
-          "Transportul de suprafata pe Bulevardul Basarabia (autobuz / tramvai catre Mihai Bravu) este o alternativa, dar in primele 30-45 de minute dupa eveniment vehiculele sunt aglomerate si traseul ramane oricum mai lent decat mersul pe jos."
+          "Pentru oaspeții Serene Studio, mersul pe jos invers rămâne cea mai predictibilă opțiune: ~14 minute, fără taxiul comun de după eveniment și fără surge price.",
+          "Dacă alegi taxi sau ridesharing, prevezi că timpul de așteptare poate crește 15-30 de minute în primele 30 de minute după eveniment. Stabilește punctul de pickup cu câteva străzi mai departe de stadion, ca să eviți zona blocată pentru evacuare.",
+          "Transportul de suprafață pe Bulevardul Basarabia (autobuz / tramvai către Mihai Bravu) este o alternativă, dar în primele 30-45 de minute după eveniment vehiculele sunt aglomerate și traseul rămâne oricum mai lent decât mersul pe jos."
         ],
         table: {
-          headers: ["Optiune retur", "Avantaj", "Atentie"],
+          headers: ["Opțiune retur", "Avantaj", "Atenție"],
           rows: [
-            ["Pe jos (~14 min)", "predictibil, fara surge, fara cozi", "haine pentru vreme rece"],
-            ["Autobuz/tramvai pe Bd. Basarabia", "alternativa daca ploua", "aglomerat dupa eveniment"],
-            ["Taxi/ridesharing", "comod cu bagaj sau seara tarziu", "surge si asteptare dupa eveniment"]
+            ["Pe jos (~14 min)", "predictibil, fără surge, fără cozi", "haine pentru vreme rece"],
+            ["Autobuz/tramvai pe Bd. Basarabia", "alternativă dacă plouă", "aglomerat după eveniment"],
+            ["Taxi/ridesharing", "comod cu bagaj sau seara târziu", "surge și așteptare după eveniment"]
           ]
         }
       },
       arenaPhotoSection("ro"),
       arenaVideoSection("ro"),
       {
-        title: "Cauti cazare pentru un eveniment la Arena Nationala?",
+        title: "Cauți cazare pentru un eveniment la Arena Națională?",
         intro:
-          "Acest articol este un ghid de traseu. Daca vrei pagina dedicata cazarii (preturi, disponibilitate, facilitati si rezervare online), continua aici.",
+          "Acest articol este un ghid de traseu. Dacă vrei pagina dedicată cazării (prețuri, disponibilitate, facilități și rezervare online), continuă aici.",
         cards: [
           {
-            eyebrow: "Pagina cazare",
-            title: "Cazare langa Arena Nationala - Serene Studio",
-            text: "Studio privat in Sector 2, ~14 minute pe jos de stadion. Self check-in si rezervare online directa.",
+            eyebrow: "Pagină cazare",
+            title: "Cazare lângă Arena Națională - Serene Studio",
+            text: "Studio privat în Sector 2, ~14 minute pe jos de stadion. Self check-in și rezervare online directă.",
             href: "/cazare-langa-arena-nationala/"
           }
         ]
       }
     ],
     faq: [
-      { q: "Cat e drumul pe jos de la Serene Studio la Arena Nationala?", a: "Aproximativ 14 minute la pas mediu (~1,1-1,3 km), in functie de poarta de acces. In zile de eveniment, adauga 5-15 minute pentru filtrele de acces." },
-      { q: "Care e ruta cea mai simpla pe jos?", a: "Iesi din Serene Studio (Str. Alexandru Zagoritz 12) spre Piata Muncii, apoi continui pe Bulevardul Basarabia pana la Arena Nationala (Bd. Basarabia 37-39)." },
-      { q: "Pot merge pe jos seara dupa concert?", a: "Da. Mersul pe jos este de obicei mai predictibil decat taxiul/ridesharingul imediat dupa eveniment, cand tarifele si timpii de asteptare cresc." },
-      { q: "Cat trebuie sa plec mai devreme pentru un meci?", a: "Pentru meciuri importante (nationala, Champions League) pleaca de la Serene Studio cu cel putin 60-90 minute inainte de ora din bilet pentru filtrele de acces." },
+      { q: "Cât e drumul pe jos de la Serene Studio la Arena Națională?", a: "Aproximativ 14 minute la pas mediu (~1,1-1,3 km), în funcție de poarta de acces. În zile de eveniment, adaugă 5-15 minute pentru filtrele de acces." },
+      { q: "Care e ruta cea mai simplă pe jos?", a: "Ieși din Serene Studio (Str. Alexandru Zagoritz 12) spre Piața Muncii, apoi continui pe Bulevardul Basarabia până la Arena Națională (Bd. Basarabia 37-39)." },
+      { q: "Pot merge pe jos seara după concert?", a: "Da. Mersul pe jos este de obicei mai predictibil decât taxiul/ridesharingul imediat după eveniment, când tarifele și timpii de așteptare cresc." },
+      { q: "Cât trebuie să plec mai devreme pentru un meci?", a: "Pentru meciuri importante (națională, Champions League) pleacă de la Serene Studio cu cel puțin 60-90 minute înainte de ora din bilet pentru filtrele de acces." },
       ...commonFaqRo
     ]
   },
@@ -121,29 +121,29 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-langa-spitalul-victor-babes-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-victor-babes-hospital-bucharest",
-    title: "Cazare langa Spitalul Victor Babes Bucuresti",
-    description: "Cazare privata in Sector 2 pentru apartinatori sau oaspeti care cauta acces rapid catre Spitalul Victor Babes Bucuresti.",
-    keyword: "cazare langa Spitalul Victor Babes Bucuresti",
+    title: "Cazare lângă Spitalul Victor Babeș București",
+    description: "Cazare privată în Sector 2 pentru aparținători sau oaspeți care caută acces rapid către Spitalul Victor Babeș București.",
+    keyword: "cazare langa Spitalul Victor Babeș Bucuresti",
     date: "2026-04-30",
     intro:
-      "O cazare langa Spitalul Victor Babes este utila pentru apartinatori sau persoane care au program medical in estul Bucurestiului.",
+      "O cazare lângă Spitalul Victor Babeș este utilă pentru aparținători sau persoane care au program medical în estul Bucureștiului.",
     ctaReferer: "website_blog_victor_babes",
     sections: [
       {
-        title: "Este Serene Studio potrivit pentru apartinatori?",
-        intro: "Serene Studio poate fi potrivit pentru apartinatori care vor un spatiu privat, linistit si usor de rezervat online.",
+        title: "Este Serene Studio potrivit pentru aparținători?",
+        intro: "Serene Studio poate fi potrivit pentru aparținători care vor un spațiu privat, liniștit și ușor de rezervat online.",
         paragraphs: [
-          "Proprietatea nu ofera servicii medicale si nu promite proximitate maxima fata de spital. Valoarea vine din intimitate, curatenie, chicineta si acces bun catre zona Piata Muncii - Mihai Bravu - Iancului.",
-          "Pentru consultatii, internari sau vizite, verifica intotdeauna traseul exact in Google Maps inainte de plecare."
+          "Proprietatea nu oferă servicii medicale și nu promite proximitate maximă față de spital. Valoarea vine din intimitate, curățenie, chicinetă și acces bun către zona Piața Muncii - Mihai Bravu - Iancului.",
+          "Pentru consultații, internări sau vizite, verifică întotdeauna traseul exact în Google Maps înainte de plecare."
         ],
-        table: { headers: ["Spital", "De ce conteaza", "Distanta / timp"], rows: hospitalRows.ro }
+        table: { headers: ["Spital", "De ce contează", "Distanța / timp"], rows: hospitalRows.ro }
       },
       {
-        title: "Ce ajuta intr-un sejur de cateva zile?",
-        intro: "Chicineta, Wi-Fi-ul rapid si self-check-in-ul reduc frictiunea cand programul este variabil.",
+        title: "Ce ajuta într-un sejur de câteva zile?",
+        intro: "Chicineta, Wi-Fi-ul rapid și self-check-in-ul reduc fricțiunea când programul este variabil.",
         paragraphs: [
-          "Poti folosi frigiderul, cuptorul cu microunde, aparatul de cafea si fierbatorul. Nu exista aragaz sau plita. Ai baie privata, prosoape si spatiu potrivit pentru odihna intre drumuri.",
-          "Check-in-ul online se completeaza inainte de sosire, iar dupa completarea datelor necesare primesti codul pentru cutia de chei de la poarta."
+          "Poți folosi frigiderul, cuptorul cu microunde, aparatul de cafea și fierbătorul. Nu există aragaz sau plită. Ai baie privată, prosoape și spațiu potrivit pentru odihnă între drumuri.",
+          "Check-in-ul online se completează înainte de sosire, iar după completarea datelor necesare primești codul pentru cutia de chei de la poartă."
         ]
       }
     ],
@@ -153,29 +153,29 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-langa-spitalul-monza-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-monza-hospital-bucharest",
-    title: "Cazare langa Spitalul Monza Bucuresti",
-    description: "Studio privat in Bucuresti pentru oaspeti care cauta cazare linistita cu acces catre Spitalul Monza.",
+    title: "Cazare lângă Spitalul Monza București",
+    description: "Studio privat în București pentru oaspeți care caută cazare liniștită cu acces către Spitalul Monza.",
     keyword: "cazare langa Spitalul Monza Bucuresti",
     date: "2026-04-30",
     intro:
-      "Cazarea langa Spitalul Monza este cautata de pacienti, apartinatori si persoane care au nevoie de un spatiu privat in perioada controalelor.",
+      "Cazarea lângă Spitalul Monza este căutată de pacienți, aparținători și persoane care au nevoie de un spațiu privat în perioada controalelor.",
     ctaReferer: "website_blog_monza",
     sections: [
       {
-        title: "Ce ofera Serene Studio pentru un sejur legat de Spitalul Monza?",
-        intro: "Serene Studio ofera un studio privat, linistit, cu self-check-in si rezervare online.",
+        title: "Ce oferă Serene Studio pentru un sejur legat de Spitalul Monza?",
+        intro: "Serene Studio oferă un studio privat, liniștit, cu self-check-in și rezervare online.",
         paragraphs: [
-          "Nu este o unitate medicala si nu promite servicii medicale. Este o cazare privata unde poti avea intimitate, Wi-Fi rapid, chicineta si acces rapid la transport/taxi.",
-          "Pentru traseul catre Spitalul Monza, verifica ruta exacta in aplicatia de navigatie in ziua deplasarii."
+          "Nu este o unitate medicală și nu promite servicii medicale. Este o cazare privată unde poți avea intimitate, Wi-Fi rapid, chicinetă și acces rapid la transport/taxi.",
+          "Pentru traseul către Spitalul Monza, verifică ruta exactă în aplicația de navigație în ziua deplasării."
         ],
-        table: { headers: ["Punct", "Utilitate", "Observatie"], rows: [["Spitalul Monza", "Consultatii, controale, apartinatori", "Verifica ruta in Google Maps"], ["Piata Muncii", "Metrou si transport public", "aprox. 4 minute pe jos"], ["Serene Studio", "Cazare privata", "rezervare online directa"]] }
+        table: { headers: ["Punct", "Utilitate", "Observație"], rows: [["Spitalul Monza", "Consultații, controale, aparținători", "Verifică ruta în Google Maps"], ["Piata Muncii", "Metrou și transport public", "aprox. 4 minute pe jos"], ["Serene Studio", "Cazare privată", "rezervare online directă"]] }
       },
       {
-        title: "Cum eviti apelurile pentru rezervare?",
-        intro: "Pretul si disponibilitatea se verifica direct, apasand butonul Rezerva online.",
+        title: "Cum eviți apelurile pentru rezervare?",
+        intro: "Prețul și disponibilitatea se verifică direct, apăsând butonul Rezervă online.",
         paragraphs: [
-          "Fluxul este gandit pentru autoservire: rezervi online, completezi check-in-ul online (ID, selfie, taxa de oras, semnatura regulament) si folosesti codul pentru cutia de chei din guidebook.",
-          "Telefonul ramane util pentru urgente sau pentru intrebari care nu se gasesc in guidebook."
+          "Fluxul este gândit pentru autoservire: rezervi online, completezi check-in-ul online (ID, selfie, taxa de oraș, semnătură regulament) și folosești codul pentru cutia de chei din guidebook.",
+          "Telefonul este doar pentru urgențe — nu facem rezervări telefonic. Toate răspunsurile uzuale le găsești în guidebook, accesibil oricând prin același link folosit la check-in-ul online."
         ]
       }
     ],
@@ -185,29 +185,29 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-piata-muncii-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-piata-muncii-bucharest",
-    title: "Cazare Piata Muncii Bucuresti",
-    description: "Ghid pentru cazare la Piata Muncii Bucuresti: metrou aproape, Arena Nationala, Sector 2 si rezervare online.",
+    title: "Cazare Piața Muncii București",
+    description: "Ghid pentru cazare la Piața Muncii București: metrou aproape, Arena Națională, Sector 2 și rezervare online.",
     keyword: "cazare Piata Muncii Bucuresti",
     date: "2026-04-30",
     intro:
-      "Cazarea la Piata Muncii este potrivita cand vrei metrou aproape si acces rapid catre Arena Nationala, Mihai Bravu, Iancului si centrul orasului.",
+      "Cazarea la Piața Muncii este potrivită când vrei metrou aproape și acces rapid către Arena Națională, Mihai Bravu, Iancului și centrul orașului.",
     ctaReferer: "website_blog_piata_muncii",
     sections: [
       {
-        title: "De ce conteaza metroul Piata Muncii?",
-        intro: "Metroul Piata Muncii este la aproximativ 4 minute de mers pe jos de Serene Studio.",
+        title: "De ce contează metroul Piața Muncii?",
+        intro: "Metroul Piața Muncii este la aproximativ 4 minute de mers pe jos de Serene Studio.",
         paragraphs: [
-          "Pentru oaspeti, metroul inseamna trasee mai predictibile decat traficul de suprafata. Din zona poti ajunge rapid catre centru, Gara de Nord prin conexiuni si alte zone utile.",
-          "Serene Studio este pe Strada Alexandru Zagoritz 12, intr-o zona rezidentiala linistita."
+          "Pentru oaspeți, metroul înseamnă trasee mai predictibile decât traficul de suprafață. Din zonă poți ajunge rapid către centru, Gara de Nord prin conexiuni și alte zone utile.",
+          "Serene Studio este pe Strada Alexandru Zagoritz 12, într-o zonă rezidențială liniștită."
         ],
-        table: { headers: ["Loc", "Rol", "Timp / distanta"], rows: locationRows.ro }
+        table: { headers: ["Loc", "Rol", "Timp / distanță"], rows: locationRows.ro }
       },
       {
-        title: "Ce tip de cazare gasesti aici?",
-        intro: "Serene Studio este un singur studio privat, nu hotel si nu apartament impartit.",
+        title: "Ce tip de cazare găsești aici?",
+        intro: "Serene Studio este un singur studio privat, nu hotel și nu apartament împărțit.",
         paragraphs: [
-          "Ai pat matrimonial, baie privata, chicineta, Wi-Fi rapid, terasa/curte si parcare gratuita pe strada.",
-          "Copiii sunt acceptati, dar dorm cu parintii in acelasi pat matrimonial. Animalele nu sunt acceptate."
+          "Ai pat matrimonial, baie privată, chicinetă, Wi-Fi rapid, terasă/curte și parcare gratuită pe stradă.",
+          "Copiii sunt acceptati, dar dorm cu părinții în același pat matrimonial. Animalele nu sunt acceptate."
         ]
       }
     ],
@@ -217,29 +217,29 @@ export const blogPosts: BlogPost[] = [
     slug: "cum-ajungi-de-la-otopeni-la-piata-muncii",
     locale: "ro",
     translationSlug: "how-to-get-from-otopeni-to-piata-muncii",
-    title: "Cum ajungi de la Otopeni la Piata Muncii",
-    description: "Rute practice de la Aeroportul Otopeni la Piata Muncii si Serene Studio: tren, metrou, taxi sau ridesharing.",
+    title: "Cum ajungi de la Otopeni la Piața Muncii",
+    description: "Rute practice de la Aeroportul Otopeni la Piața Muncii și Serene Studio: tren, metrou, taxi sau ridesharing.",
     keyword: "Otopeni Piata Muncii, aeroport Serene Studio Bucuresti",
     date: "2026-04-30",
     intro:
-      "De la Aeroportul Otopeni la Piata Muncii poti ajunge cu trenul pana la Gara de Nord si apoi metrou/taxi, sau direct cu taxi/ridesharing.",
+      "De la Aeroportul Otopeni la Piața Muncii poți ajunge cu trenul până la Gara de Nord și apoi metrou/taxi, sau direct cu taxi/ridesharing.",
     ctaReferer: "website_blog_otopeni",
     sections: [
       {
         title: "Care este ruta cu transport public?",
-        intro: "Ruta tipica este tren Aeroport Otopeni - Gara de Nord, apoi metrou si/sau taxi catre Piata Muncii.",
+        intro: "Ruta tipică este tren Aeroport Otopeni - Gara de Nord, apoi metrou și/sau taxi către Piața Muncii.",
         paragraphs: [
-          "Verifica programul trenului si traseul metroului in ziua sosirii, pentru ca orarele si lucrarile pot schimba timpul total.",
-          "Daca ai bagaj mare sau ajungi tarziu, taxiul sau ridesharingul poate fi mai simplu."
+          "Verifică programul trenului și traseul metroului în ziua sosirii, pentru că orarele și lucrările pot schimba timpul total.",
+          "Dacă ai bagaj mare sau ajungi târziu, taxiul sau ridesharingul poate fi mai simplu."
         ],
-        table: { headers: ["Optiune", "Avantaj", "Observatie"], rows: [["Tren + metrou", "cost predictibil", "verifica orarul"], ["Taxi/ridesharing", "mai simplu cu bagaje", "timp dependent de trafic"], ["Transfer privat", "comod", "necesita organizare separata"]] }
+        table: { headers: ["Opțiune", "Avantaj", "Observație"], rows: [["Tren + metrou", "cost predictibil", "verifică orarul"], ["Taxi/ridesharing", "mai simplu cu bagaje", "timp dependent de trafic"], ["Transfer privat", "comod", "necesită organizare separată"]] }
       },
       {
-        title: "Ce trebuie sa faci inainte de sosire?",
-        intro: "Finalizeaza check-in-ul online inainte sa ajungi la poarta.",
+        title: "Ce trebuie să faci înainte de sosire?",
+        intro: "Finalizează check-in-ul online înainte să ajungi la poartă.",
         paragraphs: [
-          "Dupa check-in-ul online si completarea datelor necesare, folosesti codul de acces pentru cutia de chei de la poarta.",
-          "Pentru rezervare, foloseste butonul Rezerva online, unde vezi pretul si disponibilitatea reala."
+          "După check-in-ul online și completarea datelor necesare, folosești codul de acces pentru cutia de chei de la poartă.",
+          "Pentru rezervare, folosește butonul Rezervă online, unde vezi prețul și disponibilitatea reală."
         ]
       }
     ],
@@ -249,27 +249,27 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-langa-parcul-ior-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-ior-park-bucharest",
-    title: "Cazare langa Parcul IOR Bucuresti",
-    description: "Cazare privata in Sector 2 cu acces catre Parcul IOR, Piata Muncii si Arena Nationala.",
+    title: "Cazare lângă Parcul IOR București",
+    description: "Cazare privată în Sector 2 cu acces către Parcul IOR, Piața Muncii și Arena Națională.",
     keyword: "cazare langa Parcul IOR Bucuresti",
     date: "2026-04-30",
     intro:
-      "Cazarea langa Parcul IOR este utila daca vrei un parc mare aproape si acces bun catre Piata Muncii si Sector 2.",
+      "Cazarea lângă Parcul IOR este utilă dacă vrei un parc mare aproape și acces bun către Piața Muncii și Sector 2.",
     ctaReferer: "website_blog_ior",
     sections: [
       {
-        title: "De ce sa alegi zona Piata Muncii - IOR?",
-        intro: "Zona combina metrou, acces la parc, Arena Nationala si o atmosfera rezidentiala.",
+        title: "De ce să alegi zona Piața Muncii - IOR?",
+        intro: "Zona combină metrou, acces la parc, Arena Națională și o atmosferă rezidențială.",
         paragraphs: [
-          "Serene Studio este aproape de Piata Muncii, iar Parcul IOR / Alexandru Ioan Cuza este accesibil rapid cu transport public, taxi sau metrou.",
-          "Pentru timpul exact de mers, verifica ruta in aplicatia de navigatie inainte sa pleci."
+          "Serene Studio este aproape de Piața Muncii, iar Parcul IOR / Alexandru Ioan Cuza este accesibil rapid cu transport public, taxi sau metrou.",
+          "Pentru timpul exact de mers, verifică ruta în aplicația de navigație înainte să pleci."
         ],
-        table: { headers: ["Loc", "Utilitate", "Timp / distanta"], rows: locationRows.ro.slice(0, 6) }
+        table: { headers: ["Loc", "Utilitate", "Timp / distanță"], rows: locationRows.ro.slice(0, 6) }
       },
       {
         title: "Ce include studioul?",
-        intro: "Studioul include facilitatile importante pentru un sejur scurt.",
-        paragraphs: ["Ai pat matrimonial, baie privata, chicineta, Wi-Fi rapid si terasa/curte. Parcarea este gratuita pe strada si de obicei disponibila in apropiere."]
+        intro: "Studioul include facilitățile importante pentru un sejur scurt.",
+        paragraphs: ["Ai pat matrimonial, baie privată, chicinetă, Wi-Fi rapid și terasă/curte. Parcarea este gratuită pe stradă și de obicei disponibilă în apropiere."]
       }
     ],
     faq: commonFaqRo
@@ -278,26 +278,26 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-sector-2-bucuresti-studio-privat",
     locale: "ro",
     translationSlug: "sector-2-bucharest-private-studio-accommodation",
-    title: "Cazare Sector 2 Bucuresti - studio privat",
-    description: "Studio privat in Sector 2 Bucuresti, aproape de Piata Muncii, Arena Nationala si spitale, cu rezervare online.",
+    title: "Cazare Sector 2 București - studio privat",
+    description: "Studio privat în Sector 2 București, aproape de Piața Muncii, Arena Națională și spitale, cu rezervare online.",
     keyword: "cazare Sector 2 Bucuresti studio privat",
     date: "2026-04-30",
     intro:
-      "Un studio privat in Sector 2 este potrivit cand vrei mai multa intimitate decat intr-o camera de hotel si acces rapid la metrou.",
+      "Un studio privat în Sector 2 este potrivit când vrei mai multă intimitate decât într-o cameră de hotel și acces rapid la metrou.",
     ctaReferer: "website_blog_sector2",
     sections: [
       {
-        title: "Ce diferentiaza un studio privat?",
-        intro: "Intr-un studio privat rezervi intregul spatiu, nu imparti baia sau chicineta cu alti oaspeti.",
+        title: "Ce diferențiază un studio privat?",
+        intro: "Într-un studio privat rezervi întregul spațiu, nu împarți baia sau chicineta cu alți oaspeți.",
         paragraphs: [
-          "Serene Studio are un pat matrimonial, baie privata, chicineta si zona exterioara. Este gandit pentru oaspeti care vor liniste si un flux de rezervare simplu.",
-          "Check-in-ul este online, iar dupa completarea datelor necesare primesti codul pentru cutia de chei de la poarta."
+          "Serene Studio are un pat matrimonial, baie privată, chicinetă și zona exterioară. Este gândit pentru oaspeți care vor liniște și un flux de rezervare simplu.",
+          "Check-in-ul este online, iar după completarea datelor necesare primești codul pentru cutia de chei de la poartă."
         ]
       },
       {
         title: "Ce puncte utile sunt aproape?",
-        intro: "Piata Muncii, Arena Nationala, Mega Mall si mai multe spitale sunt entitati importante pentru cautari locale.",
-        table: { headers: ["Loc", "Utilitate", "Timp / distanta"], rows: locationRows.ro.slice(0, 5) }
+        intro: "Piața Muncii, Arena Națională, Mega Mall și mai multe spitale sunt entități importante pentru căutări locale.",
+        table: { headers: ["Loc", "Utilitate", "Timp / distanță"], rows: locationRows.ro.slice(0, 5) }
       }
     ],
     faq: commonFaqRo
@@ -306,27 +306,27 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-langa-mega-mall-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-mega-mall-bucharest",
-    title: "Cazare langa Mega Mall Bucuresti",
-    description: "Studio privat langa Piata Muncii, cu acces catre Mega Mall, Arena Nationala si Sector 2.",
+    title: "Cazare lângă Mega Mall București",
+    description: "Studio privat lângă Piața Muncii, cu acces către Mega Mall, Arena Națională și Sector 2.",
     keyword: "cazare langa Mega Mall Bucuresti",
     date: "2026-04-30",
     intro:
-      "Cazarea langa Mega Mall este practica daca vrei restaurante, cinema si cumparaturi aproape de zona Piata Muncii - Arena Nationala.",
+      "Cazarea lângă Mega Mall este practica dacă vrei restaurante, cinema și cumpărături aproape de zona Piața Muncii - Arena Națională.",
     ctaReferer: "website_blog_mega_mall",
     sections: [
       {
-        title: "Cat este pana la Mega Mall?",
-        intro: "Mega Mall este la aproximativ 18-20 de minute pe jos de Serene Studio, dar timpul trebuie verificat inainte de plecare.",
+        title: "Cât este până la Mega Mall?",
+        intro: "Mega Mall este la aproximativ 18-20 de minute pe jos de Serene Studio, dar timpul trebuie verificat înainte de plecare.",
         paragraphs: [
-          "Pentru oaspeti, Mega Mall poate fi util pentru masa, cumparaturi rapide sau cinema. Arena Nationala si Piata Muncii sunt de asemenea aproape.",
-          "Serene Studio ramane intr-o zona rezidentiala, potrivita pentru odihna dupa o zi plina."
+          "Pentru oaspeți, Mega Mall poate fi util pentru masă, cumpărături rapide sau cinema. Arena Națională și Piața Muncii sunt de asemenea aproape.",
+          "Serene Studio rămâne într-o zonă rezidențială, potrivită pentru odihnă după o zi plina."
         ],
-        table: { headers: ["Loc", "Utilitate", "Timp / distanta"], rows: locationRows.ro.slice(0, 5) }
+        table: { headers: ["Loc", "Utilitate", "Timp / distanță"], rows: locationRows.ro.slice(0, 5) }
       },
       {
         title: "Cum rezervi?",
-        intro: "Rezervarea se face online, apasand butonul Rezerva online; check-in-ul ulterior se completeaza tot online.",
-        paragraphs: ["Aceasta separare ajuta: rezervarea online gestioneaza disponibilitatea si pretul, iar check-in-ul online (ID, selfie, taxa de oras, regulament) pregateste accesul self-check-in cu cod pentru cutia de chei, livrat in guidebook."]
+        intro: "Rezervarea se face online, apăsând butonul Rezervă online; check-in-ul ulterior se completează tot online.",
+        paragraphs: ["Această separare ajută: rezervarea online gestionează disponibilitatea și prețul, iar check-in-ul online (ID, selfie, taxa de oraș, regulament) pregătește accesul self-check-in cu cod pentru cutia de chei, livrat în guidebook."]
       }
     ],
     faq: commonFaqRo
@@ -335,27 +335,27 @@ export const blogPosts: BlogPost[] = [
     slug: "self-check-in-bucuresti-cazare-studio-privat",
     locale: "ro",
     translationSlug: "self-check-in-bucharest-private-studio",
-    title: "Self check-in in Bucuresti - cazare in studio privat",
-    description: "Cum functioneaza self-check-in-ul la Serene Studio Bucuresti: rezervare online, check-in online cu verificare ID si cutie de chei la poarta.",
+    title: "Self check-in în București - cazare în studio privat",
+    description: "Cum funcționează self-check-in-ul la Serene Studio București: rezervare online, check-in online cu verificare ID și cutie de chei la poartă.",
     keyword: "self check-in Bucuresti cazare",
     date: "2026-04-30",
     intro:
-      "Self check-in-ul in Bucuresti este util daca ajungi tarziu sau nu vrei sa depinzi de predarea fizica a cheii.",
+      "Self check-in-ul în București este util dacă ajungi târziu sau nu vrei să depinzi de predarea fizică a cheii.",
     ctaReferer: "website_blog_self_checkin",
     sections: [
       {
-        title: "Cum functioneaza self-check-in-ul la Serene Studio?",
-        intro: "Fluxul este complet online pana la acces: rezervare online, check-in online cu verificare ID si selfie, apoi codul pentru cutia de chei in guidebook.",
+        title: "Cum funcționează self-check-in-ul la Serene Studio?",
+        intro: "Fluxul este complet online până la acces: rezervare online, check-in online cu verificare ID și selfie, apoi codul pentru cutia de chei în guidebook.",
         paragraphs: [
-          "Dupa ora 14:00 poti intra pe baza instructiunilor din guidebook. Cheia este in cutia de chei de la poarta, iar codul devine disponibil dupa finalizarea check-in-ului online.",
-          "Este important sa finalizezi check-in-ul online inainte sa ajungi, ca sa eviti intarzieri. Daca pozele de la verificare nu sunt clare, rezervarea poate fi anulata fara ramburs."
+          "După ora 14:00 poți intra pe baza instrucțiunilor din guidebook. Cheia este în cutia de chei de la poartă, iar codul devine disponibil după finalizarea check-in-ului online.",
+          "Este important să finalizezi check-in-ul online înainte să ajungi, ca să eviți întârzieri. Dacă pozele de la verificare nu sunt clare, rezervarea poate fi anulată fără ramburs."
         ],
-        table: { headers: ["Pas", "Unde se face", "Rezultat"], rows: [["Rezervare", "Buton Rezerva online", "confirmare pe email"], ["Check-in online", "Link primit dupa rezervare", "ID, selfie, taxa de oras, regulament"], ["Acces", "Cutia de chei de la poarta", "codul disponibil in guidebook"]] }
+        table: { headers: ["Pas", "Unde se face", "Rezultat"], rows: [["Rezervare", "Buton Rezervă online", "confirmare pe email"], ["Check-in online", "Link primit după rezervare", "ID, selfie, taxa de oraș, regulament"], ["Acces", "Cutia de chei de la poartă", "codul disponibil în guidebook"]] }
       },
       {
-        title: "Cand trebuie sa contactezi personalul?",
-        intro: "Contactul este pentru urgente sau probleme care nu se pot rezolva din guidebook.",
-        paragraphs: ["Pentru disponibilitate si pret, foloseste butonul Rezerva online. Pentru instructiuni si raspunsuri uzuale, deschide guidebook-ul prin acelasi link folosit la check-in-ul online."]
+        title: "Când trebuie să contactezi personalul?",
+        intro: "Contactul este pentru urgențe sau probleme care nu se pot rezolva din guidebook.",
+        paragraphs: ["Pentru disponibilitate și preț, folosește butonul Rezervă online. Pentru instrucțiuni și răspunsuri uzuale, deschide guidebook-ul prin același link folosit la check-in-ul online."]
       }
     ],
     faq: commonFaqRo
@@ -364,26 +364,26 @@ export const blogPosts: BlogPost[] = [
     slug: "cazare-cu-chicineta-bucuresti-piata-muncii",
     locale: "ro",
     translationSlug: "accommodation-with-kitchenette-bucharest-piata-muncii",
-    title: "Cazare cu chicineta in Bucuresti langa Piata Muncii",
-    description: "Studio privat cu chicineta langa Piata Muncii, potrivit pentru sejururi scurte si rezervare online.",
+    title: "Cazare cu chicinetă în București lângă Piața Muncii",
+    description: "Studio privat cu chicinetă lângă Piața Muncii, potrivit pentru sejururi scurte și rezervare online.",
     keyword: "cazare cu chicineta Bucuresti Piata Muncii",
     date: "2026-04-30",
     intro:
-      "Cazarea cu chicineta in Bucuresti este utila cand vrei frigider, cuptor cu microunde, cafea sau ceai fara sa depinzi complet de restaurante.",
+      "Cazarea cu chicinetă în București este utilă când vrei frigider, cuptor cu microunde, cafea sau ceai fără să depinzi complet de restaurante.",
     ctaReferer: "website_blog_kitchenette",
     sections: [
       {
         title: "Ce include chicineta?",
-        intro: "Chicineta Serene Studio este potrivita pentru mic dejun, bauturi si incalzire la cuptorul cu microunde.",
+        intro: "Chicineta Serene Studio este potrivită pentru mic dejun, băuturi și încălzire la cuptorul cu microunde.",
         paragraphs: [
-          "Ai frigider, cuptor cu microunde, aparat de cafea si fierbator. Studioul include si cafea, ceai si apa filtrata, conform informatiilor existente.",
-          "Nu exista aragaz sau plita. Pozitionarea corecta este chicineta pentru sejururi scurte, mic dejun, bauturi si incalzire la microunde, nu bucatarie pentru gatit."
+          "Ai frigider, cuptor cu microunde, aparat de cafea și fierbător. Studioul include și cafea, ceai și apă filtrată, conform informațiilor existente.",
+          "Nu există aragaz sau plită. Poziționarea corectă este chicinetă pentru sejururi scurte, mic dejun, băuturi și încălzire la microunde, nu bucătărie pentru gătit."
         ]
       },
       {
-        title: "Pentru cine conteaza chicineta?",
-        intro: "Chicineta ajuta cuplurile, calatorii business si apartinatorii care stau cateva zile.",
-        table: { headers: ["Oaspete", "De ce ajuta", "Observatie"], rows: [["Cupluri", "mic dejun simplu", "un singur pat matrimonial"], ["Business", "cafea si gustari", "Wi-Fi rapid"], ["Apartinatori", "frigider si microunde intre drumuri", "acces catre spitale"]] }
+        title: "Pentru cine contează chicineta?",
+        intro: "Chicineta ajută cuplurile, călătorii business și aparținătorii care stau câteva zile.",
+        table: { headers: ["Oaspete", "De ce ajută", "Observație"], rows: [["Cupluri", "mic dejun simplu", "un singur pat matrimonial"], ["Business", "cafea și gustări", "Wi-Fi rapid"], ["Aparținători", "frigider și microunde între drumuri", "acces către spitale"]] }
       }
     ],
     faq: commonFaqRo
@@ -391,15 +391,15 @@ export const blogPosts: BlogPost[] = [
 ];
 
 const englishPosts: BlogPost[] = [
-  ["accommodation-near-victor-babes-hospital-bucharest", "cazare-langa-spitalul-victor-babes-bucuresti", "Accommodation near Victor Babes Hospital Bucharest", "Private accommodation in Sector 2 for relatives or guests who need access to Victor Babes Hospital Bucharest.", "accommodation near Victor Babes Hospital Bucharest", "Accommodation near Victor Babes Hospital can help relatives or guests with medical appointments in eastern Bucharest."],
-  ["accommodation-near-monza-hospital-bucharest", "cazare-langa-spitalul-monza-bucuresti", "Accommodation near Monza Hospital Bucharest", "Private studio in Bucharest for guests looking for quiet accommodation with access to Monza Hospital.", "accommodation near Monza Hospital Bucharest", "Accommodation near Monza Hospital is searched by guests who need a private space during appointments or checks."],
-  ["accommodation-piata-muncii-bucharest", "cazare-piata-muncii-bucuresti", "Accommodation in Piata Muncii Bucharest", "Guide to accommodation in Piata Muncii Bucharest: nearby metro, National Arena, Sector 2 and online booking.", "accommodation Piata Muncii Bucharest", "Accommodation in Piata Muncii is useful when you want nearby metro access and routes to the National Arena, Mihai Bravu, Iancului and the center."],
-  ["how-to-get-from-otopeni-to-piata-muncii", "cum-ajungi-de-la-otopeni-la-piata-muncii", "How to get from Otopeni to Piata Muncii", "Practical routes from Otopeni Airport to Piata Muncii and Serene Studio: train, metro, taxi or ridesharing.", "Otopeni to Piata Muncii", "From Otopeni Airport to Piata Muncii you can travel by train to Gara de Nord and then metro/taxi, or directly by taxi/ridesharing."],
-  ["accommodation-near-ior-park-bucharest", "cazare-langa-parcul-ior-bucuresti", "Accommodation near IOR Park Bucharest", "Private accommodation in Sector 2 with access to IOR Park, Piata Muncii and the National Arena.", "accommodation near IOR Park Bucharest", "Accommodation near IOR Park is useful if you want a large park nearby and good access to Piata Muncii and Sector 2."],
-  ["sector-2-bucharest-private-studio-accommodation", "cazare-sector-2-bucuresti-studio-privat", "Sector 2 Bucharest accommodation - private studio", "Private studio in Sector 2 Bucharest, close to Piata Muncii, National Arena and hospitals, with online booking.", "Sector 2 Bucharest private studio accommodation", "A private studio in Sector 2 works well when you want more privacy than a hotel room and quick metro access."],
-  ["accommodation-near-mega-mall-bucharest", "cazare-langa-mega-mall-bucuresti", "Accommodation near Mega Mall Bucharest", "Private studio near Piata Muncii, with access to Mega Mall, National Arena and Sector 2.", "accommodation near Mega Mall Bucharest", "Accommodation near Mega Mall is practical if you want restaurants, cinema and shopping near Piata Muncii - National Arena."],
-  ["self-check-in-bucharest-private-studio", "self-check-in-bucuresti-cazare-studio-privat", "Self check-in in Bucharest - private studio accommodation", "How self check-in works at Serene Studio Bucharest: online booking, online check-in with ID verification and gate key box.", "self check-in Bucharest accommodation", "Self check-in in Bucharest is useful if you arrive late or prefer not to depend on in-person key handover."],
-  ["accommodation-with-kitchenette-bucharest-piata-muncii", "cazare-cu-chicineta-bucuresti-piata-muncii", "Accommodation with kitchenette in Bucharest near Piata Muncii", "Private studio with kitchenette near Piata Muncii, suitable for short stays and online booking.", "accommodation with kitchenette Bucharest Piata Muncii", "Accommodation with a kitchenette in Bucharest is useful when you want a fridge, microwave, coffee or tea without depending completely on restaurants."]
+  ["accommodation-near-victor-babes-hospital-bucharest", "cazare-langa-spitalul-victor-babes-bucuresti", "Accommodation near Victor Babes Hospital Bucharest", "Private accommodation în Sector 2 for relatives or guests who need access to Victor Babes Hospital Bucharest.", "accommodation near Victor Babes Hospital Bucharest", "Accommodation near Victor Babes Hospital can help relatives or guests with medical appointments în eastern Bucharest."],
+  ["accommodation-near-monza-hospital-bucharest", "cazare-langa-spitalul-monza-bucuresti", "Accommodation near Monza Hospital Bucharest", "Private studio în Bucharest for guests looking for quiet accommodation with access to Monza Hospital.", "accommodation near Monza Hospital Bucharest", "Accommodation near Monza Hospital is searched by guests who need a private space during appointments or checks."],
+  ["accommodation-piata-muncii-bucharest", "cazare-piata-muncii-bucuresti", "Accommodation în Piața Muncii Bucharest", "Guide to accommodation în Piața Muncii Bucharest: nearby metro, National Arena, Sector 2 and online booking.", "accommodation Piața Muncii Bucharest", "Accommodation în Piața Muncii is useful when you want nearby metro access and routes to the National Arena, Mihai Bravu, Iancului and the center."],
+  ["how-to-get-from-otopeni-to-piata-muncii", "cum-ajungi-de-la-otopeni-la-piata-muncii", "How to get from Otopeni to Piața Muncii", "Practical routes from Otopeni Airport to Piața Muncii and Serene Studio: train, metro, taxi or ridesharing.", "Otopeni to Piața Muncii", "From Otopeni Airport to Piața Muncii you can travel by train to Gara de Nord and then metro/taxi, or directly by taxi/ridesharing."],
+  ["accommodation-near-ior-park-bucharest", "cazare-langa-parcul-ior-bucuresti", "Accommodation near IOR Park Bucharest", "Private accommodation în Sector 2 with access to IOR Park, Piața Muncii and the National Arena.", "accommodation near IOR Park Bucharest", "Accommodation near IOR Park is useful if you want a large park nearby and good access to Piața Muncii and Sector 2."],
+  ["sector-2-bucharest-private-studio-accommodation", "cazare-sector-2-bucuresti-studio-privat", "Sector 2 Bucharest accommodation - private studio", "Private studio în Sector 2 Bucharest, close to Piața Muncii, National Arena and hospitals, with online booking.", "Sector 2 Bucharest private studio accommodation", "A private studio în Sector 2 works well when you want more privacy than a hotel room and quick metro access."],
+  ["accommodation-near-mega-mall-bucharest", "cazare-langa-mega-mall-bucuresti", "Accommodation near Mega Mall Bucharest", "Private studio near Piața Muncii, with access to Mega Mall, National Arena and Sector 2.", "accommodation near Mega Mall Bucharest", "Accommodation near Mega Mall is practical if you want restaurants, cinema and shopping near Piața Muncii - National Arena."],
+  ["self-check-in-bucharest-private-studio", "self-check-in-bucuresti-cazare-studio-privat", "Self check-in în Bucharest - private studio accommodation", "How self check-in works at Serene Studio Bucharest: online booking, online check-in with ID verification and gate key box.", "self check-in Bucharest accommodation", "Self check-in în Bucharest is useful if you arrive late or prefer not to depend on in-person key handover."],
+  ["accommodation-with-kitchenette-bucharest-piata-muncii", "cazare-cu-chicineta-bucuresti-piata-muncii", "Accommodation with kitchenette în Bucharest near Piața Muncii", "Private studio with kitchenette near Piața Muncii, suitable for short stays and online booking.", "accommodation with kitchenette Bucharest Piața Muncii", "Accommodation with a kitchenette în Bucharest is useful when you want a fridge, microwave, coffee or tea without depending completely on restaurants."]
 ].map(([slug, translationSlug, title, description, keyword, intro]) => ({
   slug,
   locale: "en" as const,
@@ -544,35 +544,35 @@ const nearbyPostsRo: BlogPost[] = [
     slug: "cazare-langa-spitalul-copii-gomoiu-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-gomoiu-childrens-hospital-bucharest",
-    title: "Cazare langa Spitalul de Copii Dr. Victor Gomoiu Bucuresti - ghid pentru parinti",
+    title: "Cazare lângă Spitalul de Copii Dr. Victor Gomoiu București - ghid pentru părinți",
     description:
-      "Cazare privata in Sector 2 Bucuresti, la aproximativ 1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Ghid practic pentru parinti si insotitori.",
+      "Cazare privată în Sector 2 București, la aproximativ 1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Ghid practic pentru părinți și însoțitori.",
     keyword: "cazare Spitalul Gomoiu Bucuresti, parinti spital de copii",
     date: "2026-04-30",
     intro:
-      "Daca aduci copilul la Spitalul Clinic de Copii Dr. Victor Gomoiu, ai nevoie de cazare aproape, linistita si flexibila. Serene Studio se afla pe Strada Alexandru Zagoritz 12, Sector 2, la aproximativ 1,5 km de Bulevardul Basarabia 21.",
+      "Dacă aduci copilul la Spitalul Clinic de Copii Dr. Victor Gomoiu, ai nevoie de cazare aproape, liniștită și flexibilă. Serene Studio se află pe Strada Alexandru Zagoritz 12, Sector 2, la aproximativ 1,5 km de Bulevardul Basarabia 21.",
     ctaReferer: "website_blog_gomoiu",
     sections: [
       {
-        title: "Adresa Spitalului Gomoiu si cum ajungi acolo",
-        intro: "Spitalul are sediul principal pe Bulevardul Basarabia 21, Sector 2, cod postal 022102. Ambulatoriul este la Strada Rodul Pamantului 2-4, Sector 3.",
+        title: "Adresa Spitalului Gomoiu și cum ajungi acolo",
+        intro: "Spitalul are sediul principal pe Bulevardul Basarabia 21, Sector 2, cod poștal 022102. Ambulatoriul este la Strada Rodul Pamantului 2-4, Sector 3.",
         paragraphs: [
-          "De la Serene Studio, drumul cu masina dureaza in jur de 5-7 minute, in functie de trafic. Bulevardul Basarabia este aproape de Arena Nationala si de Soseaua Mihai Bravu, deci ai mai multe rute alternative.",
-          "Daca preferi transportul public, statia de metrou Piata Muncii este la 4 minute pe jos de Serene Studio si te conecteaza rapid spre Iancului si Republica."
+          "De la Serene Studio, drumul cu mașina durează în jur de 5-7 minute, în funcție de trafic. Bulevardul Basarabia este aproape de Arena Națională și de Șoseaua Mihai Bravu, deci ai mai multe rute alternative.",
+          "Dacă preferi transportul public, stația de metrou Piața Muncii este la 4 minute pe jos de Serene Studio și te conecteaza rapid spre Iancului și Republica."
         ]
       },
       {
-        title: "Ce inseamna sa stai aproape cand copilul e internat",
-        intro: "Studioul are pat matrimonial, baie privata, chicineta si Wi-Fi rapid - util pentru video-call cu familia ramasa acasa.",
+        title: "Ce înseamnă sa stai aproape când copilul e internat",
+        intro: "Studioul are pat matrimonial, baie privată, chicinetă și Wi-Fi rapid - util pentru video-call cu familia rămasă acasa.",
         paragraphs: [
-          "Self check-in-ul functioneaza dupa ora 14:00. Codul cutiei de chei devine disponibil in guidebook dupa finalizarea check-in-ului online. Daca ajungi seara dupa o zi grea la spital, nu astepti la receptie.",
-          "Orele de liniste 22:00-09:00 ajuta la somn corect, mai ales inainte de o zi de operatie sau dupa o zi cu multe vizite."
+          "Self check-in-ul funcționează după ora 14:00. Codul cutiei de chei devine disponibil în guidebook după finalizarea check-in-ului online. Dacă ajungi seara după o zi grea la spital, nu astepti la receptie.",
+          "Orele de liniște 22:00-09:00 ajuta la somn corect, mai ales înainte de o zi de operație sau după o zi cu multe vizite."
         ]
       }
     ],
     faq: [
-      { q: "Care este adresa Spitalului Gomoiu?", a: "Sediul principal este pe Bulevardul Basarabia 21, Sector 2, Bucuresti, cod postal 022102. Ambulatoriul este pe Strada Rodul Pamantului 2-4, Sector 3." },
-      { q: "Cat e de la Serene Studio la Spitalul Gomoiu?", a: "Aproximativ 1,5 km - cateva minute cu masina sau taxi. Verifica ruta in Google Maps inainte de plecare." },
+      { q: "Care este adresa Spitalului Gomoiu?", a: "Sediul principal este pe Bulevardul Basarabia 21, Sector 2, București, cod poștal 022102. Ambulatoriul este pe Strada Rodul Pamantului 2-4, Sector 3." },
+      { q: "Cat e de la Serene Studio la Spitalul Gomoiu?", a: "Aproximativ 1,5 km - câteva minute cu mașina sau taxi. Verifică ruta în Google Maps înainte de plecare." },
       ...commonFaqRo
     ]
   },
@@ -580,35 +580,35 @@ const nearbyPostsRo: BlogPost[] = [
     slug: "cazare-langa-stadionul-dinamo-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-dinamo-stadium-bucharest",
-    title: "Cazare langa Stadionul Dinamo Bucuresti - studio privat in Sector 2",
+    title: "Cazare lângă Stadionul Dinamo București - studio privat în Sector 2",
     description:
-      "Studio privat in Sector 2 Bucuresti, aproape de Stadionul Dinamo si Arena Nationala. Self check-in, chicineta, baie privata si rezervare online directa pentru fani si oaspeti.",
+      "Studio privat în Sector 2 București, aproape de Stadionul Dinamo și Arena Națională. Self check-in, chicinetă, baie privată și rezervare online directă pentru fani și oaspeți.",
     keyword: "cazare Stadionul Dinamo Bucuresti, cazare Stefan cel Mare",
     date: "2026-04-30",
     intro:
-      "Cazarea langa Stadionul Dinamo este utila daca ai bilet la meci sau participi la un eveniment in zona Stefan cel Mare. Serene Studio este la cativa kilometri distanta, intr-o zona rezidentiala linistita din Sector 2.",
+      "Cazarea lângă Stadionul Dinamo este utilă dacă ai bilet la meci sau participi la un eveniment în zona Ștefan cel Mare. Serene Studio este la câțiva kilometri distanță, într-o zonă rezidențială liniștită din Sector 2.",
     ctaReferer: "website_blog_dinamo",
     sections: [
       {
         title: "Cum ajungi de la Serene Studio la Stadionul Dinamo",
-        intro: "Stadionul Dinamo se afla pe Soseaua Stefan cel Mare 7-9, Sector 2. Distanta de la Serene Studio este de aproximativ 3 km - 10-12 minute cu masina sau taxi, in functie de trafic.",
+        intro: "Stadionul Dinamo se află pe Șoseaua Ștefan cel Mare 7-9, Sector 2. Distanța de la Serene Studio este de aproximativ 3 km - 10-12 minute cu mașina sau taxi, în funcție de trafic.",
         paragraphs: [
-          "Pe metrou, mergi de la Piata Muncii pana la Iancului sau Stefan cel Mare si continui cu un taxi scurt. Pentru zile de meci, traseul cu metroul evita aglomeratia auto din zona stadionului.",
-          "Daca ai bilet la dubla Dinamo + Arena Nationala (concert sau alt eveniment), Serene Studio te plaseaza la mijloc intre cele doua puncte."
+          "Pe metrou, mergi de la Piața Muncii până la Iancului sau Ștefan cel Mare și continui cu un taxi scurt. Pentru zile de meci, traseul cu metroul evită aglomerația auto din zona stadionului.",
+          "Dacă ai bilet la dubla Dinamo + Arena Națională (concert sau alt eveniment), Serene Studio te plasează la mijloc între cele două puncte."
         ]
       },
       {
-        title: "De ce o zona rezidentiala dupa meci",
-        intro: "Strazile din jurul stadionului pot fi zgomotoase imediat dupa fluierul final. Serene Studio te scoate din fluxul de fani si te lasa sa dormi linistit.",
+        title: "De ce o zonă rezidențială după meci",
+        intro: "Străzile din jurul stadionului pot fi zgomotoase imediat după fluierul final. Serene Studio te scoate din fluxul de fani și te lasă să dormi liniștit.",
         paragraphs: [
-          "Studioul este privat, cu pat matrimonial, baie proprie si chicineta. Self check-in-ul te lasa sa intri tarziu fara intermediar, cu codul cutiei de chei dupa check-in-ul online.",
-          "Parcarea este gratuita pe strada si de obicei disponibila in apropiere - util cand ajungi tarziu si nu vrei sa cauti loc minute intregi."
+          "Studioul este privat, cu pat matrimonial, baie proprie și chicinetă. Self check-in-ul te lasă să intri târziu fără intermediar, cu codul cutiei de chei după check-in-ul online.",
+          "Parcarea este gratuită pe stradă și de obicei disponibilă în apropiere - util când ajungi târziu și nu vrei să cauți loc minute întregi."
         ]
       }
     ],
     faq: [
-      { q: "Cat e de la Serene Studio la Stadionul Dinamo?", a: "Aproximativ 3 km - 10-12 minute cu masina sau taxi, in functie de trafic. Verifica ruta in Google Maps." },
-      { q: "Pot ajunge cu metroul la stadion?", a: "Da, mergi de la Piata Muncii (la 4 min pe jos de Serene Studio) catre Iancului sau Stefan cel Mare si continui cu un taxi scurt." },
+      { q: "Cât e de la Serene Studio la Stadionul Dinamo?", a: "Aproximativ 3 km - 10-12 minute cu mașina sau taxi, în funcție de trafic. Verifică ruta în Google Maps." },
+      { q: "Pot ajunge cu metroul la stadion?", a: "Da, mergi de la Piața Muncii (la 4 min pe jos de Serene Studio) către Iancului sau Ștefan cel Mare și continui cu un taxi scurt." },
       ...commonFaqRo
     ]
   },
@@ -616,35 +616,35 @@ const nearbyPostsRo: BlogPost[] = [
     slug: "cazare-langa-spitalul-sf-pantelimon-bucuresti",
     locale: "ro",
     translationSlug: "accommodation-near-sf-pantelimon-hospital-bucharest",
-    title: "Cazare langa Spitalul Sf. Pantelimon Bucuresti - studio privat in Sector 2",
+    title: "Cazare lângă Spitalul Sf. Pantelimon București - studio privat în Sector 2",
     description:
-      "Studio privat in Sector 2 Bucuresti, la aproximativ 3 km de Spitalul Clinic de Urgenta Sf. Pantelimon. Self check-in, chicineta, baie privata si rezervare online pentru pacienti si apartinatori.",
+      "Studio privat în Sector 2 București, la aproximativ 3 km de Spitalul Clinic de Urgență Sf. Pantelimon. Self check-in, chicinetă, baie privată și rezervare online pentru pacienți și aparținători.",
     keyword: "cazare Spitalul Sf. Pantelimon Bucuresti, cazare apartinatori urgenta",
     date: "2026-04-30",
     intro:
-      "Spitalul Clinic de Urgenta Sf. Pantelimon (Soseaua Pantelimon 340-342, Sector 2) este unul dintre spitalele de urgenta importante din estul Bucurestiului. Cazarea aproape ajuta apartinatorii sa stea privati si linistiti intre vizite.",
+      "Spitalul Clinic de Urgență Sf. Pantelimon (Soseaua Pantelimon 340-342, Sector 2) este unul dintre spitalele de urgență importante din estul Bucureștiului. Cazarea aproape ajută aparținătorii să stea privați și liniștiți între vizite.",
     ctaReferer: "website_blog_pantelimon",
     sections: [
       {
-        title: "Adresa si cum ajungi la spital",
-        intro: "Adresa: Soseaua Pantelimon 340-342, Sector 2, Bucuresti. De la Serene Studio sunt aproximativ 3 km - 8-10 minute cu masina sau taxi.",
+        title: "Adresa și cum ajungi la spital",
+        intro: "Adresa: Soseaua Pantelimon 340-342, Sector 2, București. De la Serene Studio sunt aproximativ 3 km - 8-10 minute cu mașina sau taxi.",
         paragraphs: [
-          "Cu transport public, mergi pe Soseaua Mihai Bravu spre est. Pentru orele de varf, taxi-ul ramane mai predictibil decat tramvaiul, mai ales daca esti grabit.",
-          "Farmaciile non-stop de pe Mihai Bravu si din Piata Muncii sunt utile pentru retetele de urgenta - te poti opri pe drumul de intoarcere catre Serene Studio."
+          "Cu transport public, mergi pe Șoseaua Mihai Bravu spre est. Pentru orele de vârf, taxi-ul rămâne mai predictibil decât tramvaiul, mai ales dacă ești grăbit.",
+          "Farmaciile non-stop de pe Mihai Bravu și din Piața Muncii sunt utile pentru rețetele de urgență - te poți opri pe drumul de întoarcere către Serene Studio."
         ]
       },
       {
-        title: "Ce conteaza intr-un sejur de apartinator",
-        intro: "Spitalul nu pune la dispozitie cazare pentru apartinatori - studioul privat devine baza ta de odihna intre vizite.",
+        title: "Ce contează într-un sejur de aparținător",
+        intro: "Spitalul nu pune la dispoziție cazare pentru aparținători - studioul privat devine baza ta de odihnă între vizite.",
         paragraphs: [
-          "Serene Studio are chicineta cu microunde, frigider si aparat de cafea. Daca stai cateva zile, poti pregati gustari rapide fara sa depinzi de restaurantele din zona.",
-          "Wi-Fi-ul rapid ajuta la coordonarea cu familia ramasa acasa, iar self check-in-ul iti permite sa intri si sa iesi dupa programul de la spital."
+          "Serene Studio are chicinetă cu microunde, frigider și aparat de cafea. Dacă stai câteva zile, poți pregăti gustări rapide fără să depinzi de restaurantele din zonă.",
+          "Wi-Fi-ul rapid ajută la coordonarea cu familia rămasă acasă, iar self check-in-ul îți permite să intri și să ieși după programul de la spital."
         ]
       }
     ],
     faq: [
-      { q: "Cat e de la Serene Studio la Spitalul Sf. Pantelimon?", a: "Aproximativ 3 km - 8-10 minute cu masina sau taxi. Verifica ruta in Google Maps in ziua deplasarii." },
-      { q: "Exista farmacii non-stop in zona?", a: "Da, pe Soseaua Mihai Bravu si in jurul Pietei Muncii sunt farmacii deschise 24/7." },
+      { q: "Cât e de la Serene Studio la Spitalul Sf. Pantelimon?", a: "Aproximativ 3 km - 8-10 minute cu mașina sau taxi. Verifică ruta în Google Maps în ziua deplasării." },
+      { q: "Există farmacii non-stop în zonă?", a: "Da, pe Șoseaua Mihai Bravu și în jurul Pieței Muncii sunt farmacii deschise 24/7." },
       ...commonFaqRo
     ]
   },
@@ -654,33 +654,33 @@ const nearbyPostsRo: BlogPost[] = [
     translationSlug: "how-to-get-from-serene-studio-to-old-town-bucharest",
     title: "Cum ajungi de la Serene Studio la Centrul Vechi cu metroul",
     description:
-      "Ghid practic: cum mergi de la Serene Studio (Sector 2, Piata Muncii) la Centrul Vechi al Bucurestiului cu metroul. Trasee rapide, alternative cu taxi si timpii reali.",
+      "Ghid practic: cum mergi de la Serene Studio (Sector 2, Piața Muncii) la Centrul Vechi al Bucureștiului cu metroul. Trasee rapide, alternative cu taxi și timpii reali.",
     keyword: "metrou Piata Muncii Centrul Vechi, transport Serene Studio centru",
     date: "2026-04-30",
     intro:
-      "Centrul Vechi al Bucurestiului este la aproximativ 5 km de Serene Studio. Cu metroul de la Piata Muncii ajungi rapid si predictibil, fara stres in trafic.",
+      "Centrul Vechi al Bucureștiului este la aproximativ 5 km de Serene Studio. Cu metroul de la Piața Muncii ajungi rapid și predictibil, fără stres în trafic.",
     ctaReferer: "website_blog_centrul_vechi",
     sections: [
       {
-        title: "Ruta rapida cu metroul",
-        intro: "Statia Piata Muncii este la aproximativ 4 minute pe jos de Serene Studio. De acolo iei magistrala M1 spre Universitate sau Piata Unirii - apoi 5-10 minute pe jos pana la Centrul Vechi.",
+        title: "Ruta rapidă cu metroul",
+        intro: "Stația Piața Muncii este la aproximativ 4 minute pe jos de Serene Studio. De acolo iei magistrala M1 spre Universitate sau Piața Unirii - apoi 5-10 minute pe jos până la Centrul Vechi.",
         paragraphs: [
-          "Coboara la Universitate pentru zona Lipscani-Selari sau la Piata Unirii pentru zona Hanul lui Manuc si Stavropoleos. Ambele optiuni te duc la 5-10 minute pe jos in inima Centrului Vechi.",
-          "In weekend si seara, fluxul de trenuri scade, deci verifica ultimul tren pe drumul de intoarcere - sau pregateste-te pentru un taxi pana acasa."
+          "Coboară la Universitate pentru zona Lipscani-Selari sau la Piața Unirii pentru zona Hanul lui Manuc și Stavropoleos. Ambele opțiuni te duc la 5-10 minute pe jos în inima Centrului Vechi.",
+          "În weekend și seara, fluxul de trenuri scade, deci verifică ultimul tren pe drumul de întoarcere - sau pregătește-te pentru un taxi până acasă."
         ]
       },
       {
         title: "Alternative cu taxi sau ridesharing",
-        intro: "Taxi-ul te duce direct in 15-25 minute, in functie de trafic. Pentru zone de seara, ridesharingul (Bolt, Uber) este de obicei mai disponibil pe ruta de intoarcere.",
+        intro: "Taxi-ul te duce direct în 15-25 minute, în funcție de trafic. Pentru zone de seară, ridesharingul (Bolt, Uber) este de obicei mai disponibil pe ruta de întoarcere.",
         paragraphs: [
-          "Daca alegi taxi-ul, drumul tipic trece prin Stefan cel Mare sau Mihai Bravu spre centru. Vinerea si sambata seara traficul poate fi destul de aglomerat in zona Universitate.",
-          "Cand revii la Serene Studio dupa o seara in Centrul Vechi, accesul cu cod la cutia de chei te lasa sa intri direct, fara contact uman."
+          "Dacă alegi taxi-ul, drumul tipic trece prin Ștefan cel Mare sau Mihai Bravu spre centru. Vinerea și sâmbătă seara traficul poate fi destul de aglomerat în zona Universitate.",
+          "Când revii la Serene Studio după o seară în Centrul Vechi, accesul cu cod la cutia de chei te lasă să intri direct, fără contact uman."
         ]
       }
     ],
     faq: [
-      { q: "Cat de lung e drumul cu metroul de la Serene Studio la Centrul Vechi?", a: "In jur de 20-25 de minute, inclusiv cele 4 minute pe jos pana la metrou Piata Muncii si 5-10 minute pe jos de la Universitate sau Piata Unirii la Lipscani." },
-      { q: "Care e ultima cursa de metrou?", a: "In general, metroul circula pana la aproximativ 23:00. Verifica orarul exact pentru ziua respectiva." },
+      { q: "Cât de lung e drumul cu metroul de la Serene Studio la Centrul Vechi?", a: "În jur de 20-25 de minute, inclusiv cele 4 minute pe jos până la metrou Piața Muncii și 5-10 minute pe jos de la Universitate sau Piața Unirii la Lipscani." },
+      { q: "Care e ultima cursă de metrou?", a: "În general, metroul circulă până la aproximativ 23:00. Verifică orarul exact pentru ziua respectivă." },
       ...commonFaqRo
     ]
   },
@@ -688,50 +688,50 @@ const nearbyPostsRo: BlogPost[] = [
     slug: "obiective-langa-serene-studio-bucuresti-3-5-km",
     locale: "ro",
     translationSlug: "things-to-do-near-serene-studio-bucharest-3-5-km",
-    title: "Top 7 obiective langa Serene Studio Bucuresti (3-5 km)",
+    title: "Top 7 obiective lângă Serene Studio București (3-5 km)",
     description:
-      "Ghid de zona: spitale, mall-uri, stadioane, parcuri si destinatii turistice in raza de 3-5 km in jurul Serene Studio Bucuresti, Sector 2.",
+      "Ghid de zona: spitale, mall-uri, stadioane, parcuri și destinații turistice în raza de 3-5 km în jurul Serene Studio București, Sector 2.",
     keyword: "obiective langa Serene Studio Bucuresti, ce sa vizitezi Sector 2",
     date: "2026-04-30",
     intro:
-      "Serene Studio se afla pe Strada Alexandru Zagoritz 12, Sector 2, Bucuresti - aproape de Piata Muncii. In jurul studioului, intr-o raza de 3-5 km, ai spitale importante, mall-uri, parcuri si zone turistice. Iata cele mai utile.",
+      "Serene Studio se află pe Strada Alexandru Zagoritz 12, Sector 2, București - aproape de Piața Muncii. În jurul studioului, într-o raza de 3-5 km, ai spitale importante, mall-uri, parcuri și zone turistice. Iată cele mai utile.",
     ctaReferer: "website_blog_top_obiective",
     sections: [
       {
-        title: "Spitale si centre medicale",
-        intro: "Pentru pacienti si apartinatori, urmatoarele spitale sunt aproape de Serene Studio:",
+        title: "Spitale și centre medicale",
+        intro: "Pentru pacienți și aparținători, următoarele spitale sunt aproape de Serene Studio:",
         bullets: [
           "Spitalul Clinic de Copii Dr. Victor Gomoiu - Bd. Basarabia 21, ~1,5 km",
           "Spitalul Monza - Str. Tony Bulandra 27, ~2 km",
-          "Spitalul Clinic de Urgenta Sf. Pantelimon - Sos. Pantelimon 340-342, ~3 km",
-          "Spitalul Clinic Dr. Victor Babes - Sos. Mihai Bravu 281, ~3 km",
-          "Spitalul Clinic Colentina - Sos. Stefan cel Mare 19-21, ~5 km"
+          "Spitalul Clinic de Urgență Sf. Pantelimon - Sos. Pantelimon 340-342, ~3 km",
+          "Spitalul Clinic Dr. Victor Babeș - Sos. Mihai Bravu 281, ~3 km",
+          "Spitalul Clinic Colentina - Sos. Ștefan cel Mare 19-21, ~5 km"
         ]
       },
       {
-        title: "Shopping si divertisment",
-        intro: "Daca vrei o pauza de la sejurul medical sau o zi de turism urban:",
+        title: "Shopping și divertisment",
+        intro: "Dacă vrei o pauză de la sejurul medical sau o zi de turism urban:",
         bullets: [
-          "Mega Mall - Bd. Pierre de Coubertin 3-5, ~18-20 min pe jos sau 5-7 min cu masina",
+          "Mega Mall - Bd. Pierre de Coubertin 3-5, ~18-20 min pe jos sau 5-7 min cu mașina",
           "Bucur Obor - magazinul universal istoric din Sector 2, ~10 min pe jos",
-          "Veranda Mall - Str. Ziduri Mosi 23, ~2 km"
+          "Veranda Mall - Str. Ziduri Moși 23, ~2 km"
         ]
       },
       {
-        title: "Sport, parcuri si turism",
+        title: "Sport, parcuri și turism",
         intro: "Pentru aer liber sau evenimente:",
         bullets: [
-          "Arena Nationala - concerte si meciuri, ~14 min pe jos",
-          "Stadionul Dinamo - Sos. Stefan cel Mare 7-9, ~3 km",
-          "Parcul IOR / Alexandru Ioan Cuza - lac si zona de plimbare, acces rapid cu metrou",
+          "Arena Națională - concerte și meciuri, ~14 min pe jos",
+          "Stadionul Dinamo - Sos. Ștefan cel Mare 7-9, ~3 km",
+          "Parcul IOR / Alexandru Ioan Cuza - lac și zonă de plimbare, acces rapid cu metrou",
           "Centrul Vechi (Lipscani, Hanul lui Manuc) - ~5 km, 20-25 min cu metroul"
         ]
       }
     ],
     faq: [
-      { q: "Care sunt cele mai apropiate spitale de Serene Studio?", a: "Spitalul Gomoiu (~1,5 km), Spitalul Monza (~2 km), Spitalul Sf. Pantelimon (~3 km), Spitalul Babes (~3 km) si Spitalul Colentina (~5 km)." },
-      { q: "Cat e pana la Mega Mall pe jos?", a: "Aproximativ 18-20 de minute pe jos sau 5-7 minute cu masina/taxi." },
-      { q: "Pot ajunge in Centrul Vechi cu metroul?", a: "Da, de la Piata Muncii (4 minute pe jos de Serene Studio) iei M1 pana la Universitate sau Piata Unirii - apoi 5-10 minute pe jos." },
+      { q: "Care sunt cele mai apropiate spitale de Serene Studio?", a: "Spitalul Gomoiu (~1,5 km), Spitalul Monza (~2 km), Spitalul Sf. Pantelimon (~3 km), Spitalul Babeș (~3 km) și Spitalul Colentina (~5 km)." },
+      { q: "Cât e până la Mega Mall pe jos?", a: "Aproximativ 18-20 de minute pe jos sau 5-7 minute cu mașina/taxi." },
+      { q: "Pot ajunge în Centrul Vechi cu metroul?", a: "Da, de la Piața Muncii (4 minute pe jos de Serene Studio) iei M1 până la Universitate sau Piața Unirii - apoi 5-10 minute pe jos." },
       ...commonFaqRo
     ]
   }
@@ -912,7 +912,7 @@ const nearbyPostsEn: BlogPost[] = [
         bullets: [
           "Mega Mall - Bd. Pierre de Coubertin 3-5, ~18-20 min on foot or 5-7 min by car",
           "Bucur Obor - the historic department store in Sector 2, ~10 min on foot",
-          "Veranda Mall - Str. Ziduri Mosi 23, ~2 km"
+          "Veranda Mall - Str. Ziduri Moși 23, ~2 km"
         ]
       },
       {
