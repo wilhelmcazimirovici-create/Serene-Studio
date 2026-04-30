@@ -1,0 +1,74 @@
+---
+import BookingCta from "./BookingCta.astro";
+import { labels, nav, type Locale } from "@/data/site";
+
+type Props = {
+  locale: Locale;
+  currentPath: string;
+  translationPath: string;
+};
+
+const { locale, currentPath, translationPath } = Astro.props;
+const l = labels[locale];
+const otherLocale = locale === "ro" ? "en" : "ro";
+const otherHref = translationPath;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={locale === "ro" ? "/" : "/en/"} aria-label="Serene Studio">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Serene Studio</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      {nav[locale].map((item) => (
+        <a href={item.href} aria-current={currentPath === item.href ? "page" : undefined}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switch" aria-label="Language">
+        <a href={locale === "ro" ? currentPath : otherHref} aria-current={locale === "ro" ? "true" : undefined}>RO</a>
+        <a href={locale === "en" ? currentPath : otherHref} aria-current={locale === "en" ? "true" : undefined}>EN</a>
+      </div>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label={locale === "ro" ? "Schimba tema" : "Change theme"}
+        title={locale === "ro" ? "Schimba tema" : "Change theme"}
+        data-theme-toggle
+      >
+        <svg class="theme-icon theme-icon-light" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m14.5-6.5 1.4-1.4M4.1 19.9l1.4-1.4m0-13L4.1 4.1m15.8 15.8-1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+        </svg>
+        <svg class="theme-icon theme-icon-dark" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M20 14.2A7.8 7.8 0 0 1 9.8 4 8 8 0 1 0 20 14.2Z" />
+        </svg>
+      </button>
+      <BookingCta locale={locale} referer={`website_${locale}_header`} label={l.reserve} />
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label={l.menu}>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile">
+    {nav[locale].map((item) => <a href={item.href}>{item.label}</a>)}
+    <a href={locale === "ro" ? "/blog/" : "/en/blog/"}>Blog</a>
+    <a href={otherHref}>{otherLocale.toUpperCase()}</a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("#mobile-menu");
+  toggle?.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    menu?.classList.toggle("is-open", !open);
+    document.body.classList.toggle("menu-open", !open);
+  });
+</script>

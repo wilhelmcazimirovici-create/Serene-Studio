@@ -1,0 +1,445 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingCta from "@/components/BookingCta.astro";
+import FAQ from "@/components/FAQ.astro";
+import Infographic from "@/components/Infographic.astro";
+import Lightbox from "@/components/Lightbox.astro";
+import ResponsiveImage from "@/components/ResponsiveImage.astro";
+import SectionVideo from "@/components/SectionVideo.astro";
+import { absoluteUrl, gallery, images, labels, maps, SITE_URL, type Locale } from "@/data/site";
+import type { PageContent, PageSection } from "@/data/types";
+
+type Props = {
+  page: PageContent;
+};
+
+const { page } = Astro.props;
+const locale = page.locale;
+const l = labels[locale];
+const heroImage = page.heroImage ?? "bed";
+
+function sectionClass(index: number) {
+  return index % 2 === 1 ? "band alt" : "band";
+}
+
+function breadcrumbName(path: string) {
+  if (path === "/" || path === "/en/") return locale === "ro" ? "Acasa" : "Home";
+  const parts = path.split("/").filter(Boolean);
+  return parts[parts.length - 1]?.replaceAll("-", " ") ?? "Page";
+}
+
+function cardLabel(index: number) {
+  return String(index + 1).padStart(2, "0");
+}
+
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .map((part) => part.charAt(0))
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+const distancePlaces = page.sections
+  .filter((section) => section.infographic?.variant === "distances")
+  .flatMap((section) =>
+    section.infographic && section.infographic.variant === "distances"
+      ? section.infographic.distances.map((entry, idx) => ({
+          "@type": "Place",
+          "@id": `${absoluteUrl(page.path)}#place-${idx}-${entry.place.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: entry.place,
+          description: entry.detail,
+          ...(entry.lat != null && entry.lon != null
+            ? {
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: entry.lat,
+                  longitude: entry.lon
+                }
+              }
+            : {})
+        }))
+      : []
+  );
+
+const allSectionVideos = page.sections.flatMap((section) => [
+  ...(section.video ? [section.video] : []),
+  ...(section.videoGallery ?? [])
+]);
+
+const videoObjects = allSectionVideos.map((video, idx) => {
+  const videoName = video.name[locale];
+  const videoDescription = video.description[locale];
+  return {
+    "@type": "VideoObject",
+    "@id": `${absoluteUrl(page.path)}#video-${idx}`,
+    name: videoName,
+    description: videoDescription,
+    uploadDate: video.uploadDate,
+    duration: `PT${video.durationSeconds}S`,
+    thumbnailUrl: `${SITE_URL}${video.poster}`,
+    contentUrl: `${SITE_URL}/video/${video.base}.mp4`,
+    width: video.width,
+    height: video.height,
+    inLanguage: locale,
+    isFamilyFriendly: true,
+    ...(video.contentLocation
+      ? {
+          contentLocation: {
+            "@type": "Place",
+            name: video.contentLocation.name,
+            ...(video.contentLocation.address
+              ? { address: video.contentLocation.address }
+              : {}),
+            ...(video.contentLocation.lat != null && video.contentLocation.lon != null
+              ? {
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: video.contentLocation.lat,
+                    longitude: video.contentLocation.lon
+                  }
+                }
+              : {})
+          }
+        }
+      : {})
+  };
+});
+
+const allSectionImages = page.sections.flatMap((section) => section.imageGallery ?? []);
+const hasAnyGallery = Boolean(page.gallery) || allSectionImages.length > 0;
+const imageObjects = allSectionImages
+  .map((item, idx) => {
+    const meta = images[item.key as keyof typeof images];
+    if (!meta) return null;
+    return {
+      "@type": "ImageObject",
+      "@id": `${absoluteUrl(page.path)}#image-${idx}`,
+      contentUrl: `${SITE_URL}${meta.webp}`,
+      thumbnailUrl: `${SITE_URL}/images/${meta.base}-480.webp`,
+      caption: item.caption[locale],
+      description: meta.alt[locale],
+      width: meta.width,
+      height: meta.height,
+      inLanguage: locale,
+      representativeOfPage: false
+    };
+  })
+  .filter((item): item is NonNullable<typeof item> => item !== null);
+
+const pageSchema = [
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${absoluteUrl(page.path)}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "ro" ? "Acasa" : "Home",
+        item: absoluteUrl(locale === "ro" ? "/" : "/en/")
+      },
+      ...(page.path === "/" || page.path === "/en/"
+        ? []
+        : [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: breadcrumbName(page.path),
+              item: absoluteUrl(page.path)
+            }
+          ])
+    ]
+  },
+  ...(page.faq?.length
+    ? [
+        {
+          "@type": "FAQPage",
+          "@id": `${absoluteUrl(page.path)}#faq`,
+          mainEntity: page.faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a
+            }
+          }))
+        }
+      ]
+    : []),
+  ...distancePlaces,
+  ...videoObjects,
+  ...imageObjects
+];
+---
+
+<BaseLayout
+  locale={locale}
+  path={page.path}
+  translationPath={page.translationPath}
+  title={page.title}
+  description={page.description}
+  keyword={page.keyword}
+  schema={pageSchema}
+>
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <ResponsiveImage image={heroImage as never} locale={locale as Locale} loading="eager" fetchpriority="high" />
+    </div>
+    <div class="container hero-grid">
+      <div>
+        {page.eyebrow && <p class="eyebrow">{page.eyebrow}</p>}
+        <h1>{page.h1}</h1>
+        <p class="hero-lead">{page.heroText}</p>
+        <div class="hero-actions">
+          <BookingCta locale={locale} referer={page.heroCtaReferer} label={l.checkAvailability} />
+          {page.secondaryHref && <a class="btn-soft" href={page.secondaryHref}>{page.secondaryLabel ?? l.seeStudio}</a>}
+        </div>
+        {page.proof && (
+          <div class="proof-strip" aria-label={locale === "ro" ? "Date rapide" : "Quick facts"}>
+            {page.proof.map((item) => (
+              <div class="proof-item">
+                <span class="proof-value">{item.value}</span>
+                <span class="proof-label">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+      <div class="hero-media">
+        <ResponsiveImage image={heroImage as never} locale={locale as Locale} loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  {page.sections.map((section: PageSection, index: number) => (
+    <section class={sectionClass(index)}>
+      <div class="container">
+        <div class={section.image ? "content-grid two" : "content-grid"}>
+          <div>
+            <div class="section-head">
+              <h2>{section.title}</h2>
+              {section.intro && <p>{section.intro}</p>}
+            </div>
+
+            {section.paragraphs && (
+              <div class="rich-text">
+                {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              </div>
+            )}
+
+            {section.bullets && (
+              <ul class="check-list">
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )}
+
+            {section.cards && section.variant === "reviews" && (
+              <div class="reviews-grid">
+                {section.cards.map((card) => (
+                  <article class="review-card">
+                    <span class="review-stars" aria-label={locale === "ro" ? "5 din 5 stele" : "5 out of 5 stars"}>
+                      {Array.from({ length: 5 }).map(() => (
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                      ))}
+                    </span>
+                    <p class="review-quote">{card.text}</p>
+                    <div class="review-author">
+                      <span class="review-avatar" aria-hidden="true">{initials(card.title)}</span>
+                      <div>
+                        <div class="review-name">{card.title}</div>
+                        <div class="review-role">{locale === "ro" ? "Oaspete verificat" : "Verified guest"}</div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
+
+            {section.cards && section.variant !== "reviews" && (
+              <div class="cards-grid">
+                {section.cards.map((card, cardIndex) =>
+                  card.href ? (
+                    <a class="card card-link" href={card.href}>
+                      <span class="card-number">{card.eyebrow ?? cardLabel(cardIndex)}</span>
+                      <h3>{card.title}</h3>
+                      <p>{card.text}</p>
+                      <span class="card-cta" aria-hidden="true">
+                        {locale === "ro" ? "Vezi pagina" : "See page"}
+                        <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6" /></svg>
+                      </span>
+                    </a>
+                  ) : (
+                    <article class="card">
+                      <span class="card-number">{card.eyebrow ?? cardLabel(cardIndex)}</span>
+                      <h3>{card.title}</h3>
+                      <p>{card.text}</p>
+                    </article>
+                  )
+                )}
+              </div>
+            )}
+
+            {section.table && (
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>{section.table.headers.map((header) => <th>{header}</th>)}</tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row) => (
+                      <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {section.infographic && (
+              <Infographic data={section.infographic} locale={locale as Locale} />
+            )}
+
+            {section.video && (
+              <SectionVideo data={section.video} locale={locale as Locale} />
+            )}
+
+            {section.imageGallery && (
+              <div class="gallery-grid article-gallery">
+                {section.imageGallery.map((item) => {
+                  const meta = images[item.key as keyof typeof images];
+                  const orient = meta && meta.height > meta.width ? "portrait" : "landscape";
+                  const captionText = item.caption[locale];
+                  return (
+                    <figure class="gallery-item" data-orient={orient}>
+                      <button
+                        type="button"
+                        class="gallery-trigger"
+                        data-lightbox-trigger
+                        data-full={meta?.webp}
+                        data-caption={captionText}
+                        aria-label={locale === "ro" ? `Deschide imaginea: ${captionText}` : `Open image: ${captionText}`}
+                      >
+                        <ResponsiveImage image={item.key as never} locale={locale as Locale} />
+                      </button>
+                      <figcaption>{captionText}</figcaption>
+                    </figure>
+                  );
+                })}
+              </div>
+            )}
+
+            {section.videoGallery && (
+              <div class="video-gallery">
+                {section.videoGallery.map((video) => (
+                  <SectionVideo data={video} locale={locale as Locale} />
+                ))}
+              </div>
+            )}
+
+            {section.ctaReferer && (
+              <div class="section-actions">
+                <BookingCta locale={locale} referer={section.ctaReferer} label={l.bookOnline} />
+              </div>
+            )}
+          </div>
+
+          {section.image && (
+            <div class="hero-media">
+              <ResponsiveImage image={section.image as never} locale={locale as Locale} />
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  {page.gallery && (
+    <section class="band alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>{locale === "ro" ? "Galerie foto Serene Studio" : "Serene Studio photo gallery"}</h2>
+          <p>
+            {locale === "ro"
+              ? "Fotografiile folosesc imagini reale ale studioului, chicinetei, baii, terasei si accesului."
+              : "The gallery uses real images of the studio, kitchenette, bathroom, terrace and access."}
+          </p>
+        </div>
+        <div class="gallery-grid">
+          {gallery.map((item) => {
+            const meta = images[item.key as keyof typeof images];
+            const orient = meta && meta.height > meta.width ? "portrait" : "landscape";
+            const captionText = item.caption[locale];
+            return (
+              <figure class="gallery-item" data-orient={orient}>
+                <button
+                  type="button"
+                  class="gallery-trigger"
+                  data-lightbox-trigger
+                  data-full={meta?.webp}
+                  data-caption={captionText}
+                  aria-label={locale === "ro" ? `Deschide imaginea: ${captionText}` : `Open image: ${captionText}`}
+                >
+                  <ResponsiveImage image={item.key as never} locale={locale as Locale} />
+                </button>
+                <figcaption>{captionText}</figcaption>
+              </figure>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {hasAnyGallery && <Lightbox locale={locale as Locale} />}
+
+  {page.maps && (
+    <section class="band">
+      <div class="container">
+        <div class="section-head">
+          <h2>{locale === "ro" ? "Deschide ruta in aplicatia ta de navigatie" : "Open the route in your navigation app"}</h2>
+          <p>
+            {locale === "ro"
+              ? "Coordonatele folosite sunt 44.4338629, 26.1408394. Verifica ruta inainte de plecare."
+              : "The coordinates used are 44.4338629, 26.1408394. Check your route before leaving."}
+          </p>
+        </div>
+        <div class="cards-grid">
+          <a class="card" href={maps.google} rel="noopener">Google Maps</a>
+          <a class="card" href={maps.apple} rel="noopener">Apple Maps</a>
+          <a class="card" href={maps.waze} rel="noopener">Waze</a>
+          <a class="card" href={maps.osm} rel="noopener">OpenStreetMap</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {page.faq && (
+    <section class="band alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>{l.faqTitle}</h2>
+          <p>
+            {locale === "ro"
+              ? "Raspunsuri scurte pentru intrebarile care apar cel mai des inainte de rezervare."
+              : "Short answers to the questions that most often come up before booking."}
+          </p>
+        </div>
+        <FAQ items={page.faq} />
+      </div>
+    </section>
+  )}
+
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner">
+        <h2>{l.finalTitle}</h2>
+        <p>{l.finalText}</p>
+        <div class="section-actions">
+          <BookingCta locale={locale} referer={page.finalCtaReferer} label={l.checkAvailability} />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

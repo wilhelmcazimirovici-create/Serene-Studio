@@ -1,0 +1,57 @@
+---
+import BookingCta from "./BookingCta.astro";
+import { labels, nav, property, type Locale } from "@/data/site";
+
+type Props = {
+  locale: Locale;
+};
+
+const { locale } = Astro.props;
+const l = labels[locale];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href={locale === "ro" ? "/" : "/en/"} aria-label="Serene Studio">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <span>Serene Studio</span>
+        </a>
+        <p>
+          {locale === "ro"
+            ? "Studio privat langa Piata Muncii, Arena Nationala si spitalele importante din estul Bucurestiului."
+            : "Private studio near Piata Muncii, the National Arena and key hospitals in eastern Bucharest."}
+        </p>
+        <BookingCta locale={locale} referer={`website_${locale}_footer`} label={l.reserve} />
+      </div>
+      <div>
+        <h3>{locale === "ro" ? "Navigatie" : "Navigation"}</h3>
+        <nav class="footer-links" aria-label="Footer">
+          {nav[locale].map((item) => <a href={item.href}>{item.label}</a>)}
+          <a href={locale === "ro" ? "/blog/" : "/en/blog/"}>Blog</a>
+          <a href={locale === "ro" ? "/politica-confidentialitate/" : "/en/privacy-policy/"}>
+            {locale === "ro" ? "Politica de confidentialitate" : "Privacy policy"}
+          </a>
+          <a href={locale === "ro" ? "/politica-cookies/" : "/en/cookie-policy/"}>
+            {locale === "ro" ? "Politica cookies" : "Cookie policy"}
+          </a>
+        </nav>
+      </div>
+      <div>
+        <h3>{locale === "ro" ? "Contact" : "Contact"}</h3>
+        <div class="footer-links">
+          <span class="footer-muted">{property.address}</span>
+          <a href={property.phoneHref}>{property.phone}</a>
+          <a href={`mailto:${property.email}`}>{property.email}</a>
+          <span class="footer-muted">
+            {locale === "ro" ? `Check-in dupa ${property.checkin}; check-out pana la ${property.checkout}.` : `Check-in after ${property.checkin}; check-out by ${property.checkout}.`}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © {new Date().getFullYear()} Serene Studio. {locale === "ro" ? "Rezervarile se fac online, apasand butonul Rezerva online." : "Bookings are made online, by clicking the Book online button."}
+    </div>
+  </div>
+</footer>

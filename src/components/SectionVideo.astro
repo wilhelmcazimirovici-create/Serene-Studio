@@ -1,0 +1,55 @@
+---
+import type { SectionVideo } from "@/data/types";
+import type { Locale } from "@/data/site";
+
+type Props = {
+  data: SectionVideo;
+  locale: Locale;
+};
+
+const { data, locale } = Astro.props;
+const name = data.name[locale];
+const description = data.description[locale];
+const mp4 = `/video/${data.base}.mp4`;
+const webm = `/video/${data.base}.webm`;
+---
+
+<figure class="section-video" itemscope itemtype="https://schema.org/VideoObject">
+  <meta itemprop="name" content={name} />
+  <meta itemprop="description" content={description} />
+  <meta itemprop="uploadDate" content={data.uploadDate} />
+  <meta itemprop="duration" content={`PT${data.durationSeconds}S`} />
+  <meta itemprop="contentUrl" content={mp4} />
+  <meta itemprop="thumbnailUrl" content={data.poster} />
+  <meta itemprop="width" content={String(data.width)} />
+  <meta itemprop="height" content={String(data.height)} />
+  <meta itemprop="inLanguage" content={locale} />
+  {data.contentLocation && (
+    <span itemprop="contentLocation" itemscope itemtype="https://schema.org/Place">
+      <meta itemprop="name" content={data.contentLocation.name} />
+      {data.contentLocation.address && <meta itemprop="address" content={data.contentLocation.address} />}
+      {data.contentLocation.lat != null && data.contentLocation.lon != null && (
+        <span itemprop="geo" itemscope itemtype="https://schema.org/GeoCoordinates">
+          <meta itemprop="latitude" content={String(data.contentLocation.lat)} />
+          <meta itemprop="longitude" content={String(data.contentLocation.lon)} />
+        </span>
+      )}
+    </span>
+  )}
+
+  <video
+    controls
+    muted
+    preload="metadata"
+    playsinline
+    poster={data.posterWebp ?? data.poster}
+    width={data.width}
+    height={data.height}
+    aria-label={name}
+    disableremoteplayback
+  >
+    <source src={webm} type="video/webm" />
+    <source src={mp4} type="video/mp4" />
+  </video>
+  <figcaption>{description}</figcaption>
+</figure>

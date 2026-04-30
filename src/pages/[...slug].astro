@@ -1,0 +1,17 @@
+---
+import PageTemplate from "@/components/PageTemplate.astro";
+import { pages } from "@/data/pages";
+
+export function getStaticPaths() {
+  return pages
+    .filter((page) => page.path !== "/" && page.path !== "/en/")
+    .map((page) => ({
+      params: { slug: page.path.replace(/^\/|\/$/g, "") },
+      props: { page }
+    }));
+}
+
+const { page } = Astro.props;
+---
+
+<PageTemplate page={page} />

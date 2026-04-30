@@ -1,0 +1,36 @@
+---
+description: Serene Studio project rules and skill index — applies to every file in the repo
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# Serene Studio — project rules
+
+**Primary source of truth: [AGENTS.md](mdc:AGENTS.md). Read it first.**
+
+## Skills (read on demand)
+
+Global skills (user-level, shared across all projects — read at absolute path):
+
+- Video / ffmpeg / hero loops / posters / mp4+webm → `C:\Users\Wilhelm\.claude\skills\video-editing\SKILL.md`
+- Liquid glass / glassmorphism / watermorphism / frosted UI → `C:\Users\Wilhelm\.claude\skills\liquid-glass-watermorphism\SKILL.md`
+- Colors / palette / OKLCH / dark mode / gradients → `C:\Users\Wilhelm\.claude\skills\modern-colors\SKILL.md`
+- SEO / AEO / GEO / mobile-first / schema.org → `C:\Users\Wilhelm\.claude\skills\seo-aeo-geo-mobile\SKILL.md`
+
+Project skill (this repo only):
+
+- Brand constants, palette, NAP, conversion logic → [.claude/skills/serene-studio-brand/SKILL.md](mdc:.claude/skills/serene-studio-brand/SKILL.md)
+
+For design/SEO/video tasks, read the matching global skill **and** the project brand skill.
+
+## Hard rules (always)
+
+- Astro 6 static output; no SSR unless explicitly requested.
+- Romanian copy by default.
+- Mobile-first. `Rezerva acum` CTA visible in the first viewport on a 360 px phone, plus sticky bottom bar.
+- No phone as a primary CTA. No autoplay with sound. No client-only rendering for booking-relevant content.
+- All images through `npm run optimize:images` before commit.
+- Single source of truth for NAP (name / address / phone) — never hardcode twice.
+- Performance: mobile LCP < 2.0 s, INP < 200 ms, CLS < 0.05.
+- Accessibility: WCAG AA body text, AAA on the booking CTA.

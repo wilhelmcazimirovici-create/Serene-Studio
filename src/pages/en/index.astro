@@ -1,0 +1,8 @@
+---
+import PageTemplate from "@/components/PageTemplate.astro";
+import { getPage } from "@/data/pages";
+
+const page = getPage("/en/");
+---
+
+<PageTemplate page={page} />

@@ -1,0 +1,33 @@
+---
+import { images, type Locale } from "@/data/site";
+
+type Props = {
+  image: keyof typeof images;
+  locale: Locale;
+  class?: string;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+};
+
+const { image, locale, class: className, loading = "lazy", fetchpriority = "auto" } = Astro.props;
+const item = images[image] ?? images.bed;
+const widths = [...new Set([480, 900, item.width].filter((width) => width <= item.width))];
+const avifSrcset = widths.map((width) => `/images/${item.base}-${width}.avif ${width}w`).join(", ");
+const webpSrcset = widths.map((width) => `/images/${item.base}-${width}.webp ${width}w`).join(", ");
+const sizes = "(min-width: 960px) 50vw, 100vw";
+---
+
+<picture>
+  <source srcset={avifSrcset} sizes={sizes} type="image/avif" />
+  <source srcset={webpSrcset} sizes={sizes} type="image/webp" />
+  <img
+    src={item.webp}
+    alt={item.alt[locale]}
+    width={item.width}
+    height={item.height}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+    class={className}
+  />
+</picture>

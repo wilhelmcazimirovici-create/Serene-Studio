@@ -1,0 +1,44 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingCta from "@/components/BookingCta.astro";
+import { getBlogPosts } from "@/data/blog";
+import { absoluteUrl } from "@/data/site";
+
+const posts = getBlogPosts("en");
+const path = "/en/blog/";
+const title = "Serene Studio Blog - Bucharest accommodation guides";
+const description = "Practical articles about accommodation near Piata Muncii, the National Arena, hospitals, IOR Park and Sector 2 Bucharest.";
+const schema = [
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/en/") },
+      { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl(path) }
+    ]
+  }
+];
+---
+
+<BaseLayout locale="en" path={path} translationPath="/blog/" title={title} description={description} keyword="Bucharest accommodation blog" schema={schema}>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Local SEO · Piata Muncii · Sector 2</p>
+      <h1>Serene Studio Blog</h1>
+      <p class="hero-lead">{description}</p>
+      <div class="hero-actions">
+        <BookingCta locale="en" referer="website_en_blog_index_hero" label="Check availability" />
+      </div>
+    </div>
+  </section>
+  <section class="band alt">
+    <div class="container cards-grid">
+      {posts.map((post) => (
+        <article class="card">
+          <h2><a href={`/en/blog/${post.slug}/`}>{post.title}</a></h2>
+          <p>{post.description}</p>
+          <a class="btn-soft" href={`/en/blog/${post.slug}/`}>Read article</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

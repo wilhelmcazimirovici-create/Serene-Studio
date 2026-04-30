@@ -1,0 +1,25 @@
+---
+import { bookingUrl, labels, type Locale } from "@/data/site";
+
+type Props = {
+  locale: Locale;
+  referer: string;
+  label?: string;
+  variant?: "primary" | "secondary" | "soft";
+  class?: string;
+};
+
+const { locale, referer, label, variant = "primary", class: className = "" } = Astro.props;
+const text = label ?? labels[locale].checkAvailability;
+const cls = variant === "secondary" ? "btn-secondary" : variant === "soft" ? "btn-soft" : "btn";
+---
+
+<a
+  class={`${cls} ${className}`}
+  href={bookingUrl(referer, locale)}
+  data-booking-link
+  data-referer={referer}
+  rel="nofollow sponsored noopener"
+>
+  {text}
+</a>

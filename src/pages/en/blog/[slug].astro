@@ -1,0 +1,189 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingCta from "@/components/BookingCta.astro";
+import FAQ from "@/components/FAQ.astro";
+import Lightbox from "@/components/Lightbox.astro";
+import ResponsiveImage from "@/components/ResponsiveImage.astro";
+import SectionVideo from "@/components/SectionVideo.astro";
+import { getBlogPosts } from "@/data/blog";
+import { absoluteUrl, images, labels, SITE_URL } from "@/data/site";
+
+export function getStaticPaths() {
+  return getBlogPosts("en").map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const path = `/en/blog/${post.slug}/`;
+const translationPath = `/blog/${post.translationSlug}/`;
+const l = labels.en;
+const locale = "en" as const;
+
+const galleryVideos = post.sections.flatMap((section) => section.videoGallery ?? []);
+const galleryImages = post.sections.flatMap((section) => section.imageGallery ?? []);
+
+const videoSchemas = galleryVideos.map((video, idx) => ({
+  "@type": "VideoObject",
+  "@id": `${absoluteUrl(path)}#video-${idx}`,
+  name: video.name[locale],
+  description: video.description[locale],
+  uploadDate: video.uploadDate,
+  duration: `PT${video.durationSeconds}S`,
+  thumbnailUrl: `${SITE_URL}${video.poster}`,
+  contentUrl: `${SITE_URL}/video/${video.base}.mp4`,
+  width: video.width,
+  height: video.height,
+  inLanguage: locale,
+  isFamilyFriendly: true,
+  ...(video.contentLocation
+    ? {
+        contentLocation: {
+          "@type": "Place",
+          name: video.contentLocation.name,
+          ...(video.contentLocation.address ? { address: video.contentLocation.address } : {}),
+          ...(video.contentLocation.lat != null && video.contentLocation.lon != null
+            ? {
+                geo: {
+                  "@type": "GeoCoordinates",
+                  latitude: video.contentLocation.lat,
+                  longitude: video.contentLocation.lon
+                }
+              }
+            : {})
+        }
+      }
+    : {})
+}));
+
+const imageSchemas = galleryImages
+  .map((item, idx) => {
+    const meta = images[item.key as keyof typeof images];
+    if (!meta) return null;
+    return {
+      "@type": "ImageObject",
+      "@id": `${absoluteUrl(path)}#image-${idx}`,
+      contentUrl: `${SITE_URL}${meta.webp}`,
+      thumbnailUrl: `${SITE_URL}/images/${meta.base}-480.webp`,
+      caption: item.caption[locale],
+      description: meta.alt[locale],
+      width: meta.width,
+      height: meta.height,
+      inLanguage: locale,
+      representativeOfPage: false
+    };
+  })
+  .filter((item): item is NonNullable<typeof item> => item !== null);
+
+const schema = [
+  {
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: "en",
+    mainEntityOfPage: absoluteUrl(path),
+    ...(imageSchemas.length ? { image: imageSchemas.map((item) => item.contentUrl) } : {}),
+    ...(videoSchemas.length ? { video: videoSchemas.map((item) => ({ "@id": item["@id"] })) } : {})
+  },
+  {
+    "@type": "FAQPage",
+    mainEntity: post.faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a }
+    }))
+  },
+  ...videoSchemas,
+  ...imageSchemas
+];
+---
+
+<BaseLayout locale="en" path={path} translationPath={translationPath} title={`${post.title} - Serene Studio`} description={post.description} keyword={post.keyword} schema={schema}>
+  <article class="band">
+    <div class="container article">
+      <p class="article-meta">Updated: {post.date}</p>
+      <h1>{post.title}</h1>
+      <p class="hero-lead">{post.intro}</p>
+      <div class="article-cta">
+        <p>For prices and availability, use the Book online button.</p>
+        <BookingCta locale="en" referer={`${post.ctaReferer}_top`} label={l.checkAvailability} />
+      </div>
+      <div class="article-content">
+        {post.sections.map((section, index) => (
+          <>
+            <h2>{section.title}</h2>
+            {section.intro && <p>{section.intro}</p>}
+            {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets && (
+              <ul class="check-list">
+                {section.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            )}
+            {section.image && images[section.image as keyof typeof images] && (
+              <figure class="article-figure">
+                <ResponsiveImage image={section.image as never} locale={locale} />
+                {section.imageCaption && <figcaption>{section.imageCaption}</figcaption>}
+              </figure>
+            )}
+            {section.imageGallery && (
+              <div class="gallery-grid article-gallery">
+                {section.imageGallery.map((item) => {
+                  const meta = images[item.key as keyof typeof images];
+                  const orient = meta && meta.height > meta.width ? "portrait" : "landscape";
+                  const captionText = item.caption[locale];
+                  return (
+                    <figure class="gallery-item" data-orient={orient}>
+                      <button
+                        type="button"
+                        class="gallery-trigger"
+                        data-lightbox-trigger
+                        data-full={meta?.webp}
+                        data-caption={captionText}
+                        aria-label={`Open image: ${captionText}`}
+                      >
+                        <ResponsiveImage image={item.key as never} locale={locale} />
+                      </button>
+                      <figcaption>{captionText}</figcaption>
+                    </figure>
+                  );
+                })}
+              </div>
+            )}
+            {section.video && <SectionVideo data={section.video} locale={locale} />}
+            {section.videoGallery && (
+              <div class="video-gallery">
+                {section.videoGallery.map((video) => (
+                  <SectionVideo data={video} locale={locale} />
+                ))}
+              </div>
+            )}
+            {section.table && (
+              <div class="table-wrap">
+                <table>
+                  <thead><tr>{section.table.headers.map((header) => <th>{header}</th>)}</tr></thead>
+                  <tbody>{section.table.rows.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody>
+                </table>
+              </div>
+            )}
+            {index === 1 && (
+              <div class="article-cta">
+                <p>Bookings are made online through our secure page.</p>
+                <BookingCta locale="en" referer={`${post.ctaReferer}_mid`} label="Book online" />
+              </div>
+            )}
+          </>
+        ))}
+        <h2>Frequently asked questions</h2>
+        <FAQ items={post.faq} />
+        <div class="article-cta">
+          <p>See the price for your dates and complete the booking online.</p>
+          <BookingCta locale="en" referer={`${post.ctaReferer}_final`} label={l.checkAvailability} />
+        </div>
+      </div>
+    </div>
+  </article>
+  {galleryImages.length > 0 && <Lightbox locale="en" />}
+</BaseLayout>

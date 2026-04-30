@@ -1,0 +1,299 @@
+---
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import BookingCta from "@/components/BookingCta.astro";
+import { absoluteUrl, bookingUrl, labels, property, SITE_URL, type Locale } from "@/data/site";
+import "@/styles/global.css";
+
+type Alternate = {
+  hreflang: string;
+  href: string;
+};
+
+type Props = {
+  locale: Locale;
+  path: string;
+  translationPath: string;
+  title: string;
+  description: string;
+  keyword?: string;
+  schema?: Record<string, unknown>[];
+  alternates?: Alternate[];
+};
+
+const { locale, path, translationPath, title, description, keyword, schema = [], alternates = [] } = Astro.props;
+const l = labels[locale];
+const canonical = absoluteUrl(path);
+const lang = locale === "ro" ? "ro" : "en";
+
+const baseSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: "Serene Studio",
+    url: SITE_URL,
+    inLanguage: lang,
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: bookingUrl(`website_${locale}_schema`, locale),
+      name: l.reserve
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "@id": `${SITE_URL}/#lodging`,
+    name: "Serene Studio",
+    url: SITE_URL,
+    telephone: property.phone,
+    email: property.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: property.streetAddress,
+      addressLocality: property.locality,
+      addressRegion: property.region,
+      postalCode: property.postalCode,
+      addressCountry: property.country
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: property.latitude,
+      longitude: property.longitude
+    },
+    checkinTime: property.checkin,
+    checkoutTime: property.checkout,
+    petsAllowed: false,
+    smokingAllowed: false,
+    amenityFeature: [
+      "Self check-in",
+      "Fast Wi-Fi",
+      "Kitchenette",
+      "Terrace",
+      "Free street parking",
+      "Air conditioning",
+      "Central heating"
+    ].map((name) => ({ "@type": "LocationFeatureSpecification", name, value: true })),
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: bookingUrl(`website_${locale}_lodging_schema`, locale),
+      name: l.reserve
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    inLanguage: lang,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#lodging` }
+  }
+];
+
+const graph = [...baseSchema, ...schema];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keyword && <meta name="keywords" content={keyword} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="ro" href={absoluteUrl(locale === "ro" ? path : translationPath)} />
+    <link rel="alternate" hreflang="en" href={absoluteUrl(locale === "en" ? path : translationPath)} />
+    <link rel="alternate" hreflang="x-default" href={absoluteUrl(locale === "ro" ? path : translationPath)} />
+    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />)}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${SITE_URL}/images/og-serene-studio.webp`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#25212a" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <script>
+      (() => {
+        const storageKey = "serene-theme";
+        const lightColor = "#faf3e6";
+        const darkColor = "#060403";
+        const getPreferredTheme = () => {
+          try {
+            const saved = localStorage.getItem(storageKey);
+            if (saved === "light" || saved === "dark") return saved;
+          } catch {
+            // localStorage can be unavailable in hardened browsers.
+          }
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        };
+        const theme = getPreferredTheme();
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? darkColor : lightColor);
+      })();
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}></script>
+  </head>
+  <body>
+    <canvas class="ambient-network" aria-hidden="true"></canvas>
+    <a class="skip-link" href="#content">{l.content}</a>
+    <Header locale={locale} currentPath={path} translationPath={translationPath} />
+    <main id="content">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <div class="mobile-booking-bar" aria-label={l.reserve}>
+      <BookingCta locale={locale} referer={`website_${locale}_mobile_sticky`} label={l.reserve} />
+    </div>
+    <script>
+      (() => {
+        const storageKey = "serene-theme";
+        const lightColor = "#faf3e6";
+        const darkColor = "#060403";
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+        const buttons = document.querySelectorAll("[data-theme-toggle]");
+        const iconLabels = {
+          ro: { light: "Activeaza tema luminoasa", dark: "Activeaza tema intunecata" },
+          en: { light: "Switch to light theme", dark: "Switch to dark theme" }
+        };
+
+        const readSavedTheme = () => {
+          try {
+            const saved = localStorage.getItem(storageKey);
+            return saved === "light" || saved === "dark" ? saved : null;
+          } catch {
+            return null;
+          }
+        };
+
+        const applyTheme = (theme, persist = false) => {
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+          document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? darkColor : lightColor);
+          buttons.forEach((button) => {
+            const label = iconLabels[document.documentElement.lang]?.[theme === "dark" ? "light" : "dark"] ?? "Change theme";
+            button.setAttribute("aria-pressed", String(theme === "dark"));
+            button.setAttribute("aria-label", label);
+            button.setAttribute("title", label);
+          });
+          if (persist) {
+            try {
+              localStorage.setItem(storageKey, theme);
+            } catch {
+              // Ignore storage failures; the selected theme still applies for this page load.
+            }
+          }
+          window.dispatchEvent(new CustomEvent("serene_theme_change", { detail: { theme } }));
+        };
+
+        applyTheme(document.documentElement.dataset.theme || (media.matches ? "dark" : "light"));
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+            applyTheme(nextTheme, true);
+          });
+        });
+        media.addEventListener("change", (event) => {
+          if (!readSavedTheme()) applyTheme(event.matches ? "dark" : "light");
+        });
+      })();
+
+      window.addEventListener("click", (event) => {
+        const link = event.target?.closest?.("[data-booking-link]");
+        if (!link) return;
+        window.dispatchEvent(
+          new CustomEvent("book_click", {
+            detail: { referer: link.getAttribute("data-referer"), href: link.getAttribute("href") }
+          })
+        );
+      });
+    </script>
+    <script>
+      const canvas = document.querySelector(".ambient-network");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (canvas && !prefersReducedMotion.matches) {
+        const ctx = canvas.getContext("2d", { alpha: true });
+        let width = 0;
+        let height = 0;
+        let points = [];
+        const palettes = {
+          light: ["rgba(184, 90, 67, 0.46)", "rgba(53, 93, 131, 0.38)", "rgba(37, 33, 42, 0.28)"],
+          dark: ["rgba(242, 120, 53, 0.5)", "rgba(88, 125, 182, 0.34)", "rgba(255, 244, 235, 0.18)"]
+        };
+
+        const getTheme = () => document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+        const pointPalette = () => palettes[getTheme()];
+        const lineColor = (distance) => getTheme() === "dark"
+          ? `rgba(255, 244, 235, ${0.06 * (1 - distance / 132)})`
+          : `rgba(37, 33, 42, ${0.09 * (1 - distance / 132)})`;
+
+        const resize = () => {
+          const ratio = Math.min(window.devicePixelRatio || 1, 2);
+          width = window.innerWidth;
+          height = window.innerHeight;
+          canvas.width = Math.floor(width * ratio);
+          canvas.height = Math.floor(height * ratio);
+          canvas.style.width = `${width}px`;
+          canvas.style.height = `${height}px`;
+          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+          const count = Math.max(26, Math.min(64, Math.floor((width * height) / 18000)));
+          points = Array.from({ length: count }, (_, index) => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.24,
+            vy: (Math.random() - 0.5) * 0.24,
+            r: 1.2 + Math.random() * 1.8,
+            colorIndex: index % pointPalette().length
+          }));
+        };
+
+        const draw = () => {
+          ctx.clearRect(0, 0, width, height);
+          for (const p of points) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < -20 || p.x > width + 20) p.vx *= -1;
+            if (p.y < -20 || p.y > height + 20) p.vy *= -1;
+          }
+
+          for (let i = 0; i < points.length; i++) {
+            for (let j = i + 1; j < points.length; j++) {
+              const a = points[i];
+              const b = points[j];
+              const dx = a.x - b.x;
+              const dy = a.y - b.y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              if (distance < 132 && Math.random() > 0.18) {
+                ctx.strokeStyle = lineColor(distance);
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.stroke();
+              }
+            }
+          }
+
+          const palette = pointPalette();
+          for (const p of points) {
+            ctx.fillStyle = palette[p.colorIndex % palette.length];
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          requestAnimationFrame(draw);
+        };
+
+        resize();
+        draw();
+        window.addEventListener("resize", resize, { passive: true });
+      }
+    </script>
+  </body>
+</html>

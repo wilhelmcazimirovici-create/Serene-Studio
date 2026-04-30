@@ -1,0 +1,91 @@
+---
+import type { Infographic } from "@/data/types";
+import type { Locale } from "@/data/site";
+
+type Props = {
+  data: Infographic;
+  locale: Locale;
+};
+
+const { data, locale } = Astro.props;
+const ariaLabel = locale === "ro" ? "Infografic" : "Infographic";
+
+const modeIcon: Record<string, string> = {
+  walk: "M9.25 4.5a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4Zm-2.6 7.7 1.6-2.7 2.5 1.4-2.5 4.4 1.4 1L13 11.5l-3.6-2.1L11 6.6c.5-.7 1.2-1.1 2-1.1 1.4 0 2.7 1 3 2.4l.4 2.2 2.6-.5-.4-2.2A5.5 5.5 0 0 0 13 3c-1.5 0-2.9.7-3.7 2L7 8.7l-3.4-2-1.4 2.4Zm6.5 7.6-2.5-1.4-1 1.7L7 22.4l1.7 1L11 19l1.4.8 2.6-1.4-1.4-2.4Z",
+  metro: "M5 12V8a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v4m0 4-7 6-7-6V8a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v8Z",
+  drive: "M5 17h14M5 17l1-5h12l1 5M5 17v3m14-3v3m-2-9-1-3a3 3 0 0 0-3-2h-2a3 3 0 0 0-3 2l-1 3",
+  train: "M8 3h8a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-1l2 3h-2l-2-3h-2l-2 3H7l2-3H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm0 5v3h8V8H8Z"
+};
+
+const modeLabel: Record<string, { ro: string; en: string }> = {
+  walk: { ro: "Mers pe jos", en: "On foot" },
+  metro: { ro: "Metrou", en: "Metro" },
+  drive: { ro: "Cu masina", en: "By car" },
+  train: { ro: "Tren", en: "Train" }
+};
+---
+
+{data.variant === "steps" && (
+  <figure class="infographic infographic-steps" aria-label={ariaLabel}>
+    <ol class="infographic-flow">
+      {data.steps.map((step, index) => (
+        <li class="infographic-step">
+          <span class="infographic-step-number" aria-hidden="true">{step.number}</span>
+          <div class="infographic-step-body">
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+          {index < data.steps.length - 1 && (
+            <span class="infographic-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h16m0 0-6-6m6 6-6 6" /></svg>
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+    {data.caption && <figcaption class="infographic-caption">{data.caption}</figcaption>}
+  </figure>
+)}
+
+{data.variant === "distances" && (
+  <figure class="infographic infographic-distances" aria-label={ariaLabel}>
+    <div class="infographic-hub">
+      <span class="infographic-hub-dot" aria-hidden="true"></span>
+      <div class="infographic-hub-body">
+        <span class="infographic-hub-eyebrow">{locale === "ro" ? "Pleci de la" : "Starting from"}</span>
+        <span class="infographic-hub-label">{data.origin ?? "Serene Studio"}</span>
+      </div>
+    </div>
+    <ul class="infographic-distance-list">
+      {data.distances.map((entry) => {
+        const mode = entry.mode ?? "walk";
+        const modeText = modeLabel[mode][locale];
+        return (
+          <li
+            class="infographic-distance-item"
+            itemscope
+            itemtype="https://schema.org/Place"
+          >
+            <span class="infographic-distance-icon" aria-label={modeText} title={modeText}>
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d={modeIcon[mode]} />
+              </svg>
+            </span>
+            <div class="infographic-distance-body">
+              <strong itemprop="name">{entry.place}</strong>
+              <span itemprop="description">{entry.detail}</span>
+              {entry.lat != null && entry.lon != null && (
+                <meta itemprop="latitude" content={String(entry.lat)} />
+              )}
+              {entry.lat != null && entry.lon != null && (
+                <meta itemprop="longitude" content={String(entry.lon)} />
+              )}
+            </div>
+            <span class="infographic-distance-value">{entry.value}</span>
+          </li>
+        );
+      })}
+    </ul>
+    {data.caption && <figcaption class="infographic-caption">{data.caption}</figcaption>}
+  </figure>
+)}
