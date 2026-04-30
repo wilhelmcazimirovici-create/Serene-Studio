@@ -4,54 +4,125 @@ import { labels, nav, property, type Locale } from "@/data/site";
 
 type Props = {
   locale: Locale;
+  translationPath?: string;
 };
 
-const { locale } = Astro.props;
+const { locale, translationPath = locale === "ro" ? "/en/" : "/" } = Astro.props;
 const l = labels[locale];
+const year = new Date().getFullYear();
+
+const tagline = locale === "ro"
+  ? "Studio privat de aprox. 35 m2, langa Piata Muncii si Arena Nationala. Self check-in, terasa proprie, Wi-Fi rapid si zona rezidentiala linistita."
+  : "Private studio of about 35 m2 near Piata Muncii and the National Arena. Self check-in, own terrace, fast Wi-Fi and a quiet residential area.";
+
+const navTitle = locale === "ro" ? "Navigatie" : "Navigation";
+const contactTitle = locale === "ro" ? "Contact" : "Contact";
+const langTitle = locale === "ro" ? "Limba" : "Language";
+const addressLabel = locale === "ro" ? "Adresa" : "Address";
+const phoneLabel = locale === "ro" ? "Telefon" : "Phone";
+const emailLabel = "Email";
+const checkLabel = locale === "ro"
+  ? `Check-in dupa ${property.checkin}, check-out pana la ${property.checkout}`
+  : `Check-in after ${property.checkin}, check-out by ${property.checkout}`;
+
+const privacyHref = locale === "ro" ? "/politica-confidentialitate/" : "/en/privacy-policy/";
+const cookiesHref = locale === "ro" ? "/politica-cookies/" : "/en/cookie-policy/";
+const privacyLabel = locale === "ro" ? "Politica de confidentialitate" : "Privacy policy";
+const cookiesLabel = locale === "ro" ? "Politica cookies" : "Cookie policy";
+const copyrightSuffix = locale === "ro" ? "Toate drepturile rezervate." : "All rights reserved.";
 ---
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href={locale === "ro" ? "/" : "/en/"} aria-label="Serene Studio">
-          <span class="brand-mark" aria-hidden="true">S</span>
-          <span>Serene Studio</span>
+<footer class="site-footer relative">
+  <div class="absolute inset-x-0 -top-16 h-16 pointer-events-none bg-gradient-to-b from-transparent to-cream-100/60"></div>
+
+  <div class="glass-strong rounded-t-[2.5rem] mx-2 sm:mx-4">
+    <div class="container-max pt-12 pb-8 grid gap-10 md:grid-cols-12">
+      <div class="md:col-span-5 space-y-4">
+        <a
+          href={locale === "ro" ? "/" : "/en/"}
+          class="inline-flex items-center gap-2 text-ink-900 no-underline"
+          aria-label="Serene Studio"
+        >
+          <span
+            aria-hidden="true"
+            class="grid place-items-center w-10 h-10 rounded-2xl text-white font-bold text-base"
+            style="background: linear-gradient(140deg, var(--brand) 0%, var(--brand-2) 100%); box-shadow: 0 6px 14px rgba(249, 115, 22, 0.32);"
+          >S</span>
+          <span class="font-bold tracking-tight text-lg">Serene Studio</span>
         </a>
-        <p>
-          {locale === "ro"
-            ? "Studio privat langa Piata Muncii, Arena Nationala si spitalele importante din estul Bucurestiului."
-            : "Private studio near Piata Muncii, the National Arena and key hospitals in eastern Bucharest."}
-        </p>
-        <BookingCta locale={locale} referer={`website_${locale}_footer`} label={l.reserve} />
-      </div>
-      <div>
-        <h3>{locale === "ro" ? "Navigatie" : "Navigation"}</h3>
-        <nav class="footer-links" aria-label="Footer">
-          {nav[locale].map((item) => <a href={item.href}>{item.label}</a>)}
-          <a href={locale === "ro" ? "/blog/" : "/en/blog/"}>Blog</a>
-          <a href={locale === "ro" ? "/politica-confidentialitate/" : "/en/privacy-policy/"}>
-            {locale === "ro" ? "Politica de confidentialitate" : "Privacy policy"}
-          </a>
-          <a href={locale === "ro" ? "/politica-cookies/" : "/en/cookie-policy/"}>
-            {locale === "ro" ? "Politica cookies" : "Cookie policy"}
-          </a>
-        </nav>
-      </div>
-      <div>
-        <h3>{locale === "ro" ? "Contact" : "Contact"}</h3>
-        <div class="footer-links">
-          <span class="footer-muted">{property.address}</span>
-          <a href={property.phoneHref}>{property.phone}</a>
-          <a href={`mailto:${property.email}`}>{property.email}</a>
-          <span class="footer-muted">
-            {locale === "ro" ? `Check-in dupa ${property.checkin}; check-out pana la ${property.checkout}.` : `Check-in after ${property.checkin}; check-out by ${property.checkout}.`}
-          </span>
+        <p class="text-ink-700 max-w-md leading-relaxed">{tagline}</p>
+        <div class="pt-1">
+          <BookingCta locale={locale} referer={`website_${locale}_footer`} label={l.reserve} class="text-sm py-3 px-6" />
         </div>
       </div>
+
+      <div class="md:col-span-3">
+        <h3 class="eyebrow mb-3">{navTitle}</h3>
+        <ul class="space-y-2 text-sm list-none m-0 p-0">
+          {nav[locale].map((item) => (
+            <li class="m-0 p-0">
+              <a href={item.href} class="text-ink-700 hover:text-brand-700 transition no-underline">{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="md:col-span-4">
+        <h3 class="eyebrow mb-3">{contactTitle}</h3>
+        <address class="not-italic text-sm space-y-3 text-ink-700">
+          <div>
+            <span class="font-semibold text-ink-900">{addressLabel}:</span> {property.address}
+          </div>
+          <div>
+            <span class="font-semibold text-ink-900">{phoneLabel}:</span>{" "}
+            <a href={property.phoneHref} class="hover:text-brand-700 whitespace-nowrap tabular-nums no-underline">{property.phone}</a>
+          </div>
+          <div>
+            <span class="font-semibold text-ink-900">{emailLabel}:</span>{" "}
+            <a href={`mailto:${property.email}`} class="hover:text-brand-700 no-underline">{property.email}</a>
+          </div>
+          <div class="text-ink-400">{checkLabel}.</div>
+        </address>
+      </div>
     </div>
-    <div class="footer-bottom">
-      © {new Date().getFullYear()} Serene Studio. {locale === "ro" ? "Rezervarile se fac online, apasand butonul Rezerva online." : "Bookings are made online, by clicking the Book online button."}
+
+    <div class="border-t border-white/30">
+      <div class="container-max py-5 flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+        <h3 class="eyebrow shrink-0 md:w-24" id="footer-lang-label">{langTitle}</h3>
+        <ul class="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-sm list-none m-0 p-0" aria-labelledby="footer-lang-label">
+          <li class="m-0 p-0">
+            <a
+              href={locale === "ro" ? "/" : translationPath}
+              hreflang="ro"
+              aria-current={locale === "ro" ? "page" : undefined}
+              class={`block w-full text-center px-2 py-1.5 rounded-full leading-tight transition no-underline ${
+                locale === "ro" ? "glass-tinted text-brand-700 font-semibold" : "glass text-ink-700 hover:text-brand-700"
+              }`}
+            >Romana</a>
+          </li>
+          <li class="m-0 p-0">
+            <a
+              href={locale === "en" ? "/en/" : translationPath}
+              hreflang="en"
+              aria-current={locale === "en" ? "page" : undefined}
+              class={`block w-full text-center px-2 py-1.5 rounded-full leading-tight transition no-underline ${
+                locale === "en" ? "glass-tinted text-brand-700 font-semibold" : "glass text-ink-700 hover:text-brand-700"
+              }`}
+            >English</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/30">
+      <div class="container-max py-5 text-xs text-ink-400 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <span>© {year} Serene Studio. {copyrightSuffix}</span>
+        <span class="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <a href={privacyHref} class="text-ink-700 hover:text-brand-700 underline underline-offset-2 decoration-ink-100 hover:decoration-brand-300 transition">{privacyLabel}</a>
+          <span aria-hidden="true">·</span>
+          <a href={cookiesHref} class="text-ink-700 hover:text-brand-700 underline underline-offset-2 decoration-ink-100 hover:decoration-brand-300 transition">{cookiesLabel}</a>
+        </span>
+      </div>
     </div>
   </div>
 </footer>

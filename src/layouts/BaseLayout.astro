@@ -100,7 +100,7 @@ const graph = [...baseSchema, ...schema];
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {keyword && <meta name="keywords" content={keyword} />}
@@ -115,185 +115,117 @@ const graph = [...baseSchema, ...schema];
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={`${SITE_URL}/images/og-serene-studio.webp`} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#25212a" />
+    <meta name="theme-color" content="#f97316" data-theme-color />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <script>
-      (() => {
-        const storageKey = "serene-theme";
-        const lightColor = "#faf3e6";
-        const darkColor = "#060403";
-        const getPreferredTheme = () => {
-          try {
-            const saved = localStorage.getItem(storageKey);
-            if (saved === "light" || saved === "dark") return saved;
-          } catch {
-            // localStorage can be unavailable in hardened browsers.
-          }
-          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        };
-        const theme = getPreferredTheme();
+    <script is:inline>
+      (function () {
+        var key = "serene-theme";
+        var theme = "light";
+        try {
+          var stored = localStorage.getItem(key);
+          if (stored === "dark" || stored === "light") theme = stored;
+          else if (window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+        } catch (e) {}
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
-        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? darkColor : lightColor);
       })();
     </script>
     <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}></script>
   </head>
   <body>
-    <canvas class="ambient-network" aria-hidden="true"></canvas>
+    <!-- One-time SVG filter for liquid-glass refraction lenses -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <filter id="liquid-refract" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="3" />
+          <feGaussianBlur stdDeviation="0.6" />
+          <feDisplacementMap in="SourceGraphic" scale="14" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
     <a class="skip-link" href="#content">{l.content}</a>
     <Header locale={locale} currentPath={path} translationPath={translationPath} />
-    <main id="content">
+    <main id="content" class="flex-1">
       <slot />
     </main>
-    <Footer locale={locale} />
+    <Footer locale={locale} translationPath={translationPath} />
     <div class="mobile-booking-bar" aria-label={l.reserve}>
       <BookingCta locale={locale} referer={`website_${locale}_mobile_sticky`} label={l.reserve} />
     </div>
+
     <script>
       (() => {
         const storageKey = "serene-theme";
-        const lightColor = "#faf3e6";
-        const darkColor = "#060403";
-        const media = window.matchMedia("(prefers-color-scheme: dark)");
-        const buttons = document.querySelectorAll("[data-theme-toggle]");
-        const iconLabels = {
-          ro: { light: "Activeaza tema luminoasa", dark: "Activeaza tema intunecata" },
-          en: { light: "Switch to light theme", dark: "Switch to dark theme" }
+        const lightColor = "#f97316";
+        const darkColor = "#0f0d0a";
+        const root = document.documentElement;
+        const buttons = document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]");
+
+        const setMetaThemeColor = (theme: string) => {
+          document
+            .querySelector('meta[data-theme-color]')
+            ?.setAttribute("content", theme === "dark" ? darkColor : lightColor);
         };
 
-        const readSavedTheme = () => {
-          try {
-            const saved = localStorage.getItem(storageKey);
-            return saved === "light" || saved === "dark" ? saved : null;
-          } catch {
-            return null;
-          }
-        };
-
-        const applyTheme = (theme, persist = false) => {
-          document.documentElement.dataset.theme = theme;
-          document.documentElement.style.colorScheme = theme;
-          document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme === "dark" ? darkColor : lightColor);
+        const setTheme = (theme: string, persist = false) => {
+          theme = theme === "dark" ? "dark" : "light";
+          root.dataset.theme = theme;
+          root.style.colorScheme = theme;
+          setMetaThemeColor(theme);
           buttons.forEach((button) => {
-            const label = iconLabels[document.documentElement.lang]?.[theme === "dark" ? "light" : "dark"] ?? "Change theme";
+            const nextIsDark = theme !== "dark";
+            const label = nextIsDark
+              ? button.getAttribute("data-theme-label-dark")
+              : button.getAttribute("data-theme-label-light");
+            button.setAttribute("aria-label", label || "Change theme");
+            button.setAttribute("title", label || "Change theme");
             button.setAttribute("aria-pressed", String(theme === "dark"));
-            button.setAttribute("aria-label", label);
-            button.setAttribute("title", label);
           });
           if (persist) {
             try {
               localStorage.setItem(storageKey, theme);
             } catch {
-              // Ignore storage failures; the selected theme still applies for this page load.
+              // localStorage can be unavailable in hardened browsers
             }
           }
           window.dispatchEvent(new CustomEvent("serene_theme_change", { detail: { theme } }));
         };
 
-        applyTheme(document.documentElement.dataset.theme || (media.matches ? "dark" : "light"));
+        setTheme(root.dataset.theme || "light");
         buttons.forEach((button) => {
           button.addEventListener("click", () => {
-            const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-            applyTheme(nextTheme, true);
+            setTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
           });
         });
+
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
         media.addEventListener("change", (event) => {
-          if (!readSavedTheme()) applyTheme(event.matches ? "dark" : "light");
+          let saved: string | null = null;
+          try {
+            saved = localStorage.getItem(storageKey);
+          } catch {}
+          if (saved !== "dark" && saved !== "light") {
+            setTheme(event.matches ? "dark" : "light");
+          }
+        });
+
+        // Beds24 booking-link analytics dispatch
+        document.addEventListener("click", (event) => {
+          const target = event.target as Element | null;
+          const link = target?.closest?.("[data-booking-link]");
+          if (!link) return;
+          window.dispatchEvent(
+            new CustomEvent("book_click", {
+              detail: {
+                referer: link.getAttribute("data-referer"),
+                href: link.getAttribute("href")
+              }
+            })
+          );
         });
       })();
-
-      window.addEventListener("click", (event) => {
-        const link = event.target?.closest?.("[data-booking-link]");
-        if (!link) return;
-        window.dispatchEvent(
-          new CustomEvent("book_click", {
-            detail: { referer: link.getAttribute("data-referer"), href: link.getAttribute("href") }
-          })
-        );
-      });
-    </script>
-    <script>
-      const canvas = document.querySelector(".ambient-network");
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (canvas && !prefersReducedMotion.matches) {
-        const ctx = canvas.getContext("2d", { alpha: true });
-        let width = 0;
-        let height = 0;
-        let points = [];
-        const palettes = {
-          light: ["rgba(184, 90, 67, 0.46)", "rgba(53, 93, 131, 0.38)", "rgba(37, 33, 42, 0.28)"],
-          dark: ["rgba(242, 120, 53, 0.5)", "rgba(88, 125, 182, 0.34)", "rgba(255, 244, 235, 0.18)"]
-        };
-
-        const getTheme = () => document.documentElement.dataset.theme === "dark" ? "dark" : "light";
-        const pointPalette = () => palettes[getTheme()];
-        const lineColor = (distance) => getTheme() === "dark"
-          ? `rgba(255, 244, 235, ${0.06 * (1 - distance / 132)})`
-          : `rgba(37, 33, 42, ${0.09 * (1 - distance / 132)})`;
-
-        const resize = () => {
-          const ratio = Math.min(window.devicePixelRatio || 1, 2);
-          width = window.innerWidth;
-          height = window.innerHeight;
-          canvas.width = Math.floor(width * ratio);
-          canvas.height = Math.floor(height * ratio);
-          canvas.style.width = `${width}px`;
-          canvas.style.height = `${height}px`;
-          ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-          const count = Math.max(26, Math.min(64, Math.floor((width * height) / 18000)));
-          points = Array.from({ length: count }, (_, index) => ({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.24,
-            vy: (Math.random() - 0.5) * 0.24,
-            r: 1.2 + Math.random() * 1.8,
-            colorIndex: index % pointPalette().length
-          }));
-        };
-
-        const draw = () => {
-          ctx.clearRect(0, 0, width, height);
-          for (const p of points) {
-            p.x += p.vx;
-            p.y += p.vy;
-            if (p.x < -20 || p.x > width + 20) p.vx *= -1;
-            if (p.y < -20 || p.y > height + 20) p.vy *= -1;
-          }
-
-          for (let i = 0; i < points.length; i++) {
-            for (let j = i + 1; j < points.length; j++) {
-              const a = points[i];
-              const b = points[j];
-              const dx = a.x - b.x;
-              const dy = a.y - b.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-              if (distance < 132 && Math.random() > 0.18) {
-                ctx.strokeStyle = lineColor(distance);
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(a.x, a.y);
-                ctx.lineTo(b.x, b.y);
-                ctx.stroke();
-              }
-            }
-          }
-
-          const palette = pointPalette();
-          for (const p of points) {
-            ctx.fillStyle = palette[p.colorIndex % palette.length];
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fill();
-          }
-
-          requestAnimationFrame(draw);
-        };
-
-        resize();
-        draw();
-        window.addEventListener("resize", resize, { passive: true });
-      }
     </script>
   </body>
 </html>

@@ -5,13 +5,13 @@ type Props = {
   locale: Locale;
   referer: string;
   label?: string;
-  variant?: "primary" | "secondary" | "soft";
+  variant?: "primary" | "secondary";
   class?: string;
 };
 
 const { locale, referer, label, variant = "primary", class: className = "" } = Astro.props;
 const text = label ?? labels[locale].checkAvailability;
-const cls = variant === "secondary" ? "btn-secondary" : variant === "soft" ? "btn-soft" : "btn";
+const cls = variant === "secondary" ? "btn-liquid-dark" : "btn-liquid-primary";
 ---
 
 <a

@@ -193,7 +193,7 @@ const pageSchema = [
         <p class="hero-lead">{page.heroText}</p>
         <div class="hero-actions">
           <BookingCta locale={locale} referer={page.heroCtaReferer} label={l.checkAvailability} />
-          {page.secondaryHref && <a class="btn-soft" href={page.secondaryHref}>{page.secondaryLabel ?? l.seeStudio}</a>}
+          {page.secondaryHref && <a class="btn-liquid-dark" href={page.secondaryHref}>{page.secondaryLabel ?? l.seeStudio}</a>}
         </div>
         {page.proof && (
           <div class="proof-strip" aria-label={locale === "ro" ? "Date rapide" : "Quick facts"}>
