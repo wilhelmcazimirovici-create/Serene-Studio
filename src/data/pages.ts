@@ -75,7 +75,7 @@ export const pages: PageContent[] = [
             { place: "Arena Națională", detail: "Concerte, meciuri și evenimente mari", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
             { place: "Metrou Iancului", detail: "Stație de metrou alternativă", value: "~1,1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
             { place: "Mega Mall", detail: "Cumpărături, restaurante și cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
-            { place: "Parcul IOR / Alexandru Ioan Cuza", detail: "Plimbări și relaxare lângă lac", value: "metrou, taxi sau transport public", mode: "metro", lat: 44.4209, lon: 26.1652 }
+            { place: "Parcul IOR / Alexandru Ioan Cuza", detail: "Plimbări și relaxare lângă lac", value: "~19 min pe jos", mode: "walk", lat: 44.4209, lon: 26.1652 }
           ]
         },
         ctaReferer: "website_home_location"
