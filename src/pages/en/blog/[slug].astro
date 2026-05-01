@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import AirportTrainPlanner from "@/components/AirportTrainPlanner.astro";
 import BookingCta from "@/components/BookingCta.astro";
 import FAQ from "@/components/FAQ.astro";
 import Lightbox from "@/components/Lightbox.astro";
@@ -20,8 +21,12 @@ const path = `/en/blog/${post.slug}/`;
 const translationPath = `/blog/${post.translationSlug}/`;
 const l = labels.en;
 const locale = "en" as const;
+const showAirportTrainPlanner = post.slug === "how-to-get-from-otopeni-to-piata-muncii";
 
-const galleryVideos = post.sections.flatMap((section) => section.videoGallery ?? []);
+const galleryVideos = post.sections.flatMap((section) => [
+  ...(section.video ? [section.video] : []),
+  ...(section.videoGallery ?? [])
+]);
 const galleryImages = post.sections.flatMap((section) => section.imageGallery ?? []);
 
 const videoSchemas = galleryVideos.map((video, idx) => ({
@@ -111,6 +116,7 @@ const schema = [
         <p>For prices and availability, use the Book online button.</p>
         <BookingCta locale="en" referer={`${post.ctaReferer}_top`} label={l.checkAvailability} />
       </div>
+      {showAirportTrainPlanner && <AirportTrainPlanner locale="en" />}
       <div class="article-content">
         {post.sections.map((section, index) => (
           <>

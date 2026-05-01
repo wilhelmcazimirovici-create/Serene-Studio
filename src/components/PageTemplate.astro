@@ -18,8 +18,9 @@ const locale = page.locale;
 const l = labels[locale];
 const heroImage = page.heroImage ?? "bed";
 
-function sectionClass(index: number) {
-  return index % 2 === 1 ? "band alt" : "band";
+function sectionClass(index: number, section: PageSection) {
+  const base = index % 2 === 1 ? "band alt" : "band";
+  return section.variant === "airportTrainCta" ? `${base} airport-home-band` : base;
 }
 
 function breadcrumbName(path: string) {
@@ -40,6 +41,27 @@ function initials(name: string) {
     .slice(0, 2)
     .toUpperCase();
 }
+
+const airportHomeCta = {
+  ro: {
+    after: "După aterizare",
+    afterText: "pui ora avionului și vezi 3 trenuri după sosire",
+    before: "Spre aeroport",
+    beforeText: "pui ora dorită la OTP și vezi trenurile potrivite",
+    route: ["OTP", "Gara de Nord", "M1", "Serene Studio"],
+    cta: "Vezi pagina aeroportului",
+    badge: "trenuri directe Infofer"
+  },
+  en: {
+    after: "After landing",
+    afterText: "enter your flight time and see 3 trains after arrival",
+    before: "To the airport",
+    beforeText: "enter your target OTP time and see matching trains",
+    route: ["OTP", "Gara de Nord", "M1", "Serene Studio"],
+    cta: "Open the airport guide",
+    badge: "direct Infofer trains"
+  }
+}[locale];
 
 const distancePlaces = page.sections
   .filter((section) => section.infographic?.variant === "distances")
@@ -213,14 +235,16 @@ const pageSchema = [
   </section>
 
   {page.sections.map((section: PageSection, index: number) => (
-    <section class={sectionClass(index)}>
+    <section class={sectionClass(index, section)}>
       <div class="container">
         <div class={section.image ? "content-grid two" : "content-grid"}>
           <div>
-            <div class="section-head">
-              <h2>{section.title}</h2>
-              {section.intro && <p>{section.intro}</p>}
-            </div>
+            {section.variant !== "airportTrainCta" && (
+              <div class="section-head">
+                <h2>{section.title}</h2>
+                {section.intro && <p>{section.intro}</p>}
+              </div>
+            )}
 
             {section.paragraphs && (
               <div class="rich-text">
@@ -258,7 +282,46 @@ const pageSchema = [
               </div>
             )}
 
-            {section.cards && section.variant !== "reviews" && (
+            {section.cards && section.variant === "airportTrainCta" && (
+              <div class="airport-home-cta-wrap">
+                {section.cards.map((card) => (
+                  <a class="airport-home-cta" href={card.href}>
+                    <div class="airport-home-cta-copy">
+                      <span class="airport-home-kicker">{card.eyebrow}</span>
+                      <h2>{section.title}</h2>
+                      {section.intro && <p>{section.intro}</p>}
+                      <div class="airport-home-tools" aria-label={locale === "ro" ? "Opțiuni pentru trenul de aeroport" : "Airport train options"}>
+                        <span>
+                          <strong>{airportHomeCta.after}</strong>
+                          <small>{airportHomeCta.afterText}</small>
+                        </span>
+                        <span>
+                          <strong>{airportHomeCta.before}</strong>
+                          <small>{airportHomeCta.beforeText}</small>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="airport-home-route" aria-hidden="true">
+                      <span class="airport-home-badge">{airportHomeCta.badge}</span>
+                      <div class="airport-home-rail">
+                        {airportHomeCta.route.map((stop, stopIndex) => (
+                          <>
+                            {stopIndex > 0 && <i></i>}
+                            <span>{stop}</span>
+                          </>
+                        ))}
+                      </div>
+                      <span class="airport-home-link-label">
+                        {airportHomeCta.cta}
+                        <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6" /></svg>
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {section.cards && section.variant !== "reviews" && section.variant !== "airportTrainCta" && (
               <div class="cards-grid">
                 {section.cards.map((card, cardIndex) =>
                   card.href ? (

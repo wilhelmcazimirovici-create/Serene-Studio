@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import AirportTrainPlanner from "@/components/AirportTrainPlanner.astro";
 import BookingCta from "@/components/BookingCta.astro";
 import FAQ from "@/components/FAQ.astro";
 import Lightbox from "@/components/Lightbox.astro";
 import ResponsiveImage from "@/components/ResponsiveImage.astro";
 import SectionVideo from "@/components/SectionVideo.astro";
 import { blogPosts, getBlogPosts } from "@/data/blog";
-import { absoluteUrl, images, labels, SITE_URL } from "@/data/site";
+import { absoluteUrl, images, labels, property, SITE_URL } from "@/data/site";
 
 export function getStaticPaths() {
   return getBlogPosts("ro").map((post) => ({
@@ -20,9 +21,28 @@ const path = `/blog/${post.slug}/`;
 const translationPath = `/en/blog/${post.translationSlug}/`;
 const l = labels.ro;
 const locale = "ro" as const;
+const showAirportTrainPlanner = post.slug === "cum-ajungi-de-la-otopeni-la-piata-muncii";
 
-const galleryVideos = post.sections.flatMap((section) => section.videoGallery ?? []);
+function cardLabel(index: number) {
+  return String(index + 1).padStart(2, "0");
+}
+
+const galleryVideos = post.sections.flatMap((section) => [
+  ...(section.video ? [section.video] : []),
+  ...(section.videoGallery ?? [])
+]);
 const galleryImages = post.sections.flatMap((section) => section.imageGallery ?? []);
+const inlineImages = post.sections.flatMap((section) =>
+  section.image
+    ? [
+        {
+          key: section.image,
+          caption: { ro: section.imageCaption ?? "", en: section.imageCaption ?? "" }
+        }
+      ]
+    : []
+);
+const schemaImages = [...galleryImages, ...inlineImages];
 
 const videoSchemas = galleryVideos.map((video, idx) => ({
   "@type": "VideoObject",
@@ -57,16 +77,17 @@ const videoSchemas = galleryVideos.map((video, idx) => ({
     : {})
 }));
 
-const imageSchemas = galleryImages
+const imageSchemas = schemaImages
   .map((item, idx) => {
     const meta = images[item.key as keyof typeof images];
     if (!meta) return null;
+    const caption = item.caption[locale] || meta.alt[locale];
     return {
       "@type": "ImageObject",
       "@id": `${absoluteUrl(path)}#image-${idx}`,
       contentUrl: `${SITE_URL}${meta.webp}`,
       thumbnailUrl: `${SITE_URL}/images/${meta.base}-480.webp`,
-      caption: item.caption[locale],
+      caption,
       description: meta.alt[locale],
       width: meta.width,
       height: meta.height,
@@ -76,6 +97,22 @@ const imageSchemas = galleryImages
   })
   .filter((item): item is NonNullable<typeof item> => item !== null);
 
+const howToSchema = post.howTo
+  ? {
+      "@type": "HowTo",
+      "@id": `${absoluteUrl(path)}#howto`,
+      name: post.howTo.name,
+      description: post.howTo.description,
+      ...(post.howTo.totalTime ? { totalTime: post.howTo.totalTime } : {}),
+      step: post.howTo.steps.map((step, idx) => ({
+        "@type": "HowToStep",
+        position: idx + 1,
+        name: step.name,
+        text: step.text
+      }))
+    }
+  : null;
+
 const schema = [
   {
     "@type": "BlogPosting",
@@ -84,10 +121,25 @@ const schema = [
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: "ro",
+    author: { "@type": "Organization", name: property.fullName },
+    publisher: { "@type": "Organization", name: property.fullName },
+    about: { "@id": `${SITE_URL}/#lodging` },
+    keywords: post.keyword,
     mainEntityOfPage: absoluteUrl(path),
     ...(imageSchemas.length ? { image: imageSchemas.map((item) => item.contentUrl) } : {}),
-    ...(videoSchemas.length ? { video: videoSchemas.map((item) => ({ "@id": item["@id"] })) } : {})
+    ...(videoSchemas.length ? { video: videoSchemas.map((item) => ({ "@id": item["@id"] })) } : {}),
+    ...(howToSchema ? { mainEntity: { "@id": howToSchema["@id"] } } : {})
   },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${absoluteUrl(path)}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Acasă", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog/") },
+      { "@type": "ListItem", position: 3, name: post.title, item: absoluteUrl(path) }
+    ]
+  },
+  ...(howToSchema ? [howToSchema] : []),
   {
     "@type": "FAQPage",
     mainEntity: post.faq.map((item) => ({
@@ -111,6 +163,7 @@ const schema = [
         <p>Pentru prețuri și disponibilitate, folosește butonul Rezervă online.</p>
         <BookingCta locale="ro" referer={`${post.ctaReferer}_top`} label={l.checkAvailability} />
       </div>
+      {showAirportTrainPlanner && <AirportTrainPlanner locale="ro" />}
       <div class="article-content">
         {post.sections.map((section, index) => (
           <>
@@ -121,6 +174,29 @@ const schema = [
               <ul class="check-list">
                 {section.bullets.map((bullet) => <li>{bullet}</li>)}
               </ul>
+            )}
+            {section.cards && (
+              <div class="cards-grid">
+                {section.cards.map((card, cardIndex) =>
+                  card.href ? (
+                    <a class="card card-link" href={card.href} rel={card.href.startsWith("http") ? "noopener" : undefined}>
+                      <span class="card-number">{card.eyebrow ?? cardLabel(cardIndex)}</span>
+                      <h3>{card.title}</h3>
+                      <p>{card.text}</p>
+                      <span class="card-cta" aria-hidden="true">
+                        Vezi detalii
+                        <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6" /></svg>
+                      </span>
+                    </a>
+                  ) : (
+                    <article class="card">
+                      <span class="card-number">{card.eyebrow ?? cardLabel(cardIndex)}</span>
+                      <h3>{card.title}</h3>
+                      <p>{card.text}</p>
+                    </article>
+                  )
+                )}
+              </div>
             )}
             {section.image && images[section.image as keyof typeof images] && (
               <figure class="article-figure">

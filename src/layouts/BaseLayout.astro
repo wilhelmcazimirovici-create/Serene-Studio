@@ -125,7 +125,6 @@ const graph = [...baseSchema, ...schema];
         try {
           var stored = localStorage.getItem(key);
           if (stored === "dark" || stored === "light") theme = stored;
-          else if (window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
         } catch (e) {}
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = theme;
@@ -198,17 +197,6 @@ const graph = [...baseSchema, ...schema];
           button.addEventListener("click", () => {
             setTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
           });
-        });
-
-        const media = window.matchMedia("(prefers-color-scheme: dark)");
-        media.addEventListener("change", (event) => {
-          let saved: string | null = null;
-          try {
-            saved = localStorage.getItem(storageKey);
-          } catch {}
-          if (saved !== "dark" && saved !== "light") {
-            setTheme(event.matches ? "dark" : "light");
-          }
         });
 
         // Beds24 booking-link analytics dispatch

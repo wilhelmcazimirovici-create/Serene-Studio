@@ -118,6 +118,39 @@ export const images = {
     width: 1400,
     height: 1867
   },
+  airportPlatform: {
+    base: "gara-aeroport-otopeni-peron",
+    avif: "/images/gara-aeroport-otopeni-peron.avif",
+    webp: "/images/gara-aeroport-otopeni-peron.webp",
+    alt: {
+      ro: "Peronul Gării Aeroport Henri Coandă pentru trenul spre Gara de Nord București",
+      en: "Henri Coanda Airport railway station platform for the train to Bucharest North"
+    },
+    width: 1200,
+    height: 900
+  },
+  airportCanopy: {
+    base: "gara-aeroport-otopeni-copertina",
+    avif: "/images/gara-aeroport-otopeni-copertina.avif",
+    webp: "/images/gara-aeroport-otopeni-copertina.webp",
+    alt: {
+      ro: "Copertina Gării Aeroport Henri Coandă și liniile trenului spre București Nord",
+      en: "Henri Coanda Airport railway station canopy and train tracks toward Bucharest North"
+    },
+    width: 1200,
+    height: 900
+  },
+  airportTrainInterior: {
+    base: "tren-aeroport-gara-de-nord-interior",
+    avif: "/images/tren-aeroport-gara-de-nord-interior.avif",
+    webp: "/images/tren-aeroport-gara-de-nord-interior.webp",
+    alt: {
+      ro: "Interiorul trenului de la Aeroportul Otopeni către Gara de Nord București",
+      en: "Interior of the train from Otopeni Airport to Bucharest North railway station"
+    },
+    width: 1200,
+    height: 900
+  },
   arena: {
     base: "arena-nationala-serene-studio",
     avif: "/images/arena-nationala-serene-studio.avif",
@@ -343,6 +376,25 @@ export const locationRows = {
     ["IOR / Alexandru Ioan Cuza Park", "Walks and relaxation", "quick access by metro, taxi or public transport"],
     ["Old Town", "Restaurants and sightseeing", "fast access by metro or taxi"],
     ["Otopeni Airport", "International arrivals", "train to Gara de Nord, then metro/taxi"]
+  ]
+};
+
+export const airportTrainRows = {
+  ro: [
+    ["01:52", "02:17", "25 min", "TFC RE 10102"],
+    ["07:52", "08:17", "25 min", "TFC RE 10108"],
+    ["11:12", "11:37", "25 min", "TFC RE 10112"],
+    ["13:52", "14:17", "25 min", "TFC RE 10118"],
+    ["21:12", "21:37", "25 min", "TFC RE 10120"],
+    ["23:12", "23:37", "25 min", "TFC RE 10124"]
+  ],
+  en: [
+    ["01:52", "02:17", "25 min", "TFC RE 10102"],
+    ["07:52", "08:17", "25 min", "TFC RE 10108"],
+    ["11:12", "11:37", "25 min", "TFC RE 10112"],
+    ["13:52", "14:17", "25 min", "TFC RE 10118"],
+    ["21:12", "21:37", "25 min", "TFC RE 10120"],
+    ["23:12", "23:37", "25 min", "TFC RE 10124"]
   ]
 };
 

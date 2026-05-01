@@ -81,6 +81,18 @@ export const pages: PageContent[] = [
         ctaReferer: "website_home_location"
       },
       {
+        title: "Vezi ora trenului pentru zborul tău",
+        intro:
+          "Planifică trenul aeroport pentru sosire sau plecare: introdu ora aterizării ori ora la care vrei să fii la OTP și vezi 3 trenuri directe utile între Aeroport Henri Coandă și Gara de Nord.",
+        variant: "airportTrainCta",
+        cards: [
+          {
+            eyebrow: "Tren aeroport",
+            href: "/blog/cum-ajungi-de-la-otopeni-la-piata-muncii/"
+          }
+        ]
+      },
+      {
         title: "Descoperă zona din jurul Serene Studio",
         intro:
           "Pagini dedicate pentru oaspeții care vin cu un scop clar - vizită la spital, eveniment la Arena Națională sau o ieșire la mall.",
@@ -97,6 +109,7 @@ export const pages: PageContent[] = [
         intro:
           "Citește ghidul de zonă înainte să rezervi: trasee cu metroul, spitale apropiate, evenimente la stadion și obiective în raza de 3-5 km.",
         cards: [
+          { eyebrow: "Aeroport Otopeni", title: "Cum ajungi de la Otopeni la Serene Studio", text: "Tren până la Gara de Nord, metrou M1 la Piața Muncii și 4 minute pe jos până la studio.", href: "/blog/cum-ajungi-de-la-otopeni-la-piata-muncii/" },
           { eyebrow: "Top 7 obiective", title: "Top obiective lângă Serene Studio (3-5 km)", text: "Spitale, mall-uri, stadioane, parcuri și Centrul Vechi - toate la câțiva kilometri de studio.", href: "/blog/obiective-langa-serene-studio-bucuresti-3-5-km/" },
           { eyebrow: "Self check-in", title: "Self check-in în București - cazare în studio privat", text: "Cum funcționează fluxul: rezervare online, check-in online cu ID și selfie, codul cutiei de chei în guidebook.", href: "/blog/self-check-in-bucuresti-cazare-studio-privat/" },
           { eyebrow: "Stadion", title: "Cazare lângă Stadionul Dinamo București", text: "La ~3 km de stadion. Cum ajungi cu mașina sau metroul și de ce contează o zonă rezidențială după meci.", href: "/blog/cazare-langa-stadionul-dinamo-bucuresti/" },
@@ -187,6 +200,18 @@ export const pages: PageContent[] = [
         ctaReferer: "website_en_home_location"
       },
       {
+        title: "See the train time for your flight",
+        intro:
+          "Plan the airport train for arrival or departure: enter your landing time or the time you want to be at OTP and see 3 useful direct trains between Henri Coanda Airport and Gara de Nord.",
+        variant: "airportTrainCta",
+        cards: [
+          {
+            eyebrow: "Airport train",
+            href: "/en/blog/how-to-get-from-otopeni-to-piata-muncii/"
+          }
+        ]
+      },
+      {
         title: "Discover the area around Serene Studio",
         intro:
           "Dedicated pages for guests with a clear purpose - a hospital visit, a National Arena event or a mall trip.",
@@ -203,6 +228,7 @@ export const pages: PageContent[] = [
         intro:
           "Read the area guide before booking: metro routes, nearby hospitals, stadium events and key places within 3-5 km.",
         cards: [
+          { eyebrow: "Otopeni Airport", title: "How to get from Otopeni to Serene Studio", text: "Train to Gara de Nord, M1 metro to Piata Muncii and a 4-minute walk to the studio.", href: "/en/blog/how-to-get-from-otopeni-to-piata-muncii/" },
           { eyebrow: "Top 7 places", title: "Top things to do near Serene Studio (3-5 km)", text: "Hospitals, malls, stadiums, parks and the Old Town - all within a few kilometers of the studio.", href: "/en/blog/things-to-do-near-serene-studio-bucharest-3-5-km/" },
           { eyebrow: "Self check-in", title: "Self check-in in Bucharest - private studio accommodation", text: "How the flow works: online booking, online check-in with ID and selfie, key-box code in the guidebook.", href: "/en/blog/self-check-in-bucharest-private-studio/" },
           { eyebrow: "Stadium", title: "Stay near Dinamo Stadium Bucharest", text: "About 3 km from the stadium. How to get there by car or metro and why a residential area helps after the match.", href: "/en/blog/accommodation-near-dinamo-stadium-bucharest/" },

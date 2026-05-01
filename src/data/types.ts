@@ -63,6 +63,13 @@ export type GalleryImage = {
   caption: { ro: string; en: string };
 };
 
+export type HowTo = {
+  name: string;
+  description: string;
+  totalTime?: string;
+  steps: { name: string; text: string }[];
+};
+
 export type PageSection = {
   title: string;
   intro?: string;
@@ -77,7 +84,7 @@ export type PageSection = {
   videoGallery?: SectionVideo[];
   imageGallery?: GalleryImage[];
   ctaReferer?: string;
-  variant?: "reviews";
+  variant?: "reviews" | "airportTrainCta";
 };
 
 export type PageContent = {
@@ -114,4 +121,5 @@ export type BlogPost = {
   sections: PageSection[];
   faq: Faq[];
   ctaReferer: string;
+  howTo?: HowTo;
 };

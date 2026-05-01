@@ -1,0 +1,1305 @@
+---
+type Locale = 'ro' | 'en';
+
+interface Props {
+  locale?: Locale;
+  limit?: number;
+}
+
+const { locale = 'ro', limit = 4 } = Astro.props;
+
+const sourceUrl = 'https://mersultrenurilor.infofer.ro/ro-RO/Rute-trenuri/Aeroport-Henri-Coanda/Bucuresti-Nord';
+const returnSourceUrl = 'https://mersultrenurilor.infofer.ro/ro-RO/Rute-trenuri/Bucuresti-Nord/Aeroport-Henri-Coanda';
+const endpoint = '/api/infofer/aeroport-gara-de-nord/';
+
+const copy = {
+  ro: {
+    eyebrow: 'Program tren aeroport',
+    title: 'Planifică trenul Otopeni ↔ Gara de Nord',
+    intro:
+      'Alege ora de aterizare sau ora la care vrei să fii la aeroport. După tren, la Gara de Nord cobori la metrou: stația de metrou este chiar în gară. Intri pe peronul din dreapta, iei metroul până la Piața Muncii și mai mergi aproximativ 4 minute pe jos.',
+    afterEyebrow: 'Tren după aterizare',
+    afterTitle: 'Vezi la ce oră ai tren după ce aterizezi',
+    afterText: 'Pune ora de aterizare și primești următoarele 3 trenuri directe de la aeroport la Gara de Nord.',
+    afterLabel: 'Ora de aterizare',
+    afterPickerTitle: 'Ora de aterizare',
+    afterPickerAria: 'Selectează ora aterizării',
+    arriveEyebrow: 'Tren spre aeroport',
+    arriveTitle: 'Vezi cu ce tren ajungi la aeroport la timp',
+    arriveText: 'Pune ora la care vrei să fii la aeroport și primești 3 trenuri cu sosire la OTP imediat înainte.',
+    arriveLabel: 'Ora la care vrei să fii la aeroport',
+    arrivePickerTitle: 'Ora dorită la aeroport',
+    arrivePickerAria: 'Selectează ora la care vrei să fii la aeroport',
+    chooseTime: 'Alege ora',
+    loading: 'Se încarcă plecările live. Dacă Infofer nu răspunde, folosește site-ul oficial Infofer.',
+    source: 'date citite din Infofer',
+    cancel: 'Anulează',
+    ok: 'OK',
+    routeAria: 'Ruta de la aeroport la Serene Studio',
+    tripGridAria: 'Caută trenuri directe aeroport București',
+    routeSteps: [
+      ['OTP', 'Aeroport Henri Coandă'],
+      ['Gara de Nord', 'tren direct'],
+      ['Metrou', 'stația Piața Muncii'],
+      ['Serene Studio', '4 min pe jos'],
+    ],
+  },
+  en: {
+    eyebrow: 'Airport train schedule',
+    title: 'Plan your Otopeni ↔ Gara de Nord train',
+    intro:
+      'Choose your landing time or the time you want to be at the airport. After the train, go down to the metro at Gara de Nord: the metro station is inside the train station. Take the right-hand platform, get off at Piata Muncii and walk about 4 minutes.',
+    afterEyebrow: 'Train after landing',
+    afterTitle: 'See which train you have after landing',
+    afterText: 'Enter your landing time and get the next 3 direct trains from the airport to Gara de Nord.',
+    afterLabel: 'Landing time',
+    afterPickerTitle: 'Landing time',
+    afterPickerAria: 'Select landing time',
+    arriveEyebrow: 'Train to airport',
+    arriveTitle: 'See which train gets you to the airport on time',
+    arriveText: 'Enter the time you want to be at the airport and get 3 trains arriving at OTP just before.',
+    arriveLabel: 'Time you want to be at the airport',
+    arrivePickerTitle: 'Airport arrival time',
+    arrivePickerAria: 'Select the time you want to be at the airport',
+    chooseTime: 'Choose time',
+    loading: 'Loading live departures. If Infofer does not respond, use the official Infofer timetable.',
+    source: 'data read from Infofer',
+    cancel: 'Cancel',
+    ok: 'OK',
+    routeAria: 'Route from the airport to Serene Studio',
+    tripGridAria: 'Search direct Bucharest airport trains',
+    routeSteps: [
+      ['OTP', 'Henri Coanda Airport'],
+      ['Gara de Nord', 'direct train'],
+      ['Metro', 'Piata Muncii station'],
+      ['Serene Studio', '4 min walk'],
+    ],
+  },
+}[locale];
+
+const getClockPosition = (slot: number, total: number, radius: number) => {
+  const radians = (slot / total) * Math.PI * 2 - Math.PI / 2;
+  return {
+    x: `${(50 + Math.cos(radians) * radius).toFixed(2)}%`,
+    y: `${(50 + Math.sin(radians) * radius).toFixed(2)}%`,
+  };
+};
+
+const hourChoices = Array.from({ length: 24 }, (_, hour) => ({
+  value: hour,
+  label: String(hour).padStart(2, '0'),
+  ...getClockPosition(hour % 12, 12, hour < 12 ? 41 : 27),
+}));
+
+const minuteChoices = Array.from({ length: 12 }, (_, index) => {
+  const minute = index * 5;
+  return {
+    value: minute,
+    label: String(minute).padStart(2, '0'),
+    ...getClockPosition(index, 12, 41),
+  };
+});
+---
+
+<section
+  class="airport-train-planner"
+  data-serene-airport-train
+  data-locale={locale}
+  data-endpoint={endpoint}
+  data-limit={limit}
+  data-source-to-city={sourceUrl}
+  data-source-to-airport={returnSourceUrl}
+  aria-labelledby={`airport-train-planner-${locale}`}
+>
+  <div class="airport-train-glow" aria-hidden="true"></div>
+
+  <div class="airport-train-head">
+    <p class="eyebrow">{copy.eyebrow}</p>
+    <h2 id={`airport-train-planner-${locale}`}>{copy.title}</h2>
+    <p>{copy.intro}</p>
+  </div>
+
+  <div class="airport-route-strip" aria-label={copy.routeAria}>
+    {copy.routeSteps.map(([title, label], index) => (
+      <>
+        {index > 0 && <i aria-hidden="true"></i>}
+        <span><strong>{title}</strong><small>{label}</small></span>
+      </>
+    ))}
+  </div>
+
+  <div class="airport-trip-grid" aria-label={copy.tripGridAria}>
+    <form class="airport-trip-card is-active" data-trip-form data-trip="toCity">
+      <div class="airport-trip-title">
+        <span class="airport-trip-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 16l20-5-20-5 4 5-4 5zM6 11h8" />
+          </svg>
+        </span>
+        <div>
+          <p class="eyebrow">{copy.afterEyebrow}</p>
+          <h3>{copy.afterTitle}</h3>
+          <p>{copy.afterText}</p>
+        </div>
+      </div>
+
+      <label class="airport-time-field">
+        <span>{copy.afterLabel}</span>
+        <button
+          type="button"
+          data-open-time-picker
+          data-picker-title={copy.afterPickerTitle}
+          data-picker-aria={copy.afterPickerAria}
+          aria-haspopup="dialog"
+        >
+          <span data-time-display>{copy.chooseTime}</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8" />
+            <path d="M12 8v4l3 2" />
+          </svg>
+        </button>
+        <input type="hidden" data-time-input="after" />
+      </label>
+    </form>
+
+    <form class="airport-trip-card" data-trip-form data-trip="toAirport">
+      <div class="airport-trip-title">
+        <span class="airport-trip-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 17h16M5 13h14M6 7a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v10H6V7zM8 17l-2 4M16 17l2 4" />
+          </svg>
+        </span>
+        <div>
+          <p class="eyebrow">{copy.arriveEyebrow}</p>
+          <h3>{copy.arriveTitle}</h3>
+          <p>{copy.arriveText}</p>
+        </div>
+      </div>
+
+      <label class="airport-time-field">
+        <span>{copy.arriveLabel}</span>
+        <button
+          type="button"
+          data-open-time-picker
+          data-picker-title={copy.arrivePickerTitle}
+          data-picker-aria={copy.arrivePickerAria}
+          aria-haspopup="dialog"
+        >
+          <span data-time-display>{copy.chooseTime}</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8" />
+            <path d="M12 8v4l3 2" />
+          </svg>
+        </button>
+        <input type="hidden" data-time-input="arriveBy" />
+      </label>
+    </form>
+  </div>
+
+  <div class="airport-board-meta">
+    <div class="airport-live-pills">
+      <span class="airport-live-pill"><i aria-hidden="true"></i><span data-status>{locale === 'ro' ? 'Se încarcă programul live...' : 'Loading live timetable...'}</span></span>
+      <span class="airport-live-pill is-soft" data-updated>{locale === 'ro' ? 'Ora locală București' : 'Bucharest local time'}</span>
+    </div>
+  </div>
+
+  <div class="airport-results">
+    <div class="airport-results-head">
+      <div>
+        <p class="eyebrow">{locale === 'ro' ? 'Board live' : 'Live board'}</p>
+        <h3 data-board-title>{locale === 'ro' ? 'Următoarele trenuri directe' : 'Next direct trains'}</h3>
+      </div>
+      <span data-source-label>{copy.source}</span>
+    </div>
+
+    <div class="airport-table-wrap">
+      <table>
+        <caption data-caption>{locale === 'ro' ? 'Trenuri de la Aeroport Henri Coandă la Gara de Nord București' : 'Trains from Henri Coanda Airport to Bucharest North'}</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-departure-heading>{locale === 'ro' ? 'Plecare aeroport' : 'Airport departure'}</th>
+            <th scope="col" data-arrival-heading>{locale === 'ro' ? 'Sosire Gara de Nord' : 'Gara de Nord arrival'}</th>
+            <th scope="col">{locale === 'ro' ? 'Tren' : 'Train'}</th>
+            <th scope="col">{locale === 'ro' ? 'Durata' : 'Duration'}</th>
+          </tr>
+        </thead>
+        <tbody data-body>
+          <tr>
+            <td colspan="4">{copy.loading}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="airport-time-overlay" data-time-dialog hidden role="dialog" aria-modal="true" aria-label={copy.afterPickerAria}>
+    <div class="airport-time-panel" role="document">
+      <p data-dialog-title>{locale === 'ro' ? 'Selectează ora' : 'Select time'}</p>
+
+      <div class="airport-time-readout" aria-live="polite">
+        <button type="button" data-mode="hour" aria-pressed="true">
+          <span data-picker-hour>20</span>
+        </button>
+        <span aria-hidden="true">:</span>
+        <button type="button" data-mode="minute" aria-pressed="false">
+          <span data-picker-minute>00</span>
+        </button>
+      </div>
+
+      <div class="airport-time-dial" data-hour-dial aria-label={locale === 'ro' ? 'Alege ora' : 'Choose hour'}>
+        <span class="airport-time-hand" data-hour-hand aria-hidden="true"></span>
+        {hourChoices.map((choice) => (
+          <button
+            type="button"
+            class="airport-time-choice"
+            style={`left: ${choice.x}; top: ${choice.y};`}
+            data-hour={choice.value}
+            aria-label={locale === 'ro' ? `Ora ${choice.label}` : `Hour ${choice.label}`}
+          >
+            {choice.label}
+          </button>
+        ))}
+      </div>
+
+      <div class="airport-time-dial" data-minute-dial aria-label={locale === 'ro' ? 'Alege minutul' : 'Choose minute'} hidden>
+        <span class="airport-time-hand" data-minute-hand aria-hidden="true"></span>
+        {minuteChoices.map((choice) => (
+          <button
+            type="button"
+            class="airport-time-choice"
+            style={`left: ${choice.x}; top: ${choice.y};`}
+            data-minute={choice.value}
+            aria-label={locale === 'ro' ? `Minutul ${choice.label}` : `Minute ${choice.label}`}
+          >
+            {choice.label}
+          </button>
+        ))}
+      </div>
+
+      <div class="airport-time-actions">
+        <button type="button" data-time-cancel>{copy.cancel}</button>
+        <button type="button" data-time-ok>{copy.ok}</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .airport-train-planner {
+    --planner-surface: var(--surface, var(--bg));
+    --planner-surface-2: var(--surface-2, var(--bg-2));
+    --planner-brand-soft: var(--brand-soft, var(--brand-3));
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    margin: clamp(1.5rem, 5vw, 3rem) 0;
+    padding: clamp(1rem, 3vw, 1.6rem);
+    border: 1px solid var(--glass-strong-border);
+    border-radius: clamp(1.25rem, 4vw, 2rem);
+    background:
+      linear-gradient(135deg, color-mix(in oklch, var(--planner-surface) 86%, transparent), color-mix(in oklch, var(--planner-brand-soft) 42%, transparent)),
+      var(--glass-strong-bg);
+    box-shadow: var(--glass-strong-shadow), 0 30px 82px -56px color-mix(in oklch, var(--brand) 34%, black);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+  }
+
+  .airport-train-glow {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 12% 10%, color-mix(in oklch, var(--brand) 20%, transparent), transparent 35%),
+      radial-gradient(circle at 92% 4%, color-mix(in oklch, var(--accent) 16%, transparent), transparent 32%);
+    opacity: 0.8;
+  }
+
+  .airport-train-head {
+    display: grid;
+    gap: 0.55rem;
+    max-width: 58rem;
+  }
+
+  .airport-train-head h2,
+  .airport-results-head h3,
+  .airport-trip-title h3 {
+    margin: 0;
+    font-family: Georgia, ui-serif, serif;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+
+  .airport-train-head h2 {
+    font-size: clamp(1.8rem, 5vw, 3.1rem);
+    line-height: 1.02;
+  }
+
+  .airport-train-head p:not(.eyebrow),
+  .airport-trip-title p:not(.eyebrow) {
+    margin: 0;
+    color: var(--ink-2);
+  }
+
+  .airport-route-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .airport-route-strip span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.25rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: color-mix(in oklch, var(--planner-surface) 74%, transparent);
+  }
+
+  .airport-route-strip strong {
+    font-family: Georgia, ui-serif, serif;
+    font-size: 1.05rem;
+  }
+
+  .airport-route-strip small {
+    color: var(--ink-3);
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .airport-route-strip i {
+    display: none;
+  }
+
+  .airport-trip-grid {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .airport-trip-card {
+    display: grid;
+    gap: 1rem;
+    padding: clamp(1rem, 3vw, 1.25rem);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: color-mix(in oklch, var(--planner-surface) 72%, transparent);
+    box-shadow: 0 16px 44px -32px color-mix(in oklch, var(--ink) 28%, transparent);
+  }
+
+  .airport-trip-card.is-active {
+    border-color: color-mix(in oklch, var(--brand) 46%, var(--line));
+    background:
+      linear-gradient(135deg, color-mix(in oklch, var(--planner-brand-soft) 42%, transparent), color-mix(in oklch, var(--planner-surface) 78%, transparent));
+  }
+
+  .airport-trip-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .airport-trip-icon {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    color: var(--brand-2);
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .airport-trip-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .airport-trip-title h3 {
+    margin-top: 0.25rem;
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    line-height: 1.1;
+  }
+
+  .airport-trip-title p:not(.eyebrow) {
+    margin-top: 0.55rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .airport-time-field {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .airport-time-field > span {
+    font-weight: 700;
+    color: var(--ink-2);
+  }
+
+  .airport-time-field button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 4.5rem;
+    width: 100%;
+    border: 1px solid color-mix(in oklch, var(--glass-border) 70%, transparent);
+    border-radius: 1.05rem;
+    color: var(--ink);
+    background: color-mix(in oklch, var(--planner-surface) 72%, transparent);
+    box-shadow: var(--btn-liquid-shadow);
+    cursor: pointer;
+  }
+
+  .airport-time-field button span {
+    font-family: Georgia, ui-serif, serif;
+    font-size: clamp(1.45rem, 6vw, 2rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .airport-time-field button svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.65rem;
+    border-radius: 999px;
+    color: var(--brand-2);
+    background: color-mix(in oklch, var(--brand) 12%, var(--planner-surface));
+  }
+
+  .airport-board-meta {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+
+  .airport-live-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .airport-live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2.25rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    color: var(--ink-2);
+    background: color-mix(in oklch, var(--planner-surface) 72%, transparent);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .airport-live-pill i {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 0.3rem color-mix(in oklch, var(--accent) 16%, transparent);
+  }
+
+  .airport-live-pill.is-soft {
+    color: var(--brand-2);
+    background: color-mix(in oklch, var(--planner-brand-soft) 72%, transparent);
+  }
+
+  .airport-results {
+    margin-top: 1rem;
+    padding: clamp(1rem, 3vw, 1.25rem);
+    border-radius: 1.25rem;
+    background: color-mix(in oklch, var(--planner-surface) 76%, transparent);
+  }
+
+  .airport-results-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .airport-results-head h3 {
+    font-size: clamp(1.45rem, 5vw, 2.2rem);
+    line-height: 1.12;
+  }
+
+  .airport-results-head > span {
+    color: var(--brand-2);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .airport-table-wrap {
+    overflow-x: auto;
+    margin-top: 0.9rem;
+    border-radius: 1rem;
+  }
+
+  .airport-table-wrap table {
+    width: 100%;
+    min-width: 34rem;
+    border-collapse: collapse;
+    background: color-mix(in oklch, var(--planner-surface) 44%, transparent);
+  }
+
+  .airport-table-wrap caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .airport-table-wrap th,
+  .airport-table-wrap td {
+    padding: 0.85rem 0.9rem;
+    border-top: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .airport-table-wrap th {
+    color: var(--ink-2);
+    font-size: 0.85rem;
+  }
+
+  .airport-table-wrap td:first-child,
+  .airport-table-wrap td:nth-child(2) {
+    font-family: Georgia, ui-serif, serif;
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .airport-table-wrap a {
+    color: var(--brand-2);
+    font-weight: 800;
+    text-decoration-color: color-mix(in oklch, var(--brand) 42%, transparent);
+  }
+
+  .airport-table-wrap :global(.airport-error-cell) {
+    padding: 1rem 0.9rem;
+    border-top: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink-3);
+  }
+
+  .airport-table-wrap :global(.airport-error-state) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .airport-table-wrap :global(.airport-error-state p) {
+    margin: 0;
+    color: var(--ink-3);
+  }
+
+  .airport-table-wrap :global(.airport-error-link) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0 1.1rem;
+    border: 1px solid color-mix(in oklch, var(--brand) 42%, white);
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, color-mix(in oklch, var(--brand) 92%, white), var(--brand-2));
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklch, white 32%, transparent),
+      0 14px 32px -18px color-mix(in oklch, var(--brand) 70%, black);
+    transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+  }
+
+  .airport-table-wrap :global(.airport-error-link::after) {
+    content: "↗";
+    margin-left: 0.45rem;
+    font-size: 0.85em;
+  }
+
+  .airport-table-wrap :global(.airport-error-link:hover) {
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklch, white 38%, transparent),
+      0 18px 36px -18px color-mix(in oklch, var(--brand) 78%, black);
+  }
+
+  .airport-table-wrap :global(.airport-error-link:focus-visible) {
+    outline: 3px solid color-mix(in oklch, var(--brand) 36%, white);
+    outline-offset: 3px;
+  }
+
+  .airport-operator {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--ink-3);
+    font-size: 0.78rem;
+  }
+
+  .airport-time-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: color-mix(in oklch, black 42%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .airport-time-overlay[hidden] {
+    display: none;
+  }
+
+  .airport-time-panel {
+    width: min(28rem, calc(100vw - 2rem));
+    padding: 1.25rem;
+    border: 1px solid var(--glass-strong-border);
+    border-radius: 1.65rem;
+    color: var(--ink);
+    background: var(--glass-strong-bg);
+    box-shadow: var(--glass-strong-shadow), 0 32px 90px -36px rgb(0 0 0 / 0.55);
+    backdrop-filter: blur(26px) saturate(170%);
+    -webkit-backdrop-filter: blur(26px) saturate(170%);
+  }
+
+  .airport-time-panel > p {
+    margin: 0 0 0.85rem;
+    color: var(--ink-2);
+    font-weight: 800;
+  }
+
+  .airport-time-readout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .airport-time-readout button {
+    min-width: 6rem;
+    min-height: 4.8rem;
+    border: 0;
+    border-radius: 0.8rem;
+    color: var(--ink);
+    background: color-mix(in oklch, var(--planner-surface) 78%, transparent);
+    font-family: Georgia, ui-serif, serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .airport-time-readout button[aria-pressed="true"] {
+    color: white;
+    background: var(--accent);
+  }
+
+  .airport-time-readout > span {
+    font-family: Georgia, ui-serif, serif;
+    font-size: 3rem;
+    color: var(--accent);
+  }
+
+  .airport-time-dial {
+    position: relative;
+    width: min(19.5rem, 76vw);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    border-radius: 999px;
+    background: color-mix(in oklch, var(--planner-surface-2) 68%, transparent);
+  }
+
+  .airport-time-dial[hidden] {
+    display: none;
+  }
+
+  .airport-time-hand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 38%;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: rotate(var(--hand-angle, -90deg));
+    transform-origin: left center;
+  }
+
+  .airport-time-hand::after {
+    content: '';
+    position: absolute;
+    left: -0.25rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: translateY(-50%);
+  }
+
+  .airport-time-choice {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    min-width: 2.35rem;
+    min-height: 2.35rem;
+    border: 0;
+    border-radius: 999px;
+    color: var(--ink);
+    background: transparent;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+  }
+
+  .airport-time-choice.is-selected {
+    color: white;
+    background: var(--accent);
+  }
+
+  .airport-time-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .airport-time-actions button {
+    min-height: 2.75rem;
+    border: 0;
+    border-radius: 999px;
+    padding: 0 1rem;
+    color: var(--brand-2);
+    background: transparent;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .airport-time-actions button:last-child {
+    color: white;
+    background: var(--accent);
+  }
+
+  @supports not (backdrop-filter: blur(1px)) {
+    .airport-train-planner,
+    .airport-time-panel {
+      background: var(--planner-surface);
+    }
+  }
+
+  @media (min-width: 760px) {
+    .airport-route-strip {
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      align-items: stretch;
+    }
+
+    .airport-route-strip span {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .airport-route-strip small {
+      text-align: left;
+    }
+
+    .airport-route-strip i {
+      display: block;
+      width: 1.2rem;
+      align-self: center;
+      border-top: 2px solid color-mix(in oklch, var(--brand) 44%, transparent);
+    }
+
+    .airport-trip-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .airport-live-pills {
+      justify-content: flex-end;
+    }
+
+    .airport-results-head {
+      flex-direction: row;
+      align-items: end;
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .airport-table-wrap th:nth-child(4),
+    .airport-table-wrap td:nth-child(4) {
+      display: none;
+    }
+
+    .airport-table-wrap table {
+      min-width: 27rem;
+    }
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const COPY = {
+      ro: {
+        chooseTime: 'Alege ora',
+        source: 'Sursa: Infofer',
+        unavailable: 'Programul live nu este disponibil acum.',
+        openOfficial: 'Deschide programul oficial pe Infofer',
+        loadError: 'Nu am putut încărca plecările live.',
+        toAirportTitle: (count) => `Cele ${count} trenuri directe care ajung la aeroport înainte de ora aleasă`,
+        afterTitle: (count) => `Următoarele ${count} trenuri directe după ora de aterizare`,
+        defaultTitle: 'Următoarele trenuri directe',
+        departureAirport: 'Plecare aeroport',
+        arrivalGara: 'Sosire Gara de Nord',
+        departureGara: 'Plecare Gara de Nord',
+        arrivalAirport: 'Sosire aeroport',
+        captionToCity: 'Trenuri de la Aeroport Henri Coandă la Gara de Nord București',
+        captionToAirport: 'Trenuri de la Gara de Nord București la Aeroport Henri Coandă',
+        noArriveBy: (time) => `Nu am găsit trenuri directe cu sosire la aeroport înainte de ${time}`,
+        noAfter: (time) => `Nu am găsit trenuri directe după ora de aterizare ${time}`,
+        noDefault: 'Nu am găsit plecări live pentru ruta selectată.',
+        infoferNoArriveBy: 'Infofer nu a returnat trenuri care ajung la aeroport înainte de ora aleasă.',
+        infoferNoDefault: 'Infofer nu a returnat plecări următoare pentru ruta selectată.',
+        statusArriveBy: (count, time) => `${count} trenuri directe cu sosire la aeroport înainte de ${time}`,
+        statusAfter: (count, time) => `Următoarele ${count} trenuri directe după ora de aterizare ${time}`,
+        statusDefault: (count) => `${count} plecări următoare încărcate din Infofer`,
+        updatedArriveBy: (time) => `Ora dorită la aeroport: ${time}`,
+        updatedAfter: (time) => `Ora de aterizare: ${time}`,
+        updatedDefault: (time) => time ? `Actualizat la ${time}, ora București` : 'Actualizat din Infofer',
+        loadingArriveBy: (time) => `Caut trenuri cu sosire la aeroport înainte de ${time}...`,
+        loadingAfter: (time) => `Caut 3 trenuri după ora ${time}...`,
+        loadingDefault: 'Se încarcă programul live...',
+      },
+      en: {
+        chooseTime: 'Choose time',
+        source: 'Source: Infofer',
+        unavailable: 'Live timetable is not available right now.',
+        openOfficial: 'Open the official Infofer timetable',
+        loadError: 'Could not load live departures.',
+        toAirportTitle: (count) => `The ${count} direct trains arriving at the airport before your chosen time`,
+        afterTitle: (count) => `The next ${count} direct trains after landing`,
+        defaultTitle: 'Next direct trains',
+        departureAirport: 'Airport departure',
+        arrivalGara: 'Gara de Nord arrival',
+        departureGara: 'Gara de Nord departure',
+        arrivalAirport: 'Airport arrival',
+        captionToCity: 'Trains from Henri Coanda Airport to Bucharest North',
+        captionToAirport: 'Trains from Bucharest North to Henri Coanda Airport',
+        noArriveBy: (time) => `No direct trains found arriving at the airport before ${time}`,
+        noAfter: (time) => `No direct trains found after landing time ${time}`,
+        noDefault: 'No live departures found for the selected route.',
+        infoferNoArriveBy: 'Infofer did not return trains arriving at the airport before the chosen time.',
+        infoferNoDefault: 'Infofer did not return upcoming departures for the selected route.',
+        statusArriveBy: (count, time) => `${count} direct trains arriving at the airport before ${time}`,
+        statusAfter: (count, time) => `Next ${count} direct trains after landing time ${time}`,
+        statusDefault: (count) => `${count} upcoming departures loaded from Infofer`,
+        updatedArriveBy: (time) => `Desired airport time: ${time}`,
+        updatedAfter: (time) => `Landing time: ${time}`,
+        updatedDefault: (time) => time ? `Updated at ${time}, Bucharest time` : 'Updated from Infofer',
+        loadingArriveBy: (time) => `Searching trains arriving at the airport before ${time}...`,
+        loadingAfter: (time) => `Searching 3 trains after ${time}...`,
+        loadingDefault: 'Loading live timetable...',
+      },
+    };
+
+    const sourceUrl = 'https://mersultrenurilor.infofer.ro/ro-RO/Rute-trenuri/Aeroport-Henri-Coanda/Bucuresti-Nord';
+    const returnSourceUrl = 'https://mersultrenurilor.infofer.ro/ro-RO/Rute-trenuri/Bucuresti-Nord/Aeroport-Henri-Coanda';
+
+    const padTime = (value) => String(value).padStart(2, '0');
+
+    const parseTime = (value) => {
+      const match = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(value || '');
+      if (!match) return null;
+      return { hour: Number(match[1]), minute: Number(match[2]), value: `${match[1]}:${match[2]}` };
+    };
+
+    const nearestFive = (minute) => Math.round(minute / 5) * 5 % 60;
+
+    const currentPickerTime = () => {
+      const now = new Date();
+      return { hour: now.getHours(), minute: nearestFive(now.getMinutes()) };
+    };
+
+    const makeCell = (text, className = '') => {
+      const cell = document.createElement('td');
+      cell.className = className;
+      cell.textContent = text || '-';
+      return cell;
+    };
+
+    const getCopy = (widget) => COPY[widget.dataset.locale === 'en' ? 'en' : 'ro'];
+
+    const applyResultContext = (widget, data, rowCount = null) => {
+      const t = getCopy(widget);
+      const departureHeading = widget.querySelector('[data-departure-heading]');
+      const arrivalHeading = widget.querySelector('[data-arrival-heading]');
+      const boardTitle = widget.querySelector('[data-board-title]');
+      const caption = widget.querySelector('[data-caption]');
+      const sourceLabel = widget.querySelector('[data-source-label]');
+      const toAirport = data?.direction === 'toAirport';
+      const requestedAfterTime = data?.requestedAfterTime;
+      const requestedArriveByTime = data?.requestedArriveByTime;
+      const countLabel = Number.isFinite(rowCount) && rowCount > 0 ? rowCount : 3;
+
+      widget.dataset.currentSourceUrl = data?.sourceUrl || (toAirport ? returnSourceUrl : sourceUrl);
+
+      if (departureHeading) departureHeading.textContent = toAirport ? t.departureGara : t.departureAirport;
+      if (arrivalHeading) arrivalHeading.textContent = toAirport ? t.arrivalAirport : t.arrivalGara;
+      if (caption) caption.textContent = toAirport ? t.captionToAirport : t.captionToCity;
+      if (sourceLabel) sourceLabel.textContent = t.source;
+      if (boardTitle) {
+        boardTitle.textContent = requestedArriveByTime
+          ? t.toAirportTitle(countLabel)
+          : requestedAfterTime
+            ? t.afterTitle(countLabel)
+            : t.defaultTitle;
+      }
+
+      return { toAirport };
+    };
+
+    const renderError = (widget, message, options = {}) => {
+      const t = getCopy(widget);
+      const body = widget.querySelector('[data-body]');
+      const status = widget.querySelector('[data-status]');
+      const updated = widget.querySelector('[data-updated]');
+      const currentSourceUrl = widget.dataset.currentSourceUrl || sourceUrl;
+      if (!options.keepMeta) {
+        if (status) status.textContent = t.unavailable;
+        if (updated) updated.textContent = t.source;
+      }
+      if (!body) return;
+
+      body.textContent = '';
+      const row = document.createElement('tr');
+      const cell = document.createElement('td');
+      cell.colSpan = 4;
+      cell.className = 'airport-error-cell';
+      const wrap = document.createElement('div');
+      wrap.className = 'airport-error-state';
+      const text = document.createElement('p');
+      text.textContent = message || t.loadError;
+      const link = document.createElement('a');
+      link.className = 'airport-error-link';
+      link.href = currentSourceUrl;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = t.openOfficial;
+      wrap.append(text);
+      wrap.append(link);
+      cell.append(wrap);
+      row.append(cell);
+      body.append(row);
+    };
+
+    const renderRows = (widget, data) => {
+      const t = getCopy(widget);
+      const body = widget.querySelector('[data-body]');
+      const status = widget.querySelector('[data-status]');
+      const updated = widget.querySelector('[data-updated]');
+      if (!body) return;
+
+      const rows = Array.isArray(data.departures) ? data.departures : [];
+      const context = applyResultContext(widget, data, rows.length);
+      if (!rows.length) {
+        if (status) {
+          status.textContent = data.requestedArriveByTime
+            ? t.noArriveBy(data.requestedArriveByTime)
+            : data.requestedAfterTime
+              ? t.noAfter(data.requestedAfterTime)
+              : t.noDefault;
+        }
+        if (updated) {
+          updated.textContent = data.requestedArriveByTime
+            ? t.updatedArriveBy(data.requestedArriveByTime)
+            : data.requestedAfterTime
+              ? t.updatedAfter(data.requestedAfterTime)
+              : t.source;
+        }
+        renderError(widget, data.requestedArriveByTime ? t.infoferNoArriveBy : t.infoferNoDefault, { keepMeta: true });
+        return;
+      }
+
+      body.textContent = '';
+      const fallbackTrainUrl = widget.dataset.currentSourceUrl || (context.toAirport ? returnSourceUrl : sourceUrl);
+      rows.forEach((item) => {
+        const row = document.createElement('tr');
+        row.append(makeCell(item.departureTime));
+        row.append(makeCell(item.arrivalTime));
+
+        const trainCell = makeCell('');
+        const trainLink = document.createElement('a');
+        trainLink.href = item.trainUrl || fallbackTrainUrl;
+        trainLink.target = '_blank';
+        trainLink.rel = 'noopener';
+        trainLink.textContent = item.train || 'Infofer';
+        trainCell.append(trainLink);
+        if (item.operator) {
+          const operator = document.createElement('span');
+          operator.className = 'airport-operator';
+          operator.textContent = item.operator;
+          trainCell.append(operator);
+        }
+        row.append(trainCell);
+        row.append(makeCell(item.duration));
+        body.append(row);
+      });
+
+      if (status) {
+        status.textContent = data.requestedArriveByTime
+          ? t.statusArriveBy(rows.length, data.requestedArriveByTime)
+          : data.requestedAfterTime
+            ? t.statusAfter(rows.length, data.requestedAfterTime)
+            : t.statusDefault(rows.length);
+      }
+      if (updated) {
+        updated.textContent = data.requestedArriveByTime
+          ? t.updatedArriveBy(data.requestedArriveByTime)
+          : data.requestedAfterTime
+            ? t.updatedAfter(data.requestedAfterTime)
+            : t.updatedDefault(data.localTime);
+      }
+    };
+
+    const endpointCandidates = (endpoint) => {
+      const clean = String(endpoint || '/api/infofer/aeroport-gara-de-nord/').replace(/\?.*$/, '');
+      const noSlash = clean.endsWith('/') ? clean.slice(0, -1) : clean;
+      const candidates = [clean, noSlash, `${noSlash}.json`];
+      const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+      if (isLocal) {
+        candidates.push(
+          `https://www.serenestudio.ro${clean}`,
+          `https://www.serenestudio.ro${noSlash}`,
+          `https://www.serenestudio.ro${noSlash}.json`
+        );
+      }
+      return [...new Set(candidates)];
+    };
+
+    const fetchLiveSchedule = async (endpoint, params, fallbackMessage) => {
+      let lastError = null;
+      for (const candidate of endpointCandidates(endpoint)) {
+        try {
+          const response = await fetch(`${candidate}?${params.toString()}`, {
+            headers: { accept: 'application/json' },
+            cache: 'no-store',
+          });
+          const contentType = response.headers.get('content-type') || '';
+          if (!contentType.includes('application/json')) {
+            throw new Error(fallbackMessage);
+          }
+          const data = await response.json();
+          if (!response.ok || !data.ok) throw new Error(data.message || fallbackMessage);
+          return data;
+        } catch (error) {
+          lastError = error;
+        }
+      }
+      throw lastError instanceof Error ? lastError : new Error(fallbackMessage);
+    };
+
+    const loadWidget = async (widget, options = {}) => {
+      const t = getCopy(widget);
+      const endpoint = widget.dataset.endpoint || '/api/infofer/aeroport-gara-de-nord/';
+      const limit = options.limit || widget.dataset.limit || '4';
+      const params = new URLSearchParams({ limit });
+      const direction = options.direction || 'toCity';
+      params.set('direction', direction);
+      if (options.after) params.set('after', options.after);
+      if (options.arriveBy) params.set('arriveBy', options.arriveBy);
+      widget.dataset.currentSourceUrl = direction === 'toAirport'
+        ? (widget.dataset.sourceToAirport || returnSourceUrl)
+        : (widget.dataset.sourceToCity || sourceUrl);
+
+      const status = widget.querySelector('[data-status]');
+      if (status) {
+        status.textContent = options.arriveBy
+          ? t.loadingArriveBy(options.arriveBy)
+          : options.after
+            ? t.loadingAfter(options.after)
+            : t.loadingDefault;
+      }
+
+      try {
+        const data = await fetchLiveSchedule(endpoint, params, t.loadError);
+        renderRows(widget, data);
+      } catch (error) {
+        const message = error instanceof Error && error.message ? error.message : t.loadError;
+        const isTechnicalParserError = /unexpected token|doctype|json|html|failed to fetch|networkerror/i.test(message);
+        renderError(widget, isTechnicalParserError ? t.loadError : message);
+      }
+    };
+
+    const setupTimePicker = (widget) => {
+      const t = getCopy(widget);
+      const dialog = widget.querySelector('[data-time-dialog]');
+      const openButtons = widget.querySelectorAll('[data-open-time-picker]');
+      const dialogTitle = widget.querySelector('[data-dialog-title]');
+      const hourText = widget.querySelector('[data-picker-hour]');
+      const minuteText = widget.querySelector('[data-picker-minute]');
+      const hourDial = widget.querySelector('[data-hour-dial]');
+      const minuteDial = widget.querySelector('[data-minute-dial]');
+      const hourHand = widget.querySelector('[data-hour-hand]');
+      const minuteHand = widget.querySelector('[data-minute-hand]');
+      const modeButtons = widget.querySelectorAll('[data-mode]');
+      const hourButtons = widget.querySelectorAll('[data-hour]');
+      const minuteButtons = widget.querySelectorAll('[data-minute]');
+      const cancelButton = widget.querySelector('[data-time-cancel]');
+      const okButton = widget.querySelector('[data-time-ok]');
+      if (!dialog || !openButtons.length) return;
+      if (dialog.parentElement !== document.body) document.body.appendChild(dialog);
+
+      let selected = currentPickerTime();
+      let mode = 'hour';
+      let previousFocus = null;
+      let activeField = null;
+
+      const selectedValue = () => `${padTime(selected.hour)}:${padTime(selected.minute)}`;
+      const handAngle = (value, total) => `${(value / total) * 360 - 90}deg`;
+
+      const syncActiveTripCard = (activeForm) => {
+        widget.querySelectorAll('[data-trip-form]').forEach((form) => {
+          const isActive = form === activeForm;
+          const input = form.querySelector('[data-time-input]');
+          const display = form.querySelector('[data-time-display]');
+
+          form.classList.toggle('is-active', isActive);
+          if (!isActive) {
+            if (input) input.value = '';
+            if (display) display.textContent = t.chooseTime;
+          }
+        });
+      };
+
+      const loadSelectedTrip = (field, value) => {
+        const form = field?.closest('[data-trip-form]');
+        if (!form || !value) return;
+        const trip = form.dataset.trip === 'toAirport' ? 'toAirport' : 'toCity';
+        loadWidget(widget, trip === 'toAirport'
+          ? { direction: 'toAirport', arriveBy: value, limit: '3' }
+          : { direction: 'toCity', after: value, limit: '3' });
+      };
+
+      const update = () => {
+        if (hourText) hourText.textContent = padTime(selected.hour);
+        if (minuteText) minuteText.textContent = padTime(selected.minute);
+        if (hourDial) hourDial.hidden = mode !== 'hour';
+        if (minuteDial) minuteDial.hidden = mode !== 'minute';
+
+        modeButtons.forEach((button) => {
+          const active = button.dataset.mode === mode;
+          button.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        hourButtons.forEach((button) => {
+          button.classList.toggle('is-selected', Number(button.dataset.hour) === selected.hour);
+        });
+        minuteButtons.forEach((button) => {
+          button.classList.toggle('is-selected', Number(button.dataset.minute) === selected.minute);
+        });
+
+        hourHand?.style.setProperty('--hand-angle', handAngle(selected.hour % 12, 12));
+        minuteHand?.style.setProperty('--hand-angle', handAngle(selected.minute, 60));
+      };
+
+      const open = (field = null) => {
+        activeField = field || openButtons[0];
+        const activeInput = activeField?.closest('label')?.querySelector('[data-time-input]');
+        selected = parseTime(activeInput?.value) || currentPickerTime();
+        mode = 'hour';
+        previousFocus = document.activeElement;
+        if (dialogTitle) dialogTitle.textContent = activeField?.dataset.pickerTitle || t.chooseTime;
+        dialog.setAttribute('aria-label', activeField?.dataset.pickerAria || t.chooseTime);
+        dialog.hidden = false;
+        document.documentElement.classList.add('overflow-hidden');
+        update();
+        requestAnimationFrame(() => {
+          const selectedHourButton = dialog.querySelector(`[data-hour="${selected.hour}"]`);
+          (selectedHourButton || okButton || dialog).focus?.();
+        });
+      };
+
+      const close = () => {
+        dialog.hidden = true;
+        document.documentElement.classList.remove('overflow-hidden');
+        previousFocus?.focus?.();
+      };
+
+      openButtons.forEach((button) => {
+        button.addEventListener('click', () => open(button));
+      });
+
+      modeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          mode = button.dataset.mode === 'minute' ? 'minute' : 'hour';
+          update();
+        });
+      });
+
+      hourButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selected.hour = Number(button.dataset.hour);
+          mode = 'minute';
+          update();
+        });
+      });
+
+      minuteButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selected.minute = Number(button.dataset.minute);
+          update();
+        });
+      });
+
+      cancelButton?.addEventListener('click', close);
+      okButton?.addEventListener('click', () => {
+        const field = activeField || openButtons[0];
+        const form = field?.closest('[data-trip-form]');
+        const label = field?.closest('label');
+        const input = label?.querySelector('[data-time-input]');
+        const display = label?.querySelector('[data-time-display]');
+        const value = selectedValue();
+        syncActiveTripCard(form);
+        if (input) input.value = value;
+        if (display) display.textContent = value;
+        close();
+        loadSelectedTrip(field, value);
+      });
+
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) close();
+      });
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') close();
+      });
+    };
+
+    document.querySelectorAll('[data-serene-airport-train]').forEach((widget) => {
+      setupTimePicker(widget);
+      loadWidget(widget, { direction: 'toCity' });
+    });
+  })();
+</script>

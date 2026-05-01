@@ -1,4 +1,4 @@
-import { hospitalRows, locationRows, property } from "./site";
+import { airportTrainRows, hospitalRows, locationRows, property } from "./site";
 import type { BlogPost, Faq } from "./types";
 import { arenaPhotoSection, arenaVideoSection } from "./arena-media";
 
@@ -217,33 +217,217 @@ export const blogPosts: BlogPost[] = [
     slug: "cum-ajungi-de-la-otopeni-la-piata-muncii",
     locale: "ro",
     translationSlug: "how-to-get-from-otopeni-to-piata-muncii",
-    title: "Cum ajungi de la Otopeni la Piața Muncii",
-    description: "Rute practice de la Aeroportul Otopeni la Piața Muncii și Serene Studio: tren, metrou, taxi sau ridesharing.",
-    keyword: "Otopeni Piata Muncii, aeroport Serene Studio Bucuresti",
-    date: "2026-04-30",
+    title: "Cum ajungi de la Otopeni la Serene Studio",
+    description: "Ghid simplu de la Aeroportul Otopeni la Serene Studio: tren până la Gara de Nord, metrou din gară la Piața Muncii și 4 minute pe jos.",
+    keyword: "Aeroport Otopeni Serene Studio, Otopeni Piata Muncii, tren aeroport Gara de Nord",
+    date: "2026-05-01",
     intro:
-      "De la Aeroportul Otopeni la Piața Muncii poți ajunge cu trenul până la Gara de Nord și apoi metrou/taxi, sau direct cu taxi/ridesharing.",
+      "Cea mai simplă rută: tren Aeroport Henri Coandă - Gara de Nord, metrou din gară până la Piața Muncii și 4 minute pe jos până la Serene Studio.",
     ctaReferer: "website_blog_otopeni",
+    howTo: {
+      name: "Cum ajungi de la Aeroportul Otopeni la Serene Studio București",
+      description:
+        "Traseu pas cu pas cu trenul până la Gara de Nord, metrou din gară până la Piața Muncii și mers pe jos până la Serene Studio.",
+      totalTime: "PT60M",
+      steps: [
+        {
+          name: "Mergi la Gara Aeroport Henri Coandă",
+          text: "Din terminal urmezi indicatoarele către tren / Gara Aeroport. Peronul este lângă zona Sosiri."
+        },
+        {
+          name: "Iei trenul spre București Nord",
+          text: "Cumperi biletul și iei trenul Aeroport Henri Coandă - București Nord. Durata afișată de CFR Călători este aproximativ 20-25 minute."
+        },
+        {
+          name: "La Gara de Nord cobori la metrou",
+          text: "Stația de metrou este chiar în Gara de Nord. Urmezi indicatoarele Metrorex, cobori la metrou și intri pe peronul din dreapta, în direcția Dristor / Pantelimon, fără schimbare de magistrală."
+        },
+        {
+          name: "Cobori la Piața Muncii",
+          text: "Cobori la stația Piața Muncii, apoi folosești harta pentru ultima porțiune de aproximativ 4 minute pe jos."
+        }
+      ]
+    },
     sections: [
       {
-        title: "Care este ruta cu transport public?",
-        intro: "Ruta tipică este tren Aeroport Otopeni - Gara de Nord, apoi metrou și/sau taxi către Piața Muncii.",
+        title: "Care este ruta recomandată de la aeroport la Serene Studio?",
+        intro: "Ruta recomandată este tren până la Gara de Nord, metrou din gară până la Piața Muncii și mers pe jos până la Serene Studio.",
         paragraphs: [
-          "Verifică programul trenului și traseul metroului în ziua sosirii, pentru că orarele și lucrările pot schimba timpul total.",
-          "Dacă ai bagaj mare sau ajungi târziu, taxiul sau ridesharingul poate fi mai simplu."
+          "La actualizarea din 1 mai 2026, CFR Călători afișează pentru ruta Aeroport Henri Coandă - București Nord o durată de aproximativ 20-25 minute și tarif de 6,50 lei pentru trenurile sale. Există și alți operatori pe această rută, deci verifică biletul și ora trenului înainte de plecare.",
+          "După ce ajungi la Gara de Nord, nu trebuie să traversezi orașul cu autobuzul și nu depinzi de trafic. Stația de metrou este chiar în gară: urmezi indicatoarele Metrorex, cobori la metrou, intri pe peronul din dreapta, iei metroul până la Piața Muncii. Serene Studio este la aproximativ 4 minute pe jos de stația Piața Muncii."
         ],
-        table: { headers: ["Opțiune", "Avantaj", "Observație"], rows: [["Tren + metrou", "cost predictibil", "verifică orarul"], ["Taxi/ridesharing", "mai simplu cu bagaje", "timp dependent de trafic"], ["Transfer privat", "comod", "necesită organizare separată"]] }
+        imageGallery: [
+          {
+            key: "airportPlatform",
+            caption: {
+              ro: "Peronul Gării Aeroport Henri Coandă: de aici pleacă trenurile spre București Nord.",
+              en: "Henri Coanda Airport railway station platform: trains leave from here toward Bucharest North."
+            }
+          },
+          {
+            key: "airportTrainInterior",
+            caption: {
+              ro: "Interiorul trenului de aeroport, varianta predictibilă când vrei să eviți traficul.",
+              en: "Airport train interior, the predictable option when you want to avoid traffic."
+            }
+          }
+        ],
+        video: {
+          base: "gara-aeroport-otopeni-bucuresti",
+          poster: "/video/gara-aeroport-otopeni-bucuresti-poster.jpg",
+          posterWebp: "/video/gara-aeroport-otopeni-bucuresti-poster.webp",
+          durationSeconds: 6,
+          uploadDate: "2026-05-01",
+          width: 960,
+          height: 710,
+          name: {
+            ro: "Gara Aeroport Henri Coandă (Otopeni) - punctul de plecare al trenului spre București Nord",
+            en: "Henri Coanda Airport railway station (Otopeni) - departure point for the train to Bucharest North"
+          },
+          description: {
+            ro: "Filmare scurtă din Gara Aeroport Henri Coandă, lângă terminalul Otopeni - aici iei trenul direct spre București Nord, primul pas al rutei către Serene Studio (metrou din Gara de Nord până la Piața Muncii și 4 minute pe jos).",
+            en: "Short clip from the Henri Coanda Airport railway station next to Otopeni terminal - this is where you board the direct train to Bucharest North, the first leg of the route to Serene Studio (metro from Gara de Nord to Piata Muncii and a 4-minute walk)."
+          },
+          contentLocation: {
+            name: "Gara Aeroport Henri Coandă",
+            address: "Calea Bucureștilor 224E, Otopeni 075150, Județul Ilfov",
+            lat: 44.5722,
+            lon: 26.1025
+          }
+        },
+        table: {
+          headers: ["Pas", "Ce faci", "Timp orientativ"],
+          rows: [
+            ["1", "Aeroport Henri Coandă - mergi la Gara Aeroport", "5-10 minute din zona Sosiri"],
+            ["2", "Tren Aeroport Henri Coandă - București Nord", "aprox. 20-25 minute"],
+            ["3", "Metrou din Gara de Nord - peronul din dreapta - Piața Muncii", "aprox. 15-20 minute"],
+            ["4", "Piața Muncii - Serene Studio, Str. Alexandru Zagoritz 12", "aprox. 4 minute pe jos"]
+          ]
+        }
       },
       {
-        title: "Ce trebuie să faci înainte de sosire?",
-        intro: "Finalizează check-in-ul online înainte să ajungi la poartă.",
+        title: "Plecări și sosiri Aeroport Henri Coandă - Gara de Nord",
+        intro:
+          "Mai jos sunt câteva exemple de trenuri directe Aeroport Henri Coandă - București Nord. Tabelul este orientativ, nu orarul complet; verifică Infofer, CFR Călători sau operatorul trenului în ziua aterizării.",
+        table: {
+          headers: ["Plecare aeroport", "Sosire Gara de Nord", "Durată", "Operator / tren"],
+          rows: airportTrainRows.ro
+        }
+      },
+      {
+        title: "De ce este simplu cu trenul și metroul?",
+        intro: "Este simplu pentru că ai două segmente principale: un tren direct până la Gara de Nord și o singură linie de metrou până la Piața Muncii.",
         paragraphs: [
-          "După check-in-ul online și completarea datelor necesare, folosești codul de acces pentru cutia de chei de la poartă.",
-          "Pentru rezervare, folosește butonul Rezervă online, unde vezi prețul și disponibilitatea reală."
+          "Pentru un oaspete care vine prima dată în București, ruta are puține decizii: urmezi indicatoarele de tren din aeroport, cobori la capătul feroviar principal al orașului, apoi cobori la metrou chiar din Gara de Nord, intri pe peronul din dreapta și iei metroul până la Piața Muncii. Nu trebuie să negociezi taxi, nu trebuie să schimbi autobuze și nu stai blocat pe DN1.",
+          "La metrou cumperi un titlu de călătorie separat. Tarifele Metrorex se pot schimba, de aceea este mai sigur să verifici prețul actual la automatele din stație sau pe site-ul Metrorex în ziua sosirii."
+        ],
+        image: "airportCanopy",
+        imageCaption: "Gara Aeroport Henri Coandă este ușor de recunoscut: peron acoperit, indicatoare clare și trenuri către București Nord."
+      },
+      {
+        title: "Cât durează realist drumul de la Otopeni la Piața Muncii?",
+        intro: "În mers efectiv, ruta este de aproximativ 40-45 minute; cu așteptarea trenului și orientarea în stații, planifică 50-75 minute.",
+        paragraphs: [
+          "Timpul total depinde mai mult de cât aștepți trenul decât de traficul rutier. Dacă tocmai pleacă un tren când ajungi la peron, următorul poate adăuga timp la călătorie. Verifică mersul trenurilor înainte să ieși din terminal.",
+          "Dacă ai o sosire seara târziu, bagaj voluminos sau vii cu mai multe valize, un taxi sau ridesharing poate fi mai comod. Totuși, pe timpul zilei, trenul + metroul rămân de obicei cea mai predictibilă variantă."
+        ],
+        table: {
+          headers: ["Variantă", "Când e potrivită", "Timp orientativ"],
+          rows: [
+            ["Tren + metrou + mers pe jos", "bagaj normal, vrei cost predictibil", "50-75 minute cu așteptare"],
+            ["Tren + taxi din Gara de Nord", "bagaj mare, dar vrei să eviți DN1", "45-70 minute"],
+            ["Taxi/ridesharing direct din aeroport", "sosire târzie sau multe bagaje", "35-70 minute, în funcție de trafic"]
+          ]
+        }
+      },
+      {
+        title: "Cum ajungi de la Piața Muncii la Serene Studio?",
+        intro: "De la metrou Piața Muncii până la Serene Studio faci aproximativ 4 minute pe jos.",
+        paragraphs: [
+          `Adresa este ${property.address}. Pentru ultima porțiune, deschide Google Maps, Apple Maps sau Waze și caută Serene Studio / Strada Alexandru Zagoritz 12.`,
+          "Zona este rezidențială, cu străzi mai liniștite decât bulevardele mari. Dacă ajungi seara, păstrează harta deschisă până la poartă și verifică din timp instrucțiunile din guidebook."
+        ],
+        table: {
+          headers: ["Reper", "Rol", "Timp / distanță"],
+          rows: [
+            ["Metrou Piața Muncii", "stația de metrou pentru Serene Studio", "aprox. 4 minute pe jos"],
+            ["Strada Alexandru Zagoritz 12", "adresa cazării", "Sector 2, București 021998"],
+            ["Arena Națională", "reper mare în apropiere", "aprox. 14 minute pe jos de studio"]
+          ]
+        }
+      },
+      {
+        title: "Ce trebuie să faci înainte să ajungi la poartă?",
+        intro: "Finalizează check-in-ul online înainte să ajungi la Serene Studio, ca să ai codul pentru cutia de chei.",
+        paragraphs: [
+          "După rezervare, completezi check-in-ul online: fotografiezi documentul acceptat, faci selfie pe loc, achiți taxa de oraș și semnezi regulamentul. La final se deschide guidebook-ul cu instrucțiunile de acces.",
+          "Nu facem rezervări telefonic. Telefonul este doar pentru urgențe. Toate informațiile pentru sejur le găsești în guidebook, accesibil oricând prin același link folosit la check-in-ul online."
+        ]
+      },
+      {
+        title: "Unde verifici orarul și traseul înainte să pleci?",
+        intro: "Verifică orarul trenului și harta metroului în ziua sosirii, mai ales dacă aterizezi seara sau în perioade cu lucrări.",
+        cards: [
+          {
+            eyebrow: "Plecări / sosiri",
+            title: "Infofer - stația Aeroport Henri Coandă",
+            text: "Verifică plecările și sosirile din stația Aeroport Henri Coandă în ziua aterizării.",
+            href: "https://m.infofer.ro/ro-RO/Statie/Aeroport-Henri-Coanda"
+          },
+          {
+            eyebrow: "Tren aeroport",
+            title: "CFR Călători - Aeroport Henri Coandă",
+            text: "Durată, tarif, cumpărare bilet și informații pentru trenurile CFR spre București Nord.",
+            href: "https://www.cfrcalatori.ro/bucuresti-nord-aeroport-henri-coanda/"
+          },
+          {
+            eyebrow: "Exemple RE",
+            title: "Transferoviar Călători - Aeroport - București Nord",
+            text: "Tabel public cu plecări și sosiri RE între Aeroport Henri Coandă și București Nord.",
+            href: "https://transferoviarcalatori.ro/ro/mersul-trenurilor/bucuresti-nord-aeroport-h-coanda"
+          },
+          {
+            eyebrow: "Metrou",
+            title: "Harta oficială Metrorex",
+            text: "Verifică M1: Gara de Nord - Piața Muncii și conexiunile din București.",
+            href: "https://www.metrorex.ro/storage/documents/1732693185harta_metrorex.pdf"
+          },
+          {
+            eyebrow: "Aeroport",
+            title: "Conexiunea cu trenul la Aeroportul Henri Coandă",
+            text: "Informații de orientare pentru gara aflată lângă terminalul Sosiri.",
+            href: "https://www.bucharestairports.ro/ro/transport/conexiune-tren"
+          }
         ]
       }
     ],
-    faq: commonFaqRo
+    faq: [
+      {
+        q: "Care este cea mai simplă rută de la Aeroportul Otopeni la Serene Studio?",
+        a: "Cea mai simplă rută este tren Aeroport Henri Coandă - Gara de Nord, apoi cobori la metrou chiar în gară, intri pe peronul din dreapta, iei metroul până la Piața Muncii și mai ai aproximativ 4 minute pe jos până la Serene Studio."
+      },
+      {
+        q: "Trebuie să schimb linia de metrou?",
+        a: "Nu. Stația de metrou este chiar în Gara de Nord; cobori la metrou, intri pe peronul din dreapta și iei metroul până la Piața Muncii."
+      },
+      {
+        q: "Cât durează total drumul de la Otopeni la Serene Studio?",
+        a: "Planifică aproximativ 50-75 minute cu transport public, incluzând mersul prin stații și așteptarea trenului. În mers efectiv, ruta este de aproximativ 40-45 minute."
+      },
+      {
+        q: "Cât costă trenul Aeroport Henri Coandă - Gara de Nord?",
+        a: "La actualizarea din 1 mai 2026, CFR Călători afișa 6,50 lei pentru trenurile sale pe ruta Aeroport Henri Coandă - București Nord. Verifică tariful în ziua plecării."
+      },
+      {
+        q: "Ce fac dacă am bagaj mare?",
+        a: "Poți lua trenul până la Gara de Nord și apoi taxi/ridesharing către Serene Studio, sau taxi/ridesharing direct din aeroport. Pentru bagaj normal, tren + metrou este varianta predictibilă."
+      },
+      {
+        q: "Pot rezerva telefonic dacă sunt deja în aeroport?",
+        a: "Nu facem rezervări telefonic. Apasă Rezervă online ca să vezi prețul și disponibilitatea. Telefonul este doar pentru urgențe."
+      },
+      ...commonFaqRo
+    ]
   },
   {
     slug: "cazare-langa-parcul-ior-bucuresti",
@@ -394,7 +578,7 @@ const englishPosts: BlogPost[] = [
   ["accommodation-near-victor-babes-hospital-bucharest", "cazare-langa-spitalul-victor-babes-bucuresti", "Accommodation near Victor Babes Hospital Bucharest", "Private accommodation în Sector 2 for relatives or guests who need access to Victor Babes Hospital Bucharest.", "accommodation near Victor Babes Hospital Bucharest", "Accommodation near Victor Babes Hospital can help relatives or guests with medical appointments în eastern Bucharest."],
   ["accommodation-near-monza-hospital-bucharest", "cazare-langa-spitalul-monza-bucuresti", "Accommodation near Monza Hospital Bucharest", "Private studio în Bucharest for guests looking for quiet accommodation with access to Monza Hospital.", "accommodation near Monza Hospital Bucharest", "Accommodation near Monza Hospital is searched by guests who need a private space during appointments or checks."],
   ["accommodation-piata-muncii-bucharest", "cazare-piata-muncii-bucuresti", "Accommodation în Piața Muncii Bucharest", "Guide to accommodation în Piața Muncii Bucharest: nearby metro, National Arena, Sector 2 and online booking.", "accommodation Piața Muncii Bucharest", "Accommodation în Piața Muncii is useful when you want nearby metro access and routes to the National Arena, Mihai Bravu, Iancului and the center."],
-  ["how-to-get-from-otopeni-to-piata-muncii", "cum-ajungi-de-la-otopeni-la-piata-muncii", "How to get from Otopeni to Piața Muncii", "Practical routes from Otopeni Airport to Piața Muncii and Serene Studio: train, metro, taxi or ridesharing.", "Otopeni to Piața Muncii", "From Otopeni Airport to Piața Muncii you can travel by train to Gara de Nord and then metro/taxi, or directly by taxi/ridesharing."],
+  ["how-to-get-from-otopeni-to-piata-muncii", "cum-ajungi-de-la-otopeni-la-piata-muncii", "How to get from Otopeni to Serene Studio", "Simple route from Otopeni Airport to Serene Studio: train to Gara de Nord, metro from inside the station to Piata Muncii and a 4-minute walk.", "Otopeni Airport to Serene Studio", "The simplest route from Otopeni Airport to Serene Studio is the airport train to Gara de Nord, where the metro station is inside the train station, then metro to Piata Muncii and about 4 minutes on foot."],
   ["accommodation-near-ior-park-bucharest", "cazare-langa-parcul-ior-bucuresti", "Accommodation near IOR Park Bucharest", "Private accommodation în Sector 2 with access to IOR Park, Piața Muncii and the National Arena.", "accommodation near IOR Park Bucharest", "Accommodation near IOR Park is useful if you want a large park nearby and good access to Piața Muncii and Sector 2."],
   ["sector-2-bucharest-private-studio-accommodation", "cazare-sector-2-bucuresti-studio-privat", "Sector 2 Bucharest accommodation - private studio", "Private studio în Sector 2 Bucharest, close to Piața Muncii, National Arena and hospitals, with online booking.", "Sector 2 Bucharest private studio accommodation", "A private studio în Sector 2 works well when you want more privacy than a hotel room and quick metro access."],
   ["accommodation-near-mega-mall-bucharest", "cazare-langa-mega-mall-bucuresti", "Accommodation near Mega Mall Bucharest", "Private studio near Piața Muncii, with access to Mega Mall, National Arena and Sector 2.", "accommodation near Mega Mall Bucharest", "Accommodation near Mega Mall is practical if you want restaurants, cinema and shopping near Piața Muncii - National Arena."],
