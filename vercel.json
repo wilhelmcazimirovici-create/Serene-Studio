@@ -5,14 +5,37 @@
     { "source": "/en-2/rooms/", "destination": "/en/studio/", "permanent": true },
     { "source": "/en-2/facilities/", "destination": "/en/studio/", "permanent": true },
     { "source": "/en-2/things-to-do/", "destination": "/en/location/", "permanent": true },
+
     { "source": "/rooms/", "destination": "/studio/", "permanent": true },
     { "source": "/facilities/", "destination": "/studio/", "permanent": true },
     { "source": "/things-to-do/", "destination": "/locatie/", "permanent": true },
+
+    { "source": "/en/rooms/", "destination": "/en/studio/", "permanent": true },
+    { "source": "/en/facilities/", "destination": "/en/studio/", "permanent": true },
+    { "source": "/en/things-to-do/", "destination": "/en/location/", "permanent": true },
+
+    { "source": "/es/rooms/", "destination": "/es/studio/", "permanent": true },
+    { "source": "/es/facilities/", "destination": "/es/studio/", "permanent": true },
+    { "source": "/es/things-to-do/", "destination": "/es/location/", "permanent": true },
+    { "source": "/es/blog/", "destination": "/en/blog/", "permanent": true },
+
+    { "source": "/ru/rooms/", "destination": "/ru/studio/", "permanent": true },
+    { "source": "/ru/facilities/", "destination": "/ru/studio/", "permanent": true },
+    { "source": "/ru/things-to-do/", "destination": "/ru/location/", "permanent": true },
+    { "source": "/ru/blog/", "destination": "/en/blog/", "permanent": true },
+
     { "source": "/sitemap_index.xml", "destination": "/sitemap-index.xml", "permanent": true },
     { "source": "/page-sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
     { "source": "/wp-sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
+
+    { "source": "/feed/", "destination": "/blog/", "permanent": true },
+    { "source": "/comments/feed/", "destination": "/blog/", "permanent": true },
+    { "source": "/wp-login.php", "destination": "/", "permanent": true },
+    { "source": "/xmlrpc.php", "destination": "/", "permanent": true },
+
     { "source": "/rezerva-online", "destination": "https://beds24.com/booking.php?propid=249069", "permanent": false },
     { "source": "/rezerva-online/", "destination": "https://beds24.com/booking.php?propid=249069", "permanent": false },
+
     { "source": "/blog/cazare-langa-arena-nationala-bucuresti/", "destination": "/cazare-langa-arena-nationala/", "permanent": true },
     { "source": "/en/blog/accommodation-near-national-arena-bucharest/", "destination": "/en/accommodation-near-national-arena/", "permanent": true }
   ],

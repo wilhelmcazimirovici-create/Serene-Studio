@@ -1,0 +1,54 @@
+---
+import LegacyPageLayout from "@/layouts/LegacyPageLayout.astro";
+import { property } from "@/data/site";
+---
+<LegacyPageLayout
+  locale="ru"
+  path="/ru/contact/"
+  title="Контакты - Serene Studio Бухарест"
+  description="Свяжитесь с Serene Studio Бухарест: телефон, электронная почта и адрес. Бронирование только онлайн; телефон используется для срочных вопросов."
+  hreflangRo="/contact/"
+  hreflangEn="/en/contact/"
+  hreflangEs="/es/contact/"
+  hreflangRu="/ru/contact/"
+  bookingReferer="website_ru_contact"
+>
+  <h1>Контакты</h1>
+  <p>
+    Бронирование осуществляется исключительно онлайн через кнопку бронирования.
+    Телефон используется для срочных вопросов во время проживания, а не для
+    проверки наличия или бронирования.
+  </p>
+
+  <h2>Контактные данные</h2>
+  <ul>
+    <li><strong>Телефон (срочные вопросы):</strong> <a href={`tel:${property.phone.replace(/\s/g, "")}`}>{property.phone}</a></li>
+    <li><strong>Электронная почта:</strong> <a href={`mailto:${property.email}`}>{property.email}</a></li>
+    <li><strong>Адрес:</strong> {property.address}</li>
+  </ul>
+
+  <h2>Время</h2>
+  <ul>
+    <li>Заселение: с {property.checkin}</li>
+    <li>Выезд: до {property.checkout}</li>
+    <li>Тихие часы: {property.quietHours}</li>
+  </ul>
+
+  <h2>Как забронировать</h2>
+  <p>
+    Нажмите кнопку <em>Забронировать онлайн</em> на любой странице сайта: вы увидите
+    общую стоимость для ваших дат, а подтверждение придёт сразу.
+  </p>
+
+  <div class="legacy-final-cta">
+    <strong>Проверьте даты</strong>
+    <p>Наличие и цена в реальном времени.</p>
+    <a
+      class="legacy-cta"
+      href="https://beds24.com/booking.php?propid=249069&referer=website_ru_contact_final"
+      data-booking-link
+      data-referer="website_ru_contact_final"
+      rel="nofollow sponsored noopener"
+    >Забронировать онлайн</a>
+  </div>
+</LegacyPageLayout>

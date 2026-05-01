@@ -115,7 +115,7 @@ const graph = [...baseSchema, ...schema];
     <link rel="alternate" hreflang="ro" href={absoluteUrl(locale === "ro" ? path : translationPath)} />
     <link rel="alternate" hreflang="en" href={absoluteUrl(locale === "en" ? path : translationPath)} />
     <link rel="alternate" hreflang="x-default" href={absoluteUrl(locale === "ro" ? path : translationPath)} />
-    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />)}
+    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href.startsWith("http") ? alternate.href : absoluteUrl(alternate.href)} />)}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

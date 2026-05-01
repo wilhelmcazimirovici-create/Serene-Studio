@@ -21,6 +21,10 @@ export const pages: PageContent[] = [
     path: "/",
     locale: "ro",
     translationPath: "/en/",
+    alternates: [
+      { hreflang: "es", href: "/es/" },
+      { hreflang: "ru", href: "/ru/" }
+    ],
     title: "Serene Studio București - cazare lângă Piața Muncii",
     description:
       "Studio privat în București, la 4 minute de metrou Piața Muncii și aproape de Arena Națională. Chicinetă, terasă, Wi-Fi rapid, parcare și self check-in complet.",
@@ -139,6 +143,10 @@ export const pages: PageContent[] = [
     path: "/en/",
     locale: "en",
     translationPath: "/",
+    alternates: [
+      { hreflang: "es", href: "/es/" },
+      { hreflang: "ru", href: "/ru/" }
+    ],
     title: "Serene Studio Bucharest - accommodation near Piata Muncii",
     description:
       "Private studio in Bucharest, 4 minutes from Piata Muncii metro and close to the National Arena. Kitchenette, terrace, fast Wi-Fi, parking and full self check-in.",
@@ -257,6 +265,10 @@ export const pages: PageContent[] = [
     path: "/studio/",
     locale: "ro",
     translationPath: "/en/studio/",
+    alternates: [
+      { hreflang: "es", href: "/es/studio/" },
+      { hreflang: "ru", href: "/ru/studio/" }
+    ],
     title: "Studio privat în București cu chicinetă și terasă - Serene Studio",
     description:
       "Vezi ce include Serene Studio București: pat matrimonial, chicinetă, baie modernă, terasă, Wi-Fi rapid, self check-in și parcare gratuită pe stradă.",
@@ -313,6 +325,10 @@ export const pages: PageContent[] = [
     path: "/en/studio/",
     locale: "en",
     translationPath: "/studio/",
+    alternates: [
+      { hreflang: "es", href: "/es/studio/" },
+      { hreflang: "ru", href: "/ru/studio/" }
+    ],
     title: "Private studio in Bucharest with kitchenette and terrace - Serene Studio",
     description:
       "See what Serene Studio Bucharest includes: double bed, kitchenette, modern bathroom, terrace, fast Wi-Fi, self check-in and free street parking.",
@@ -421,6 +437,10 @@ export const pages: PageContent[] = [
     path: "/locatie/",
     locale: "ro",
     translationPath: "/en/location/",
+    alternates: [
+      { hreflang: "es", href: "/es/location/" },
+      { hreflang: "ru", href: "/ru/location/" }
+    ],
     title: "Locația Serene Studio în București - Piața Muncii și Arena Națională",
     description:
       "Serene Studio este pe Strada Alexandru Zagoritz 12, Sector 2, la aproximativ 4 minute de metrou Piața Muncii și 14 minute pe jos de Arena Națională.",
@@ -457,6 +477,10 @@ export const pages: PageContent[] = [
     path: "/en/location/",
     locale: "en",
     translationPath: "/locatie/",
+    alternates: [
+      { hreflang: "es", href: "/es/location/" },
+      { hreflang: "ru", href: "/ru/location/" }
+    ],
     title: "Serene Studio location in Bucharest - Piata Muncii and National Arena",
     description:
       "Serene Studio is on Strada Alexandru Zagoritz 12, Sector 2, about 4 minutes from Piata Muncii metro and 14 minutes on foot from the National Arena.",
@@ -836,6 +860,10 @@ const operationalRo: PageContent[] = [
     path: "/contact/",
     locale: "ro",
     translationPath: "/en/contact/",
+    alternates: [
+      { hreflang: "es", href: "/es/contact/" },
+      { hreflang: "ru", href: "/ru/contact/" }
+    ],
     title: "Contact Serene Studio București - rezervări online directe",
     description: "Pentru prețuri și disponibilitate la Serene Studio folosește butonul Rezervă online. Contact pentru urgențe: telefon și email confirmate.",
     keyword: "contact Serene Studio, rezervare Serene Studio, serenestudio.ro@gmail.com",
@@ -1097,6 +1125,10 @@ const operationalEn: PageContent[] = [
     path: "/en/contact/",
     locale: "en",
     translationPath: "/contact/",
+    alternates: [
+      { hreflang: "es", href: "/es/contact/" },
+      { hreflang: "ru", href: "/ru/contact/" }
+    ],
     title: "Contact Serene Studio Bucharest - direct online bookings",
     description: "For Serene Studio prices and availability use the Book online button. Confirmed emergency contact: phone and email.",
     keyword: "contact Serene Studio, Serene Studio booking, serenestudio.ro@gmail.com",

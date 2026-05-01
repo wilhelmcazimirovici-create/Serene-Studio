@@ -1,0 +1,54 @@
+---
+import LegacyPageLayout from "@/layouts/LegacyPageLayout.astro";
+import { property } from "@/data/site";
+---
+<LegacyPageLayout
+  locale="es"
+  path="/es/contact/"
+  title="Contacto - Serene Studio Bucarest"
+  description="Contacta con Serene Studio Bucarest: teléfono, correo electrónico y dirección. Reservas únicamente online; el teléfono se reserva para urgencias."
+  hreflangRo="/contact/"
+  hreflangEn="/en/contact/"
+  hreflangEs="/es/contact/"
+  hreflangRu="/ru/contact/"
+  bookingReferer="website_es_contact"
+>
+  <h1>Contacto</h1>
+  <p>
+    Las reservas se hacen exclusivamente online, a través del botón de reserva.
+    El teléfono se reserva para urgencias durante la estancia, no para consultas
+    de disponibilidad ni para reservar.
+  </p>
+
+  <h2>Datos de contacto</h2>
+  <ul>
+    <li><strong>Teléfono (urgencias):</strong> <a href={`tel:${property.phone.replace(/\s/g, "")}`}>{property.phone}</a></li>
+    <li><strong>Correo electrónico:</strong> <a href={`mailto:${property.email}`}>{property.email}</a></li>
+    <li><strong>Dirección:</strong> {property.address}</li>
+  </ul>
+
+  <h2>Horarios</h2>
+  <ul>
+    <li>Check-in: a partir de las {property.checkin}</li>
+    <li>Check-out: hasta las {property.checkout}</li>
+    <li>Horario tranquilo: {property.quietHours}</li>
+  </ul>
+
+  <h2>Cómo reservar</h2>
+  <p>
+    Pulsa el botón <em>Reservar online</em> en cualquier página del sitio: verás el
+    precio total para tus fechas y la confirmación es inmediata.
+  </p>
+
+  <div class="legacy-final-cta">
+    <strong>Comprueba tus fechas</strong>
+    <p>Disponibilidad y precio en tiempo real.</p>
+    <a
+      class="legacy-cta"
+      href="https://beds24.com/booking.php?propid=249069&referer=website_es_contact_final"
+      data-booking-link
+      data-referer="website_es_contact_final"
+      rel="nofollow sponsored noopener"
+    >Reservar online</a>
+  </div>
+</LegacyPageLayout>

@@ -107,6 +107,7 @@ export type PageContent = {
   gallery?: boolean;
   maps?: boolean;
   finalCtaReferer: string;
+  alternates?: { hreflang: string; href: string }[];
 };
 
 export type BlogPost = {
