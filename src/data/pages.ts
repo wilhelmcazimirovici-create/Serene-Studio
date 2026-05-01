@@ -71,9 +71,9 @@ export const pages: PageContent[] = [
           caption:
             "Distanțele sunt orientative pentru un mers pe jos relaxat. Verifică ruta în aplicația ta de navigație înainte de plecare.",
           distances: [
-            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru, Gara de Nord și Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Metrou Piața Muncii", detail: "Metrou către centru, Gara de Nord și Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "Arena Națională", detail: "Concerte, meciuri și evenimente mari", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
-            { place: "Metrou Iancului", detail: "Stație alternativă pe linia M1", value: "~1,1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
+            { place: "Metrou Iancului", detail: "Stație de metrou alternativă", value: "~1,1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
             { place: "Mega Mall", detail: "Cumpărături, restaurante și cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
             { place: "Parcul IOR / Alexandru Ioan Cuza", detail: "Plimbări și relaxare lângă lac", value: "metrou, taxi sau transport public", mode: "metro", lat: 44.4209, lon: 26.1652 }
           ]
@@ -83,7 +83,7 @@ export const pages: PageContent[] = [
       {
         title: "Vezi ora trenului pentru zborul tău",
         intro:
-          "Planifică trenul aeroport pentru sosire sau plecare: introdu ora aterizării ori ora la care vrei să fii la OTP și vezi 3 trenuri directe utile între Aeroport Henri Coandă și Gara de Nord.",
+          "Planifică trenul aeroport pentru sosire sau plecare: introdu ora aterizării ori ora la care vrei să fii la aeroport și vezi 3 trenuri directe utile între Aeroport Henri Coandă și Gara de Nord.",
         variant: "airportTrainCta",
         cards: [
           {
@@ -109,11 +109,11 @@ export const pages: PageContent[] = [
         intro:
           "Citește ghidul de zonă înainte să rezervi: trasee cu metroul, spitale apropiate, evenimente la stadion și obiective în raza de 3-5 km.",
         cards: [
-          { eyebrow: "Aeroport Otopeni", title: "Cum ajungi de la Otopeni la Serene Studio", text: "Tren până la Gara de Nord, metrou M1 la Piața Muncii și 4 minute pe jos până la studio.", href: "/blog/cum-ajungi-de-la-otopeni-la-piata-muncii/" },
+          { eyebrow: "Aeroport Otopeni", title: "Cum ajungi de la Otopeni la Serene Studio", text: "Tren până la Gara de Nord, metrou până la Piața Muncii și 4 minute pe jos până la studio.", href: "/blog/cum-ajungi-de-la-otopeni-la-piata-muncii/" },
           { eyebrow: "Top 7 obiective", title: "Top obiective lângă Serene Studio (3-5 km)", text: "Spitale, mall-uri, stadioane, parcuri și Centrul Vechi - toate la câțiva kilometri de studio.", href: "/blog/obiective-langa-serene-studio-bucuresti-3-5-km/" },
           { eyebrow: "Self check-in", title: "Self check-in în București - cazare în studio privat", text: "Cum funcționează fluxul: rezervare online, check-in online cu ID și selfie, codul cutiei de chei în guidebook.", href: "/blog/self-check-in-bucuresti-cazare-studio-privat/" },
           { eyebrow: "Stadion", title: "Cazare lângă Stadionul Dinamo București", text: "La ~3 km de stadion. Cum ajungi cu mașina sau metroul și de ce contează o zonă rezidențială după meci.", href: "/blog/cazare-langa-stadionul-dinamo-bucuresti/" },
-          { eyebrow: "Centrul Vechi", title: "Cum ajungi de la Serene Studio la Centrul Vechi cu metroul", text: "Ghid practic: traseu M1 de la Piața Muncii până la Lipscani în 20-25 minute, plus alternative cu taxi.", href: "/blog/cum-ajungi-de-la-serene-studio-la-centrul-vechi-bucuresti/" }
+          { eyebrow: "Centrul Vechi", title: "Cum ajungi de la Serene Studio la Centrul Vechi cu metroul", text: "Ghid practic: metrou de la Piața Muncii până aproape de Lipscani în 20-25 minute, plus alternative cu taxi.", href: "/blog/cum-ajungi-de-la-serene-studio-la-centrul-vechi-bucuresti/" }
         ]
       },
       {
@@ -190,9 +190,9 @@ export const pages: PageContent[] = [
           caption:
             "Distances are indicative for a relaxed walk. Always check the route in your navigation app before leaving.",
           distances: [
-            { place: "Piata Muncii metro", detail: "M1 line to the city center, Gara de Nord and Universitate", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Piata Muncii metro", detail: "Metro to the city center, Gara de Nord and Universitate", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "National Arena", detail: "Concerts, matches and major events", value: "~14 min walk", mode: "walk", lat: 44.4378, lon: 26.1521 },
-            { place: "Iancului metro", detail: "Alternative station on the M1 line", value: "~1.1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
+            { place: "Iancului metro", detail: "Alternative metro station", value: "~1.1 km", mode: "metro", lat: 44.4434, lon: 26.1283 },
             { place: "Mega Mall", detail: "Shopping, restaurants and cinema", value: "~18-20 min walk", mode: "walk", lat: 44.4434, lon: 26.1500 },
             { place: "IOR / Alexandru Ioan Cuza Park", detail: "Walks and lakeside relaxation", value: "metro, taxi or public transport", mode: "metro", lat: 44.4209, lon: 26.1652 }
           ]
@@ -202,7 +202,7 @@ export const pages: PageContent[] = [
       {
         title: "See the train time for your flight",
         intro:
-          "Plan the airport train for arrival or departure: enter your landing time or the time you want to be at OTP and see 3 useful direct trains between Henri Coanda Airport and Gara de Nord.",
+          "Plan the airport train for arrival or departure: enter your landing time or the time you want to be at the airport and see 3 useful direct trains between Henri Coanda Airport and Gara de Nord.",
         variant: "airportTrainCta",
         cards: [
           {
@@ -228,11 +228,11 @@ export const pages: PageContent[] = [
         intro:
           "Read the area guide before booking: metro routes, nearby hospitals, stadium events and key places within 3-5 km.",
         cards: [
-          { eyebrow: "Otopeni Airport", title: "How to get from Otopeni to Serene Studio", text: "Train to Gara de Nord, M1 metro to Piata Muncii and a 4-minute walk to the studio.", href: "/en/blog/how-to-get-from-otopeni-to-piata-muncii/" },
+          { eyebrow: "Otopeni Airport", title: "How to get from Otopeni to Serene Studio", text: "Train to Gara de Nord, metro to Piata Muncii and a 4-minute walk to the studio.", href: "/en/blog/how-to-get-from-otopeni-to-piata-muncii/" },
           { eyebrow: "Top 7 places", title: "Top things to do near Serene Studio (3-5 km)", text: "Hospitals, malls, stadiums, parks and the Old Town - all within a few kilometers of the studio.", href: "/en/blog/things-to-do-near-serene-studio-bucharest-3-5-km/" },
           { eyebrow: "Self check-in", title: "Self check-in in Bucharest - private studio accommodation", text: "How the flow works: online booking, online check-in with ID and selfie, key-box code in the guidebook.", href: "/en/blog/self-check-in-bucharest-private-studio/" },
           { eyebrow: "Stadium", title: "Stay near Dinamo Stadium Bucharest", text: "About 3 km from the stadium. How to get there by car or metro and why a residential area helps after the match.", href: "/en/blog/accommodation-near-dinamo-stadium-bucharest/" },
-          { eyebrow: "Old Town", title: "How to get from Serene Studio to the Old Town by metro", text: "Practical guide: M1 from Piata Muncii to Lipscani in 20-25 minutes, plus taxi alternatives.", href: "/en/blog/how-to-get-from-serene-studio-to-old-town-bucharest/" }
+          { eyebrow: "Old Town", title: "How to get from Serene Studio to the Old Town by metro", text: "Practical guide: metro from Piata Muncii toward Lipscani in 20-25 minutes, plus taxi alternatives.", href: "/en/blog/how-to-get-from-serene-studio-to-old-town-bucharest/" }
         ]
       },
       {
@@ -1297,7 +1297,7 @@ const nearbyRo: PageContent[] = [
             { place: "Spitalul Clinic de Copii Dr. Victor Gomoiu", detail: "Bd. Basarabia 21 - chirurgie pediatrică, pediatrie, ATI copii", value: "~1,5 km", mode: "drive", lat: 44.4393, lon: 26.1486 },
             { place: "Ambulatoriul Gomoiu (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - consultații ambulatorii", value: "~6 km cu mașina", mode: "drive", lat: 44.4232, lon: 26.1843 },
             { place: "Spitalul Monza", detail: "Strada Tony Bulandra 27 - cardiologie, chirurgie", value: "~2 km", mode: "drive", lat: 44.4464, lon: 26.1379 },
-            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Metrou Piața Muncii", detail: "Metrou către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "Farmacii non-stop", detail: "Pe Mihai Bravu și Bulevardul Basarabia", value: "1-5 min pe jos", mode: "walk" }
           ]
         },
@@ -1400,10 +1400,10 @@ const nearbyRo: PageContent[] = [
             "Distanțele sunt orientative pentru un drum cu mașină sau taxi. Verifică întotdeauna în Google Maps înainte de plecare, mai ales cu trafic.",
           distances: [
             { place: "Spitalul Monza", detail: "Strada Tony Bulandra 27, Sector 2 - cardiologie și chirurgie", value: "~2 km cu mașina", mode: "drive", lat: 44.4464, lon: 26.1379 },
-            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru, Gara de Nord și Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Metrou Piața Muncii", detail: "Metrou către centru, Gara de Nord și Universitate", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "Farmacii non-stop", detail: "Pe Mihai Bravu și în Piața Muncii", value: "1-5 min pe jos", mode: "walk" },
             { place: "Mega Mall", detail: "Restaurante, supermarket și cinema", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
-            { place: "Aeroportul Otopeni (OTP)", detail: "Sosiri internaționale, cu tren via Gara de Nord", value: "tren + metrou sau taxi", mode: "train", lat: 44.5711, lon: 26.085 }
+            { place: "Aeroportul Henri Coandă (Otopeni)", detail: "Sosiri internaționale, cu tren via Gara de Nord", value: "tren + metrou sau taxi", mode: "train", lat: 44.5711, lon: 26.085 }
           ]
         },
         ctaReferer: "website_monza_distances"
@@ -1479,7 +1479,7 @@ const nearbyRo: PageContent[] = [
             { place: "Mega Mall", detail: "Bulevardul Pierre de Coubertin 3-5 - 200+ magazine, cinema, restaurante", value: "~18-20 min pe jos", mode: "walk", lat: 44.4434, lon: 26.1500 },
             { place: "Arena Națională", detail: "Concerte, meciuri și evenimente", value: "~14 min pe jos", mode: "walk", lat: 44.4378, lon: 26.1521 },
             { place: "Bucur Obor", detail: "Magazinul universal istoric din Sector 2", value: "~10 min pe jos", mode: "walk", lat: 44.4474, lon: 26.1284 },
-            { place: "Metrou Piața Muncii", detail: "Linia M1 către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Metrou Piața Muncii", detail: "Metrou către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "Centrul Vechi", detail: "Restaurante, baruri și turism", value: "metrou sau taxi", mode: "metro" }
           ]
         },
@@ -1585,7 +1585,7 @@ const nearbyEn: PageContent[] = [
             { place: "Dr. Victor Gomoiu Children's Clinical Hospital", detail: "Bd. Basarabia 21 - pediatric surgery, pediatrics, ICU", value: "~1.5 km", mode: "drive", lat: 44.4393, lon: 26.1486 },
             { place: "Gomoiu Outpatient Clinic (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - outpatient consultations", value: "~6 km by car", mode: "drive", lat: 44.4232, lon: 26.1843 },
             { place: "Monza Hospital", detail: "Strada Tony Bulandra 27 - cardiology, surgery", value: "~2 km", mode: "drive", lat: 44.4464, lon: 26.1379 },
-            { place: "Piata Muncii metro", detail: "M1 line to city center and Gara de Nord", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Piata Muncii metro", detail: "Metro to city center and Gara de Nord", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "24/7 pharmacies nearby", detail: "On Mihai Bravu and Bulevardul Basarabia", value: "1-5 min walk", mode: "walk" }
           ]
         },
@@ -1687,10 +1687,10 @@ const nearbyEn: PageContent[] = [
           caption: "Distances are indicative for a car or taxi ride. Always check Google Maps before leaving, especially with traffic.",
           distances: [
             { place: "Monza Hospital", detail: "Strada Tony Bulandra 27, Sector 2 - cardiology and surgery", value: "~2 km by car", mode: "drive", lat: 44.4464, lon: 26.1379 },
-            { place: "Piata Muncii metro", detail: "M1 line to city center, Gara de Nord and Universitate", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Piata Muncii metro", detail: "Metro to city center, Gara de Nord and Universitate", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "24/7 pharmacies", detail: "On Mihai Bravu and around Piata Muncii", value: "1-5 min walk", mode: "walk" },
             { place: "Mega Mall", detail: "Restaurants, supermarket and cinema", value: "~18-20 min walk", mode: "walk", lat: 44.4434, lon: 26.1500 },
-            { place: "Otopeni Airport (OTP)", detail: "International arrivals via train + Gara de Nord", value: "train + metro or taxi", mode: "train", lat: 44.5711, lon: 26.085 }
+            { place: "Henri Coanda Airport (Otopeni)", detail: "International arrivals via train + Gara de Nord", value: "train + metro or taxi", mode: "train", lat: 44.5711, lon: 26.085 }
           ]
         },
         ctaReferer: "website_en_monza_distances"
@@ -1765,7 +1765,7 @@ const nearbyEn: PageContent[] = [
             { place: "Mega Mall", detail: "Bulevardul Pierre de Coubertin 3-5 - 200+ stores, cinema, restaurants", value: "~18-20 min walk", mode: "walk", lat: 44.4434, lon: 26.1500 },
             { place: "National Arena", detail: "Concerts, matches and major events", value: "~14 min walk", mode: "walk", lat: 44.4378, lon: 26.1521 },
             { place: "Bucur Obor", detail: "Historic department store in Sector 2", value: "~10 min walk", mode: "walk", lat: 44.4474, lon: 26.1284 },
-            { place: "Piata Muncii metro", detail: "M1 line to city center and Gara de Nord", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
+            { place: "Piata Muncii metro", detail: "Metro to city center and Gara de Nord", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "Old Town", detail: "Restaurants, bars and sightseeing", value: "metro or taxi", mode: "metro" }
           ]
         },

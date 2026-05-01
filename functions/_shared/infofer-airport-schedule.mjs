@@ -71,11 +71,11 @@ export function errorPayload(error, direction = 'toCity') {
   const route = ROUTES[parseDirection(direction)];
   return {
     ok: false,
-    source: 'Infofer',
+    source: 'Mersul trenurilor',
     sourceUrl: route.url,
     direction: route.key,
     generatedAt: new Date().toISOString(),
-    message: error instanceof Error ? error.message : 'Programul live Infofer nu a putut fi incarcat.',
+    message: error instanceof Error ? error.message : 'Programul live al trenurilor nu a putut fi incarcat.',
     departures: [],
   };
 }
@@ -104,7 +104,7 @@ export async function fetchInfoferAirportSchedule({ limit = 6, afterTime, arrive
 
   return {
     ok: true,
-    source: 'Infofer',
+    source: 'Mersul trenurilor',
     sourceUrl: route.url,
     direction: route.key,
     route: {
@@ -130,7 +130,7 @@ async function fetchRouteDepartures(route, date) {
   });
 
   if (!initialResponse.ok) {
-    throw new Error(`Infofer a raspuns cu HTTP ${initialResponse.status}.`);
+    throw new Error(`Programul live al trenurilor a raspuns cu HTTP ${initialResponse.status}.`);
   }
 
   const cookieHeader = getCookieHeader(initialResponse.headers);
@@ -138,7 +138,7 @@ async function fetchRouteDepartures(route, date) {
   const fields = extractHiddenFields(initialHtml);
 
   if (!fields.__RequestVerificationToken || !fields.ConfirmationKey) {
-    throw new Error('Infofer nu a returnat tokenurile necesare pentru cautarea rutei.');
+    throw new Error('Programul live al trenurilor nu a returnat datele necesare pentru cautarea rutei.');
   }
 
   fields.DepartureStationName = route.departureStationName;
@@ -167,12 +167,12 @@ async function fetchRouteDepartures(route, date) {
   });
 
   if (!itineraryResponse.ok) {
-    throw new Error(`Infofer GetItineraries a raspuns cu HTTP ${itineraryResponse.status}.`);
+    throw new Error(`Programul live al trenurilor a raspuns cu HTTP ${itineraryResponse.status}.`);
   }
 
   const itineraryHtml = await itineraryResponse.text();
   if (/ServiceTemporarilyUnavailable/i.test(itineraryHtml)) {
-    throw new Error('Infofer marcheaza serviciul ca temporar indisponibil.');
+    throw new Error('Programul live al trenurilor este temporar indisponibil.');
   }
 
   return parseItineraries(itineraryHtml, route.url).map((departure) => ({
@@ -227,7 +227,7 @@ async function selectArrivalsBefore({ route, departures, limit, localNow, reques
           .filter((candidate) => candidate.effectiveArrivalMinutes <= targetArrivalMinutes),
       ];
     } catch {
-      // Adjacent dates are helpful for midnight searches, but the current-day list is still useful if Infofer rejects them.
+      // Adjacent dates are helpful for midnight searches, but the current-day list is still useful if the provider rejects them.
     }
   }
 
@@ -356,7 +356,7 @@ function parseItineraries(html, fallbackRouteUrl = INFOFER_ROUTE_URL) {
       trainUrl: relativeTrainUrl ? new URL(relativeTrainUrl, INFOFER_ORIGIN).toString() : fallbackRouteUrl,
       duration: durationMatch ? cleanText(durationMatch[1]) : '',
       operator: operatorMatch ? cleanText(operatorMatch[1]) : '',
-      status: statusMatch ? cleanStatus(statusMatch[1]) : 'Verifica pe Infofer',
+      status: statusMatch ? cleanStatus(statusMatch[1]) : 'Verifica programul oficial',
       direct: /Tren direct/i.test(cleanText(card)),
     });
   }

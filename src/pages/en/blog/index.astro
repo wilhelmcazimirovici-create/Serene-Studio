@@ -1,13 +1,27 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogCardImage from "@/components/BlogCardImage.astro";
 import BookingCta from "@/components/BookingCta.astro";
 import { getBlogPosts } from "@/data/blog";
-import { absoluteUrl } from "@/data/site";
+import { getBlogCardVisual } from "@/data/blog-card-visuals";
+import { absoluteUrl, property, SITE_URL } from "@/data/site";
 
 const posts = getBlogPosts("en");
 const path = "/en/blog/";
 const title = "Serene Studio Blog - Bucharest accommodation guides";
 const description = "Practical articles about accommodation near Piata Muncii, the National Arena, hospitals, IOR Park and Sector 2 Bucharest.";
+const itemListElement = posts.map((post, index) => {
+  const visual = getBlogCardVisual(post);
+
+  return {
+    "@type": "ListItem",
+    position: index + 1,
+    url: absoluteUrl(`/en/blog/${post.slug}/`),
+    name: post.title,
+    description: post.description,
+    image: `${SITE_URL}/images/${visual.base}.webp`
+  };
+});
 const schema = [
   {
     "@type": "BreadcrumbList",
@@ -15,6 +29,28 @@ const schema = [
       { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/en/") },
       { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl(path) }
     ]
+  },
+  {
+    "@type": "Blog",
+    "@id": `${absoluteUrl(path)}#blog`,
+    url: absoluteUrl(path),
+    name: title,
+    description,
+    inLanguage: "en",
+    publisher: { "@type": "Organization", name: property.fullName },
+    about: { "@id": `${SITE_URL}/#lodging` },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: absoluteUrl(`/en/blog/${post.slug}/`),
+      datePublished: post.date,
+      dateModified: post.date
+    }))
+  },
+  {
+    "@type": "ItemList",
+    "@id": `${absoluteUrl(path)}#blog-list`,
+    itemListElement
   }
 ];
 ---
@@ -31,14 +67,31 @@ const schema = [
     </div>
   </section>
   <section class="band alt">
-    <div class="container cards-grid">
-      {posts.map((post) => (
-        <article class="card">
-          <h2><a href={`/en/blog/${post.slug}/`}>{post.title}</a></h2>
-          <p>{post.description}</p>
-          <a class="btn-soft" href={`/en/blog/${post.slug}/`}>Read article</a>
+    <div class="container cards-grid blog-cards-grid">
+      {posts.map((post) => {
+        const href = `/en/blog/${post.slug}/`;
+        const visual = getBlogCardVisual(post);
+
+        return (
+        <article class="blog-card-shell">
+          <a class="blog-card" href={href} aria-label={`Read article: ${post.title}`}>
+            <span class="blog-card-media">
+              <BlogCardImage visual={visual} locale="en" class="blog-card-image" />
+              <span class="blog-card-label">{visual.label.en}</span>
+            </span>
+            <span class="blog-card-body">
+              <span class="blog-card-meta"><time datetime={post.date}>Updated {post.date}</time></span>
+              <h2>{post.title}</h2>
+              <p>{post.description}</p>
+              <span class="blog-card-cta" aria-hidden="true">
+                Read article
+                <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m0 0-6-6m6 6-6 6" /></svg>
+              </span>
+            </span>
+          </a>
         </article>
-      ))}
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

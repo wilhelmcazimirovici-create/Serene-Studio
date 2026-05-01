@@ -47,7 +47,7 @@ function handleInfoferApi(request, response, next) {
     response.setHeader("allow", "GET, OPTIONS");
     writeJson(response, 405, {
       ok: false,
-      source: "Infofer",
+      source: "Mersul trenurilor",
       message: "Method not allowed.",
       departures: [],
     });

@@ -7,6 +7,7 @@ import Lightbox from "@/components/Lightbox.astro";
 import ResponsiveImage from "@/components/ResponsiveImage.astro";
 import SectionVideo from "@/components/SectionVideo.astro";
 import { blogPosts, getBlogPosts } from "@/data/blog";
+import { BLOG_CARD_IMAGE_HEIGHT, BLOG_CARD_IMAGE_WIDTH, getBlogCardVisual } from "@/data/blog-card-visuals";
 import { absoluteUrl, images, labels, property, SITE_URL } from "@/data/site";
 
 export function getStaticPaths() {
@@ -22,6 +23,8 @@ const translationPath = `/en/blog/${post.translationSlug}/`;
 const l = labels.ro;
 const locale = "ro" as const;
 const showAirportTrainPlanner = post.slug === "cum-ajungi-de-la-otopeni-la-piata-muncii";
+const cardVisual = getBlogCardVisual(post);
+const cardImageUrl = `${SITE_URL}/images/${cardVisual.base}.webp`;
 
 function cardLabel(index: number) {
   return String(index + 1).padStart(2, "0");
@@ -96,6 +99,19 @@ const imageSchemas = schemaImages
     };
   })
   .filter((item): item is NonNullable<typeof item> => item !== null);
+const primaryImageSchema = {
+  "@type": "ImageObject",
+  "@id": `${absoluteUrl(path)}#primaryimage`,
+  contentUrl: cardImageUrl,
+  thumbnailUrl: `${SITE_URL}/images/${cardVisual.base}-480.webp`,
+  caption: post.title,
+  description: cardVisual.alt[locale],
+  width: BLOG_CARD_IMAGE_WIDTH,
+  height: BLOG_CARD_IMAGE_HEIGHT,
+  inLanguage: locale,
+  representativeOfPage: true
+};
+const allImageSchemas = [primaryImageSchema, ...imageSchemas];
 
 const howToSchema = post.howTo
   ? {
@@ -126,7 +142,7 @@ const schema = [
     about: { "@id": `${SITE_URL}/#lodging` },
     keywords: post.keyword,
     mainEntityOfPage: absoluteUrl(path),
-    ...(imageSchemas.length ? { image: imageSchemas.map((item) => item.contentUrl) } : {}),
+    image: allImageSchemas.map((item) => item.contentUrl),
     ...(videoSchemas.length ? { video: videoSchemas.map((item) => ({ "@id": item["@id"] })) } : {}),
     ...(howToSchema ? { mainEntity: { "@id": howToSchema["@id"] } } : {})
   },
@@ -149,11 +165,11 @@ const schema = [
     }))
   },
   ...videoSchemas,
-  ...imageSchemas
+  ...allImageSchemas
 ];
 ---
 
-<BaseLayout locale="ro" path={path} translationPath={translationPath} title={`${post.title} - Serene Studio`} description={post.description} keyword={post.keyword} schema={schema}>
+<BaseLayout locale="ro" path={path} translationPath={translationPath} title={`${post.title} - Serene Studio`} description={post.description} keyword={post.keyword} schema={schema} ogImage={`/images/${cardVisual.base}.webp`}>
   <article class="band">
     <div class="container article">
       <p class="article-meta">Actualizat: {post.date}</p>

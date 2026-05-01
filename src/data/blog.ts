@@ -45,7 +45,7 @@ export const blogPosts: BlogPost[] = [
           headers: ["Reper", "Poziție", "Timp / distanță"],
           rows: [
             ["Plecare: Serene Studio", "Strada Alexandru Zagoritz 12, Sector 2", "0 min"],
-            ["Metrou Piața Muncii (M1)", "Sosirea Piața Muncii", "~4 min pe jos"],
+            ["Metrou Piața Muncii", "Sosirea Piața Muncii", "~4 min pe jos"],
             ["Bulevardul Basarabia", "Pe direcția Arena", "~9-10 min pe jos"],
             ["Sosire: Arena Națională", "Bd. Basarabia 37-39, Sector 2", "~14 min pe jos"]
           ]
@@ -56,7 +56,7 @@ export const blogPosts: BlogPost[] = [
         intro:
           "Drumul tipic urmează Strada Alexandru Zagoritz spre Piața Muncii, apoi continuă pe Bulevardul Basarabia direct către stadion.",
         bullets: [
-          "La ieșirea din Serene Studio mergi spre Piața Muncii (sud-est) - vezi semnele pentru metrou M1",
+          "La ieșirea din Serene Studio mergi spre Piața Muncii (sud-est) - vezi semnele pentru stația de metrou",
           "Treci de Piața Muncii păstrând direcția spre Bulevardul Basarabia",
           "Pe Bulevardul Basarabia mergi continuu până vezi conturul stadionului și pasajul pietonal",
           "Intrările pentru fani sunt pe Bd. Basarabia 37-39 - poarta exactă apare pe biletul tău",
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Drumul de întoarcere: cum eviți aglomerația",
         intro:
-          "De la Arena Națională nu ai metrou direct către Piața Muncii - cea mai apropiată stație M1 de stadion este Costin Georgian, iar drumul până la ea este comparabil cu mersul direct către Serene Studio.",
+          "De la Arena Națională nu ai metrou direct către Piața Muncii - cea mai apropiată stație de metrou de stadion este Costin Georgian, iar drumul până la ea este comparabil cu mersul direct către Serene Studio.",
         paragraphs: [
           "Pentru oaspeții Serene Studio, mersul pe jos invers rămâne cea mai predictibilă opțiune: ~14 minute, fără taxiul comun de după eveniment și fără surge price.",
           "Dacă alegi taxi sau ridesharing, prevezi că timpul de așteptare poate crește 15-30 de minute în primele 30 de minute după eveniment. Stabilește punctul de pickup cu câteva străzi mai departe de stadion, ca să eviți zona blocată pentru evacuare.",
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "Plecări și sosiri Aeroport Henri Coandă - Gara de Nord",
         intro:
-          "Mai jos sunt câteva exemple de trenuri directe Aeroport Henri Coandă - București Nord. Tabelul este orientativ, nu orarul complet; verifică Infofer, CFR Călători sau operatorul trenului în ziua aterizării.",
+          "Mai jos sunt câteva exemple de trenuri directe Aeroport Henri Coandă - București Nord. Tabelul este orientativ, nu orarul complet; verifică site-ul oficial de mers al trenurilor, CFR Călători sau operatorul trenului în ziua aterizării.",
         table: {
           headers: ["Plecare aeroport", "Sosire Gara de Nord", "Durată", "Operator / tren"],
           rows: airportTrainRows.ro
@@ -370,7 +370,7 @@ export const blogPosts: BlogPost[] = [
         cards: [
           {
             eyebrow: "Plecări / sosiri",
-            title: "Infofer - stația Aeroport Henri Coandă",
+            title: "Mersul trenurilor - stația Aeroport Henri Coandă",
             text: "Verifică plecările și sosirile din stația Aeroport Henri Coandă în ziua aterizării.",
             href: "https://m.infofer.ro/ro-RO/Statie/Aeroport-Henri-Coanda"
           },
@@ -389,7 +389,7 @@ export const blogPosts: BlogPost[] = [
           {
             eyebrow: "Metrou",
             title: "Harta oficială Metrorex",
-            text: "Verifică M1: Gara de Nord - Piața Muncii și conexiunile din București.",
+            text: "Verifică ruta de metrou Gara de Nord - Piața Muncii și conexiunile din București.",
             href: "https://www.metrorex.ro/storage/documents/1732693185harta_metrorex.pdf"
           },
           {
@@ -650,7 +650,7 @@ const arenaWalkingRouteEn: BlogPost = {
         headers: ["Landmark", "Position", "Time / distance"],
         rows: [
           ["Start: Serene Studio", "Strada Alexandru Zagoritz 12, Sector 2", "0 min"],
-          ["Piata Muncii metro (M1)", "Reaching Piata Muncii", "~4 min on foot"],
+          ["Piata Muncii metro", "Reaching Piata Muncii", "~4 min on foot"],
           ["Bulevardul Basarabia", "Heading to the Arena", "~9-10 min on foot"],
           ["Arrival: National Arena", "Bd. Basarabia 37-39, Sector 2", "~14 min on foot"]
         ]
@@ -661,7 +661,7 @@ const arenaWalkingRouteEn: BlogPost = {
       intro:
         "The typical walk follows Strada Alexandru Zagoritz toward Piata Muncii, then continues straight on Bulevardul Basarabia to the stadium.",
       bullets: [
-        "Leaving Serene Studio, head toward Piata Muncii (south-east) - look for the M1 metro signs",
+        "Leaving Serene Studio, head toward Piata Muncii (south-east) and follow the metro station signs",
         "Cross Piata Muncii staying in the Bulevardul Basarabia direction",
         "On Bulevardul Basarabia, walk straight until you see the stadium outline and the pedestrian crossing",
         "Fan entrances are at Bd. Basarabia 37-39 - the exact gate is printed on your ticket",
@@ -683,7 +683,7 @@ const arenaWalkingRouteEn: BlogPost = {
     {
       title: "The walk back: how to avoid the rush",
       intro:
-        "There is no direct metro from the National Arena to Piata Muncii - the closest M1 station to the stadium is Costin Georgian, and walking there is comparable to walking directly to Serene Studio.",
+        "There is no direct metro from the National Arena to Piata Muncii - the closest metro station to the stadium is Costin Georgian, and walking there is comparable to walking directly to Serene Studio.",
       paragraphs: [
         "For Serene Studio guests, walking back remains the most predictable option: ~14 minutes, with no shared post-event taxi and no surge price.",
         "If you choose taxi or ridesharing, expect waits to climb 15-30 minutes during the first 30 minutes after the event. Set the pickup point a few streets away from the stadium to avoid the evacuation-blocked area.",
@@ -847,7 +847,7 @@ const nearbyPostsRo: BlogPost[] = [
     sections: [
       {
         title: "Ruta rapidă cu metroul",
-        intro: "Stația Piața Muncii este la aproximativ 4 minute pe jos de Serene Studio. De acolo iei magistrala M1 spre Universitate sau Piața Unirii - apoi 5-10 minute pe jos până la Centrul Vechi.",
+        intro: "Stația Piața Muncii este la aproximativ 4 minute pe jos de Serene Studio. De acolo iei metroul spre Universitate sau Piața Unirii - apoi 5-10 minute pe jos până la Centrul Vechi.",
         paragraphs: [
           "Coboară la Universitate pentru zona Lipscani-Selari sau la Piața Unirii pentru zona Hanul lui Manuc și Stavropoleos. Ambele opțiuni te duc la 5-10 minute pe jos în inima Centrului Vechi.",
           "În weekend și seara, fluxul de trenuri scade, deci verifică ultimul tren pe drumul de întoarcere - sau pregătește-te pentru un taxi până acasă."
@@ -915,7 +915,7 @@ const nearbyPostsRo: BlogPost[] = [
     faq: [
       { q: "Care sunt cele mai apropiate spitale de Serene Studio?", a: "Spitalul Gomoiu (~1,5 km), Spitalul Monza (~2 km), Spitalul Sf. Pantelimon (~3 km), Spitalul Babeș (~3 km) și Spitalul Colentina (~5 km)." },
       { q: "Cât e până la Mega Mall pe jos?", a: "Aproximativ 18-20 de minute pe jos sau 5-7 minute cu mașina/taxi." },
-      { q: "Pot ajunge în Centrul Vechi cu metroul?", a: "Da, de la Piața Muncii (4 minute pe jos de Serene Studio) iei M1 până la Universitate sau Piața Unirii - apoi 5-10 minute pe jos." },
+      { q: "Pot ajunge în Centrul Vechi cu metroul?", a: "Da, de la Piața Muncii (4 minute pe jos de Serene Studio) iei metroul până la Universitate sau Piața Unirii - apoi 5-10 minute pe jos." },
       ...commonFaqRo
     ]
   }
@@ -1045,7 +1045,7 @@ const nearbyPostsEn: BlogPost[] = [
     sections: [
       {
         title: "Quick metro route",
-        intro: "Piata Muncii station is about 4 minutes on foot from Serene Studio. From there, take M1 toward Universitate or Piata Unirii - then a 5-10 minute walk to the Old Town.",
+        intro: "Piata Muncii station is about 4 minutes on foot from Serene Studio. From there, take the metro toward Universitate or Piata Unirii - then a 5-10 minute walk to the Old Town.",
         paragraphs: [
           "Get off at Universitate for the Lipscani-Selari area or at Piata Unirii for Hanul lui Manuc and Stavropoleos. Either option puts you 5-10 minutes on foot from the heart of the Old Town.",
           "On weekends and evenings, train frequency drops, so check the last train on your way back - or be ready to take a taxi home."
@@ -1113,7 +1113,7 @@ const nearbyPostsEn: BlogPost[] = [
     faq: [
       { q: "Which are the closest hospitals to Serene Studio?", a: "Gomoiu Hospital (~1.5 km), Monza Hospital (~2 km), Sf. Pantelimon Hospital (~3 km), Babes Hospital (~3 km) and Colentina Hospital (~5 km)." },
       { q: "How far is Mega Mall on foot?", a: "About 18-20 minutes on foot or 5-7 minutes by car/taxi." },
-      { q: "Can I reach the Old Town by metro?", a: "Yes, from Piata Muncii (4 minutes on foot from Serene Studio) take M1 to Universitate or Piata Unirii - then 5-10 minutes on foot." },
+      { q: "Can I reach the Old Town by metro?", a: "Yes, from Piata Muncii (4 minutes on foot from Serene Studio) take the metro to Universitate or Piata Unirii - then 5-10 minutes on foot." },
       ...commonFaqEn
     ]
   }

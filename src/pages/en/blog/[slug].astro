@@ -7,7 +7,8 @@ import Lightbox from "@/components/Lightbox.astro";
 import ResponsiveImage from "@/components/ResponsiveImage.astro";
 import SectionVideo from "@/components/SectionVideo.astro";
 import { getBlogPosts } from "@/data/blog";
-import { absoluteUrl, images, labels, SITE_URL } from "@/data/site";
+import { BLOG_CARD_IMAGE_HEIGHT, BLOG_CARD_IMAGE_WIDTH, getBlogCardVisual } from "@/data/blog-card-visuals";
+import { absoluteUrl, images, labels, property, SITE_URL } from "@/data/site";
 
 export function getStaticPaths() {
   return getBlogPosts("en").map((post) => ({
@@ -22,6 +23,8 @@ const translationPath = `/blog/${post.translationSlug}/`;
 const l = labels.en;
 const locale = "en" as const;
 const showAirportTrainPlanner = post.slug === "how-to-get-from-otopeni-to-piata-muncii";
+const cardVisual = getBlogCardVisual(post);
+const cardImageUrl = `${SITE_URL}/images/${cardVisual.base}.webp`;
 
 const galleryVideos = post.sections.flatMap((section) => [
   ...(section.video ? [section.video] : []),
@@ -80,6 +83,19 @@ const imageSchemas = galleryImages
     };
   })
   .filter((item): item is NonNullable<typeof item> => item !== null);
+const primaryImageSchema = {
+  "@type": "ImageObject",
+  "@id": `${absoluteUrl(path)}#primaryimage`,
+  contentUrl: cardImageUrl,
+  thumbnailUrl: `${SITE_URL}/images/${cardVisual.base}-480.webp`,
+  caption: post.title,
+  description: cardVisual.alt[locale],
+  width: BLOG_CARD_IMAGE_WIDTH,
+  height: BLOG_CARD_IMAGE_HEIGHT,
+  inLanguage: locale,
+  representativeOfPage: true
+};
+const allImageSchemas = [primaryImageSchema, ...imageSchemas];
 
 const schema = [
   {
@@ -89,9 +105,22 @@ const schema = [
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: "en",
+    author: { "@type": "Organization", name: property.fullName },
+    publisher: { "@type": "Organization", name: property.fullName },
+    about: { "@id": `${SITE_URL}/#lodging` },
+    keywords: post.keyword,
     mainEntityOfPage: absoluteUrl(path),
-    ...(imageSchemas.length ? { image: imageSchemas.map((item) => item.contentUrl) } : {}),
+    image: allImageSchemas.map((item) => item.contentUrl),
     ...(videoSchemas.length ? { video: videoSchemas.map((item) => ({ "@id": item["@id"] })) } : {})
+  },
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${absoluteUrl(path)}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/en/") },
+      { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/en/blog/") },
+      { "@type": "ListItem", position: 3, name: post.title, item: absoluteUrl(path) }
+    ]
   },
   {
     "@type": "FAQPage",
@@ -102,11 +131,11 @@ const schema = [
     }))
   },
   ...videoSchemas,
-  ...imageSchemas
+  ...allImageSchemas
 ];
 ---
 
-<BaseLayout locale="en" path={path} translationPath={translationPath} title={`${post.title} - Serene Studio`} description={post.description} keyword={post.keyword} schema={schema}>
+<BaseLayout locale="en" path={path} translationPath={translationPath} title={`${post.title} - Serene Studio`} description={post.description} keyword={post.keyword} schema={schema} ogImage={`/images/${cardVisual.base}.webp`}>
   <article class="band">
     <div class="container article">
       <p class="article-meta">Updated: {post.date}</p>

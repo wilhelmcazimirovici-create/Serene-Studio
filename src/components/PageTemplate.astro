@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogCardImage from "@/components/BlogCardImage.astro";
 import BookingCta from "@/components/BookingCta.astro";
 import FAQ from "@/components/FAQ.astro";
 import Infographic from "@/components/Infographic.astro";
 import Lightbox from "@/components/Lightbox.astro";
 import ResponsiveImage from "@/components/ResponsiveImage.astro";
 import SectionVideo from "@/components/SectionVideo.astro";
+import { getBlogCardVisualByHref } from "@/data/blog-card-visuals";
 import { absoluteUrl, gallery, images, labels, maps, SITE_URL, type Locale } from "@/data/site";
 import type { PageContent, PageSection } from "@/data/types";
 
@@ -47,19 +49,19 @@ const airportHomeCta = {
     after: "După aterizare",
     afterText: "pui ora avionului și vezi 3 trenuri după sosire",
     before: "Spre aeroport",
-    beforeText: "pui ora dorită la OTP și vezi trenurile potrivite",
-    route: ["OTP", "Gara de Nord", "M1", "Serene Studio"],
+    beforeText: "pui ora la care vrei să fii la aeroport",
+    route: ["Aeroport Otopeni", "Gara de Nord", "Metrou Piața Muncii", "Serene Studio"],
     cta: "Vezi pagina aeroportului",
-    badge: "trenuri directe Infofer"
+    badge: "rută aeroport-studio"
   },
   en: {
     after: "After landing",
     afterText: "enter your flight time and see 3 trains after arrival",
     before: "To the airport",
-    beforeText: "enter your target OTP time and see matching trains",
-    route: ["OTP", "Gara de Nord", "M1", "Serene Studio"],
+    beforeText: "enter the time you want to be at the airport",
+    route: ["Otopeni Airport", "Gara de Nord", "Piata Muncii metro", "Serene Studio"],
     cta: "Open the airport guide",
-    badge: "direct Infofer trains"
+    badge: "airport-studio route"
   }
 }[locale];
 
@@ -323,9 +325,16 @@ const pageSchema = [
 
             {section.cards && section.variant !== "reviews" && section.variant !== "airportTrainCta" && (
               <div class="cards-grid">
-                {section.cards.map((card, cardIndex) =>
-                  card.href ? (
-                    <a class="card card-link" href={card.href}>
+                {section.cards.map((card, cardIndex) => {
+                  const blogVisual = getBlogCardVisualByHref(card.href);
+
+                  return card.href ? (
+                    <a class={`card card-link${blogVisual ? " blog-link-card" : ""}`} href={card.href}>
+                      {blogVisual && (
+                        <span class="blog-link-media">
+                          <BlogCardImage visual={blogVisual} locale={locale as Locale} class="blog-link-image" />
+                        </span>
+                      )}
                       <span class="card-number">{card.eyebrow ?? cardLabel(cardIndex)}</span>
                       <h3>{card.title}</h3>
                       <p>{card.text}</p>
@@ -340,8 +349,8 @@ const pageSchema = [
                       <h3>{card.title}</h3>
                       <p>{card.text}</p>
                     </article>
-                  )
-                )}
+                  );
+                })}
               </div>
             )}
 

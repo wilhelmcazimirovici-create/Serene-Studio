@@ -1,0 +1,45 @@
+---
+import {
+  BLOG_CARD_IMAGE_HEIGHT,
+  BLOG_CARD_IMAGE_WIDTH,
+  type BlogCardVisual
+} from "@/data/blog-card-visuals";
+import type { Locale } from "@/data/site";
+
+type Props = {
+  visual: BlogCardVisual;
+  locale: Locale;
+  class?: string;
+  loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
+  sizes?: string;
+};
+
+const {
+  visual,
+  locale,
+  class: className,
+  loading = "lazy",
+  fetchpriority = "auto",
+  sizes = "(min-width: 960px) 32vw, (min-width: 680px) 50vw, 100vw"
+} = Astro.props;
+
+const widths = [480, 900, BLOG_CARD_IMAGE_WIDTH];
+const avifSrcset = widths.map((width) => `/images/${visual.base}-${width}.avif ${width}w`).join(", ");
+const webpSrcset = widths.map((width) => `/images/${visual.base}-${width}.webp ${width}w`).join(", ");
+---
+
+<picture>
+  <source srcset={avifSrcset} sizes={sizes} type="image/avif" />
+  <source srcset={webpSrcset} sizes={sizes} type="image/webp" />
+  <img
+    src={`/images/${visual.base}.webp`}
+    alt={visual.alt[locale]}
+    width={BLOG_CARD_IMAGE_WIDTH}
+    height={BLOG_CARD_IMAGE_HEIGHT}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
+    class={className}
+  />
+</picture>

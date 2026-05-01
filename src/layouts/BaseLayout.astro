@@ -19,12 +19,18 @@ type Props = {
   keyword?: string;
   schema?: Record<string, unknown>[];
   alternates?: Alternate[];
+  ogImage?: string;
 };
 
-const { locale, path, translationPath, title, description, keyword, schema = [], alternates = [] } = Astro.props;
+const { locale, path, translationPath, title, description, keyword, schema = [], alternates = [], ogImage } = Astro.props;
 const l = labels[locale];
 const canonical = absoluteUrl(path);
 const lang = locale === "ro" ? "ro" : "en";
+const socialImage = ogImage
+  ? ogImage.startsWith("http")
+    ? ogImage
+    : `${SITE_URL}${ogImage}`
+  : `${SITE_URL}/images/og-serene-studio.webp`;
 
 const baseSchema = [
   {
@@ -87,6 +93,7 @@ const baseSchema = [
     url: canonical,
     name: title,
     description,
+    image: socialImage,
     inLanguage: lang,
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#lodging` }
@@ -113,8 +120,9 @@ const graph = [...baseSchema, ...schema];
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={`${SITE_URL}/images/og-serene-studio.webp`} />
+    <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImage} />
     <meta name="theme-color" content="#f97316" data-theme-color />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
