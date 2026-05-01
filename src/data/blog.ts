@@ -730,19 +730,19 @@ const nearbyPostsRo: BlogPost[] = [
     translationSlug: "accommodation-near-gomoiu-childrens-hospital-bucharest",
     title: "Cazare lângă Spitalul de Copii Dr. Victor Gomoiu București - ghid pentru părinți",
     description:
-      "Cazare privată în Sector 2 București, la aproximativ 1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Ghid practic pentru părinți și însoțitori.",
+      "Cazare privată în Sector 2 București, la 180 m (2 minute pe jos) de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Ghid practic pentru părinți și însoțitori.",
     keyword: "cazare Spitalul Gomoiu Bucuresti, parinti spital de copii",
     date: "2026-04-30",
     intro:
-      "Dacă aduci copilul la Spitalul Clinic de Copii Dr. Victor Gomoiu, ai nevoie de cazare aproape, liniștită și flexibilă. Serene Studio se află pe Strada Alexandru Zagoritz 12, Sector 2, la aproximativ 1,5 km de Bulevardul Basarabia 21.",
+      "Dacă aduci copilul la Spitalul Clinic de Copii Dr. Victor Gomoiu, ai nevoie de cazare aproape, liniștită și flexibilă. Serene Studio se află pe Strada Alexandru Zagoritz 12, Sector 2, la doar 180 m de Bulevardul Basarabia 21 - 2 minute pe jos, cu acoperișul spitalului vizibil din zona studioului.",
     ctaReferer: "website_blog_gomoiu",
     sections: [
       {
         title: "Adresa Spitalului Gomoiu și cum ajungi acolo",
         intro: "Spitalul are sediul principal pe Bulevardul Basarabia 21, Sector 2, cod poștal 022102. Ambulatoriul este la Strada Rodul Pamantului 2-4, Sector 3.",
         paragraphs: [
-          "De la Serene Studio, drumul cu mașina durează în jur de 5-7 minute, în funcție de trafic. Bulevardul Basarabia este aproape de Arena Națională și de Șoseaua Mihai Bravu, deci ai mai multe rute alternative.",
-          "Dacă preferi transportul public, stația de metrou Piața Muncii este la 4 minute pe jos de Serene Studio și te conecteaza rapid spre Iancului și Republica."
+          "De la Serene Studio, ajungi pe jos la spital în aproximativ 2 minute - distanța este de circa 180 m, iar acoperișul spitalului se vede direct din zona studioului. Nu ai nevoie de mașină sau taxi pentru drumul zilnic la spital.",
+          "Pentru cei care vin din afara orașului cu trenul sau metroul, stația Piața Muncii este la 4 minute pe jos de Serene Studio și conectează rapid spre Gara de Nord, Iancului și Republica."
         ]
       },
       {
@@ -756,7 +756,7 @@ const nearbyPostsRo: BlogPost[] = [
     ],
     faq: [
       { q: "Care este adresa Spitalului Gomoiu?", a: "Sediul principal este pe Bulevardul Basarabia 21, Sector 2, București, cod poștal 022102. Ambulatoriul este pe Strada Rodul Pamantului 2-4, Sector 3." },
-      { q: "Cat e de la Serene Studio la Spitalul Gomoiu?", a: "Aproximativ 1,5 km - câteva minute cu mașina sau taxi. Verifică ruta în Google Maps înainte de plecare." },
+      { q: "Cat e de la Serene Studio la Spitalul Gomoiu?", a: "Doar 180 m - aproximativ 2 minute pe jos. Acoperișul spitalului se vede direct din zona studioului, deci ajungi pe jos fără mașină sau taxi." },
       ...commonFaqRo
     ]
   },
@@ -885,7 +885,7 @@ const nearbyPostsRo: BlogPost[] = [
         title: "Spitale și centre medicale",
         intro: "Pentru pacienți și aparținători, următoarele spitale sunt aproape de Serene Studio:",
         bullets: [
-          "Spitalul Clinic de Copii Dr. Victor Gomoiu - Bd. Basarabia 21, ~1,5 km",
+          "Spitalul Clinic de Copii Dr. Victor Gomoiu - Bd. Basarabia 21, ~180 m (2 min pe jos)",
           "Spitalul Monza - Str. Tony Bulandra 27, ~2 km",
           "Spitalul Clinic de Urgență Sf. Pantelimon - Sos. Pantelimon 340-342, ~3 km",
           "Spitalul Clinic Dr. Victor Babeș - Sos. Mihai Bravu 281, ~3 km",
@@ -913,7 +913,7 @@ const nearbyPostsRo: BlogPost[] = [
       }
     ],
     faq: [
-      { q: "Care sunt cele mai apropiate spitale de Serene Studio?", a: "Spitalul Gomoiu (~1,5 km), Spitalul Monza (~2 km), Spitalul Sf. Pantelimon (~3 km), Spitalul Babeș (~3 km) și Spitalul Colentina (~5 km)." },
+      { q: "Care sunt cele mai apropiate spitale de Serene Studio?", a: "Spitalul Gomoiu (~180 m, 2 min pe jos), Spitalul Monza (~2 km), Spitalul Sf. Pantelimon (~3 km), Spitalul Babeș (~3 km) și Spitalul Colentina (~5 km)." },
       { q: "Cât e până la Mega Mall pe jos?", a: "Aproximativ 18-20 de minute pe jos sau 5-7 minute cu mașina/taxi." },
       { q: "Pot ajunge în Centrul Vechi cu metroul?", a: "Da, de la Piața Muncii (4 minute pe jos de Serene Studio) iei metroul până la Universitate sau Piața Unirii - apoi 5-10 minute pe jos." },
       ...commonFaqRo
@@ -928,19 +928,19 @@ const nearbyPostsEn: BlogPost[] = [
     translationSlug: "cazare-langa-spitalul-copii-gomoiu-bucuresti",
     title: "Accommodation near Dr. Victor Gomoiu Children's Hospital Bucharest - parents' guide",
     description:
-      "Private accommodation in Sector 2 Bucharest, about 1.5 km from the Dr. Victor Gomoiu Children's Clinical Hospital (Bd. Basarabia 21). Practical guide for parents and relatives.",
+      "Private accommodation in Sector 2 Bucharest, 180 m (a 2-minute walk) from the Dr. Victor Gomoiu Children's Clinical Hospital (Bd. Basarabia 21). Practical guide for parents and relatives.",
     keyword: "Gomoiu children's hospital Bucharest accommodation, parents stay",
     date: "2026-04-30",
     intro:
-      "If you bring your child to the Dr. Victor Gomoiu Children's Clinical Hospital, you need accommodation that is close, quiet and flexible. Serene Studio is at Strada Alexandru Zagoritz 12, Sector 2, about 1.5 km from Bulevardul Basarabia 21.",
+      "If you bring your child to the Dr. Victor Gomoiu Children's Clinical Hospital, you need accommodation that is close, quiet and flexible. Serene Studio is at Strada Alexandru Zagoritz 12, Sector 2, only 180 m from Bulevardul Basarabia 21 - a 2-minute walk, with the hospital roof visible from the studio area.",
     ctaReferer: "website_en_blog_gomoiu",
     sections: [
       {
         title: "Gomoiu Hospital address and how to get there",
         intro: "The hospital's main location is at Bulevardul Basarabia 21, Sector 2, postal code 022102. The outpatient clinic is at Strada Rodul Pamantului 2-4, Sector 3.",
         paragraphs: [
-          "From Serene Studio, the trip by car takes about 5-7 minutes depending on traffic. Bulevardul Basarabia is close to the National Arena and Soseaua Mihai Bravu, so you have multiple alternative routes.",
-          "If you prefer public transport, Piata Muncii metro station is 4 minutes on foot from Serene Studio and connects you quickly toward Iancului and Republica."
+          "From Serene Studio, you reach the hospital on foot in about 2 minutes - the distance is roughly 180 m and the hospital roof is visible from the studio area. No need for a car or taxi for the daily walk to the hospital.",
+          "For travelers arriving from outside the city by train or metro, Piata Muncii station is 4 minutes on foot from Serene Studio and connects quickly toward Gara de Nord, Iancului and Republica."
         ]
       },
       {
@@ -954,7 +954,7 @@ const nearbyPostsEn: BlogPost[] = [
     ],
     faq: [
       { q: "What is the address of Gomoiu Hospital?", a: "Main location: Bulevardul Basarabia 21, Sector 2, Bucharest, postal code 022102. Outpatient clinic: Strada Rodul Pamantului 2-4, Sector 3." },
-      { q: "How far is Serene Studio from Gomoiu Hospital?", a: "About 1.5 km - a few minutes by car or taxi. Check the route in Google Maps before leaving." },
+      { q: "How far is Serene Studio from Gomoiu Hospital?", a: "Only 180 m - about a 2-minute walk. The hospital roof is visible from the studio area, so you reach it on foot, no car or taxi needed." },
       ...commonFaqEn
     ]
   },
@@ -1083,7 +1083,7 @@ const nearbyPostsEn: BlogPost[] = [
         title: "Hospitals and medical centers",
         intro: "For patients and relatives, the following hospitals are close to Serene Studio:",
         bullets: [
-          "Dr. Victor Gomoiu Children's Clinical Hospital - Bd. Basarabia 21, ~1.5 km",
+          "Dr. Victor Gomoiu Children's Clinical Hospital - Bd. Basarabia 21, ~180 m (2 min walk)",
           "Monza Hospital - Str. Tony Bulandra 27, ~2 km",
           "Sf. Pantelimon Emergency Hospital - Sos. Pantelimon 340-342, ~3 km",
           "Dr. Victor Babes Clinical Hospital - Sos. Mihai Bravu 281, ~3 km",
@@ -1111,7 +1111,7 @@ const nearbyPostsEn: BlogPost[] = [
       }
     ],
     faq: [
-      { q: "Which are the closest hospitals to Serene Studio?", a: "Gomoiu Hospital (~1.5 km), Monza Hospital (~2 km), Sf. Pantelimon Hospital (~3 km), Babes Hospital (~3 km) and Colentina Hospital (~5 km)." },
+      { q: "Which are the closest hospitals to Serene Studio?", a: "Gomoiu Hospital (~180 m, 2 min walk), Monza Hospital (~2 km), Sf. Pantelimon Hospital (~3 km), Babes Hospital (~3 km) and Colentina Hospital (~5 km)." },
       { q: "How far is Mega Mall on foot?", a: "About 18-20 minutes on foot or 5-7 minutes by car/taxi." },
       { q: "Can I reach the Old Town by metro?", a: "Yes, from Piata Muncii (4 minutes on foot from Serene Studio) take the metro to Universitate or Piata Unirii - then 5-10 minutes on foot." },
       ...commonFaqEn

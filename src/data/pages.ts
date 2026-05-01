@@ -97,7 +97,7 @@ export const pages: PageContent[] = [
         intro:
           "Pagini dedicate pentru oaspeții care vin cu un scop clar - vizită la spital, eveniment la Arena Națională sau o ieșire la mall.",
         cards: [
-          { eyebrow: "Spital de copii", title: "Cazare lângă Spitalul Gomoiu", text: "Studio privat la ~1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Pentru părinți și însoțitori.", href: "/cazare-langa-spitalul-gomoiu-bucuresti/" },
+          { eyebrow: "Spital de copii", title: "Cazare lângă Spitalul Gomoiu", text: "Studio privat la 180 m de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21) - 2 minute pe jos, se vede acoperișul. Pentru părinți și însoțitori.", href: "/cazare-langa-spitalul-gomoiu-bucuresti/" },
           { eyebrow: "Cardiologie", title: "Cazare lângă Spitalul Monza", text: "Studio privat în Sector 2, la ~2 km de Spitalul Monza (Str. Tony Bulandra 27). Pentru pacienți și aparținători.", href: "/cazare-langa-spitalul-monza-bucuresti/" },
           { eyebrow: "Concerte și meciuri", title: "Cazare lângă Arena Națională", text: "La ~14 minute pe jos de stadion. Self check-in, fără apeluri, ideal pentru concerte și meciuri.", href: "/cazare-langa-arena-nationala/" },
           { eyebrow: "Shopping și cinema", title: "Cazare lângă Mega Mall", text: "La ~18-20 min pe jos de Mega Mall și vecin cu Arena Națională. Pentru shopping, restaurante și cinema.", href: "/cazare-langa-mega-mall-bucuresti/" },
@@ -117,9 +117,8 @@ export const pages: PageContent[] = [
         ]
       },
       {
-        title: "Recenzii reale, fără scor static neverificat",
-        intro:
-          "Recenziile de mai jos provin din feedback existent; scorul actualizat trebuie verificat dinamic pe platformele de rezervare înainte de afișare.",
+        title: "Recenzii reale",
+        intro: "Feedback real de la oaspeții care au stat la Serene Studio.",
         cards: reviews.ro.map((review) => ({ title: review.name, text: review.quote })),
         variant: "reviews"
       }
@@ -216,7 +215,7 @@ export const pages: PageContent[] = [
         intro:
           "Dedicated pages for guests with a clear purpose - a hospital visit, a National Arena event or a mall trip.",
         cards: [
-          { eyebrow: "Children's hospital", title: "Stay near Gomoiu Children's Hospital", text: "Private studio about 1.5 km from Dr. Victor Gomoiu Children's Clinical Hospital (Bd. Basarabia 21). For parents and relatives.", href: "/en/accommodation-near-gomoiu-hospital-bucharest/" },
+          { eyebrow: "Children's hospital", title: "Stay near Gomoiu Children's Hospital", text: "Private studio 180 m from Dr. Victor Gomoiu Children's Clinical Hospital (Bd. Basarabia 21) - a 2-minute walk, the roof is visible. For parents and relatives.", href: "/en/accommodation-near-gomoiu-hospital-bucharest/" },
           { eyebrow: "Cardiology", title: "Stay near Monza Hospital", text: "Private studio in Sector 2, about 2 km from Monza Hospital (Str. Tony Bulandra 27). For patients and relatives.", href: "/en/accommodation-near-monza-hospital-bucharest/" },
           { eyebrow: "Concerts and matches", title: "Stay near the National Arena", text: "About 14 minutes on foot from the stadium. Self check-in, no calls, ideal for concerts and matches.", href: "/en/accommodation-near-national-arena/" },
           { eyebrow: "Shopping and cinema", title: "Stay near Mega Mall", text: "About 18-20 min on foot from Mega Mall, next to the National Arena. For shopping, restaurants and cinema.", href: "/en/accommodation-near-mega-mall-bucharest/" },
@@ -236,9 +235,8 @@ export const pages: PageContent[] = [
         ]
       },
       {
-        title: "Real reviews without an unverified static score",
-        intro:
-          "The reviews below are based on existing guest feedback; the current score should be checked dynamically on booking platforms before display.",
+        title: "Real reviews",
+        intro: "Genuine feedback from guests who have stayed at Serene Studio.",
         cards: reviews.en.map((review) => ({ title: review.name, text: review.quote })),
         variant: "reviews"
       }
@@ -1230,16 +1228,16 @@ const nearbyRo: PageContent[] = [
     translationPath: "/en/accommodation-near-gomoiu-hospital-bucharest/",
     title: "Cazare lângă Spitalul Gomoiu București - Serene Studio",
     description:
-      "Studio privat în Sector 2 București, la câteva minute de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Self check-in, chicinetă, baie privată și rezervare online directă - ideal pentru părinți și bunici care își însoțesc copilul la spital.",
+      "Studio privat în Sector 2 București, la 180 m (2 minute pe jos) de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bd. Basarabia 21). Self check-in, chicinetă, baie privată și rezervare online directă - ideal pentru părinți și bunici care își însoțesc copilul la spital.",
     keyword: "cazare langa Spitalul Gomoiu Bucuresti, cazare parinti Spitalul de Copii Gomoiu, Bd. Basarabia 21 Sector 2",
     h1: "Cazare lângă Spitalul de Copii Dr. Victor Gomoiu în București",
     eyebrow: "Sector 2 · Bd. Basarabia 21 · Părinți și însoțitori",
     heroText:
-      "Serene Studio este o cazare privată și liniștită în Sector 2 București, la aproximativ 1,5 km de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bulevardul Basarabia 21). Studio de aproximativ 35 m2, cu pat matrimonial, chicinetă, baie privată și self check-in după ora 14:00 pe baza codului din guidebook.",
+      "Serene Studio este o cazare privată și liniștită în Sector 2 București, la doar 180 m de Spitalul Clinic de Copii Dr. Victor Gomoiu (Bulevardul Basarabia 21) - 2 minute pe jos și se vede acoperișul spitalului din zona studioului. Studio de aproximativ 35 m2, cu pat matrimonial, chicinetă, baie privată și self check-in după ora 14:00 pe baza codului din guidebook.",
     heroImage: "overview",
     heroCtaReferer: "website_gomoiu_hero",
     proof: [
-      { value: "~1,5 km", label: "până la Spitalul Gomoiu" },
+      { value: "~180 m", label: "2 min pe jos până la Gomoiu" },
       { value: "35 m2", label: "studio privat" },
       { value: "Self check-in", label: "acces după 14:00" },
       { value: "22-09", label: "ore de liniște" }
@@ -1252,7 +1250,7 @@ const nearbyRo: PageContent[] = [
         cards: [
           { title: "Părinți care însoțesc copilul", text: "Studio privat unde te poți odihni între vizite, cu chicinetă pentru micul dejun, o cafea caldă dimineața și baie proprie - fără să împarți spațiul cu alți oaspeți." },
           { title: "Bunici și aparținători din afara orașului", text: "Sosiri și plecări flexibile, self check-in după ora 14:00, fără coadă la recepție. Dacă ajungi seara târziu, codul cutiei de chei te așteaptă în guidebook." },
-          { title: "Familii la sejur medical de câteva zile", text: "Rezervi un singur loc privat la 4 minute de metroul Piața Muncii, eviți drumurile lungi prin oraș și te concentrezi pe sănătatea copilului." }
+          { title: "Familii la sejur medical de câteva zile", text: "Rezervi un singur loc privat la 2 minute pe jos de Spitalul Gomoiu, eviți drumurile lungi prin oraș și te concentrezi pe sănătatea copilului." }
         ],
         ctaReferer: "website_gomoiu_quiet"
       },
@@ -1287,15 +1285,15 @@ const nearbyRo: PageContent[] = [
       {
         title: "Distanțele utile din zonă",
         intro:
-          "Adresa Serene Studio: Strada Alexandru Zagoritz 12, Sector 2, București. Spitalul Clinic de Copii Dr. Victor Gomoiu se află pe Bulevardul Basarabia 21, în același Sector 2 - foarte aproape, pe ruta către Arena Națională.",
+          "Adresa Serene Studio: Strada Alexandru Zagoritz 12, Sector 2, București. Spitalul Clinic de Copii Dr. Victor Gomoiu se află pe Bulevardul Basarabia 21, în același Sector 2 - la doar 180 m, 2 minute pe jos, iar acoperișul spitalului se vede direct din zona studioului.",
         infographic: {
           variant: "distances",
           origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2",
           caption:
             "Distanțele sunt orientative. Verifică întotdeauna ruta în aplicația ta de navigație înainte de plecare.",
           distances: [
-            { place: "Spitalul Clinic de Copii Dr. Victor Gomoiu", detail: "Bd. Basarabia 21 - chirurgie pediatrică, pediatrie, ATI copii", value: "~1,5 km", mode: "drive", lat: 44.4393, lon: 26.1486 },
-            { place: "Ambulatoriul Gomoiu (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - consultații ambulatorii", value: "~6 km cu mașina", mode: "drive", lat: 44.4232, lon: 26.1843 },
+            { place: "Spitalul Clinic de Copii Dr. Victor Gomoiu", detail: "Bd. Basarabia 21 - chirurgie pediatrică, pediatrie, ATI copii", value: "~180 m, 2 min pe jos", mode: "walk", lat: 44.4393, lon: 26.1486 },
+            { place: "Ambulatoriul Gomoiu (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - consultații ambulatorii", value: "~1,5 km, 6 min cu mașina", mode: "drive", lat: 44.4232, lon: 26.1843 },
             { place: "Spitalul Monza", detail: "Strada Tony Bulandra 27 - cardiologie, chirurgie", value: "~2 km", mode: "drive", lat: 44.4464, lon: 26.1379 },
             { place: "Metrou Piața Muncii", detail: "Metrou către centru și Gara de Nord", value: "~4 min pe jos", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "Farmacii non-stop", detail: "Pe Mihai Bravu și Bulevardul Basarabia", value: "1-5 min pe jos", mode: "walk" }
@@ -1321,7 +1319,7 @@ const nearbyRo: PageContent[] = [
     ],
     faq: [
       { q: "Care este adresa Spitalului Gomoiu din București?", a: "Spitalul Clinic de Copii Dr. Victor Gomoiu are sediul principal pe Bulevardul Basarabia 21, Sector 2, București, cod poștal 022102. Ambulatoriul se află la Strada Rodul Pamantului 2-4, Sector 3." },
-      { q: "Cat de aproape este Serene Studio de Spitalul Gomoiu?", a: "Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) este la aproximativ 1,5 km de Spitalul Gomoiu - câteva minute cu mașină sau taxi. Verifică ruta exactă în Google Maps înainte de plecare." },
+      { q: "Cat de aproape este Serene Studio de Spitalul Gomoiu?", a: "Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) este la doar 180 m de Spitalul Gomoiu - aproximativ 2 minute pe jos. Acoperișul spitalului se vede direct din zona studioului, deci ajungi pe jos fără să ai nevoie de mașină sau taxi." },
       { q: "Pot face check-in târziu dacă ies târziu de la spital?", a: "Da. Self check-in-ul funcționează după ora 14:00, fără restricție de seară. Codul cutiei de chei este disponibil în guidebook după finalizarea check-in-ului online (ID, selfie, taxa de oraș, semnătură regulament)." },
       { q: "Este potrivit pentru părinți care își însoțesc copilul?", a: "Da. Studioul este privat, liniștit, cu chicinetă și baie proprie - ideal pentru părinți care dorm puțin, mănâncă pe fugă și vor intimitate după o zi grea la spital." },
       { q: "Pot rămâne mai multe nopti pentru un sejur medical pediatric?", a: "Da, sejururile de câteva nopți sunt complet acceptate. Chicineta ajută la masa rapidă fără să depinzi de restaurante." },
@@ -1519,16 +1517,16 @@ const nearbyEn: PageContent[] = [
     translationPath: "/cazare-langa-spitalul-gomoiu-bucuresti/",
     title: "Accommodation near Dr. Victor Gomoiu Children's Hospital Bucharest - Serene Studio",
     description:
-      "Private studio in Sector 2 Bucharest, minutes from Dr. Victor Gomoiu Children's Clinical Hospital (Bd. Basarabia 21). Self check-in, kitchenette, private bathroom - ideal for parents and relatives accompanying their child.",
+      "Private studio in Sector 2 Bucharest, 180 m (a 2-minute walk) from Dr. Victor Gomoiu Children's Clinical Hospital (Bd. Basarabia 21). Self check-in, kitchenette, private bathroom - ideal for parents and relatives accompanying their child.",
     keyword: "accommodation near Gomoiu Hospital Bucharest, parents Gomoiu children's hospital, Bd. Basarabia 21",
     h1: "Accommodation near Dr. Victor Gomoiu Children's Hospital Bucharest",
     eyebrow: "Sector 2 · Bd. Basarabia 21 · Parents and relatives",
     heroText:
-      "Serene Studio is a private, quiet studio in Sector 2 Bucharest, about 1.5 km from the Dr. Victor Gomoiu Children's Clinical Hospital (Bulevardul Basarabia 21). About 35 m2 with double bed, kitchenette, private bathroom and self check-in after 14:00 via the code in your guidebook.",
+      "Serene Studio is a private, quiet studio in Sector 2 Bucharest, only 180 m from the Dr. Victor Gomoiu Children's Clinical Hospital (Bulevardul Basarabia 21) - a 2-minute walk, with the hospital roof visible from the studio area. About 35 m2 with double bed, kitchenette, private bathroom and self check-in after 14:00 via the code in your guidebook.",
     heroImage: "overview",
     heroCtaReferer: "website_en_gomoiu_hero",
     proof: [
-      { value: "~1.5 km", label: "to Gomoiu Hospital" },
+      { value: "~180 m", label: "2 min walk to Gomoiu" },
       { value: "35 m2", label: "private studio" },
       { value: "Self check-in", label: "after 14:00" },
       { value: "22-09", label: "quiet hours" }
@@ -1541,7 +1539,7 @@ const nearbyEn: PageContent[] = [
         cards: [
           { title: "Parents accompanying their child", text: "A private studio to rest between visits, with a kitchenette for breakfast, warm morning coffee and your own bathroom - no shared spaces with other guests." },
           { title: "Grandparents and out-of-town relatives", text: "Flexible arrivals and departures, self check-in after 14:00, no reception queue. If you arrive late at night, the key-box code waits for you in the guidebook." },
-          { title: "Multi-day pediatric stays", text: "One private base 4 minutes from Piata Muncii metro - skip long commutes across the city and focus on the child's care." }
+          { title: "Multi-day pediatric stays", text: "One private base 2 minutes on foot from Gomoiu Hospital - skip long commutes across the city and focus on the child's care." }
         ],
         ctaReferer: "website_en_gomoiu_quiet"
       },
@@ -1576,14 +1574,14 @@ const nearbyEn: PageContent[] = [
       {
         title: "Useful distances from Serene Studio",
         intro:
-          "Serene Studio: Strada Alexandru Zagoritz 12, Sector 2. The Dr. Victor Gomoiu Children's Clinical Hospital is at Bulevardul Basarabia 21, in the same Sector 2 - very close, on the route to the National Arena.",
+          "Serene Studio: Strada Alexandru Zagoritz 12, Sector 2. The Dr. Victor Gomoiu Children's Clinical Hospital is at Bulevardul Basarabia 21, in the same Sector 2 - only 180 m away, a 2-minute walk, with the hospital roof visible from the studio area.",
         infographic: {
           variant: "distances",
           origin: "Serene Studio · Strada Alexandru Zagoritz 12, Sector 2",
           caption: "Distances are indicative. Always check the route in your navigation app before leaving.",
           distances: [
-            { place: "Dr. Victor Gomoiu Children's Clinical Hospital", detail: "Bd. Basarabia 21 - pediatric surgery, pediatrics, ICU", value: "~1.5 km", mode: "drive", lat: 44.4393, lon: 26.1486 },
-            { place: "Gomoiu Outpatient Clinic (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - outpatient consultations", value: "~6 km by car", mode: "drive", lat: 44.4232, lon: 26.1843 },
+            { place: "Dr. Victor Gomoiu Children's Clinical Hospital", detail: "Bd. Basarabia 21 - pediatric surgery, pediatrics, ICU", value: "~180 m, 2 min walk", mode: "walk", lat: 44.4393, lon: 26.1486 },
+            { place: "Gomoiu Outpatient Clinic (Sector 3)", detail: "Strada Rodul Pamantului 2-4 - outpatient consultations", value: "~1.5 km, 6 min by car", mode: "drive", lat: 44.4232, lon: 26.1843 },
             { place: "Monza Hospital", detail: "Strada Tony Bulandra 27 - cardiology, surgery", value: "~2 km", mode: "drive", lat: 44.4464, lon: 26.1379 },
             { place: "Piata Muncii metro", detail: "Metro to city center and Gara de Nord", value: "~4 min walk", mode: "metro", lat: 44.4366, lon: 26.1364 },
             { place: "24/7 pharmacies nearby", detail: "On Mihai Bravu and Bulevardul Basarabia", value: "1-5 min walk", mode: "walk" }
@@ -1609,7 +1607,7 @@ const nearbyEn: PageContent[] = [
     ],
     faq: [
       { q: "What is the address of Gomoiu Hospital Bucharest?", a: "Dr. Victor Gomoiu Children's Clinical Hospital is at Bulevardul Basarabia 21, Sector 2, Bucharest, postal code 022102. The outpatient clinic is at Strada Rodul Pamantului 2-4, Sector 3." },
-      { q: "How close is Serene Studio to Gomoiu Hospital?", a: "Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) is about 1.5 km from Gomoiu Hospital - a few minutes by car or taxi. Check the exact route in Google Maps before leaving." },
+      { q: "How close is Serene Studio to Gomoiu Hospital?", a: "Serene Studio (Strada Alexandru Zagoritz 12, Sector 2) is only 180 m from Gomoiu Hospital - about a 2-minute walk. The hospital roof is visible from the studio area, so you reach it on foot, no car or taxi needed." },
       { q: "Can I check in late after long hospital hours?", a: "Yes. Self check-in works after 14:00 with no evening cut-off. The key-box code becomes available in your guidebook once online check-in is finalized (ID, selfie, city tax, rules signature)." },
       { q: "Is it suitable for parents accompanying their child?", a: "Yes. The studio is private, quiet, with a kitchenette and private bathroom - ideal for parents who sleep little, eat on the go and want privacy after a heavy hospital day." },
       { q: "Can I stay multiple nights for a pediatric stay?", a: "Yes, multi-night stays are fully accepted. The kitchenette helps with quick meals without depending on restaurants." },
